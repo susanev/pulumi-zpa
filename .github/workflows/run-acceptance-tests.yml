@@ -50,10 +50,6 @@ jobs:
       with:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
-    - name: Setup DotNet
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
@@ -86,14 +82,11 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 3.1.301
         goversion:
         - 1.19.x
         language:
         - nodejs
         - python
-        - dotnet
         - go
         nodeversion:
         - 14.x
@@ -179,8 +172,6 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -221,10 +212,6 @@ jobs:
       with:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
-    - name: Setup DotNet
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
@@ -238,7 +225,6 @@ jobs:
       run: |-
         tar -zxf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace}}/bin
         find ${{ github.workspace }} -name "pulumi-*-${{ env.PROVIDER }}" -print -exec chmod +x {} \;
-    - run: dotnet nuget add source ${{ github.workspace }}/nuget
     - name: Download SDK
       uses: actions/download-artifact@v3
       with:
@@ -260,14 +246,11 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 3.1.301
         goversion:
         - 1.19.x
         language:
         - nodejs
         - python
-        - dotnet
         - go
         nodeversion:
         - 14.x
