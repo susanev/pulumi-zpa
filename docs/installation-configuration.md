@@ -11,14 +11,14 @@ The Pulumi ZPA provider is available as a package in all Pulumi languages:
 * JavaScript/TypeScript: [`@zscaler/pulumi-zpa`](https://www.npmjs.com/package/@zscaler/pulumi-zpa)
 * Python: [`zscaler-pulumi-zpa`](https://pypi.org/project/zscaler-pulumi-zpa/)
 * Go: [`github.com/zscaler/pulumi-zpa/sdk/go/zpa`](https://pkg.go.dev/github.com/zscaler/pulumi-zpa/sdk)
-* .NET: [`Zscaler.zpa`](https://www.nuget.org/packages/Zscaler.zpa)
+* .NET: [`zscaler.PulumiPackage.Zpa`](https://www.nuget.org/packages/zscaler.PulumiPackage.Zpa)
 
 ### Provider Binary
 
 The ZPA provider binary is a third party binary. It can be installed using the `pulumi plugin` command.
 
 ```bash
-pulumi plugin install resource zpa v0.0.1
+pulumi plugin install resource zpa <version> --server github://api.github.com/zscaler
 ```
 
 Replace the version string with your desired version.
