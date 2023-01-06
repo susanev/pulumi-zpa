@@ -54,6 +54,12 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{matrix.pythonversion}}
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        cache: gradle
+        distribution: temurin
+        java-version: ${{matrix.javaversion}}
     - name: Download provider + tfgen binaries
       uses: actions/download-artifact@v3
       with:
@@ -86,6 +92,8 @@ jobs:
         - 3.1.301
         goversion:
         - 1.19.x
+        javaversion:
+        - "11"
         language:
         - nodejs
         - python
@@ -180,12 +188,14 @@ jobs:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
       uses: pulumi/action-install-pulumi-cli@v2
-    - name: Set Release Version
+
+    - name: Set PreRelease Version
       run: echo "GORELEASER_CURRENT_TAG=v$(pulumictl get version --language generic)" >> $GITHUB_ENV
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v4
       with:
-        args: release --rm-dist --timeout 60m0s
+        args: -p 3 -f .goreleaser.prerelease.yml --rm-dist --skip-validate --timeout
+          60m0s
         version: latest
     strategy:
       fail-fast: true
@@ -236,6 +246,12 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{matrix.pythonversion}}
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        cache: gradle
+        distribution: temurin
+        java-version: ${{matrix.javaversion}}
     - name: Download python SDK
       uses: actions/download-artifact@v3
       with:
@@ -267,6 +283,8 @@ jobs:
       matrix:
         dotnetversion:
         - 3.1.301
+        javaversion:
+        - "11"
         goversion:
         - 1.19.x
         nodeversion:
@@ -311,6 +329,12 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{matrix.pythonversion}}
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        cache: gradle
+        distribution: temurin
+        java-version: ${{matrix.javaversion}}
     - name: Download provider + tfgen binaries
       uses: actions/download-artifact@v3
       with:
@@ -338,7 +362,7 @@ jobs:
     - name: Install dependencies
       run: make install_${{ matrix.language}}_sdk
     - name: Run tests
-      run: cd examples && go test -v -count=1 -cover -timeout 2h -tags=${{ matrix.language}} -parallel 4 .
+      run: cd examples && go test -v -count=1 -cover -timeout 2h -tags=${{ matrix.language }} -parallel 4 .
     strategy:
       fail-fast: true
       matrix:
@@ -346,6 +370,8 @@ jobs:
         - 3.1.301
         goversion:
         - 1.19.x
+        javaversion:
+        - "11"
         language:
         - nodejs
         - python
@@ -359,9 +385,14 @@ jobs:
 permissions:
   contents: write
 
-name: release
+name: master
 "on":
   push:
-    tags:
-    - v*.*.*
-    - '!v*.*.*-**'
+    branches:
+    - master
+    paths-ignore:
+    - CHANGELOG.md
+    tags-ignore:
+    - v*
+    - sdk/*
+    - '**'

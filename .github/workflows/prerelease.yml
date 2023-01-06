@@ -129,6 +129,7 @@ jobs:
     # - if: github.event_name == 'pull_request'
     #   name: Check Schema is Valid
     #   run: |-
+    #     schema-tools compare ${{ env.PROVIDER }} master --local-path=provider/cmd/pulumi-resource-${{ env.PROVIDER }}/schema.json
     #     echo 'SCHEMA_CHANGES<<EOF' >> $GITHUB_ENV
     #     schema-tools compare ${{ env.PROVIDER }} master --local-path=provider/cmd/pulumi-resource-${{ env.PROVIDER }}/schema.json >> $GITHUB_ENV
     #     echo 'EOF' >> $GITHUB_ENV
@@ -140,7 +141,7 @@ jobs:
     #     message: |
     #       ### Does the PR have any schema changes?
 
-    #       ${{ env.SCHEMA_CHANGES }}
+    #      ${{ env.SCHEMA_CHANGES }}
     - name: Tar provider binaries
       run: tar -zcf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace
         }}/bin/ pulumi-resource-${{ env.PROVIDER }} pulumi-tfgen-${{ env.PROVIDER
@@ -180,12 +181,13 @@ jobs:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
       uses: pulumi/action-install-pulumi-cli@v2
-    - name: Set Release Version
+    - name: Set PreRelease Version
       run: echo "GORELEASER_CURRENT_TAG=v$(pulumictl get version --language generic)" >> $GITHUB_ENV
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v4
       with:
-        args: release --rm-dist --timeout 60m0s
+        args: -f .goreleaser.prerelease.yml --rm-dist --skip-validate --timeout
+          60m0s
         version: latest
     strategy:
       fail-fast: true
@@ -338,7 +340,7 @@ jobs:
     - name: Install dependencies
       run: make install_${{ matrix.language}}_sdk
     - name: Run tests
-      run: cd examples && go test -v -count=1 -cover -timeout 2h -tags=${{ matrix.language}} -parallel 4 .
+      run: cd examples && go test -v -count=1 -cover -timeout 2h -tags=${{ matrix.language }} -parallel 4 .
     strategy:
       fail-fast: true
       matrix:
@@ -359,9 +361,8 @@ jobs:
 permissions:
   contents: write
 
-name: release
+name: prerelease
 "on":
   push:
     tags:
-    - v*.*.*
-    - '!v*.*.*-**'
+    - v*.*.*-**
