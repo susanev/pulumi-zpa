@@ -18,7 +18,7 @@ npm install @zscaler/pulumi-zpa
 or `yarn`:
 
 ```bash
-yarn add @pulumi/pulumi-zpa
+yarn add @zscaler/pulumi-zpa
 ```
 
 ### Python
@@ -26,7 +26,7 @@ yarn add @pulumi/pulumi-zpa
 To use from Python, install using `pip`:
 
 ```bash
-pip install pulumi_zpa
+pip install zscaler-pulumi-zpa
 ```
 
 ### Go

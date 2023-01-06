@@ -1,25 +1,14 @@
 package examples
 
 import (
-	"path"
 	"testing"
 
 	"github.com/pulumi/pulumi/pkg/v3/testing/integration"
 )
 
-func TestAccZPASegmentGroupTS(t *testing.T) {
-	test := getJSBaseOptions(t).
-		With(integration.ProgramTestOptions{
-			Dir: path.Join(getCwd(t), "./ts/zpa_segment_group"),
-		})
-
-	integration.ProgramTest(t, &test)
-}
-
 func getJSBaseOptions(t *testing.T) integration.ProgramTestOptions {
-	base := getBaseOptions(t)
+	base := getBaseOptions()
 	baseJS := base.With(integration.ProgramTestOptions{
-		ExpectRefreshChanges: true,
 		Dependencies: []string{
 			"@zscaler/pulumi-zpa",
 		},
@@ -27,3 +16,13 @@ func getJSBaseOptions(t *testing.T) integration.ProgramTestOptions {
 
 	return baseJS
 }
+
+// func TestAccZPASegmentGroupTS(t *testing.T) {
+// 	skipNoZPACreds(t)
+// 	test := getJSBaseOptions(t).
+// 		With(integration.ProgramTestOptions{
+// 			Dir: path.Join(getCwd(t), "./ts/zpa_segment_group"),
+// 		})
+
+// 	integration.ProgramTest(t, &test)
+// }

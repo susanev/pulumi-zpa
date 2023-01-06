@@ -1,11 +1,10 @@
 """A Python Pulumi program"""
 
-import zscaler_zpa as zpa
+import zscaler_pulumi_zpa as zpa
 
 segmentGroup = zpa.ZPASegmentGroup("segment-group-example",
-    name = "Pulumi Segment Group",
-    description = "Pulumi Segment Group",
+    name = "Pulumi Segment Group Python",
+    description = "Pulumi Segment Group Python",
     enabled = True,
-    policy_migrated = True,
     tcp_keep_alive_enabled = "1"
 )

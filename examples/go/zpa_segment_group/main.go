@@ -10,10 +10,9 @@ import (
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 		segmentGroup, err := zpa.NewZPASegmentGroup(ctx, "segment-group-example", &zpa.ZPASegmentGroupArgs{
-			Name:                pulumi.String("Pulumi Segment Group"),
-			Description:         pulumi.String("Pulumi Segment Group"),
+			Name:                pulumi.String("Pulumi Segment Group Golang"),
+			Description:         pulumi.String("Pulumi Segment Group Golang"),
 			Enabled:             pulumi.Bool(true),
-			PolicyMigrated:      pulumi.Bool(true),
 			TcpKeepAliveEnabled: pulumi.String("1"),
 		})
 		if err != nil {

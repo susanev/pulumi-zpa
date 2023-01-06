@@ -1,6 +1,6 @@
 """A Python Pulumi program"""
 
-import zscaler_zpa as zpa
+import zscaler_pulumi_zpa as zpa
 
 serviceEdgeGroup = zpa.ZPAServiceEdgeGroup("service-edge-group-example",
     name = "Pulumi Service Edge Group",

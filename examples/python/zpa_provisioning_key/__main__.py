@@ -1,6 +1,6 @@
 """A Python Pulumi program"""
 
-import zscaler_zpa as zpa
+import zscaler_pulumi_zpa as zpa
 
 appConnectorGroup01 = zpa.ZPAAppConnectorGroup("app-connector-group",
     name = "Pulumi App Connector Group",

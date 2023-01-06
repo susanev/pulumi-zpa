@@ -1,11 +1,11 @@
-import * as zpa from "@zscaler/pulumi-zpa";
+import * as zpa from "@zscaler/pulumi-zpa"
+
 
 // Create a Segment Group
 const segmentGroup = new zpa.ZPASegmentGroup("segment-group-example", {
-    name: "Pulumi Segment Group",
-    description: "Pulumi Segment Group",
+    name: "Pulumi Segment Group TypeScript",
+    description: "Pulumi Segment Group TypeScript",
     enabled: true,
-    policyMigrated: true,
     tcpKeepAliveEnabled: "1"
  })
 

@@ -1,6 +1,6 @@
 """A Python Pulumi program"""
 
-import zscaler_zpa as zpa
+import zscaler_pulumi_zpa as zpa
 
 applicationServer = zpa.ZPAApplicationServer("application-server-example",
     name = "Pulumi Application Server",

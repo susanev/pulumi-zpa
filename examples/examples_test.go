@@ -9,31 +9,19 @@ import (
 	"github.com/pulumi/pulumi/pkg/v3/testing/integration"
 )
 
-func getClientId(t *testing.T) string {
-	zpa_client_id := os.Getenv("ZPA_CLIENT_ID")
-	if zpa_client_id == "" {
-		t.Skipf("Skipping test due to missing ZPA_CLIENT_ID environment variable")
+func skipNoZPACreds(t *testing.T) {
+	token := os.Getenv("ZPA_CLIENT_ID")
+	if token == "" {
+		t.Skipf("Skipping test due to missing ZPA_CLIENT_ID variable")
 	}
-
-	return zpa_client_id
-}
-
-func getClientSecret(t *testing.T) string {
-	zpa_client_secret := os.Getenv("ZPA_CLIENT_SECRET")
-	if zpa_client_secret == "" {
-		t.Skipf("Skipping test due to missing ZPA_CLIENT_SECRET environment variable")
+	baseUrl := os.Getenv("ZPA_CLIENT_SECRET")
+	if baseUrl == "" {
+		t.Skipf("Skipping test due to missing ZPA_CLIENT_SECRET variable")
 	}
-
-	return zpa_client_secret
-}
-
-func getCustomerId(t *testing.T) string {
-	zpa_customer_id := os.Getenv("ZPA_CUSTOMER_ID")
-	if zpa_customer_id == "" {
-		t.Skipf("Skipping test due to missing ZPA_CUSTOMER_ID environment variable")
+	orgName := os.Getenv("ZPA_CUSTOMER_ID")
+	if orgName == "" {
+		t.Skipf("Skipping test due to missing ZPA_CUSTOMER_ID variable")
 	}
-
-	return zpa_customer_id
 }
 
 func getCwd(t *testing.T) string {
@@ -45,15 +33,8 @@ func getCwd(t *testing.T) string {
 	return cwd
 }
 
-func getBaseOptions(t *testing.T) integration.ProgramTestOptions {
-	zpa_client_id := getClientId(t)
-	zpa_client_secret := getClientSecret(t)
-	zpa_customer_id := getCustomerId(t)
+func getBaseOptions() integration.ProgramTestOptions {
 	return integration.ProgramTestOptions{
-		Config: map[string]string{
-			"zpa_client_id":     zpa_client_id,
-			"zpa_client_secret": zpa_client_secret,
-			"zpa_customer_id":   zpa_customer_id,
-		},
+		ExpectRefreshChanges: true,
 	}
 }
