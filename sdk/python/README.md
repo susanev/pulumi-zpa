@@ -26,7 +26,7 @@ yarn add @pulumi/pulumi-zpa
 To use from Python, install using `pip`:
 
 ```bash
-pip install pulumi_zpa
+pip install zscaler-pulumi-zpa
 ```
 
 ### Go
