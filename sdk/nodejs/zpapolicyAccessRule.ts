@@ -44,7 +44,7 @@ export class ZPAPolicyAccessRule extends pulumi.CustomResource {
     }
 
     /**
-     * This is for providing the rule action.
+     * (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
      */
     public readonly action!: pulumi.Output<string | undefined>;
     /**
@@ -65,7 +65,7 @@ export class ZPAPolicyAccessRule extends pulumi.CustomResource {
      */
     public readonly conditions!: pulumi.Output<outputs.ZPAPolicyAccessRuleCondition[]>;
     /**
-     * This is for providing a customer message for the user.
+     * (Optional) This is for providing a customer message for the user.
      */
     public readonly customMsg!: pulumi.Output<string | undefined>;
     /**
@@ -73,21 +73,30 @@ export class ZPAPolicyAccessRule extends pulumi.CustomResource {
      */
     public readonly defaultRule!: pulumi.Output<boolean | undefined>;
     /**
-     * This is the description of the access policy.
+     * (Optional) This is the description of the access policy rule.
      */
     public readonly description!: pulumi.Output<string | undefined>;
     public readonly lssDefaultRule!: pulumi.Output<boolean | undefined>;
     /**
-     * This is the name of the policy.
+     * (Optional)
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * (Optional) Supported values: ``AND``, and ``OR``
+     */
     public readonly operator!: pulumi.Output<string>;
     public readonly policySetId!: pulumi.Output<string>;
+    /**
+     * (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+     */
     public readonly policyType!: pulumi.Output<string>;
     public readonly priority!: pulumi.Output<string>;
     public readonly reauthDefaultRule!: pulumi.Output<boolean | undefined>;
     public readonly reauthIdleTimeout!: pulumi.Output<string | undefined>;
     public readonly reauthTimeout!: pulumi.Output<string | undefined>;
+    /**
+     * (Optional)
+     */
     public readonly ruleOrder!: pulumi.Output<string>;
     public readonly zpnInspectionProfileId!: pulumi.Output<string | undefined>;
 
@@ -157,7 +166,7 @@ export class ZPAPolicyAccessRule extends pulumi.CustomResource {
  */
 export interface ZPAPolicyAccessRuleState {
     /**
-     * This is for providing the rule action.
+     * (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
      */
     action?: pulumi.Input<string>;
     /**
@@ -178,7 +187,7 @@ export interface ZPAPolicyAccessRuleState {
      */
     conditions?: pulumi.Input<pulumi.Input<inputs.ZPAPolicyAccessRuleCondition>[]>;
     /**
-     * This is for providing a customer message for the user.
+     * (Optional) This is for providing a customer message for the user.
      */
     customMsg?: pulumi.Input<string>;
     /**
@@ -186,21 +195,30 @@ export interface ZPAPolicyAccessRuleState {
      */
     defaultRule?: pulumi.Input<boolean>;
     /**
-     * This is the description of the access policy.
+     * (Optional) This is the description of the access policy rule.
      */
     description?: pulumi.Input<string>;
     lssDefaultRule?: pulumi.Input<boolean>;
     /**
-     * This is the name of the policy.
+     * (Optional)
      */
     name?: pulumi.Input<string>;
+    /**
+     * (Optional) Supported values: ``AND``, and ``OR``
+     */
     operator?: pulumi.Input<string>;
     policySetId?: pulumi.Input<string>;
+    /**
+     * (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+     */
     policyType?: pulumi.Input<string>;
     priority?: pulumi.Input<string>;
     reauthDefaultRule?: pulumi.Input<boolean>;
     reauthIdleTimeout?: pulumi.Input<string>;
     reauthTimeout?: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     ruleOrder?: pulumi.Input<string>;
     zpnInspectionProfileId?: pulumi.Input<string>;
 }
@@ -210,7 +228,7 @@ export interface ZPAPolicyAccessRuleState {
  */
 export interface ZPAPolicyAccessRuleArgs {
     /**
-     * This is for providing the rule action.
+     * (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
      */
     action?: pulumi.Input<string>;
     /**
@@ -231,7 +249,7 @@ export interface ZPAPolicyAccessRuleArgs {
      */
     conditions?: pulumi.Input<pulumi.Input<inputs.ZPAPolicyAccessRuleCondition>[]>;
     /**
-     * This is for providing a customer message for the user.
+     * (Optional) This is for providing a customer message for the user.
      */
     customMsg?: pulumi.Input<string>;
     /**
@@ -239,21 +257,30 @@ export interface ZPAPolicyAccessRuleArgs {
      */
     defaultRule?: pulumi.Input<boolean>;
     /**
-     * This is the description of the access policy.
+     * (Optional) This is the description of the access policy rule.
      */
     description?: pulumi.Input<string>;
     lssDefaultRule?: pulumi.Input<boolean>;
     /**
-     * This is the name of the policy.
+     * (Optional)
      */
     name?: pulumi.Input<string>;
+    /**
+     * (Optional) Supported values: ``AND``, and ``OR``
+     */
     operator?: pulumi.Input<string>;
     policySetId?: pulumi.Input<string>;
+    /**
+     * (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+     */
     policyType?: pulumi.Input<string>;
     priority?: pulumi.Input<string>;
     reauthDefaultRule?: pulumi.Input<boolean>;
     reauthIdleTimeout?: pulumi.Input<string>;
     reauthTimeout?: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     ruleOrder?: pulumi.Input<string>;
     zpnInspectionProfileId?: pulumi.Input<string>;
 }

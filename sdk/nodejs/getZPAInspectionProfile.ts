@@ -59,8 +59,6 @@ export interface GetZPAInspectionProfileResult {
     readonly creationTime: string;
     /**
      * (string) Types for custom controls
-     * * `type` (string) Types for custom controls
-     * * `controlRuleJson` (string) Custom controls string in JSON format
      */
     readonly customControls: outputs.GetZPAInspectionProfileCustomControl[];
     /**
@@ -69,12 +67,15 @@ export interface GetZPAInspectionProfileResult {
     readonly description: string;
     readonly globalControlActions: string[];
     /**
-     * (string) ID of the predefined control
+     * (string)
      */
     readonly id: string;
     readonly incarnationNumber: string;
     readonly modifiedBy: string;
     readonly modifiedTime: string;
+    /**
+     * (string)
+     */
     readonly name: string;
     /**
      * (string) OWASP Predefined Paranoia Level. Range: [1-4], inclusive

@@ -60,7 +60,6 @@ import (
 //
 // ```
 func LookupZPAAppConnectorGroup(ctx *pulumi.Context, args *LookupZPAAppConnectorGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPAAppConnectorGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAAppConnectorGroupResult
 	err := ctx.Invoke("zpa:index/getZPAAppConnectorGroup:getZPAAppConnectorGroup", args, &rv, opts...)
 	if err != nil {
@@ -87,11 +86,9 @@ type LookupZPAAppConnectorGroupResult struct {
 	// (String)
 	CountryCode  string `pulumi:"countryCode"`
 	CreationTime string `pulumi:"creationTime"`
-	Description  string `pulumi:"description"`
+	// (String) Description of the App Connector Group.
+	Description string `pulumi:"description"`
 	// (String)
-	// * ``0`` = ``Default``
-	// * ``1`` = ``Previous Default``
-	// * ``2`` = ``New Release``
 	DnsQueryType string `pulumi:"dnsQueryType"`
 	// (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled bool `pulumi:"enabled"`
@@ -121,21 +118,12 @@ type LookupZPAAppConnectorGroupResult struct {
 	UseInDrMode       bool   `pulumi:"useInDrMode"`
 	// (String) ID of the version profile.
 	// Exported values are:
-	// * ``0`` = ``Default``
-	// * ``1`` = ``Previous Default``
-	// * ``2`` = ``New Release``
 	VersionProfileId string `pulumi:"versionProfileId"`
 	// (String)
 	// Exported values are:
-	// * ``Default`` = ``0``
-	// * ``Previous Default`` = ``1``
-	// * ``New Release`` = ``2``
 	VersionProfileName string `pulumi:"versionProfileName"`
 	// (String)
 	// Exported values are:
-	// * ``"IPV4_IPV6"``
-	// * ``"IPV4"``
-	// * ``"IPV6``
 	VersionProfileVisibilityScope string `pulumi:"versionProfileVisibilityScope"`
 }
 
@@ -199,14 +187,12 @@ func (o LookupZPAAppConnectorGroupResultOutput) CreationTime() pulumi.StringOutp
 	return o.ApplyT(func(v LookupZPAAppConnectorGroupResult) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (String) Description of the App Connector Group.
 func (o LookupZPAAppConnectorGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAAppConnectorGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // (String)
-// * “0“ = “Default“
-// * “1“ = “Previous Default“
-// * “2“ = “New Release“
 func (o LookupZPAAppConnectorGroupResultOutput) DnsQueryType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAAppConnectorGroupResult) string { return v.DnsQueryType }).(pulumi.StringOutput)
 }
@@ -293,27 +279,18 @@ func (o LookupZPAAppConnectorGroupResultOutput) UseInDrMode() pulumi.BoolOutput 
 
 // (String) ID of the version profile.
 // Exported values are:
-// * “0“ = “Default“
-// * “1“ = “Previous Default“
-// * “2“ = “New Release“
 func (o LookupZPAAppConnectorGroupResultOutput) VersionProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAAppConnectorGroupResult) string { return v.VersionProfileId }).(pulumi.StringOutput)
 }
 
 // (String)
 // Exported values are:
-// * “Default“ = “0“
-// * “Previous Default“ = “1“
-// * “New Release“ = “2“
 func (o LookupZPAAppConnectorGroupResultOutput) VersionProfileName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAAppConnectorGroupResult) string { return v.VersionProfileName }).(pulumi.StringOutput)
 }
 
 // (String)
 // Exported values are:
-// * “"IPV4_IPV6"“
-// * “"IPV4"“
-// * “"IPV6“
 func (o LookupZPAAppConnectorGroupResultOutput) VersionProfileVisibilityScope() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAAppConnectorGroupResult) string { return v.VersionProfileVisibilityScope }).(pulumi.StringOutput)
 }

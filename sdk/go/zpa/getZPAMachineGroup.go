@@ -62,7 +62,6 @@ import (
 //
 // ```
 func GetZPAMachineGroup(ctx *pulumi.Context, args *GetZPAMachineGroupArgs, opts ...pulumi.InvokeOption) (*GetZPAMachineGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAMachineGroupResult
 	err := ctx.Invoke("zpa:index/getZPAMachineGroup:getZPAMachineGroup", args, &rv, opts...)
 	if err != nil {
@@ -81,14 +80,22 @@ type GetZPAMachineGroupArgs struct {
 
 // A collection of values returned by getZPAMachineGroup.
 type GetZPAMachineGroupResult struct {
-	CreationTime string                      `pulumi:"creationTime"`
-	Description  string                      `pulumi:"description"`
-	Enabled      bool                        `pulumi:"enabled"`
-	Id           *string                     `pulumi:"id"`
-	Machines     []GetZPAMachineGroupMachine `pulumi:"machines"`
-	ModifiedBy   string                      `pulumi:"modifiedBy"`
-	ModifiedTime string                      `pulumi:"modifiedTime"`
-	Name         *string                     `pulumi:"name"`
+	// (string)
+	CreationTime string `pulumi:"creationTime"`
+	// (string)
+	Description string `pulumi:"description"`
+	// (bool)
+	Enabled bool `pulumi:"enabled"`
+	// (string)
+	Id *string `pulumi:"id"`
+	// (string)
+	Machines []GetZPAMachineGroupMachine `pulumi:"machines"`
+	// (string)
+	ModifiedBy string `pulumi:"modifiedBy"`
+	// (string)
+	ModifiedTime string `pulumi:"modifiedTime"`
+	// (string)
+	Name *string `pulumi:"name"`
 }
 
 func GetZPAMachineGroupOutput(ctx *pulumi.Context, args GetZPAMachineGroupOutputArgs, opts ...pulumi.InvokeOption) GetZPAMachineGroupResultOutput {
@@ -131,34 +138,42 @@ func (o GetZPAMachineGroupResultOutput) ToGetZPAMachineGroupResultOutputWithCont
 	return o
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPAMachineGroupResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) Machines() GetZPAMachineGroupMachineArrayOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) []GetZPAMachineGroupMachine { return v.Machines }).(GetZPAMachineGroupMachineArrayOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) ModifiedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) string { return v.ModifiedBy }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) ModifiedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

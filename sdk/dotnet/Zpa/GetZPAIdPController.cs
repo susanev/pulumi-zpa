@@ -154,30 +154,93 @@ namespace zscaler.PulumiPackage.Zpa
     [OutputType]
     public sealed class GetZPAIdPControllerResult
     {
+        /// <summary>
+        /// (Computed)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAIdPControllerAdminMetadataResult> AdminMetadatas;
         public readonly string AdminSpSigningCertId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string AutoProvision;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string CreationTime;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool DisableSamlBasedPolicy;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly ImmutableArray<string> DomainLists;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool EnableScimBasedPolicy;
+        /// <summary>
+        /// (bool) Default value if null is True
+        /// </summary>
         public readonly bool Enabled;
         public readonly string Id;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string IdpEntityId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string LoginNameAttribute;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string LoginUrl;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
         public readonly string Name;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool ReauthOnUserUpdate;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool RedirectBinding;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool ScimEnabled;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ScimServiceProviderEndpoint;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool ScimSharedSecretExists;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string SignSamlRequest;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly ImmutableArray<string> SsoTypes;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool UseCustomSpMetadata;
+        /// <summary>
+        /// (Computed)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAIdPControllerUserMetadataResult> UserMetadatas;
         public readonly string UserSpSigningCertId;
 

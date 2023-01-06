@@ -38,7 +38,6 @@ import (
 //
 // ```
 func LookupZPAInspectionProfile(ctx *pulumi.Context, args *LookupZPAInspectionProfileArgs, opts ...pulumi.InvokeOption) (*LookupZPAInspectionProfileResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAInspectionProfileResult
 	err := ctx.Invoke("zpa:index/getZPAInspectionProfile:getZPAInspectionProfile", args, &rv, opts...)
 	if err != nil {
@@ -63,18 +62,17 @@ type LookupZPAInspectionProfileResult struct {
 	ControlsInfos []GetZPAInspectionProfileControlsInfo `pulumi:"controlsInfos"`
 	CreationTime  string                                `pulumi:"creationTime"`
 	// (string) Types for custom controls
-	// * `type` (string) Types for custom controls
-	// * `controlRuleJson` (string) Custom controls string in JSON format
 	CustomControls []GetZPAInspectionProfileCustomControl `pulumi:"customControls"`
 	// (string) Description of the inspection profile.
 	Description          string   `pulumi:"description"`
 	GlobalControlActions []string `pulumi:"globalControlActions"`
-	// (string) ID of the predefined control
+	// (string)
 	Id                string `pulumi:"id"`
 	IncarnationNumber string `pulumi:"incarnationNumber"`
 	ModifiedBy        string `pulumi:"modifiedBy"`
 	ModifiedTime      string `pulumi:"modifiedTime"`
-	Name              string `pulumi:"name"`
+	// (string)
+	Name string `pulumi:"name"`
 	// (string) OWASP Predefined Paranoia Level. Range: [1-4], inclusive
 	ParanoiaLevel string `pulumi:"paranoiaLevel"`
 	// (string) The predefined controls
@@ -137,8 +135,6 @@ func (o LookupZPAInspectionProfileResultOutput) CreationTime() pulumi.StringOutp
 }
 
 // (string) Types for custom controls
-// * `type` (string) Types for custom controls
-// * `controlRuleJson` (string) Custom controls string in JSON format
 func (o LookupZPAInspectionProfileResultOutput) CustomControls() GetZPAInspectionProfileCustomControlArrayOutput {
 	return o.ApplyT(func(v LookupZPAInspectionProfileResult) []GetZPAInspectionProfileCustomControl {
 		return v.CustomControls
@@ -154,7 +150,7 @@ func (o LookupZPAInspectionProfileResultOutput) GlobalControlActions() pulumi.St
 	return o.ApplyT(func(v LookupZPAInspectionProfileResult) []string { return v.GlobalControlActions }).(pulumi.StringArrayOutput)
 }
 
-// (string) ID of the predefined control
+// (string)
 func (o LookupZPAInspectionProfileResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAInspectionProfileResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -171,6 +167,7 @@ func (o LookupZPAInspectionProfileResultOutput) ModifiedTime() pulumi.StringOutp
 	return o.ApplyT(func(v LookupZPAInspectionProfileResult) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o LookupZPAInspectionProfileResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAInspectionProfileResult) string { return v.Name }).(pulumi.StringOutput)
 }

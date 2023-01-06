@@ -119,10 +119,12 @@ export class ZPAApplicationSegmentInspection extends pulumi.CustomResource {
      * Whether this application is enabled or not
      */
     public readonly enabled!: pulumi.Output<boolean>;
+    /**
+     * (Optional)
+     */
     public readonly healthCheckType!: pulumi.Output<string | undefined>;
     /**
      * (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-     * * `healthCheckType` (Optional)
      */
     public readonly healthReporting!: pulumi.Output<string | undefined>;
     /**
@@ -261,10 +263,12 @@ export interface ZPAApplicationSegmentInspectionState {
      * Whether this application is enabled or not
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * (Optional)
+     */
     healthCheckType?: pulumi.Input<string>;
     /**
      * (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-     * * `healthCheckType` (Optional)
      */
     healthReporting?: pulumi.Input<string>;
     /**
@@ -339,10 +343,12 @@ export interface ZPAApplicationSegmentInspectionArgs {
      * Whether this application is enabled or not
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * (Optional)
+     */
     healthCheckType?: pulumi.Input<string>;
     /**
      * (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-     * * `healthCheckType` (Optional)
      */
     healthReporting?: pulumi.Input<string>;
     /**

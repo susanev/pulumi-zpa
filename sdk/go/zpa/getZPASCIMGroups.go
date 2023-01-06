@@ -39,7 +39,6 @@ import (
 //
 // ```
 func GetZPASCIMGroups(ctx *pulumi.Context, args *GetZPASCIMGroupsArgs, opts ...pulumi.InvokeOption) (*GetZPASCIMGroupsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPASCIMGroupsResult
 	err := ctx.Invoke("zpa:index/getZPASCIMGroups:getZPASCIMGroups", args, &rv, opts...)
 	if err != nil {
@@ -52,8 +51,6 @@ func GetZPASCIMGroups(ctx *pulumi.Context, args *GetZPASCIMGroupsArgs, opts ...p
 type GetZPASCIMGroupsArgs struct {
 	Id *string `pulumi:"id"`
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	// * `idpGroupId`(string)
-	// * `modifiedTime` (string)
 	IdpId *int `pulumi:"idpId"`
 	// Name. The name of the IdP where the scim group must be exported from.
 	IdpName *string `pulumi:"idpName"`
@@ -66,12 +63,12 @@ type GetZPASCIMGroupsResult struct {
 	// (string)
 	CreationTime int     `pulumi:"creationTime"`
 	Id           *string `pulumi:"id"`
-	IdpGroupId   string  `pulumi:"idpGroupId"`
+	// (string)
+	IdpGroupId string `pulumi:"idpGroupId"`
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	// * `idpGroupId`(string)
-	// * `modifiedTime` (string)
-	IdpId        *int    `pulumi:"idpId"`
-	IdpName      *string `pulumi:"idpName"`
+	IdpId   *int    `pulumi:"idpId"`
+	IdpName *string `pulumi:"idpName"`
+	// (string)
 	ModifiedTime int     `pulumi:"modifiedTime"`
 	Name         *string `pulumi:"name"`
 }
@@ -93,8 +90,6 @@ func GetZPASCIMGroupsOutput(ctx *pulumi.Context, args GetZPASCIMGroupsOutputArgs
 type GetZPASCIMGroupsOutputArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	// * `idpGroupId`(string)
-	// * `modifiedTime` (string)
 	IdpId pulumi.IntPtrInput `pulumi:"idpId"`
 	// Name. The name of the IdP where the scim group must be exported from.
 	IdpName pulumi.StringPtrInput `pulumi:"idpName"`
@@ -130,13 +125,12 @@ func (o GetZPASCIMGroupsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPASCIMGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// (string)
 func (o GetZPASCIMGroupsResultOutput) IdpGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASCIMGroupsResult) string { return v.IdpGroupId }).(pulumi.StringOutput)
 }
 
 // (string) The ID of the IdP corresponding to the SAML attribute.
-// * `idpGroupId`(string)
-// * `modifiedTime` (string)
 func (o GetZPASCIMGroupsResultOutput) IdpId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetZPASCIMGroupsResult) *int { return v.IdpId }).(pulumi.IntPtrOutput)
 }
@@ -145,6 +139,7 @@ func (o GetZPASCIMGroupsResultOutput) IdpName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPASCIMGroupsResult) *string { return v.IdpName }).(pulumi.StringPtrOutput)
 }
 
+// (string)
 func (o GetZPASCIMGroupsResultOutput) ModifiedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetZPASCIMGroupsResult) int { return v.ModifiedTime }).(pulumi.IntOutput)
 }

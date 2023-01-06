@@ -55,7 +55,6 @@ func NewZPAApplicationServer(ctx *pulumi.Context,
 	if args.Address == nil {
 		return nil, errors.New("invalid value for required argument 'Address'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAApplicationServer
 	err := ctx.RegisterResource("zpa:index/zPAApplicationServer:ZPAApplicationServer", name, args, &resource, opts...)
 	if err != nil {

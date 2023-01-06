@@ -51,17 +51,20 @@ namespace zscaler.PulumiPackage.Zpa
         [Output("applications")]
         public Output<ImmutableArray<Outputs.ZPASegmentGroupApplication>> Applications { get; private set; } = null!;
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Output("configSpace")]
         public Output<string?> ConfigSpace { get; private set; } = null!;
 
         /// <summary>
-        /// Description of the app group.
+        /// (Optional) Description of the segment group.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Whether this app group is enabled or not.
+        /// (Optional) Whether this segment group is enabled or not.
         /// </summary>
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
@@ -75,6 +78,9 @@ namespace zscaler.PulumiPackage.Zpa
         [Output("policyMigrated")]
         public Output<bool?> PolicyMigrated { get; private set; } = null!;
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Output("tcpKeepAliveEnabled")]
         public Output<string?> TcpKeepAliveEnabled { get; private set; } = null!;
 
@@ -101,7 +107,6 @@ namespace zscaler.PulumiPackage.Zpa
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/zscaler",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -133,17 +138,20 @@ namespace zscaler.PulumiPackage.Zpa
             set => _applications = value;
         }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("configSpace")]
         public Input<string>? ConfigSpace { get; set; }
 
         /// <summary>
-        /// Description of the app group.
+        /// (Optional) Description of the segment group.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Whether this app group is enabled or not.
+        /// (Optional) Whether this segment group is enabled or not.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -157,6 +165,9 @@ namespace zscaler.PulumiPackage.Zpa
         [Input("policyMigrated")]
         public Input<bool>? PolicyMigrated { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("tcpKeepAliveEnabled")]
         public Input<string>? TcpKeepAliveEnabled { get; set; }
 
@@ -176,17 +187,20 @@ namespace zscaler.PulumiPackage.Zpa
             set => _applications = value;
         }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("configSpace")]
         public Input<string>? ConfigSpace { get; set; }
 
         /// <summary>
-        /// Description of the app group.
+        /// (Optional) Description of the segment group.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Whether this app group is enabled or not.
+        /// (Optional) Whether this segment group is enabled or not.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -200,6 +214,9 @@ namespace zscaler.PulumiPackage.Zpa
         [Input("policyMigrated")]
         public Input<bool>? PolicyMigrated { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("tcpKeepAliveEnabled")]
         public Input<string>? TcpKeepAliveEnabled { get; set; }
 

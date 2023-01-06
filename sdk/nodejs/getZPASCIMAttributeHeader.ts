@@ -40,14 +40,6 @@ export function getZPASCIMAttributeHeader(args?: GetZPASCIMAttributeHeaderArgs, 
 export interface GetZPASCIMAttributeHeaderArgs {
     /**
      * (string) The ID of the IdP corresponding to the SAML attribute.
-     * * `modifiedBy`(string)
-     * * `modifiedTime` (string)
-     * * `multivalued` (bool)
-     * * `mutability` (string)
-     * * `required` (bool)
-     * * `returned` (string)
-     * * `schemaUri` (string)
-     * * `uniqueness` (bool)
      */
     idpId?: string;
     /**
@@ -90,25 +82,38 @@ export interface GetZPASCIMAttributeHeaderResult {
     readonly id: string;
     /**
      * (string) The ID of the IdP corresponding to the SAML attribute.
-     * * `modifiedBy`(string)
-     * * `modifiedTime` (string)
-     * * `multivalued` (bool)
-     * * `mutability` (string)
-     * * `required` (bool)
-     * * `returned` (string)
-     * * `schemaUri` (string)
-     * * `uniqueness` (bool)
      */
     readonly idpId?: string;
     readonly idpName?: string;
+    /**
+     * (string)
+     */
     readonly modifiedTime: string;
     readonly modifiedby: string;
+    /**
+     * (bool)
+     */
     readonly multivalued: boolean;
+    /**
+     * (string)
+     */
     readonly mutability: string;
     readonly name?: string;
+    /**
+     * (bool)
+     */
     readonly required: boolean;
+    /**
+     * (string)
+     */
     readonly returned: string;
+    /**
+     * (string)
+     */
     readonly schemaUri: string;
+    /**
+     * (bool)
+     */
     readonly uniqueness: boolean;
     readonly values: string[];
 }
@@ -141,14 +146,6 @@ export function getZPASCIMAttributeHeaderOutput(args?: GetZPASCIMAttributeHeader
 export interface GetZPASCIMAttributeHeaderOutputArgs {
     /**
      * (string) The ID of the IdP corresponding to the SAML attribute.
-     * * `modifiedBy`(string)
-     * * `modifiedTime` (string)
-     * * `multivalued` (bool)
-     * * `mutability` (string)
-     * * `required` (bool)
-     * * `returned` (string)
-     * * `schemaUri` (string)
-     * * `uniqueness` (bool)
      */
     idpId?: pulumi.Input<string>;
     /**

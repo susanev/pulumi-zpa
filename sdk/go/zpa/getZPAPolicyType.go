@@ -176,7 +176,6 @@ import (
 //
 // ```
 func GetZPAPolicyType(ctx *pulumi.Context, args *GetZPAPolicyTypeArgs, opts ...pulumi.InvokeOption) (*GetZPAPolicyTypeResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAPolicyTypeResult
 	err := ctx.Invoke("zpa:index/getZPAPolicyType:getZPAPolicyType", args, &rv, opts...)
 	if err != nil {

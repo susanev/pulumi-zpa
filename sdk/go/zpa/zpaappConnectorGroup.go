@@ -75,7 +75,6 @@ type ZPAAppConnectorGroup struct {
 	// Description of the App Connector Group.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Supported values are:
-	// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
 	DnsQueryType pulumi.StringPtrOutput `pulumi:"dnsQueryType"`
 	// Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
@@ -125,7 +124,6 @@ func NewZPAAppConnectorGroup(ctx *pulumi.Context,
 	if args.Longitude == nil {
 		return nil, errors.New("invalid value for required argument 'Longitude'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAAppConnectorGroup
 	err := ctx.RegisterResource("zpa:index/zPAAppConnectorGroup:ZPAAppConnectorGroup", name, args, &resource, opts...)
 	if err != nil {
@@ -155,7 +153,6 @@ type zpaappConnectorGroupState struct {
 	// Description of the App Connector Group.
 	Description *string `pulumi:"description"`
 	// Supported values are:
-	// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
 	DnsQueryType *string `pulumi:"dnsQueryType"`
 	// Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled *bool `pulumi:"enabled"`
@@ -197,7 +194,6 @@ type ZPAAppConnectorGroupState struct {
 	// Description of the App Connector Group.
 	Description pulumi.StringPtrInput
 	// Supported values are:
-	// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
 	DnsQueryType pulumi.StringPtrInput
 	// Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled pulumi.BoolPtrInput
@@ -243,7 +239,6 @@ type zpaappConnectorGroupArgs struct {
 	// Description of the App Connector Group.
 	Description *string `pulumi:"description"`
 	// Supported values are:
-	// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
 	DnsQueryType *string `pulumi:"dnsQueryType"`
 	// Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled *bool `pulumi:"enabled"`
@@ -286,7 +281,6 @@ type ZPAAppConnectorGroupArgs struct {
 	// Description of the App Connector Group.
 	Description pulumi.StringPtrInput
 	// Supported values are:
-	// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
 	DnsQueryType pulumi.StringPtrInput
 	// Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled pulumi.BoolPtrInput
@@ -423,7 +417,6 @@ func (o ZPAAppConnectorGroupOutput) Description() pulumi.StringPtrOutput {
 }
 
 // Supported values are:
-// * “IPV4“, “IPV6“, “IPV4_IPV6“
 func (o ZPAAppConnectorGroupOutput) DnsQueryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAAppConnectorGroup) pulumi.StringPtrOutput { return v.DnsQueryType }).(pulumi.StringPtrOutput)
 }

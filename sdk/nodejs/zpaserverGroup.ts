@@ -142,15 +142,15 @@ export class ZPAServerGroup extends pulumi.CustomResource {
     public readonly applications!: pulumi.Output<outputs.ZPAServerGroupApplication[]>;
     public readonly configSpace!: pulumi.Output<string | undefined>;
     /**
-     * This field is the description of the server group.
+     * (Optional) This field is the description of the server group.
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
-     * This field controls dynamic discovery of the servers.
+     * (Optional) This field controls dynamic discovery of the servers.
      */
     public readonly dynamicDiscovery!: pulumi.Output<boolean | undefined>;
     /**
-     * This field defines if the server group is enabled or disabled.
+     * (Optional) This field defines if the server group is enabled or disabled.
      */
     public readonly enabled!: pulumi.Output<boolean | undefined>;
     public readonly ipAnchored!: pulumi.Output<boolean | undefined>;
@@ -159,8 +159,7 @@ export class ZPAServerGroup extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-     * only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+     * (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
      */
     public readonly servers!: pulumi.Output<outputs.ZPAServerGroupServer[]>;
 
@@ -217,15 +216,15 @@ export interface ZPAServerGroupState {
     applications?: pulumi.Input<pulumi.Input<inputs.ZPAServerGroupApplication>[]>;
     configSpace?: pulumi.Input<string>;
     /**
-     * This field is the description of the server group.
+     * (Optional) This field is the description of the server group.
      */
     description?: pulumi.Input<string>;
     /**
-     * This field controls dynamic discovery of the servers.
+     * (Optional) This field controls dynamic discovery of the servers.
      */
     dynamicDiscovery?: pulumi.Input<boolean>;
     /**
-     * This field defines if the server group is enabled or disabled.
+     * (Optional) This field defines if the server group is enabled or disabled.
      */
     enabled?: pulumi.Input<boolean>;
     ipAnchored?: pulumi.Input<boolean>;
@@ -234,8 +233,7 @@ export interface ZPAServerGroupState {
      */
     name?: pulumi.Input<string>;
     /**
-     * This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-     * only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+     * (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
      */
     servers?: pulumi.Input<pulumi.Input<inputs.ZPAServerGroupServer>[]>;
 }
@@ -254,15 +252,15 @@ export interface ZPAServerGroupArgs {
     applications?: pulumi.Input<pulumi.Input<inputs.ZPAServerGroupApplication>[]>;
     configSpace?: pulumi.Input<string>;
     /**
-     * This field is the description of the server group.
+     * (Optional) This field is the description of the server group.
      */
     description?: pulumi.Input<string>;
     /**
-     * This field controls dynamic discovery of the servers.
+     * (Optional) This field controls dynamic discovery of the servers.
      */
     dynamicDiscovery?: pulumi.Input<boolean>;
     /**
-     * This field defines if the server group is enabled or disabled.
+     * (Optional) This field defines if the server group is enabled or disabled.
      */
     enabled?: pulumi.Input<boolean>;
     ipAnchored?: pulumi.Input<boolean>;
@@ -271,8 +269,7 @@ export interface ZPAServerGroupArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-     * only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+     * (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
      */
     servers?: pulumi.Input<pulumi.Input<inputs.ZPAServerGroupServer>[]>;
 }

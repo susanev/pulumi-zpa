@@ -16,13 +16,6 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     {
         /// <summary>
         /// (bool)
-        /// * `cname` (string)
-        /// * `description` (string)
-        /// * `enabled` (bool)
-        /// * `hidden` (bool)
-        /// * `local_domain` (string)
-        /// * `path` (string)
-        /// * `trust_untrusted_cert` (bool)
         /// </summary>
         public readonly bool AllowOptions;
         public readonly string AppId;
@@ -42,9 +35,12 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// (string)
         /// </summary>
         public readonly string CertificateName;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Cname;
         /// <summary>
-        /// (string) Description of the application.
+        /// (string)
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -52,20 +48,32 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+        /// (bool)
         /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool Hidden;
         /// <summary>
         /// This field defines the id of the application server.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string LocalDomain;
         /// <summary>
         /// This field defines the name of the server.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Path;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool TrustUntrustedCert;
 
         [OutputConstructor]

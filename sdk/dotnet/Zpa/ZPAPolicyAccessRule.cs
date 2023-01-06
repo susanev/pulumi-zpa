@@ -23,7 +23,7 @@ namespace zscaler.PulumiPackage.Zpa
     public partial class ZPAPolicyAccessRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// This is for providing the rule action.
+        /// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         /// </summary>
         [Output("action")]
         public Output<string?> Action { get; private set; } = null!;
@@ -56,7 +56,7 @@ namespace zscaler.PulumiPackage.Zpa
         public Output<ImmutableArray<Outputs.ZPAPolicyAccessRuleCondition>> Conditions { get; private set; } = null!;
 
         /// <summary>
-        /// This is for providing a customer message for the user.
+        /// (Optional) This is for providing a customer message for the user.
         /// </summary>
         [Output("customMsg")]
         public Output<string?> CustomMsg { get; private set; } = null!;
@@ -68,7 +68,7 @@ namespace zscaler.PulumiPackage.Zpa
         public Output<bool?> DefaultRule { get; private set; } = null!;
 
         /// <summary>
-        /// This is the description of the access policy.
+        /// (Optional) This is the description of the access policy rule.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
@@ -77,17 +77,23 @@ namespace zscaler.PulumiPackage.Zpa
         public Output<bool?> LssDefaultRule { get; private set; } = null!;
 
         /// <summary>
-        /// This is the name of the policy.
+        /// (Optional)
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// (Optional) Supported values: ``AND``, and ``OR``
+        /// </summary>
         [Output("operator")]
         public Output<string> Operator { get; private set; } = null!;
 
         [Output("policySetId")]
         public Output<string> PolicySetId { get; private set; } = null!;
 
+        /// <summary>
+        /// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        /// </summary>
         [Output("policyType")]
         public Output<string> PolicyType { get; private set; } = null!;
 
@@ -103,6 +109,9 @@ namespace zscaler.PulumiPackage.Zpa
         [Output("reauthTimeout")]
         public Output<string?> ReauthTimeout { get; private set; } = null!;
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Output("ruleOrder")]
         public Output<string> RuleOrder { get; private set; } = null!;
 
@@ -132,7 +141,6 @@ namespace zscaler.PulumiPackage.Zpa
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/zscaler",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -157,7 +165,7 @@ namespace zscaler.PulumiPackage.Zpa
     public sealed class ZPAPolicyAccessRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This is for providing the rule action.
+        /// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -208,7 +216,7 @@ namespace zscaler.PulumiPackage.Zpa
         }
 
         /// <summary>
-        /// This is for providing a customer message for the user.
+        /// (Optional) This is for providing a customer message for the user.
         /// </summary>
         [Input("customMsg")]
         public Input<string>? CustomMsg { get; set; }
@@ -220,7 +228,7 @@ namespace zscaler.PulumiPackage.Zpa
         public Input<bool>? DefaultRule { get; set; }
 
         /// <summary>
-        /// This is the description of the access policy.
+        /// (Optional) This is the description of the access policy rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -229,17 +237,23 @@ namespace zscaler.PulumiPackage.Zpa
         public Input<bool>? LssDefaultRule { get; set; }
 
         /// <summary>
-        /// This is the name of the policy.
+        /// (Optional)
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// (Optional) Supported values: ``AND``, and ``OR``
+        /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 
         [Input("policySetId")]
         public Input<string>? PolicySetId { get; set; }
 
+        /// <summary>
+        /// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        /// </summary>
         [Input("policyType")]
         public Input<string>? PolicyType { get; set; }
 
@@ -255,6 +269,9 @@ namespace zscaler.PulumiPackage.Zpa
         [Input("reauthTimeout")]
         public Input<string>? ReauthTimeout { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("ruleOrder")]
         public Input<string>? RuleOrder { get; set; }
 
@@ -270,7 +287,7 @@ namespace zscaler.PulumiPackage.Zpa
     public sealed class ZPAPolicyAccessRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This is for providing the rule action.
+        /// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -321,7 +338,7 @@ namespace zscaler.PulumiPackage.Zpa
         }
 
         /// <summary>
-        /// This is for providing a customer message for the user.
+        /// (Optional) This is for providing a customer message for the user.
         /// </summary>
         [Input("customMsg")]
         public Input<string>? CustomMsg { get; set; }
@@ -333,7 +350,7 @@ namespace zscaler.PulumiPackage.Zpa
         public Input<bool>? DefaultRule { get; set; }
 
         /// <summary>
-        /// This is the description of the access policy.
+        /// (Optional) This is the description of the access policy rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -342,17 +359,23 @@ namespace zscaler.PulumiPackage.Zpa
         public Input<bool>? LssDefaultRule { get; set; }
 
         /// <summary>
-        /// This is the name of the policy.
+        /// (Optional)
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// (Optional) Supported values: ``AND``, and ``OR``
+        /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 
         [Input("policySetId")]
         public Input<string>? PolicySetId { get; set; }
 
+        /// <summary>
+        /// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        /// </summary>
         [Input("policyType")]
         public Input<string>? PolicyType { get; set; }
 
@@ -368,6 +391,9 @@ namespace zscaler.PulumiPackage.Zpa
         [Input("reauthTimeout")]
         public Input<string>? ReauthTimeout { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("ruleOrder")]
         public Input<string>? RuleOrder { get; set; }
 

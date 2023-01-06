@@ -40,7 +40,6 @@ import (
 //
 // ```
 func GetZPAInspectionPredefinedControls(ctx *pulumi.Context, args *GetZPAInspectionPredefinedControlsArgs, opts ...pulumi.InvokeOption) (*GetZPAInspectionPredefinedControlsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAInspectionPredefinedControlsResult
 	err := ctx.Invoke("zpa:index/getZPAInspectionPredefinedControls:getZPAInspectionPredefinedControls", args, &rv, opts...)
 	if err != nil {
@@ -66,8 +65,6 @@ type GetZPAInspectionPredefinedControlsResult struct {
 	// (Computed)
 	ActionValue string `pulumi:"actionValue"`
 	// (Computed)
-	// * `id`- (Computed)
-	// * `name`- (Computed)
 	AssociatedInspectionProfileNames []GetZPAInspectionPredefinedControlsAssociatedInspectionProfileName `pulumi:"associatedInspectionProfileNames"`
 	// (Computed)
 	Attachment string `pulumi:"attachment"`
@@ -88,7 +85,8 @@ type GetZPAInspectionPredefinedControlsResult struct {
 	// (Computed)
 	ModifiedTime string `pulumi:"modifiedTime"`
 	Modifiedby   string `pulumi:"modifiedby"`
-	Name         string `pulumi:"name"`
+	// (Computed)
+	Name string `pulumi:"name"`
 	// (Computed)
 	ParanoiaLevel string `pulumi:"paranoiaLevel"`
 	// (Computed)
@@ -149,8 +147,6 @@ func (o GetZPAInspectionPredefinedControlsResultOutput) ActionValue() pulumi.Str
 }
 
 // (Computed)
-// * `id`- (Computed)
-// * `name`- (Computed)
 func (o GetZPAInspectionPredefinedControlsResultOutput) AssociatedInspectionProfileNames() GetZPAInspectionPredefinedControlsAssociatedInspectionProfileNameArrayOutput {
 	return o.ApplyT(func(v GetZPAInspectionPredefinedControlsResult) []GetZPAInspectionPredefinedControlsAssociatedInspectionProfileName {
 		return v.AssociatedInspectionProfileNames
@@ -206,6 +202,7 @@ func (o GetZPAInspectionPredefinedControlsResultOutput) Modifiedby() pulumi.Stri
 	return o.ApplyT(func(v GetZPAInspectionPredefinedControlsResult) string { return v.Modifiedby }).(pulumi.StringOutput)
 }
 
+// (Computed)
 func (o GetZPAInspectionPredefinedControlsResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionPredefinedControlsResult) string { return v.Name }).(pulumi.StringOutput)
 }

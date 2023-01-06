@@ -50,7 +50,7 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         public Input<string> Format { get; set; } = null!;
 
         /// <summary>
-        /// - App Connector Group ID(s) where logs will be forwarded to.
+        /// App Connector Group ID(s) where logs will be forwarded to.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

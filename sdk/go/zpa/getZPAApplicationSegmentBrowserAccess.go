@@ -60,7 +60,6 @@ import (
 //
 // ```
 func LookupZPAApplicationSegmentBrowserAccess(ctx *pulumi.Context, args *LookupZPAApplicationSegmentBrowserAccessArgs, opts ...pulumi.InvokeOption) (*LookupZPAApplicationSegmentBrowserAccessResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAApplicationSegmentBrowserAccessResult
 	err := ctx.Invoke("zpa:index/getZPAApplicationSegmentBrowserAccess:getZPAApplicationSegmentBrowserAccess", args, &rv, opts...)
 	if err != nil {
@@ -92,13 +91,13 @@ type LookupZPAApplicationSegmentBrowserAccessResult struct {
 	ClientlessApps []GetZPAApplicationSegmentBrowserAccessClientlessApp `pulumi:"clientlessApps"`
 	// (string)
 	ConfigSpace string `pulumi:"configSpace"`
-	// (string) Description of the application.
+	// (string)
 	Description string `pulumi:"description"`
 	// List of domains and IPs.
 	DomainNames []string `pulumi:"domainNames"`
 	// (string) Whether Double Encryption is enabled or disabled for the app. Default: false. Boolean: `true`, `false`.
 	DoubleEncrypt bool `pulumi:"doubleEncrypt"`
-	// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+	// (bool)
 	Enabled         bool   `pulumi:"enabled"`
 	HealthCheckType string `pulumi:"healthCheckType"`
 	// (string)
@@ -187,7 +186,7 @@ func (o LookupZPAApplicationSegmentBrowserAccessResultOutput) ConfigSpace() pulu
 	return o.ApplyT(func(v LookupZPAApplicationSegmentBrowserAccessResult) string { return v.ConfigSpace }).(pulumi.StringOutput)
 }
 
-// (string) Description of the application.
+// (string)
 func (o LookupZPAApplicationSegmentBrowserAccessResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAApplicationSegmentBrowserAccessResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -202,7 +201,7 @@ func (o LookupZPAApplicationSegmentBrowserAccessResultOutput) DoubleEncrypt() pu
 	return o.ApplyT(func(v LookupZPAApplicationSegmentBrowserAccessResult) bool { return v.DoubleEncrypt }).(pulumi.BoolOutput)
 }
 
-// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+// (bool)
 func (o LookupZPAApplicationSegmentBrowserAccessResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupZPAApplicationSegmentBrowserAccessResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }

@@ -162,9 +162,6 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly string Certificate;
         /// <summary>
         /// (string) Returned values are:
-        /// * `ZAPP_CLIENT`
-        /// * `ISOLATION_CLIENT`
-        /// * `NONE`
         /// </summary>
         public readonly string ClientCertType;
         /// <summary>

@@ -160,12 +160,12 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly string CountryCode;
         public readonly string CreationTime;
+        /// <summary>
+        /// (String) Description of the App Connector Group.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// (String)
-        /// * ``0`` = ``Default``
-        /// * ``1`` = ``Previous Default``
-        /// * ``2`` = ``New Release``
         /// </summary>
         public readonly string DnsQueryType;
         /// <summary>
@@ -213,25 +213,16 @@ namespace zscaler.PulumiPackage.Zpa
         /// <summary>
         /// (String) ID of the version profile.
         /// Exported values are:
-        /// * ``0`` = ``Default``
-        /// * ``1`` = ``Previous Default``
-        /// * ``2`` = ``New Release``
         /// </summary>
         public readonly string VersionProfileId;
         /// <summary>
         /// (String)
         /// Exported values are:
-        /// * ``Default`` = ``0``
-        /// * ``Previous Default`` = ``1``
-        /// * ``New Release`` = ``2``
         /// </summary>
         public readonly string VersionProfileName;
         /// <summary>
         /// (String)
         /// Exported values are:
-        /// * ``"IPV4_IPV6"``
-        /// * ``"IPV4"``
-        /// * ``"IPV6``
         /// </summary>
         public readonly string VersionProfileVisibilityScope;
 

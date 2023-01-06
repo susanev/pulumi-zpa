@@ -145,6 +145,9 @@ class GetZPAApplicationSegmentInspectionResult:
     @property
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "health_check_type")
 
     @property
@@ -152,7 +155,6 @@ class GetZPAApplicationSegmentInspectionResult:
     def health_reporting(self) -> str:
         """
         (string) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-        * `health_check_type` (string)
         """
         return pulumi.get(self, "health_reporting")
 

@@ -164,12 +164,13 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly string IdpId;
         public readonly string? IdpName;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
         /// <summary>
         /// (string)
-        /// * `modified_by` (string)
-        /// * `modified_time` (string)
         /// </summary>
         public readonly string Name;
         /// <summary>

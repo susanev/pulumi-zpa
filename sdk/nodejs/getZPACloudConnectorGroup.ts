@@ -59,16 +59,43 @@ export interface GetZPACloudConnectorGroupArgs {
  * A collection of values returned by getZPACloudConnectorGroup.
  */
 export interface GetZPACloudConnectorGroupResult {
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly cloudConnectors: outputs.GetZPACloudConnectorGroupCloudConnector[];
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly creationTime: string;
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly description: string;
+    /**
+     * (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly enabled: boolean;
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly geolocationId: string;
     readonly id?: string;
+    /**
+     * (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly modifiedTime: string;
     readonly modifiedby: string;
+    /**
+     * (string) - This field defines the name of the cloud connector group.
+     */
     readonly name?: string;
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly ziaCloud: string;
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     readonly ziaOrgId: string;
 }
 /**

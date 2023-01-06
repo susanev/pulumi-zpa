@@ -77,11 +77,18 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
                  path: Optional[pulumi.Input[str]] = None,
                  trust_untrusted_cert: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] application_port: - Port for the BA app.
-        :param pulumi.Input[str] application_protocol: - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
-        :param pulumi.Input[str] name: - Name of BA app.
-        :param pulumi.Input[bool] allow_options: - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
-        :param pulumi.Input[str] domain: - Domain name or IP address of the BA app.
+        :param pulumi.Input[str] application_port: Port for the BA app.
+        :param pulumi.Input[str] application_protocol: Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+        :param pulumi.Input[str] name: Name of the application.
+        :param pulumi.Input[bool] allow_options: If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+        :param pulumi.Input[str] cname: (Optional)
+        :param pulumi.Input[str] description: (Optional) Description of the application.
+        :param pulumi.Input[str] domain: Domain name or IP address of the BA app.
+        :param pulumi.Input[bool] enabled: (Optional) - Whether this app is enabled or not.
+        :param pulumi.Input[bool] hidden: (Optional)
+        :param pulumi.Input[str] local_domain: (Optional)
+        :param pulumi.Input[str] path: (Optional)
+        :param pulumi.Input[bool] trust_untrusted_cert: (Optional)
         """
         pulumi.set(__self__, "application_port", application_port)
         pulumi.set(__self__, "application_protocol", application_protocol)
@@ -112,7 +119,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @pulumi.getter(name="applicationPort")
     def application_port(self) -> pulumi.Input[str]:
         """
-        - Port for the BA app.
+        Port for the BA app.
         """
         return pulumi.get(self, "application_port")
 
@@ -124,7 +131,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @pulumi.getter(name="applicationProtocol")
     def application_protocol(self) -> pulumi.Input[str]:
         """
-        - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+        Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
         """
         return pulumi.get(self, "application_protocol")
 
@@ -145,7 +152,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        - Name of BA app.
+        Name of the application.
         """
         return pulumi.get(self, "name")
 
@@ -157,7 +164,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @pulumi.getter(name="allowOptions")
     def allow_options(self) -> Optional[pulumi.Input[bool]]:
         """
-        - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+        If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
         """
         return pulumi.get(self, "allow_options")
 
@@ -168,6 +175,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter
     def cname(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "cname")
 
     @cname.setter
@@ -177,6 +187,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) Description of the application.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -187,7 +200,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
         """
-        - Domain name or IP address of the BA app.
+        Domain name or IP address of the BA app.
         """
         return pulumi.get(self, "domain")
 
@@ -198,6 +211,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Optional) - Whether this app is enabled or not.
+        """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
@@ -207,6 +223,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter
     def hidden(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "hidden")
 
     @hidden.setter
@@ -225,6 +244,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter(name="localDomain")
     def local_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "local_domain")
 
     @local_domain.setter
@@ -234,6 +256,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -243,6 +268,9 @@ class ZPAApplicationSegmentBrowserAccessClientlessAppArgs:
     @property
     @pulumi.getter(name="trustUntrustedCert")
     def trust_untrusted_cert(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "trust_untrusted_cert")
 
     @trust_untrusted_cert.setter
@@ -307,7 +335,7 @@ class ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] app_types: Indicates the type of application as inspection. Supported value: `INSPECT`
         :param pulumi.Input[str] application_port: Port for the Inspection Application Segment.
         :param pulumi.Input[str] application_protocol: Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
-        :param pulumi.Input[str] certificate_id: - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+        :param pulumi.Input[str] certificate_id: ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
         :param pulumi.Input[str] description: (Optional) Description of the application.
         :param pulumi.Input[str] domain: Domain name of the Inspection Application Segment.
         :param pulumi.Input[bool] enabled: Whether this application is enabled or not
@@ -406,7 +434,7 @@ class ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfigArgs:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+        ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -581,7 +609,7 @@ class ZPAApplicationSegmentPRACommonAppsDtoAppsConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] app_types: Indicates the type of application as Privileged Remote Access. Supported value: `SECURE_REMOTE_ACCESS`
         :param pulumi.Input[str] application_port: Port for the Privileged Remote Access
         :param pulumi.Input[str] application_protocol: Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
-        :param pulumi.Input[str] connection_security: - Parameter required when `application_protocol` is of type `RDP`
+        :param pulumi.Input[str] connection_security: Parameter required when `application_protocol` is of type `RDP`
         :param pulumi.Input[str] description: (Optional) Description of the application.
         :param pulumi.Input[str] domain: Domain name of the Privileged Remote Access
         :param pulumi.Input[bool] enabled: Whether this application is enabled or not
@@ -685,7 +713,7 @@ class ZPAApplicationSegmentPRACommonAppsDtoAppsConfigArgs:
     @pulumi.getter(name="connectionSecurity")
     def connection_security(self) -> Optional[pulumi.Input[str]]:
         """
-        - Parameter required when `application_protocol` is of type `RDP`
+        Parameter required when `application_protocol` is of type `RDP`
         """
         return pulumi.get(self, "connection_security")
 
@@ -1263,7 +1291,7 @@ class ZPALSSConfigControllerConfigArgs:
         :param pulumi.Input[str] description: (Optional)
         :param pulumi.Input[bool] enabled: (Optional)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: (Optional)
-        :param pulumi.Input[str] id: - App Connector Group ID(s) where logs will be forwarded to.
+        :param pulumi.Input[str] id: App Connector Group ID(s) where logs will be forwarded to.
         :param pulumi.Input[bool] use_tls: (Optional)
         """
         pulumi.set(__self__, "format", format)
@@ -1396,7 +1424,7 @@ class ZPALSSConfigControllerConfigArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        - App Connector Group ID(s) where logs will be forwarded to.
+        App Connector Group ID(s) where logs will be forwarded to.
         """
         return pulumi.get(self, "id")
 
@@ -1422,7 +1450,7 @@ class ZPALSSConfigControllerConnectorGroupArgs:
     def __init__(__self__, *,
                  ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ids: - App Connector Group ID(s) where logs will be forwarded to.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ids: App Connector Group ID(s) where logs will be forwarded to.
         """
         if ids is not None:
             pulumi.set(__self__, "ids", ids)
@@ -1431,7 +1459,7 @@ class ZPALSSConfigControllerConnectorGroupArgs:
     @pulumi.getter
     def ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        - App Connector Group ID(s) where logs will be forwarded to.
+        App Connector Group ID(s) where logs will be forwarded to.
         """
         return pulumi.get(self, "ids")
 
@@ -1468,7 +1496,8 @@ class ZPALSSConfigControllerPolicyRuleResourceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ZPALSSConfigControllerPolicyRuleResourceConditionArgs']]] conditions: (Optional)
         :param pulumi.Input[str] custom_msg: (Optional)
         :param pulumi.Input[str] description: (Optional)
-        :param pulumi.Input[str] id: - App Connector Group ID(s) where logs will be forwarded to.
+        :param pulumi.Input[str] id: App Connector Group ID(s) where logs will be forwarded to.
+        :param pulumi.Input[str] operator: (Optional) - Supported values are: `AND` or `OR`
         """
         pulumi.set(__self__, "name", name)
         if action is not None:
@@ -1599,7 +1628,7 @@ class ZPALSSConfigControllerPolicyRuleResourceArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        - App Connector Group ID(s) where logs will be forwarded to.
+        App Connector Group ID(s) where logs will be forwarded to.
         """
         return pulumi.get(self, "id")
 
@@ -1619,6 +1648,9 @@ class ZPALSSConfigControllerPolicyRuleResourceArgs:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) - Supported values are: `AND` or `OR`
+        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -1705,17 +1737,8 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionArgs:
                  negated: Optional[pulumi.Input[bool]] = None,
                  operands: Optional[pulumi.Input[Sequence[pulumi.Input['ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs']]]] = None):
         """
+        :param pulumi.Input[str] operator: (Optional) - Supported values are: `AND` or `OR`
         :param pulumi.Input[bool] negated: (Optional)
-               * `operator` (Optional) - Supported values are: `AND` or `OR`
-               * `operands`
-               * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-               * `values` (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
-               - `zpn_client_type_exporter`
-               - `zpn_client_type_browser_isolation`
-               - `zpn_client_type_machine_tunnel`
-               - `zpn_client_type_ip_anchoring`
-               - `zpn_client_type_edge_connector`
-               - `zpn_client_type_zapp`
         """
         pulumi.set(__self__, "operator", operator)
         if negated is not None:
@@ -1726,6 +1749,9 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionArgs:
     @property
     @pulumi.getter
     def operator(self) -> pulumi.Input[str]:
+        """
+        (Optional) - Supported values are: `AND` or `OR`
+        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -1737,16 +1763,6 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionArgs:
     def negated(self) -> Optional[pulumi.Input[bool]]:
         """
         (Optional)
-        * `operator` (Optional) - Supported values are: `AND` or `OR`
-        * `operands`
-        * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-        * `values` (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
-        - `zpn_client_type_exporter`
-        - `zpn_client_type_browser_isolation`
-        - `zpn_client_type_machine_tunnel`
-        - `zpn_client_type_ip_anchoring`
-        - `zpn_client_type_edge_connector`
-        - `zpn_client_type_zapp`
         """
         return pulumi.get(self, "negated")
 
@@ -1769,6 +1785,10 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs:
     def __init__(__self__, *,
                  object_type: pulumi.Input[str],
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] object_type: (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
+        """
         pulumi.set(__self__, "object_type", object_type)
         if values is not None:
             pulumi.set(__self__, "values", values)
@@ -1776,6 +1796,9 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs:
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> pulumi.Input[str]:
+        """
+        (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+        """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
@@ -1785,6 +1808,9 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs:
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
+        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -2124,22 +2150,10 @@ class ZPAPolicyAccessRuleConditionArgs:
                  negated: Optional[pulumi.Input[bool]] = None,
                  operands: Optional[pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleConditionOperandArgs']]]] = None):
         """
+        :param pulumi.Input[str] operator: (Optional) Supported values: ``AND``, and ``OR``
         :param pulumi.Input[str] id: (Optional) The ID of a server group resource
         :param pulumi.Input[bool] negated: (Optional) Supported values: ``true`` or ``false``
-               * `operator` (Optional) Supported values: ``AND``, and ``OR``
-               * `operands` (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
-               * `name` (Optional)
-               * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-               * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-               * `idp_id` (Optional)
-               * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-               * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-               * `zpn_client_type_exporter`
-               * `zpn_client_type_browser_isolation`
-               * `zpn_client_type_machine_tunnel`
-               * `zpn_client_type_ip_anchoring`
-               * `zpn_client_type_edge_connector`
-               * `zpn_client_type_zapp`
+        :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleConditionOperandArgs']]] operands: (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
         """
         pulumi.set(__self__, "operator", operator)
         if id is not None:
@@ -2152,6 +2166,9 @@ class ZPAPolicyAccessRuleConditionArgs:
     @property
     @pulumi.getter
     def operator(self) -> pulumi.Input[str]:
+        """
+        (Optional) Supported values: ``AND``, and ``OR``
+        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -2175,20 +2192,6 @@ class ZPAPolicyAccessRuleConditionArgs:
     def negated(self) -> Optional[pulumi.Input[bool]]:
         """
         (Optional) Supported values: ``true`` or ``false``
-        * `operator` (Optional) Supported values: ``AND``, and ``OR``
-        * `operands` (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
-        * `name` (Optional)
-        * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-        * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-        * `idp_id` (Optional)
-        * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-        * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-        * `zpn_client_type_exporter`
-        * `zpn_client_type_browser_isolation`
-        * `zpn_client_type_machine_tunnel`
-        * `zpn_client_type_ip_anchoring`
-        * `zpn_client_type_edge_connector`
-        * `zpn_client_type_zapp`
         """
         return pulumi.get(self, "negated")
 
@@ -2199,6 +2202,9 @@ class ZPAPolicyAccessRuleConditionArgs:
     @property
     @pulumi.getter
     def operands(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleConditionOperandArgs']]]]:
+        """
+        (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
+        """
         return pulumi.get(self, "operands")
 
     @operands.setter
@@ -2217,7 +2223,12 @@ class ZPAPolicyAccessRuleConditionOperandArgs:
                  rhs: Optional[pulumi.Input[str]] = None,
                  rhs_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
+        :param pulumi.Input[str] lhs: (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+        :param pulumi.Input[str] object_type: (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
         :param pulumi.Input[str] id: (Optional) The ID of a server group resource
+        :param pulumi.Input[str] idp_id: (Optional)
+        :param pulumi.Input[str] name: (Optional)
+        :param pulumi.Input[str] rhs: (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
         """
         pulumi.set(__self__, "lhs", lhs)
         pulumi.set(__self__, "object_type", object_type)
@@ -2235,6 +2246,9 @@ class ZPAPolicyAccessRuleConditionOperandArgs:
     @property
     @pulumi.getter
     def lhs(self) -> pulumi.Input[str]:
+        """
+        (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+        """
         return pulumi.get(self, "lhs")
 
     @lhs.setter
@@ -2244,6 +2258,9 @@ class ZPAPolicyAccessRuleConditionOperandArgs:
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> pulumi.Input[str]:
+        """
+        (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+        """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
@@ -2265,6 +2282,9 @@ class ZPAPolicyAccessRuleConditionOperandArgs:
     @property
     @pulumi.getter(name="idpId")
     def idp_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "idp_id")
 
     @idp_id.setter
@@ -2274,6 +2294,9 @@ class ZPAPolicyAccessRuleConditionOperandArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2283,6 +2306,9 @@ class ZPAPolicyAccessRuleConditionOperandArgs:
     @property
     @pulumi.getter
     def rhs(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+        """
         return pulumi.get(self, "rhs")
 
     @rhs.setter

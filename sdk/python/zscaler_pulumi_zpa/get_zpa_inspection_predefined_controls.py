@@ -96,8 +96,6 @@ class GetZPAInspectionPredefinedControlsResult:
     def associated_inspection_profile_names(self) -> Sequence['outputs.GetZPAInspectionPredefinedControlsAssociatedInspectionProfileNameResult']:
         """
         (Computed)
-        * `id`- (Computed)
-        * `name`- (Computed)
         """
         return pulumi.get(self, "associated_inspection_profile_names")
 
@@ -181,6 +179,9 @@ class GetZPAInspectionPredefinedControlsResult:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        (Computed)
+        """
         return pulumi.get(self, "name")
 
     @property

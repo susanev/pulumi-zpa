@@ -30,7 +30,7 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         public readonly string? ApplicationProtocol;
         public readonly string? Cname;
         /// <summary>
-        /// - Parameter required when `application_protocol` is of type `RDP`
+        /// Parameter required when `application_protocol` is of type `RDP`
         /// </summary>
         public readonly string? ConnectionSecurity;
         /// <summary>

@@ -18,6 +18,9 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// (string)
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Name;
 
         [OutputConstructor]

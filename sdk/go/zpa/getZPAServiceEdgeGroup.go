@@ -66,7 +66,6 @@ import (
 //
 // ```
 func LookupZPAServiceEdgeGroup(ctx *pulumi.Context, args *LookupZPAServiceEdgeGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPAServiceEdgeGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAServiceEdgeGroupResult
 	err := ctx.Invoke("zpa:index/getZPAServiceEdgeGroup:getZPAServiceEdgeGroup", args, &rv, opts...)
 	if err != nil {
@@ -91,73 +90,32 @@ type LookupZPAServiceEdgeGroupResult struct {
 	CountryCode string `pulumi:"countryCode"`
 	// (string)
 	CreationTime string `pulumi:"creationTime"`
-	Description  string `pulumi:"description"`
+	// (string) Description of the Service Edge Group.
+	Description string `pulumi:"description"`
 	// (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled bool `pulumi:"enabled"`
 	// (string)
 	GeoLocationId string `pulumi:"geoLocationId"`
-	Id            string `pulumi:"id"`
+	// (string)
+	Id string `pulumi:"id"`
 	// (string)
 	IsPublic string `pulumi:"isPublic"`
-	// (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+	// (string)
 	Latitude string `pulumi:"latitude"`
-	// (string) Location of the Service Edge Group.
+	// (string)
 	Location string `pulumi:"location"`
-	// (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+	// (string)
 	Longitude string `pulumi:"longitude"`
 	// (string)
 	ModifiedTime string `pulumi:"modifiedTime"`
 	Modifiedby   string `pulumi:"modifiedby"`
-	Name         string `pulumi:"name"`
+	// (string)
+	Name string `pulumi:"name"`
 	// (bool) Whether the default version profile of the App Connector Group is applied or overridden. Default: `false` Supported values: `true`, `false`
 	OverrideVersionProfile bool `pulumi:"overrideVersionProfile"`
 	// (string)
-	// * `name` (string)
-	// * `applicationStartTime` (string)
-	// * `serviceEdgeGroupId` (string)
-	// * `serviceEdgeGroupName` (string)
-	// * `controlChannelStatus` (string)
-	// * `creationTime` (string)
-	// * `modifiedBy` (string)
-	// * `modifiedTime` (string)
-	// * `ctrlBrokerName` (string)
-	// * `currentVersion` (string)
-	// * `expectedUpgradeTime` (string)
-	// * `expectedVersion` (string)
-	// * `figerprint` (string)
-	// * `ipAcl` (string)
-	// * `issuedCertId` (string)
-	// * `lastBrokerConnectTime` (string)
-	// * `lastBrokerConnectTimeDuration` (string)
-	// * `lastBrokerDisconnectTime` (string)
-	// * `lastBrokerDisconnectTimeDuration` (string)
-	// * `lastUpgradeTime` (string)
-	// * `latitude` (string)
-	// * `listenIps` (string)
-	// * `location` (string)
-	// * `longitude` (string)
-	// * `provisioningKeyId` (string)
-	// * `provisioningKeyName` (string)
-	// * `platform` (string)
-	// * `previousVersion` (string)
-	// * `privateIp` (string)
-	// * `publicIp` (string)
-	// * `publishIps` (string)
-	// * `sargeVersion` (string)
-	// * `enrollmentCert` (string)
-	// * `upgradeAttempt` (string)
-	// * `upgradeStatus` (string)
 	ServiceEdges []GetZPAServiceEdgeGroupServiceEdge `pulumi:"serviceEdges"`
 	// (string)
-	// * `creationTime` (string)
-	// * `domain` (string)
-	// * `id` (string)
-	// * `masterCustomerId` (string)
-	// * `modifiedBy` (string)
-	// * `modifiedTime` (string)
-	// * `name` (string)
-	// * `networkId` (string)
-	// * `zscalerCloud` (string)
 	TrustedNetworks []GetZPAServiceEdgeGroupTrustedNetwork `pulumi:"trustedNetworks"`
 	// (string) App Connectors in this group will attempt to update to a newer version of the software during this specified day
 	UpgradeDay string `pulumi:"upgradeDay"`
@@ -165,21 +123,12 @@ type LookupZPAServiceEdgeGroupResult struct {
 	UpgradeTimeInSecs string `pulumi:"upgradeTimeInSecs"`
 	// (String) ID of the version profile.
 	// Exported values are:
-	// * ``0`` = ``Default``
-	// * ``1`` = ``Previous Default``
-	// * ``2`` = ``New Release``
 	VersionProfileId string `pulumi:"versionProfileId"`
 	// (String)
 	// Exported values are:
-	// * ``Default`` = ``0``
-	// * ``Previous Default`` = ``1``
-	// * ``New Release`` = ``2``
 	VersionProfileName string `pulumi:"versionProfileName"`
 	// (string)
 	// Exported values are:
-	// * ``ALL``
-	// * ``NONE``
-	// * ``CUSTOM``
 	VersionProfileVisibilityScope string `pulumi:"versionProfileVisibilityScope"`
 }
 
@@ -238,6 +187,7 @@ func (o LookupZPAServiceEdgeGroupResultOutput) CreationTime() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string) Description of the Service Edge Group.
 func (o LookupZPAServiceEdgeGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -252,6 +202,7 @@ func (o LookupZPAServiceEdgeGroupResultOutput) GeoLocationId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.GeoLocationId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -261,17 +212,17 @@ func (o LookupZPAServiceEdgeGroupResultOutput) IsPublic() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.IsPublic }).(pulumi.StringOutput)
 }
 
-// (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+// (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) Latitude() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Latitude }).(pulumi.StringOutput)
 }
 
-// (string) Location of the Service Edge Group.
+// (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) Location() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Location }).(pulumi.StringOutput)
 }
 
-// (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+// (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) Longitude() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Longitude }).(pulumi.StringOutput)
 }
@@ -285,6 +236,7 @@ func (o LookupZPAServiceEdgeGroupResultOutput) Modifiedby() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Modifiedby }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -295,55 +247,11 @@ func (o LookupZPAServiceEdgeGroupResultOutput) OverrideVersionProfile() pulumi.B
 }
 
 // (string)
-// * `name` (string)
-// * `applicationStartTime` (string)
-// * `serviceEdgeGroupId` (string)
-// * `serviceEdgeGroupName` (string)
-// * `controlChannelStatus` (string)
-// * `creationTime` (string)
-// * `modifiedBy` (string)
-// * `modifiedTime` (string)
-// * `ctrlBrokerName` (string)
-// * `currentVersion` (string)
-// * `expectedUpgradeTime` (string)
-// * `expectedVersion` (string)
-// * `figerprint` (string)
-// * `ipAcl` (string)
-// * `issuedCertId` (string)
-// * `lastBrokerConnectTime` (string)
-// * `lastBrokerConnectTimeDuration` (string)
-// * `lastBrokerDisconnectTime` (string)
-// * `lastBrokerDisconnectTimeDuration` (string)
-// * `lastUpgradeTime` (string)
-// * `latitude` (string)
-// * `listenIps` (string)
-// * `location` (string)
-// * `longitude` (string)
-// * `provisioningKeyId` (string)
-// * `provisioningKeyName` (string)
-// * `platform` (string)
-// * `previousVersion` (string)
-// * `privateIp` (string)
-// * `publicIp` (string)
-// * `publishIps` (string)
-// * `sargeVersion` (string)
-// * `enrollmentCert` (string)
-// * `upgradeAttempt` (string)
-// * `upgradeStatus` (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) ServiceEdges() GetZPAServiceEdgeGroupServiceEdgeArrayOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) []GetZPAServiceEdgeGroupServiceEdge { return v.ServiceEdges }).(GetZPAServiceEdgeGroupServiceEdgeArrayOutput)
 }
 
 // (string)
-// * `creationTime` (string)
-// * `domain` (string)
-// * `id` (string)
-// * `masterCustomerId` (string)
-// * `modifiedBy` (string)
-// * `modifiedTime` (string)
-// * `name` (string)
-// * `networkId` (string)
-// * `zscalerCloud` (string)
 func (o LookupZPAServiceEdgeGroupResultOutput) TrustedNetworks() GetZPAServiceEdgeGroupTrustedNetworkArrayOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) []GetZPAServiceEdgeGroupTrustedNetwork {
 		return v.TrustedNetworks
@@ -362,27 +270,18 @@ func (o LookupZPAServiceEdgeGroupResultOutput) UpgradeTimeInSecs() pulumi.String
 
 // (String) ID of the version profile.
 // Exported values are:
-// * “0“ = “Default“
-// * “1“ = “Previous Default“
-// * “2“ = “New Release“
 func (o LookupZPAServiceEdgeGroupResultOutput) VersionProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.VersionProfileId }).(pulumi.StringOutput)
 }
 
 // (String)
 // Exported values are:
-// * “Default“ = “0“
-// * “Previous Default“ = “1“
-// * “New Release“ = “2“
 func (o LookupZPAServiceEdgeGroupResultOutput) VersionProfileName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.VersionProfileName }).(pulumi.StringOutput)
 }
 
 // (string)
 // Exported values are:
-// * “ALL“
-// * “NONE“
-// * “CUSTOM“
 func (o LookupZPAServiceEdgeGroupResultOutput) VersionProfileVisibilityScope() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAServiceEdgeGroupResult) string { return v.VersionProfileVisibilityScope }).(pulumi.StringOutput)
 }

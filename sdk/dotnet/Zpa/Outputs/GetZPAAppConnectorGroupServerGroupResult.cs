@@ -16,6 +16,9 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     {
         public readonly string ConfigSpace;
         public readonly string CreationTime;
+        /// <summary>
+        /// (String) Description of the App Connector Group.
+        /// </summary>
         public readonly string Description;
         public readonly bool DynamicDiscovery;
         /// <summary>

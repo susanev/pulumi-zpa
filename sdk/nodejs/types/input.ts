@@ -175,33 +175,54 @@ export interface GetZPALSSConfigControllerConfigArgs {
 
 export interface ZPAApplicationSegmentBrowserAccessClientlessApp {
     /**
-     * - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+     * If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
      */
     allowOptions?: pulumi.Input<boolean>;
     /**
-     * - Port for the BA app.
+     * Port for the BA app.
      */
     applicationPort: pulumi.Input<string>;
     /**
-     * - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+     * Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
      */
     applicationProtocol: pulumi.Input<string>;
     certificateId: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     cname?: pulumi.Input<string>;
+    /**
+     * (Optional) Description of the application.
+     */
     description?: pulumi.Input<string>;
     /**
-     * - Domain name or IP address of the BA app.
+     * Domain name or IP address of the BA app.
      */
     domain?: pulumi.Input<string>;
+    /**
+     * (Optional) - Whether this app is enabled or not.
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * (Optional)
+     */
     hidden?: pulumi.Input<boolean>;
     id?: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     localDomain?: pulumi.Input<string>;
     /**
-     * - Name of BA app.
+     * Name of the application.
      */
     name: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     path?: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     trustUntrustedCert?: pulumi.Input<boolean>;
 }
 
@@ -229,7 +250,7 @@ export interface ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig {
      */
     applicationProtocol?: pulumi.Input<string>;
     /**
-     * - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+     * ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
      */
     certificateId?: pulumi.Input<string>;
     certificateName?: pulumi.Input<string>;
@@ -282,7 +303,7 @@ export interface ZPAApplicationSegmentPRACommonAppsDtoAppsConfig {
     applicationProtocol?: pulumi.Input<string>;
     cname?: pulumi.Input<string>;
     /**
-     * - Parameter required when `applicationProtocol` is of type `RDP`
+     * Parameter required when `applicationProtocol` is of type `RDP`
      */
     connectionSecurity?: pulumi.Input<string>;
     /**
@@ -415,7 +436,7 @@ export interface ZPALSSConfigControllerConfig {
      */
     format: pulumi.Input<string>;
     /**
-     * - App Connector Group ID(s) where logs will be forwarded to.
+     * App Connector Group ID(s) where logs will be forwarded to.
      */
     id?: pulumi.Input<string>;
     /**
@@ -442,7 +463,7 @@ export interface ZPALSSConfigControllerConfig {
 
 export interface ZPALSSConfigControllerConnectorGroup {
     /**
-     * - App Connector Group ID(s) where logs will be forwarded to.
+     * App Connector Group ID(s) where logs will be forwarded to.
      */
     ids?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -468,7 +489,7 @@ export interface ZPALSSConfigControllerPolicyRuleResource {
      */
     description?: pulumi.Input<string>;
     /**
-     * - App Connector Group ID(s) where logs will be forwarded to.
+     * App Connector Group ID(s) where logs will be forwarded to.
      */
     id?: pulumi.Input<string>;
     lssDefaultRule?: pulumi.Input<boolean>;
@@ -476,6 +497,9 @@ export interface ZPALSSConfigControllerPolicyRuleResource {
      * (Optional)
      */
     name: pulumi.Input<string>;
+    /**
+     * (Optional) - Supported values are: `AND` or `OR`
+     */
     operator?: pulumi.Input<string>;
     policySetId?: pulumi.Input<string>;
     policyType?: pulumi.Input<string>;
@@ -490,24 +514,23 @@ export interface ZPALSSConfigControllerPolicyRuleResource {
 export interface ZPALSSConfigControllerPolicyRuleResourceCondition {
     /**
      * (Optional)
-     * * `operator` (Optional) - Supported values are: `AND` or `OR`
-     * * `operands`
-     * * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-     * * `values` (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
-     * - `zpnClientTypeExporter`
-     * - `zpnClientTypeBrowserIsolation`
-     * - `zpnClientTypeMachineTunnel`
-     * - `zpnClientTypeIpAnchoring`
-     * - `zpnClientTypeEdgeConnector`
-     * - `zpnClientTypeZapp`
      */
     negated?: pulumi.Input<boolean>;
     operands?: pulumi.Input<pulumi.Input<inputs.ZPALSSConfigControllerPolicyRuleResourceConditionOperand>[]>;
+    /**
+     * (Optional) - Supported values are: `AND` or `OR`
+     */
     operator: pulumi.Input<string>;
 }
 
 export interface ZPALSSConfigControllerPolicyRuleResourceConditionOperand {
+    /**
+     * (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+     */
     objectType: pulumi.Input<string>;
+    /**
+     * (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -566,23 +589,15 @@ export interface ZPAPolicyAccessRuleCondition {
     id?: pulumi.Input<string>;
     /**
      * (Optional) Supported values: ``true`` or ``false``
-     * * `operator` (Optional) Supported values: ``AND``, and ``OR``
-     * * `operands` (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
-     * * `name` (Optional)
-     * * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-     * * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-     * * `idpId` (Optional)
-     * * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-     * * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-     * * `zpnClientTypeExporter`
-     * * `zpnClientTypeBrowserIsolation`
-     * * `zpnClientTypeMachineTunnel`
-     * * `zpnClientTypeIpAnchoring`
-     * * `zpnClientTypeEdgeConnector`
-     * * `zpnClientTypeZapp`
      */
     negated?: pulumi.Input<boolean>;
+    /**
+     * (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
+     */
     operands?: pulumi.Input<pulumi.Input<inputs.ZPAPolicyAccessRuleConditionOperand>[]>;
+    /**
+     * (Optional) Supported values: ``AND``, and ``OR``
+     */
     operator: pulumi.Input<string>;
 }
 
@@ -591,10 +606,25 @@ export interface ZPAPolicyAccessRuleConditionOperand {
      * (Optional) The ID of a server group resource
      */
     id?: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     idpId?: pulumi.Input<string>;
+    /**
+     * (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+     */
     lhs: pulumi.Input<string>;
+    /**
+     * (Optional)
+     */
     name?: pulumi.Input<string>;
+    /**
+     * (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+     */
     objectType: pulumi.Input<string>;
+    /**
+     * (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+     */
     rhs?: pulumi.Input<string>;
     rhsLists?: pulumi.Input<pulumi.Input<string>[]>;
 }

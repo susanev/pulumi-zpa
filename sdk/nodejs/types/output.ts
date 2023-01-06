@@ -13,6 +13,9 @@ export interface GetZPAAppConnectorGroupConnector {
     creationTime: string;
     ctrlBrokerName: string;
     currentVersion: string;
+    /**
+     * (String) Description of the App Connector Group.
+     */
     description: string;
     /**
      * (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
@@ -65,6 +68,9 @@ export interface GetZPAAppConnectorGroupConnector {
 export interface GetZPAAppConnectorGroupServerGroup {
     configSpace: string;
     creationTime: string;
+    /**
+     * (String) Description of the App Connector Group.
+     */
     description: string;
     dynamicDiscovery: boolean;
     /**
@@ -86,13 +92,6 @@ export interface GetZPAAppConnectorGroupServerGroup {
 export interface GetZPAApplicationSegmentBrowserAccessClientlessApp {
     /**
      * (bool)
-     * * `cname` (string)
-     * * `description` (string)
-     * * `enabled` (bool)
-     * * `hidden` (bool)
-     * * `localDomain` (string)
-     * * `path` (string)
-     * * `trustUntrustedCert` (bool)
      */
     allowOptions: boolean;
     appId: string;
@@ -112,9 +111,12 @@ export interface GetZPAApplicationSegmentBrowserAccessClientlessApp {
      * (string)
      */
     certificateName: string;
+    /**
+     * (string)
+     */
     cname: string;
     /**
-     * (string) Description of the application.
+     * (string)
      */
     description: string;
     /**
@@ -122,20 +124,32 @@ export interface GetZPAApplicationSegmentBrowserAccessClientlessApp {
      */
     domain: string;
     /**
-     * (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+     * (bool)
      */
     enabled: boolean;
+    /**
+     * (bool)
+     */
     hidden: boolean;
     /**
      * This field defines the id of the application server.
      */
     id: string;
+    /**
+     * (string)
+     */
     localDomain: string;
     /**
      * This field defines the name of the server.
      */
     name: string;
+    /**
+     * (string)
+     */
     path: string;
+    /**
+     * (bool)
+     */
     trustUntrustedCert: boolean;
 }
 
@@ -250,8 +264,17 @@ export interface GetZPAApplicationSegmentServerGroup {
 }
 
 export interface GetZPACloudConnectorGroupCloudConnector {
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     creationTime: string;
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     description: string;
+    /**
+     * (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     enabled: boolean;
     fingerprint: string;
     /**
@@ -259,7 +282,13 @@ export interface GetZPACloudConnectorGroupCloudConnector {
      */
     id: string;
     ipacls: any[];
+    /**
+     * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     issuedCertId: string;
+    /**
+     * (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+     */
     modifiedTime: string;
     modifiedby: string;
     /**
@@ -270,27 +299,48 @@ export interface GetZPACloudConnectorGroupCloudConnector {
 }
 
 export interface GetZPAIdPControllerAdminMetadata {
+    /**
+     * (string)
+     */
     certificateUrl: string;
     spBaseUrl: string;
+    /**
+     * (string)
+     */
     spEntityId: string;
+    /**
+     * (string)
+     */
     spMetadataUrl: string;
+    /**
+     * (string)
+     */
     spPostUrl: string;
 }
 
 export interface GetZPAIdPControllerUserMetadata {
+    /**
+     * (string)
+     */
     certificateUrl: string;
     spBaseUrl: string;
+    /**
+     * (string)
+     */
     spEntityId: string;
+    /**
+     * (string)
+     */
     spMetadataUrl: string;
+    /**
+     * (string)
+     */
     spPostUrl: string;
 }
 
 export interface GetZPAInspectionAllPredefinedControlsList {
     /**
      * (string)
-     * * `PASS`
-     * * `BLOCK`
-     * * `REDIRECT`
      */
     action: string;
     /**
@@ -299,8 +349,6 @@ export interface GetZPAInspectionAllPredefinedControlsList {
     actionValue: string;
     /**
      * (string)
-     * * `id`- (string)
-     * * `name`- (string)
      */
     associatedInspectionProfileNames: outputs.GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName[];
     /**
@@ -321,9 +369,6 @@ export interface GetZPAInspectionAllPredefinedControlsList {
     creationTime: string;
     /**
      * (string)
-     * * `PASS`
-     * * `BLOCK`
-     * * `REDIRECT`
      */
     defaultAction: string;
     /**
@@ -343,6 +388,9 @@ export interface GetZPAInspectionAllPredefinedControlsList {
      */
     modifiedTime: string;
     modifiedby: string;
+    /**
+     * (string)
+     */
     name: string;
     /**
      * (string)
@@ -350,10 +398,6 @@ export interface GetZPAInspectionAllPredefinedControlsList {
     paranoiaLevel: string;
     /**
      * (string)
-     * * `CRITICAL`
-     * * `ERROR`
-     * * `WARNING`
-     * * `INFO`
      */
     severity: string;
     /**
@@ -367,6 +411,9 @@ export interface GetZPAInspectionAllPredefinedControlsListAssociatedInspectionPr
      * (string)
      */
     id: string;
+    /**
+     * (string)
+     */
     name: string;
 }
 
@@ -411,17 +458,16 @@ export interface GetZPAInspectionProfileCustomControl {
     action: string;
     /**
      * (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-     * * `attachment` (string) Control attachment
-     * * `controlGroup` (string) Control group
      */
     actionValue: string;
     /**
      * (string) Name of the inspection profile
-     * * `id`- (string)
-     * * `name`- (string)
      */
     associatedInspectionProfileNames: outputs.GetZPAInspectionProfileCustomControlAssociatedInspectionProfileName[];
     controlNumber: string;
+    /**
+     * (string) Custom controls string in JSON format
+     */
     controlRuleJson: string;
     creationTime: string;
     defaultAction: string;
@@ -507,17 +553,19 @@ export interface GetZPAInspectionProfilePredefinedControl {
     action: string;
     /**
      * (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-     * * `attachment` (string) Control attachment
-     * * `controlGroup` (string) Control group
      */
     actionValue: string;
     /**
      * (string) Name of the inspection profile
-     * * `id`- (string)
-     * * `name`- (string)
      */
     associatedInspectionProfileNames: outputs.GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileName[];
+    /**
+     * (string) Control attachment
+     */
     attachment: string;
+    /**
+     * (string) Control group
+     */
     controlGroup: string;
     controlNumber: string;
     creationTime: string;
@@ -698,23 +746,53 @@ export interface GetZPALSSConfigControllerPolicyRuleConditionOperand {
 }
 
 export interface GetZPAMachineGroupMachine {
+    /**
+     * (string)
+     */
     creationTime: string;
+    /**
+     * (string)
+     */
     description: string;
+    /**
+     * (string)
+     */
     fingerprint: string;
     /**
      * The ID of the machine group to be exported.
      */
     id: string;
+    /**
+     * (string)
+     */
     issuedCertId: string;
+    /**
+     * (string)
+     */
     machineGroupId: string;
+    /**
+     * (string)
+     */
     machineGroupName: string;
+    /**
+     * (string)
+     */
     machineTokenId: string;
+    /**
+     * (string)
+     */
     modifiedBy: string;
+    /**
+     * (string)
+     */
     modifiedTime: string;
     /**
      * The name of the machine group to be exported.
      */
     name: string;
+    /**
+     * (string)
+     */
     signingCert: {[key: string]: string};
 }
 
@@ -1030,21 +1108,45 @@ export interface GetZPAServerGroupServer {
 }
 
 export interface GetZPAServiceEdgeGroupServiceEdge {
+    /**
+     * (string)
+     */
     applicationStartTime: string;
+    /**
+     * (string)
+     */
     controlChannelStatus: string;
     /**
      * (string)
      */
     creationTime: string;
+    /**
+     * (string)
+     */
     ctrlBrokerName: string;
+    /**
+     * (string)
+     */
     currentVersion: string;
+    /**
+     * (string) Description of the Service Edge Group.
+     */
     description: string;
     /**
      * (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
      */
     enabled: boolean;
+    /**
+     * (string)
+     */
     enrollmentCert: {[key: string]: any};
+    /**
+     * (string)
+     */
     expectedUpgradeTime: string;
+    /**
+     * (string)
+     */
     expectedVersion: string;
     fingerprint: string;
     /**
@@ -1052,23 +1154,44 @@ export interface GetZPAServiceEdgeGroupServiceEdge {
      */
     id: string;
     ipacl: string;
+    /**
+     * (string)
+     */
     issuedCertId: string;
+    /**
+     * (string)
+     */
     lastBrokerConnectTime: string;
+    /**
+     * (string)
+     */
     lastBrokerConnectTimeDuration: string;
+    /**
+     * (string)
+     */
     lastBrokerDisconnectTime: string;
+    /**
+     * (string)
+     */
     lastBrokerDisconnectTimeDuration: string;
+    /**
+     * (string)
+     */
     lastUpgradeTime: string;
     /**
-     * (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+     * (string)
      */
     latitude: string;
+    /**
+     * (string)
+     */
     listenIps: string;
     /**
-     * (string) Location of the Service Edge Group.
+     * (string)
      */
     location: string;
     /**
-     * (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+     * (string)
      */
     longitude: string;
     /**
@@ -1080,17 +1203,53 @@ export interface GetZPAServiceEdgeGroupServiceEdge {
      * The name of the service edge group to be exported.
      */
     name: string;
+    /**
+     * (string)
+     */
     platform: string;
+    /**
+     * (string)
+     */
     previousVersion: string;
+    /**
+     * (string)
+     */
     privateIp: string;
+    /**
+     * (string)
+     */
     provisioningKeyId: string;
+    /**
+     * (string)
+     */
     provisioningKeyName: string;
+    /**
+     * (string)
+     */
     publicIp: string;
+    /**
+     * (string)
+     */
     publishIps: string;
+    /**
+     * (string)
+     */
     sargeVersion: string;
+    /**
+     * (string)
+     */
     serviceEdgeGroupId: string;
+    /**
+     * (string)
+     */
     serviceEdgeGroupName: string;
+    /**
+     * (string)
+     */
     upgradeAttempt: string;
+    /**
+     * (string)
+     */
     upgradeStatus: string;
 }
 
@@ -1099,11 +1258,17 @@ export interface GetZPAServiceEdgeGroupTrustedNetwork {
      * (string)
      */
     creationTime: string;
+    /**
+     * (string)
+     */
     domain: string;
     /**
      * The ID of the service edge group to be exported.
      */
     id: string;
+    /**
+     * (string)
+     */
     masterCustomerId: string;
     /**
      * (string)
@@ -1114,39 +1279,66 @@ export interface GetZPAServiceEdgeGroupTrustedNetwork {
      * The name of the service edge group to be exported.
      */
     name: string;
+    /**
+     * (string)
+     */
     networkId: string;
+    /**
+     * (string)
+     */
     zscalerCloud: string;
 }
 
 export interface ZPAApplicationSegmentBrowserAccessClientlessApp {
     /**
-     * - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+     * If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
      */
     allowOptions?: boolean;
     /**
-     * - Port for the BA app.
+     * Port for the BA app.
      */
     applicationPort: string;
     /**
-     * - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+     * Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
      */
     applicationProtocol: string;
     certificateId: string;
+    /**
+     * (Optional)
+     */
     cname: string;
+    /**
+     * (Optional) Description of the application.
+     */
     description?: string;
     /**
-     * - Domain name or IP address of the BA app.
+     * Domain name or IP address of the BA app.
      */
     domain?: string;
+    /**
+     * (Optional) - Whether this app is enabled or not.
+     */
     enabled: boolean;
+    /**
+     * (Optional)
+     */
     hidden: boolean;
     id: string;
+    /**
+     * (Optional)
+     */
     localDomain?: string;
     /**
-     * - Name of BA app.
+     * Name of the application.
      */
     name: string;
+    /**
+     * (Optional)
+     */
     path?: string;
+    /**
+     * (Optional)
+     */
     trustUntrustedCert: boolean;
 }
 
@@ -1174,7 +1366,7 @@ export interface ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig {
      */
     applicationProtocol: string;
     /**
-     * - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+     * ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
      */
     certificateId: string;
     certificateName: string;
@@ -1227,7 +1419,7 @@ export interface ZPAApplicationSegmentPRACommonAppsDtoAppsConfig {
     applicationProtocol: string;
     cname: string;
     /**
-     * - Parameter required when `applicationProtocol` is of type `RDP`
+     * Parameter required when `applicationProtocol` is of type `RDP`
      */
     connectionSecurity: string;
     /**
@@ -1360,7 +1552,7 @@ export interface ZPALSSConfigControllerConfig {
      */
     format: string;
     /**
-     * - App Connector Group ID(s) where logs will be forwarded to.
+     * App Connector Group ID(s) where logs will be forwarded to.
      */
     id: string;
     /**
@@ -1387,7 +1579,7 @@ export interface ZPALSSConfigControllerConfig {
 
 export interface ZPALSSConfigControllerConnectorGroup {
     /**
-     * - App Connector Group ID(s) where logs will be forwarded to.
+     * App Connector Group ID(s) where logs will be forwarded to.
      */
     ids?: string[];
 }
@@ -1413,7 +1605,7 @@ export interface ZPALSSConfigControllerPolicyRuleResource {
      */
     description?: string;
     /**
-     * - App Connector Group ID(s) where logs will be forwarded to.
+     * App Connector Group ID(s) where logs will be forwarded to.
      */
     id: string;
     lssDefaultRule?: boolean;
@@ -1421,6 +1613,9 @@ export interface ZPALSSConfigControllerPolicyRuleResource {
      * (Optional)
      */
     name: string;
+    /**
+     * (Optional) - Supported values are: `AND` or `OR`
+     */
     operator: string;
     policySetId?: string;
     policyType: string;
@@ -1435,24 +1630,23 @@ export interface ZPALSSConfigControllerPolicyRuleResource {
 export interface ZPALSSConfigControllerPolicyRuleResourceCondition {
     /**
      * (Optional)
-     * * `operator` (Optional) - Supported values are: `AND` or `OR`
-     * * `operands`
-     * * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-     * * `values` (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
-     * - `zpnClientTypeExporter`
-     * - `zpnClientTypeBrowserIsolation`
-     * - `zpnClientTypeMachineTunnel`
-     * - `zpnClientTypeIpAnchoring`
-     * - `zpnClientTypeEdgeConnector`
-     * - `zpnClientTypeZapp`
      */
     negated?: boolean;
     operands?: outputs.ZPALSSConfigControllerPolicyRuleResourceConditionOperand[];
+    /**
+     * (Optional) - Supported values are: `AND` or `OR`
+     */
     operator: string;
 }
 
 export interface ZPALSSConfigControllerPolicyRuleResourceConditionOperand {
+    /**
+     * (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+     */
     objectType: string;
+    /**
+     * (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
+     */
     values?: string[];
 }
 
@@ -1511,23 +1705,15 @@ export interface ZPAPolicyAccessRuleCondition {
     id: string;
     /**
      * (Optional) Supported values: ``true`` or ``false``
-     * * `operator` (Optional) Supported values: ``AND``, and ``OR``
-     * * `operands` (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
-     * * `name` (Optional)
-     * * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-     * * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-     * * `idpId` (Optional)
-     * * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-     * * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-     * * `zpnClientTypeExporter`
-     * * `zpnClientTypeBrowserIsolation`
-     * * `zpnClientTypeMachineTunnel`
-     * * `zpnClientTypeIpAnchoring`
-     * * `zpnClientTypeEdgeConnector`
-     * * `zpnClientTypeZapp`
      */
     negated: boolean;
+    /**
+     * (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
+     */
     operands: outputs.ZPAPolicyAccessRuleConditionOperand[];
+    /**
+     * (Optional) Supported values: ``AND``, and ``OR``
+     */
     operator: string;
 }
 
@@ -1536,10 +1722,25 @@ export interface ZPAPolicyAccessRuleConditionOperand {
      * (Optional) The ID of a server group resource
      */
     id: string;
+    /**
+     * (Optional)
+     */
     idpId: string;
+    /**
+     * (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+     */
     lhs: string;
+    /**
+     * (Optional)
+     */
     name: string;
+    /**
+     * (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+     */
     objectType: string;
+    /**
+     * (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+     */
     rhs?: string;
     rhsLists?: string[];
 }

@@ -15,33 +15,54 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     public sealed class ZPAApplicationSegmentBrowserAccessClientlessApp
     {
         /// <summary>
-        /// - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+        /// If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
         /// </summary>
         public readonly bool? AllowOptions;
         /// <summary>
-        /// - Port for the BA app.
+        /// Port for the BA app.
         /// </summary>
         public readonly string ApplicationPort;
         /// <summary>
-        /// - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+        /// Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
         /// </summary>
         public readonly string ApplicationProtocol;
         public readonly string CertificateId;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly string? Cname;
+        /// <summary>
+        /// (Optional) Description of the application.
+        /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// - Domain name or IP address of the BA app.
+        /// Domain name or IP address of the BA app.
         /// </summary>
         public readonly string? Domain;
+        /// <summary>
+        /// (Optional) - Whether this app is enabled or not.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly bool? Hidden;
         public readonly string? Id;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly string? LocalDomain;
         /// <summary>
-        /// - Name of BA app.
+        /// Name of the application.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly string? Path;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly bool? TrustUntrustedCert;
 
         [OutputConstructor]

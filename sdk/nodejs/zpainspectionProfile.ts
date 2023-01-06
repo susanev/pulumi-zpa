@@ -52,8 +52,6 @@ export class ZPAInspectionProfile extends pulumi.CustomResource {
     public readonly controlsInfos!: pulumi.Output<outputs.ZPAInspectionProfileControlsInfo[]>;
     /**
      * (Optional) Types for custom controls
-     * * `type` (Optional) Types for custom controls
-     * * `controlRuleJson` (Optional) Custom controls string in JSON format
      */
     public readonly customControls!: pulumi.Output<outputs.ZPAInspectionProfileCustomControl[]>;
     /**
@@ -134,8 +132,6 @@ export interface ZPAInspectionProfileState {
     controlsInfos?: pulumi.Input<pulumi.Input<inputs.ZPAInspectionProfileControlsInfo>[]>;
     /**
      * (Optional) Types for custom controls
-     * * `type` (Optional) Types for custom controls
-     * * `controlRuleJson` (Optional) Custom controls string in JSON format
      */
     customControls?: pulumi.Input<pulumi.Input<inputs.ZPAInspectionProfileCustomControl>[]>;
     /**
@@ -174,8 +170,6 @@ export interface ZPAInspectionProfileArgs {
     controlsInfos?: pulumi.Input<pulumi.Input<inputs.ZPAInspectionProfileControlsInfo>[]>;
     /**
      * (Optional) Types for custom controls
-     * * `type` (Optional) Types for custom controls
-     * * `controlRuleJson` (Optional) Custom controls string in JSON format
      */
     customControls?: pulumi.Input<pulumi.Input<inputs.ZPAInspectionProfileCustomControl>[]>;
     /**

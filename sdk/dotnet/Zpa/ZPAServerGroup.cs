@@ -172,19 +172,19 @@ namespace zscaler.PulumiPackage.Zpa
         public Output<string?> ConfigSpace { get; private set; } = null!;
 
         /// <summary>
-        /// This field is the description of the server group.
+        /// (Optional) This field is the description of the server group.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// This field controls dynamic discovery of the servers.
+        /// (Optional) This field controls dynamic discovery of the servers.
         /// </summary>
         [Output("dynamicDiscovery")]
         public Output<bool?> DynamicDiscovery { get; private set; } = null!;
 
         /// <summary>
-        /// This field defines if the server group is enabled or disabled.
+        /// (Optional) This field defines if the server group is enabled or disabled.
         /// </summary>
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
@@ -199,8 +199,7 @@ namespace zscaler.PulumiPackage.Zpa
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-        /// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        /// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         /// </summary>
         [Output("servers")]
         public Output<ImmutableArray<Outputs.ZPAServerGroupServer>> Servers { get; private set; } = null!;
@@ -228,7 +227,6 @@ namespace zscaler.PulumiPackage.Zpa
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/zscaler",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -280,19 +278,19 @@ namespace zscaler.PulumiPackage.Zpa
         public Input<string>? ConfigSpace { get; set; }
 
         /// <summary>
-        /// This field is the description of the server group.
+        /// (Optional) This field is the description of the server group.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// This field controls dynamic discovery of the servers.
+        /// (Optional) This field controls dynamic discovery of the servers.
         /// </summary>
         [Input("dynamicDiscovery")]
         public Input<bool>? DynamicDiscovery { get; set; }
 
         /// <summary>
-        /// This field defines if the server group is enabled or disabled.
+        /// (Optional) This field defines if the server group is enabled or disabled.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -310,8 +308,7 @@ namespace zscaler.PulumiPackage.Zpa
         private InputList<Inputs.ZPAServerGroupServerArgs>? _servers;
 
         /// <summary>
-        /// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-        /// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        /// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         /// </summary>
         public InputList<Inputs.ZPAServerGroupServerArgs> Servers
         {
@@ -355,19 +352,19 @@ namespace zscaler.PulumiPackage.Zpa
         public Input<string>? ConfigSpace { get; set; }
 
         /// <summary>
-        /// This field is the description of the server group.
+        /// (Optional) This field is the description of the server group.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// This field controls dynamic discovery of the servers.
+        /// (Optional) This field controls dynamic discovery of the servers.
         /// </summary>
         [Input("dynamicDiscovery")]
         public Input<bool>? DynamicDiscovery { get; set; }
 
         /// <summary>
-        /// This field defines if the server group is enabled or disabled.
+        /// (Optional) This field defines if the server group is enabled or disabled.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -385,8 +382,7 @@ namespace zscaler.PulumiPackage.Zpa
         private InputList<Inputs.ZPAServerGroupServerGetArgs>? _servers;
 
         /// <summary>
-        /// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-        /// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        /// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         /// </summary>
         public InputList<Inputs.ZPAServerGroupServerGetArgs> Servers
         {

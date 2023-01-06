@@ -19,18 +19,33 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("idpId")]
         public Input<string>? IdpId { get; set; }
 
+        /// <summary>
+        /// (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+        /// </summary>
         [Input("lhs", required: true)]
         public Input<string> Lhs { get; set; } = null!;
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+        /// </summary>
         [Input("objectType", required: true)]
         public Input<string> ObjectType { get; set; } = null!;
 
+        /// <summary>
+        /// (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+        /// </summary>
         [Input("rhs")]
         public Input<string>? Rhs { get; set; }
 

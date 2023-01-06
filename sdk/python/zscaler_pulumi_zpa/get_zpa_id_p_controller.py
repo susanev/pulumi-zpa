@@ -105,6 +105,9 @@ class GetZPAIdPControllerResult:
     @property
     @pulumi.getter(name="adminMetadatas")
     def admin_metadatas(self) -> Sequence['outputs.GetZPAIdPControllerAdminMetadataResult']:
+        """
+        (Computed)
+        """
         return pulumi.get(self, "admin_metadatas")
 
     @property
@@ -115,36 +118,57 @@ class GetZPAIdPControllerResult:
     @property
     @pulumi.getter(name="autoProvision")
     def auto_provision(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "auto_provision")
 
     @property
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "creation_time")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="disableSamlBasedPolicy")
     def disable_saml_based_policy(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "disable_saml_based_policy")
 
     @property
     @pulumi.getter(name="domainLists")
     def domain_lists(self) -> Sequence[str]:
+        """
+        (string)
+        """
         return pulumi.get(self, "domain_lists")
 
     @property
     @pulumi.getter(name="enableScimBasedPolicy")
     def enable_scim_based_policy(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "enable_scim_based_policy")
 
     @property
     @pulumi.getter
     def enabled(self) -> bool:
+        """
+        (bool) Default value if null is True
+        """
         return pulumi.get(self, "enabled")
 
     @property
@@ -155,21 +179,33 @@ class GetZPAIdPControllerResult:
     @property
     @pulumi.getter(name="idpEntityId")
     def idp_entity_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "idp_entity_id")
 
     @property
     @pulumi.getter(name="loginNameAttribute")
     def login_name_attribute(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "login_name_attribute")
 
     @property
     @pulumi.getter(name="loginUrl")
     def login_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "login_url")
 
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -185,46 +221,73 @@ class GetZPAIdPControllerResult:
     @property
     @pulumi.getter(name="reauthOnUserUpdate")
     def reauth_on_user_update(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "reauth_on_user_update")
 
     @property
     @pulumi.getter(name="redirectBinding")
     def redirect_binding(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "redirect_binding")
 
     @property
     @pulumi.getter(name="scimEnabled")
     def scim_enabled(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "scim_enabled")
 
     @property
     @pulumi.getter(name="scimServiceProviderEndpoint")
     def scim_service_provider_endpoint(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "scim_service_provider_endpoint")
 
     @property
     @pulumi.getter(name="scimSharedSecretExists")
     def scim_shared_secret_exists(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "scim_shared_secret_exists")
 
     @property
     @pulumi.getter(name="signSamlRequest")
     def sign_saml_request(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sign_saml_request")
 
     @property
     @pulumi.getter(name="ssoTypes")
     def sso_types(self) -> Sequence[str]:
+        """
+        (string)
+        """
         return pulumi.get(self, "sso_types")
 
     @property
     @pulumi.getter(name="useCustomSpMetadata")
     def use_custom_sp_metadata(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "use_custom_sp_metadata")
 
     @property
     @pulumi.getter(name="userMetadatas")
     def user_metadatas(self) -> Sequence['outputs.GetZPAIdPControllerUserMetadataResult']:
+        """
+        (Computed)
+        """
         return pulumi.get(self, "user_metadatas")
 
     @property

@@ -53,14 +53,6 @@ export function getZPALSSLogTypeFormats(args: GetZPALSSLogTypeFormatsArgs, opts?
 export interface GetZPALSSLogTypeFormatsArgs {
     /**
      * The type of log to be exported.
-     * * `zpnTransLog`
-     * * `zpnAuthLog`
-     * * `zpnAstAuthLog`
-     * * `zpnHttpTransLog`
-     * * `zpnAuditLog`
-     * * `zpnSysAuthLog`
-     * * `zpnAstComprehensiveStats`
-     * * `zpnWafHttpExchangesLog`
      */
     logType: string;
 }
@@ -123,14 +115,6 @@ export function getZPALSSLogTypeFormatsOutput(args: GetZPALSSLogTypeFormatsOutpu
 export interface GetZPALSSLogTypeFormatsOutputArgs {
     /**
      * The type of log to be exported.
-     * * `zpnTransLog`
-     * * `zpnAuthLog`
-     * * `zpnAstAuthLog`
-     * * `zpnHttpTransLog`
-     * * `zpnAuditLog`
-     * * `zpnSysAuthLog`
-     * * `zpnAstComprehensiveStats`
-     * * `zpnWafHttpExchangesLog`
      */
     logType: pulumi.Input<string>;
 }

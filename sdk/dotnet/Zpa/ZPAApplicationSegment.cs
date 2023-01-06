@@ -67,12 +67,14 @@ namespace zscaler.PulumiPackage.Zpa
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Output("healthCheckType")]
         public Output<string?> HealthCheckType { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-        /// * `health_check_type` (Optional)
         /// </summary>
         [Output("healthReporting")]
         public Output<string?> HealthReporting { get; private set; } = null!;
@@ -157,7 +159,6 @@ namespace zscaler.PulumiPackage.Zpa
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/zscaler",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -226,12 +227,14 @@ namespace zscaler.PulumiPackage.Zpa
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("healthCheckType")]
         public Input<string>? HealthCheckType { get; set; }
 
         /// <summary>
         /// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-        /// * `health_check_type` (Optional)
         /// </summary>
         [Input("healthReporting")]
         public Input<string>? HealthReporting { get; set; }
@@ -364,12 +367,14 @@ namespace zscaler.PulumiPackage.Zpa
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         [Input("healthCheckType")]
         public Input<string>? HealthCheckType { get; set; }
 
         /// <summary>
         /// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-        /// * `health_check_type` (Optional)
         /// </summary>
         [Input("healthReporting")]
         public Input<string>? HealthReporting { get; set; }

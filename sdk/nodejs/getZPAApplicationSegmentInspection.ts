@@ -95,10 +95,12 @@ export interface GetZPAApplicationSegmentInspectionResult {
      * (bool) Whether this application is enabled or not
      */
     readonly enabled: boolean;
+    /**
+     * (string)
+     */
     readonly healthCheckType: string;
     /**
      * (string) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-     * * `healthCheckType` (string)
      */
     readonly healthReporting: string;
     /**

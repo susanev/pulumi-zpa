@@ -51,41 +51,65 @@ class GetZPAMachineGroupResult:
     @property
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "creation_time")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def enabled(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
+        """
+        (string)
+        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def machines(self) -> Sequence['outputs.GetZPAMachineGroupMachineResult']:
+        """
+        (string)
+        """
         return pulumi.get(self, "machines")
 
     @property
     @pulumi.getter(name="modifiedBy")
     def modified_by(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_by")
 
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_time")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        """
+        (string)
+        """
         return pulumi.get(self, "name")
 
 

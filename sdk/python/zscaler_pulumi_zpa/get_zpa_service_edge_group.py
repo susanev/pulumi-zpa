@@ -117,6 +117,9 @@ class GetZPAServiceEdgeGroupResult:
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string) Description of the Service Edge Group.
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -138,6 +141,9 @@ class GetZPAServiceEdgeGroupResult:
     @property
     @pulumi.getter
     def id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "id")
 
     @property
@@ -152,7 +158,7 @@ class GetZPAServiceEdgeGroupResult:
     @pulumi.getter
     def latitude(self) -> str:
         """
-        (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+        (string)
         """
         return pulumi.get(self, "latitude")
 
@@ -160,7 +166,7 @@ class GetZPAServiceEdgeGroupResult:
     @pulumi.getter
     def location(self) -> str:
         """
-        (string) Location of the Service Edge Group.
+        (string)
         """
         return pulumi.get(self, "location")
 
@@ -168,7 +174,7 @@ class GetZPAServiceEdgeGroupResult:
     @pulumi.getter
     def longitude(self) -> str:
         """
-        (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+        (string)
         """
         return pulumi.get(self, "longitude")
 
@@ -188,6 +194,9 @@ class GetZPAServiceEdgeGroupResult:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -203,41 +212,6 @@ class GetZPAServiceEdgeGroupResult:
     def service_edges(self) -> Sequence['outputs.GetZPAServiceEdgeGroupServiceEdgeResult']:
         """
         (string)
-        * `name` (string)
-        * `application_start_time` (string)
-        * `service_edge_group_id` (string)
-        * `service_edge_group_name` (string)
-        * `control_channel_status` (string)
-        * `creation_time` (string)
-        * `modified_by` (string)
-        * `modified_time` (string)
-        * `ctrl_broker_name` (string)
-        * `current_version` (string)
-        * `expected_upgrade_time` (string)
-        * `expected_version` (string)
-        * `figerprint` (string)
-        * `ip_acl` (string)
-        * `issued_cert_id` (string)
-        * `last_broker_connect_time` (string)
-        * `last_broker_connect_time_duration` (string)
-        * `last_broker_disconnect_time` (string)
-        * `last_broker_disconnect_time_duration` (string)
-        * `last_upgrade_time` (string)
-        * `latitude` (string)
-        * `listen_ips` (string)
-        * `location` (string)
-        * `longitude` (string)
-        * `provisioning_key_id` (string)
-        * `provisioning_key_name` (string)
-        * `platform` (string)
-        * `previous_version` (string)
-        * `private_ip` (string)
-        * `public_ip` (string)
-        * `publish_ips` (string)
-        * `sarge_version` (string)
-        * `enrollment_cert` (string)
-        * `upgrade_attempt` (string)
-        * `upgrade_status` (string)
         """
         return pulumi.get(self, "service_edges")
 
@@ -246,15 +220,6 @@ class GetZPAServiceEdgeGroupResult:
     def trusted_networks(self) -> Sequence['outputs.GetZPAServiceEdgeGroupTrustedNetworkResult']:
         """
         (string)
-        * `creation_time` (string)
-        * `domain` (string)
-        * `id` (string)
-        * `master_customer_id` (string)
-        * `modified_by` (string)
-        * `modified_time` (string)
-        * `name` (string)
-        * `network_id` (string)
-        * `zscaler_cloud` (string)
         """
         return pulumi.get(self, "trusted_networks")
 
@@ -280,9 +245,6 @@ class GetZPAServiceEdgeGroupResult:
         """
         (String) ID of the version profile.
         Exported values are:
-        * ``0`` = ``Default``
-        * ``1`` = ``Previous Default``
-        * ``2`` = ``New Release``
         """
         return pulumi.get(self, "version_profile_id")
 
@@ -292,9 +254,6 @@ class GetZPAServiceEdgeGroupResult:
         """
         (String)
         Exported values are:
-        * ``Default`` = ``0``
-        * ``Previous Default`` = ``1``
-        * ``New Release`` = ``2``
         """
         return pulumi.get(self, "version_profile_name")
 
@@ -304,9 +263,6 @@ class GetZPAServiceEdgeGroupResult:
         """
         (string)
         Exported values are:
-        * ``ALL``
-        * ``NONE``
-        * ``CUSTOM``
         """
         return pulumi.get(self, "version_profile_visibility_scope")
 

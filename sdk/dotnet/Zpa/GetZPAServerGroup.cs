@@ -108,6 +108,9 @@ namespace zscaler.PulumiPackage.Zpa
     [OutputType]
     public sealed class GetZPAServerGroupResult
     {
+        /// <summary>
+        /// (string)This field is a json array of app-connector-id only.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAServerGroupAppConnectorGroupResult> AppConnectorGroups;
         public readonly ImmutableArray<Outputs.GetZPAServerGroupApplicationResult> Applications;
         /// <summary>
@@ -130,7 +133,6 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly string? Id;
         /// <summary>
         /// (bool)
-        /// * `app_connector_groups` (string)This field is a json array of app-connector-id only.
         /// </summary>
         public readonly bool IpAnchored;
         public readonly string ModifiedTime;

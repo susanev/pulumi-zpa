@@ -138,11 +138,18 @@ class ZPAApplicationSegmentBrowserAccessClientlessApp(dict):
                  path: Optional[str] = None,
                  trust_untrusted_cert: Optional[bool] = None):
         """
-        :param str application_port: - Port for the BA app.
-        :param str application_protocol: - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
-        :param str name: - Name of BA app.
-        :param bool allow_options: - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
-        :param str domain: - Domain name or IP address of the BA app.
+        :param str application_port: Port for the BA app.
+        :param str application_protocol: Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+        :param str name: Name of the application.
+        :param bool allow_options: If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+        :param str cname: (Optional)
+        :param str description: (Optional) Description of the application.
+        :param str domain: Domain name or IP address of the BA app.
+        :param bool enabled: (Optional) - Whether this app is enabled or not.
+        :param bool hidden: (Optional)
+        :param str local_domain: (Optional)
+        :param str path: (Optional)
+        :param bool trust_untrusted_cert: (Optional)
         """
         pulumi.set(__self__, "application_port", application_port)
         pulumi.set(__self__, "application_protocol", application_protocol)
@@ -173,7 +180,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessApp(dict):
     @pulumi.getter(name="applicationPort")
     def application_port(self) -> str:
         """
-        - Port for the BA app.
+        Port for the BA app.
         """
         return pulumi.get(self, "application_port")
 
@@ -181,7 +188,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessApp(dict):
     @pulumi.getter(name="applicationProtocol")
     def application_protocol(self) -> str:
         """
-        - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+        Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
         """
         return pulumi.get(self, "application_protocol")
 
@@ -194,7 +201,7 @@ class ZPAApplicationSegmentBrowserAccessClientlessApp(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        - Name of BA app.
+        Name of the application.
         """
         return pulumi.get(self, "name")
 
@@ -202,36 +209,48 @@ class ZPAApplicationSegmentBrowserAccessClientlessApp(dict):
     @pulumi.getter(name="allowOptions")
     def allow_options(self) -> Optional[bool]:
         """
-        - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+        If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
         """
         return pulumi.get(self, "allow_options")
 
     @property
     @pulumi.getter
     def cname(self) -> Optional[str]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "cname")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
+        """
+        (Optional) Description of the application.
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def domain(self) -> Optional[str]:
         """
-        - Domain name or IP address of the BA app.
+        Domain name or IP address of the BA app.
         """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def enabled(self) -> Optional[bool]:
+        """
+        (Optional) - Whether this app is enabled or not.
+        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
     def hidden(self) -> Optional[bool]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "hidden")
 
     @property
@@ -242,16 +261,25 @@ class ZPAApplicationSegmentBrowserAccessClientlessApp(dict):
     @property
     @pulumi.getter(name="localDomain")
     def local_domain(self) -> Optional[str]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "local_domain")
 
     @property
     @pulumi.getter
     def path(self) -> Optional[str]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter(name="trustUntrustedCert")
     def trust_untrusted_cert(self) -> Optional[bool]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "trust_untrusted_cert")
 
 
@@ -354,7 +382,7 @@ class ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig(dict):
         :param Sequence[str] app_types: Indicates the type of application as inspection. Supported value: `INSPECT`
         :param str application_port: Port for the Inspection Application Segment.
         :param str application_protocol: Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
-        :param str certificate_id: - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+        :param str certificate_id: ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
         :param str description: (Optional) Description of the application.
         :param str domain: Domain name of the Inspection Application Segment.
         :param bool enabled: Whether this application is enabled or not
@@ -433,7 +461,7 @@ class ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig(dict):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[str]:
         """
-        - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+        ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -598,7 +626,7 @@ class ZPAApplicationSegmentPRACommonAppsDtoAppsConfig(dict):
         :param Sequence[str] app_types: Indicates the type of application as Privileged Remote Access. Supported value: `SECURE_REMOTE_ACCESS`
         :param str application_port: Port for the Privileged Remote Access
         :param str application_protocol: Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
-        :param str connection_security: - Parameter required when `application_protocol` is of type `RDP`
+        :param str connection_security: Parameter required when `application_protocol` is of type `RDP`
         :param str description: (Optional) Description of the application.
         :param str domain: Domain name of the Privileged Remote Access
         :param bool enabled: Whether this application is enabled or not
@@ -678,7 +706,7 @@ class ZPAApplicationSegmentPRACommonAppsDtoAppsConfig(dict):
     @pulumi.getter(name="connectionSecurity")
     def connection_security(self) -> Optional[str]:
         """
-        - Parameter required when `application_protocol` is of type `RDP`
+        Parameter required when `application_protocol` is of type `RDP`
         """
         return pulumi.get(self, "connection_security")
 
@@ -1195,7 +1223,7 @@ class ZPALSSConfigControllerConfig(dict):
         :param str description: (Optional)
         :param bool enabled: (Optional)
         :param Sequence[str] filters: (Optional)
-        :param str id: - App Connector Group ID(s) where logs will be forwarded to.
+        :param str id: App Connector Group ID(s) where logs will be forwarded to.
         :param bool use_tls: (Optional)
         """
         pulumi.set(__self__, "format", format)
@@ -1292,7 +1320,7 @@ class ZPALSSConfigControllerConfig(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        - App Connector Group ID(s) where logs will be forwarded to.
+        App Connector Group ID(s) where logs will be forwarded to.
         """
         return pulumi.get(self, "id")
 
@@ -1310,7 +1338,7 @@ class ZPALSSConfigControllerConnectorGroup(dict):
     def __init__(__self__, *,
                  ids: Optional[Sequence[str]] = None):
         """
-        :param Sequence[str] ids: - App Connector Group ID(s) where logs will be forwarded to.
+        :param Sequence[str] ids: App Connector Group ID(s) where logs will be forwarded to.
         """
         if ids is not None:
             pulumi.set(__self__, "ids", ids)
@@ -1319,7 +1347,7 @@ class ZPALSSConfigControllerConnectorGroup(dict):
     @pulumi.getter
     def ids(self) -> Optional[Sequence[str]]:
         """
-        - App Connector Group ID(s) where logs will be forwarded to.
+        App Connector Group ID(s) where logs will be forwarded to.
         """
         return pulumi.get(self, "ids")
 
@@ -1391,7 +1419,8 @@ class ZPALSSConfigControllerPolicyRuleResource(dict):
         :param Sequence['ZPALSSConfigControllerPolicyRuleResourceConditionArgs'] conditions: (Optional)
         :param str custom_msg: (Optional)
         :param str description: (Optional)
-        :param str id: - App Connector Group ID(s) where logs will be forwarded to.
+        :param str id: App Connector Group ID(s) where logs will be forwarded to.
+        :param str operator: (Optional) - Supported values are: `AND` or `OR`
         """
         pulumi.set(__self__, "name", name)
         if action is not None:
@@ -1490,7 +1519,7 @@ class ZPALSSConfigControllerPolicyRuleResource(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        - App Connector Group ID(s) where logs will be forwarded to.
+        App Connector Group ID(s) where logs will be forwarded to.
         """
         return pulumi.get(self, "id")
 
@@ -1502,6 +1531,9 @@ class ZPALSSConfigControllerPolicyRuleResource(dict):
     @property
     @pulumi.getter
     def operator(self) -> Optional[str]:
+        """
+        (Optional) - Supported values are: `AND` or `OR`
+        """
         return pulumi.get(self, "operator")
 
     @property
@@ -1552,17 +1584,8 @@ class ZPALSSConfigControllerPolicyRuleResourceCondition(dict):
                  negated: Optional[bool] = None,
                  operands: Optional[Sequence['outputs.ZPALSSConfigControllerPolicyRuleResourceConditionOperand']] = None):
         """
+        :param str operator: (Optional) - Supported values are: `AND` or `OR`
         :param bool negated: (Optional)
-               * `operator` (Optional) - Supported values are: `AND` or `OR`
-               * `operands`
-               * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-               * `values` (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
-               - `zpn_client_type_exporter`
-               - `zpn_client_type_browser_isolation`
-               - `zpn_client_type_machine_tunnel`
-               - `zpn_client_type_ip_anchoring`
-               - `zpn_client_type_edge_connector`
-               - `zpn_client_type_zapp`
         """
         pulumi.set(__self__, "operator", operator)
         if negated is not None:
@@ -1573,6 +1596,9 @@ class ZPALSSConfigControllerPolicyRuleResourceCondition(dict):
     @property
     @pulumi.getter
     def operator(self) -> str:
+        """
+        (Optional) - Supported values are: `AND` or `OR`
+        """
         return pulumi.get(self, "operator")
 
     @property
@@ -1580,16 +1606,6 @@ class ZPALSSConfigControllerPolicyRuleResourceCondition(dict):
     def negated(self) -> Optional[bool]:
         """
         (Optional)
-        * `operator` (Optional) - Supported values are: `AND` or `OR`
-        * `operands`
-        * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-        * `values` (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
-        - `zpn_client_type_exporter`
-        - `zpn_client_type_browser_isolation`
-        - `zpn_client_type_machine_tunnel`
-        - `zpn_client_type_ip_anchoring`
-        - `zpn_client_type_edge_connector`
-        - `zpn_client_type_zapp`
         """
         return pulumi.get(self, "negated")
 
@@ -1621,6 +1637,10 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionOperand(dict):
     def __init__(__self__, *,
                  object_type: str,
                  values: Optional[Sequence[str]] = None):
+        """
+        :param str object_type: (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+        :param Sequence[str] values: (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
+        """
         pulumi.set(__self__, "object_type", object_type)
         if values is not None:
             pulumi.set(__self__, "values", values)
@@ -1628,11 +1648,17 @@ class ZPALSSConfigControllerPolicyRuleResourceConditionOperand(dict):
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> str:
+        """
+        (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+        """
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter
     def values(self) -> Optional[Sequence[str]]:
+        """
+        (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
+        """
         return pulumi.get(self, "values")
 
 
@@ -1914,22 +1940,10 @@ class ZPAPolicyAccessRuleCondition(dict):
                  negated: Optional[bool] = None,
                  operands: Optional[Sequence['outputs.ZPAPolicyAccessRuleConditionOperand']] = None):
         """
+        :param str operator: (Optional) Supported values: ``AND``, and ``OR``
         :param str id: (Optional) The ID of a server group resource
         :param bool negated: (Optional) Supported values: ``true`` or ``false``
-               * `operator` (Optional) Supported values: ``AND``, and ``OR``
-               * `operands` (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
-               * `name` (Optional)
-               * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-               * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-               * `idp_id` (Optional)
-               * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-               * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-               * `zpn_client_type_exporter`
-               * `zpn_client_type_browser_isolation`
-               * `zpn_client_type_machine_tunnel`
-               * `zpn_client_type_ip_anchoring`
-               * `zpn_client_type_edge_connector`
-               * `zpn_client_type_zapp`
+        :param Sequence['ZPAPolicyAccessRuleConditionOperandArgs'] operands: (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
         """
         pulumi.set(__self__, "operator", operator)
         if id is not None:
@@ -1942,6 +1956,9 @@ class ZPAPolicyAccessRuleCondition(dict):
     @property
     @pulumi.getter
     def operator(self) -> str:
+        """
+        (Optional) Supported values: ``AND``, and ``OR``
+        """
         return pulumi.get(self, "operator")
 
     @property
@@ -1957,26 +1974,15 @@ class ZPAPolicyAccessRuleCondition(dict):
     def negated(self) -> Optional[bool]:
         """
         (Optional) Supported values: ``true`` or ``false``
-        * `operator` (Optional) Supported values: ``AND``, and ``OR``
-        * `operands` (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
-        * `name` (Optional)
-        * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-        * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-        * `idp_id` (Optional)
-        * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-        * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-        * `zpn_client_type_exporter`
-        * `zpn_client_type_browser_isolation`
-        * `zpn_client_type_machine_tunnel`
-        * `zpn_client_type_ip_anchoring`
-        * `zpn_client_type_edge_connector`
-        * `zpn_client_type_zapp`
         """
         return pulumi.get(self, "negated")
 
     @property
     @pulumi.getter
     def operands(self) -> Optional[Sequence['outputs.ZPAPolicyAccessRuleConditionOperand']]:
+        """
+        (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.
+        """
         return pulumi.get(self, "operands")
 
 
@@ -2012,7 +2018,12 @@ class ZPAPolicyAccessRuleConditionOperand(dict):
                  rhs: Optional[str] = None,
                  rhs_lists: Optional[Sequence[str]] = None):
         """
+        :param str lhs: (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+        :param str object_type: (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
         :param str id: (Optional) The ID of a server group resource
+        :param str idp_id: (Optional)
+        :param str name: (Optional)
+        :param str rhs: (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
         """
         pulumi.set(__self__, "lhs", lhs)
         pulumi.set(__self__, "object_type", object_type)
@@ -2030,11 +2041,17 @@ class ZPAPolicyAccessRuleConditionOperand(dict):
     @property
     @pulumi.getter
     def lhs(self) -> str:
+        """
+        (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+        """
         return pulumi.get(self, "lhs")
 
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> str:
+        """
+        (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+        """
         return pulumi.get(self, "object_type")
 
     @property
@@ -2048,16 +2065,25 @@ class ZPAPolicyAccessRuleConditionOperand(dict):
     @property
     @pulumi.getter(name="idpId")
     def idp_id(self) -> Optional[str]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "idp_id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def rhs(self) -> Optional[str]:
+        """
+        (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+        """
         return pulumi.get(self, "rhs")
 
     @property
@@ -2300,6 +2326,7 @@ class GetZPAAppConnectorGroupConnectorResult(dict):
                  upgrade_attempt: str,
                  upgrade_status: str):
         """
+        :param str description: (String) Description of the App Connector Group.
         :param bool enabled: (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
         :param str id: ID of the App Connector Group.
         :param str latitude: (String) Latitude of the App Connector Group. Integer or decimal. With values in the range of `-90` to `90`
@@ -2382,6 +2409,9 @@ class GetZPAAppConnectorGroupConnectorResult(dict):
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (String) Description of the App Connector Group.
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -2556,6 +2586,7 @@ class GetZPAAppConnectorGroupServerGroupResult(dict):
                  modifiedby: str,
                  name: str):
         """
+        :param str description: (String) Description of the App Connector Group.
         :param bool enabled: (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
         :param str id: ID of the App Connector Group.
         :param str name: Name of the App Connector Group.
@@ -2583,6 +2614,9 @@ class GetZPAAppConnectorGroupServerGroupResult(dict):
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (String) Description of the App Connector Group.
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -2646,22 +2680,20 @@ class GetZPAApplicationSegmentBrowserAccessClientlessAppResult(dict):
                  trust_untrusted_cert: bool):
         """
         :param bool allow_options: (bool)
-               * `cname` (string)
-               * `description` (string)
-               * `enabled` (bool)
-               * `hidden` (bool)
-               * `local_domain` (string)
-               * `path` (string)
-               * `trust_untrusted_cert` (bool)
         :param str application_port: (string)
         :param str application_protocol: (string)
         :param str certificate_id: (string)
         :param str certificate_name: (string)
-        :param str description: (string) Description of the application.
+        :param str cname: (string)
+        :param str description: (string)
         :param str domain: (string)
-        :param bool enabled: (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+        :param bool enabled: (bool)
+        :param bool hidden: (bool)
         :param str id: This field defines the id of the application server.
+        :param str local_domain: (string)
         :param str name: This field defines the name of the server.
+        :param str path: (string)
+        :param bool trust_untrusted_cert: (bool)
         """
         pulumi.set(__self__, "allow_options", allow_options)
         pulumi.set(__self__, "app_id", app_id)
@@ -2685,13 +2717,6 @@ class GetZPAApplicationSegmentBrowserAccessClientlessAppResult(dict):
     def allow_options(self) -> bool:
         """
         (bool)
-        * `cname` (string)
-        * `description` (string)
-        * `enabled` (bool)
-        * `hidden` (bool)
-        * `local_domain` (string)
-        * `path` (string)
-        * `trust_untrusted_cert` (bool)
         """
         return pulumi.get(self, "allow_options")
 
@@ -2735,13 +2760,16 @@ class GetZPAApplicationSegmentBrowserAccessClientlessAppResult(dict):
     @property
     @pulumi.getter
     def cname(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "cname")
 
     @property
     @pulumi.getter
     def description(self) -> str:
         """
-        (string) Description of the application.
+        (string)
         """
         return pulumi.get(self, "description")
 
@@ -2757,13 +2785,16 @@ class GetZPAApplicationSegmentBrowserAccessClientlessAppResult(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+        (bool)
         """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
     def hidden(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "hidden")
 
     @property
@@ -2777,6 +2808,9 @@ class GetZPAApplicationSegmentBrowserAccessClientlessAppResult(dict):
     @property
     @pulumi.getter(name="localDomain")
     def local_domain(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "local_domain")
 
     @property
@@ -2790,11 +2824,17 @@ class GetZPAApplicationSegmentBrowserAccessClientlessAppResult(dict):
     @property
     @pulumi.getter
     def path(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter(name="trustUntrustedCert")
     def trust_untrusted_cert(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "trust_untrusted_cert")
 
 
@@ -3174,7 +3214,12 @@ class GetZPACloudConnectorGroupCloudConnectorResult(dict):
                  name: str,
                  signing_cert: Mapping[str, Any]):
         """
+        :param str creation_time: (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        :param str description: (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        :param bool enabled: (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
         :param str id: This field defines the id of the cloud connector group.
+        :param str issued_cert_id: (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        :param str modified_time: (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
         :param str name: This field defines the name of the cloud connector group.
         """
         pulumi.set(__self__, "creation_time", creation_time)
@@ -3192,16 +3237,25 @@ class GetZPACloudConnectorGroupCloudConnectorResult(dict):
     @property
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "creation_time")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def enabled(self) -> bool:
+        """
+        (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "enabled")
 
     @property
@@ -3225,11 +3279,17 @@ class GetZPACloudConnectorGroupCloudConnectorResult(dict):
     @property
     @pulumi.getter(name="issuedCertId")
     def issued_cert_id(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "issued_cert_id")
 
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -3259,6 +3319,12 @@ class GetZPAIdPControllerAdminMetadataResult(dict):
                  sp_entity_id: str,
                  sp_metadata_url: str,
                  sp_post_url: str):
+        """
+        :param str certificate_url: (string)
+        :param str sp_entity_id: (string)
+        :param str sp_metadata_url: (string)
+        :param str sp_post_url: (string)
+        """
         pulumi.set(__self__, "certificate_url", certificate_url)
         pulumi.set(__self__, "sp_base_url", sp_base_url)
         pulumi.set(__self__, "sp_entity_id", sp_entity_id)
@@ -3268,6 +3334,9 @@ class GetZPAIdPControllerAdminMetadataResult(dict):
     @property
     @pulumi.getter(name="certificateUrl")
     def certificate_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "certificate_url")
 
     @property
@@ -3278,16 +3347,25 @@ class GetZPAIdPControllerAdminMetadataResult(dict):
     @property
     @pulumi.getter(name="spEntityId")
     def sp_entity_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sp_entity_id")
 
     @property
     @pulumi.getter(name="spMetadataUrl")
     def sp_metadata_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sp_metadata_url")
 
     @property
     @pulumi.getter(name="spPostUrl")
     def sp_post_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sp_post_url")
 
 
@@ -3299,6 +3377,12 @@ class GetZPAIdPControllerUserMetadataResult(dict):
                  sp_entity_id: str,
                  sp_metadata_url: str,
                  sp_post_url: str):
+        """
+        :param str certificate_url: (string)
+        :param str sp_entity_id: (string)
+        :param str sp_metadata_url: (string)
+        :param str sp_post_url: (string)
+        """
         pulumi.set(__self__, "certificate_url", certificate_url)
         pulumi.set(__self__, "sp_base_url", sp_base_url)
         pulumi.set(__self__, "sp_entity_id", sp_entity_id)
@@ -3308,6 +3392,9 @@ class GetZPAIdPControllerUserMetadataResult(dict):
     @property
     @pulumi.getter(name="certificateUrl")
     def certificate_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "certificate_url")
 
     @property
@@ -3318,16 +3405,25 @@ class GetZPAIdPControllerUserMetadataResult(dict):
     @property
     @pulumi.getter(name="spEntityId")
     def sp_entity_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sp_entity_id")
 
     @property
     @pulumi.getter(name="spMetadataUrl")
     def sp_metadata_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sp_metadata_url")
 
     @property
     @pulumi.getter(name="spPostUrl")
     def sp_post_url(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sp_post_url")
 
 
@@ -3353,31 +3449,20 @@ class GetZPAInspectionAllPredefinedControlsListResult(dict):
                  version: str):
         """
         :param str action: (string)
-               * `PASS`
-               * `BLOCK`
-               * `REDIRECT`
         :param str action_value: (string)
         :param Sequence['GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameArgs'] associated_inspection_profile_names: (string)
-               * `id`- (string)
-               * `name`- (string)
         :param str attachment: (string)
         :param str control_group: (string)
         :param str control_number: (string)
         :param str creation_time: (string)
         :param str default_action: (string)
-               * `PASS`
-               * `BLOCK`
-               * `REDIRECT`
         :param str default_action_value: (string)
         :param str description: (string)
         :param str id: (string)
         :param str modified_time: (string)
+        :param str name: (string)
         :param str paranoia_level: (string)
         :param str severity: (string)
-               * `CRITICAL`
-               * `ERROR`
-               * `WARNING`
-               * `INFO`
         :param str version: The version of the predefined control, the default is: `OWASP_CRS/3.3.0`
         """
         pulumi.set(__self__, "action", action)
@@ -3403,9 +3488,6 @@ class GetZPAInspectionAllPredefinedControlsListResult(dict):
     def action(self) -> str:
         """
         (string)
-        * `PASS`
-        * `BLOCK`
-        * `REDIRECT`
         """
         return pulumi.get(self, "action")
 
@@ -3422,8 +3504,6 @@ class GetZPAInspectionAllPredefinedControlsListResult(dict):
     def associated_inspection_profile_names(self) -> Sequence['outputs.GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameResult']:
         """
         (string)
-        * `id`- (string)
-        * `name`- (string)
         """
         return pulumi.get(self, "associated_inspection_profile_names")
 
@@ -3464,9 +3544,6 @@ class GetZPAInspectionAllPredefinedControlsListResult(dict):
     def default_action(self) -> str:
         """
         (string)
-        * `PASS`
-        * `BLOCK`
-        * `REDIRECT`
         """
         return pulumi.get(self, "default_action")
 
@@ -3510,6 +3587,9 @@ class GetZPAInspectionAllPredefinedControlsListResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -3525,10 +3605,6 @@ class GetZPAInspectionAllPredefinedControlsListResult(dict):
     def severity(self) -> str:
         """
         (string)
-        * `CRITICAL`
-        * `ERROR`
-        * `WARNING`
-        * `INFO`
         """
         return pulumi.get(self, "severity")
 
@@ -3548,6 +3624,7 @@ class GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameRe
                  name: str):
         """
         :param str id: (string)
+        :param str name: (string)
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
@@ -3563,6 +3640,9 @@ class GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameRe
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "name")
 
 
@@ -3700,11 +3780,8 @@ class GetZPAInspectionProfileCustomControlResult(dict):
         """
         :param str action: (string) The action of the predefined control. Supported values: `PASS`, `BLOCK` and `REDIRECT`
         :param str action_value: (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-               * `attachment` (string) Control attachment
-               * `control_group` (string) Control group
         :param Sequence['GetZPAInspectionProfileCustomControlAssociatedInspectionProfileNameArgs'] associated_inspection_profile_names: (string) Name of the inspection profile
-               * `id`- (string)
-               * `name`- (string)
+        :param str control_rule_json: (string) Custom controls string in JSON format
         :param str description: (string) Description of the inspection profile.
         :param str id: This field defines the id of the application server.
         :param str name: This field defines the name of the server.
@@ -3745,8 +3822,6 @@ class GetZPAInspectionProfileCustomControlResult(dict):
     def action_value(self) -> str:
         """
         (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-        * `attachment` (string) Control attachment
-        * `control_group` (string) Control group
         """
         return pulumi.get(self, "action_value")
 
@@ -3755,8 +3830,6 @@ class GetZPAInspectionProfileCustomControlResult(dict):
     def associated_inspection_profile_names(self) -> Sequence['outputs.GetZPAInspectionProfileCustomControlAssociatedInspectionProfileNameResult']:
         """
         (string) Name of the inspection profile
-        * `id`- (string)
-        * `name`- (string)
         """
         return pulumi.get(self, "associated_inspection_profile_names")
 
@@ -3768,6 +3841,9 @@ class GetZPAInspectionProfileCustomControlResult(dict):
     @property
     @pulumi.getter(name="controlRuleJson")
     def control_rule_json(self) -> str:
+        """
+        (string) Custom controls string in JSON format
+        """
         return pulumi.get(self, "control_rule_json")
 
     @property
@@ -3989,11 +4065,9 @@ class GetZPAInspectionProfilePredefinedControlResult(dict):
         """
         :param str action: (string) The action of the predefined control. Supported values: `PASS`, `BLOCK` and `REDIRECT`
         :param str action_value: (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-               * `attachment` (string) Control attachment
-               * `control_group` (string) Control group
         :param Sequence['GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileNameArgs'] associated_inspection_profile_names: (string) Name of the inspection profile
-               * `id`- (string)
-               * `name`- (string)
+        :param str attachment: (string) Control attachment
+        :param str control_group: (string) Control group
         :param str description: (string) Description of the inspection profile.
         :param str id: This field defines the id of the application server.
         :param str name: This field defines the name of the server.
@@ -4031,8 +4105,6 @@ class GetZPAInspectionProfilePredefinedControlResult(dict):
     def action_value(self) -> str:
         """
         (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-        * `attachment` (string) Control attachment
-        * `control_group` (string) Control group
         """
         return pulumi.get(self, "action_value")
 
@@ -4041,19 +4113,23 @@ class GetZPAInspectionProfilePredefinedControlResult(dict):
     def associated_inspection_profile_names(self) -> Sequence['outputs.GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileNameResult']:
         """
         (string) Name of the inspection profile
-        * `id`- (string)
-        * `name`- (string)
         """
         return pulumi.get(self, "associated_inspection_profile_names")
 
     @property
     @pulumi.getter
     def attachment(self) -> str:
+        """
+        (string) Control attachment
+        """
         return pulumi.get(self, "attachment")
 
     @property
     @pulumi.getter(name="controlGroup")
     def control_group(self) -> str:
+        """
+        (string) Control group
+        """
         return pulumi.get(self, "control_group")
 
     @property
@@ -4682,8 +4758,18 @@ class GetZPAMachineGroupMachineResult(dict):
                  name: str,
                  signing_cert: Mapping[str, str]):
         """
+        :param str creation_time: (string)
+        :param str description: (string)
+        :param str fingerprint: (string)
         :param str id: The ID of the machine group to be exported.
+        :param str issued_cert_id: (string)
+        :param str machine_group_id: (string)
+        :param str machine_group_name: (string)
+        :param str machine_token_id: (string)
+        :param str modified_by: (string)
+        :param str modified_time: (string)
         :param str name: The name of the machine group to be exported.
+        :param Mapping[str, str] signing_cert: (string)
         """
         pulumi.set(__self__, "creation_time", creation_time)
         pulumi.set(__self__, "description", description)
@@ -4701,16 +4787,25 @@ class GetZPAMachineGroupMachineResult(dict):
     @property
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "creation_time")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def fingerprint(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "fingerprint")
 
     @property
@@ -4724,31 +4819,49 @@ class GetZPAMachineGroupMachineResult(dict):
     @property
     @pulumi.getter(name="issuedCertId")
     def issued_cert_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "issued_cert_id")
 
     @property
     @pulumi.getter(name="machineGroupId")
     def machine_group_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "machine_group_id")
 
     @property
     @pulumi.getter(name="machineGroupName")
     def machine_group_name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "machine_group_name")
 
     @property
     @pulumi.getter(name="machineTokenId")
     def machine_token_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "machine_token_id")
 
     @property
     @pulumi.getter(name="modifiedBy")
     def modified_by(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_by")
 
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -4762,6 +4875,9 @@ class GetZPAMachineGroupMachineResult(dict):
     @property
     @pulumi.getter(name="signingCert")
     def signing_cert(self) -> Mapping[str, str]:
+        """
+        (string)
+        """
         return pulumi.get(self, "signing_cert")
 
 
@@ -5941,14 +6057,41 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
                  upgrade_attempt: str,
                  upgrade_status: str):
         """
+        :param str application_start_time: (string)
+        :param str control_channel_status: (string)
         :param str creation_time: (string)
+        :param str ctrl_broker_name: (string)
+        :param str current_version: (string)
+        :param str description: (string) Description of the Service Edge Group.
         :param bool enabled: (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
+        :param Mapping[str, Any] enrollment_cert: (string)
+        :param str expected_upgrade_time: (string)
+        :param str expected_version: (string)
         :param str id: The ID of the service edge group to be exported.
-        :param str latitude: (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
-        :param str location: (string) Location of the Service Edge Group.
-        :param str longitude: (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+        :param str issued_cert_id: (string)
+        :param str last_broker_connect_time: (string)
+        :param str last_broker_connect_time_duration: (string)
+        :param str last_broker_disconnect_time: (string)
+        :param str last_broker_disconnect_time_duration: (string)
+        :param str last_upgrade_time: (string)
+        :param str latitude: (string)
+        :param str listen_ips: (string)
+        :param str location: (string)
+        :param str longitude: (string)
         :param str modified_time: (string)
         :param str name: The name of the service edge group to be exported.
+        :param str platform: (string)
+        :param str previous_version: (string)
+        :param str private_ip: (string)
+        :param str provisioning_key_id: (string)
+        :param str provisioning_key_name: (string)
+        :param str public_ip: (string)
+        :param str publish_ips: (string)
+        :param str sarge_version: (string)
+        :param str service_edge_group_id: (string)
+        :param str service_edge_group_name: (string)
+        :param str upgrade_attempt: (string)
+        :param str upgrade_status: (string)
         """
         pulumi.set(__self__, "application_start_time", application_start_time)
         pulumi.set(__self__, "control_channel_status", control_channel_status)
@@ -5992,11 +6135,17 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
     @property
     @pulumi.getter(name="applicationStartTime")
     def application_start_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "application_start_time")
 
     @property
     @pulumi.getter(name="controlChannelStatus")
     def control_channel_status(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "control_channel_status")
 
     @property
@@ -6010,16 +6159,25 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
     @property
     @pulumi.getter(name="ctrlBrokerName")
     def ctrl_broker_name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "ctrl_broker_name")
 
     @property
     @pulumi.getter(name="currentVersion")
     def current_version(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "current_version")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string) Description of the Service Edge Group.
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -6033,16 +6191,25 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
     @property
     @pulumi.getter(name="enrollmentCert")
     def enrollment_cert(self) -> Mapping[str, Any]:
+        """
+        (string)
+        """
         return pulumi.get(self, "enrollment_cert")
 
     @property
     @pulumi.getter(name="expectedUpgradeTime")
     def expected_upgrade_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "expected_upgrade_time")
 
     @property
     @pulumi.getter(name="expectedVersion")
     def expected_version(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "expected_version")
 
     @property
@@ -6066,51 +6233,72 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
     @property
     @pulumi.getter(name="issuedCertId")
     def issued_cert_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "issued_cert_id")
 
     @property
     @pulumi.getter(name="lastBrokerConnectTime")
     def last_broker_connect_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "last_broker_connect_time")
 
     @property
     @pulumi.getter(name="lastBrokerConnectTimeDuration")
     def last_broker_connect_time_duration(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "last_broker_connect_time_duration")
 
     @property
     @pulumi.getter(name="lastBrokerDisconnectTime")
     def last_broker_disconnect_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "last_broker_disconnect_time")
 
     @property
     @pulumi.getter(name="lastBrokerDisconnectTimeDuration")
     def last_broker_disconnect_time_duration(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "last_broker_disconnect_time_duration")
 
     @property
     @pulumi.getter(name="lastUpgradeTime")
     def last_upgrade_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "last_upgrade_time")
 
     @property
     @pulumi.getter
     def latitude(self) -> str:
         """
-        (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+        (string)
         """
         return pulumi.get(self, "latitude")
 
     @property
     @pulumi.getter(name="listenIps")
     def listen_ips(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "listen_ips")
 
     @property
     @pulumi.getter
     def location(self) -> str:
         """
-        (string) Location of the Service Edge Group.
+        (string)
         """
         return pulumi.get(self, "location")
 
@@ -6118,7 +6306,7 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
     @pulumi.getter
     def longitude(self) -> str:
         """
-        (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+        (string)
         """
         return pulumi.get(self, "longitude")
 
@@ -6146,61 +6334,97 @@ class GetZPAServiceEdgeGroupServiceEdgeResult(dict):
     @property
     @pulumi.getter
     def platform(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "platform")
 
     @property
     @pulumi.getter(name="previousVersion")
     def previous_version(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "previous_version")
 
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="provisioningKeyId")
     def provisioning_key_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "provisioning_key_id")
 
     @property
     @pulumi.getter(name="provisioningKeyName")
     def provisioning_key_name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "provisioning_key_name")
 
     @property
     @pulumi.getter(name="publicIp")
     def public_ip(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "public_ip")
 
     @property
     @pulumi.getter(name="publishIps")
     def publish_ips(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "publish_ips")
 
     @property
     @pulumi.getter(name="sargeVersion")
     def sarge_version(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "sarge_version")
 
     @property
     @pulumi.getter(name="serviceEdgeGroupId")
     def service_edge_group_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "service_edge_group_id")
 
     @property
     @pulumi.getter(name="serviceEdgeGroupName")
     def service_edge_group_name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "service_edge_group_name")
 
     @property
     @pulumi.getter(name="upgradeAttempt")
     def upgrade_attempt(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "upgrade_attempt")
 
     @property
     @pulumi.getter(name="upgradeStatus")
     def upgrade_status(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "upgrade_status")
 
 
@@ -6218,9 +6442,13 @@ class GetZPAServiceEdgeGroupTrustedNetworkResult(dict):
                  zscaler_cloud: str):
         """
         :param str creation_time: (string)
+        :param str domain: (string)
         :param str id: The ID of the service edge group to be exported.
+        :param str master_customer_id: (string)
         :param str modified_time: (string)
         :param str name: The name of the service edge group to be exported.
+        :param str network_id: (string)
+        :param str zscaler_cloud: (string)
         """
         pulumi.set(__self__, "creation_time", creation_time)
         pulumi.set(__self__, "domain", domain)
@@ -6243,6 +6471,9 @@ class GetZPAServiceEdgeGroupTrustedNetworkResult(dict):
     @property
     @pulumi.getter
     def domain(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "domain")
 
     @property
@@ -6256,6 +6487,9 @@ class GetZPAServiceEdgeGroupTrustedNetworkResult(dict):
     @property
     @pulumi.getter(name="masterCustomerId")
     def master_customer_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "master_customer_id")
 
     @property
@@ -6282,11 +6516,17 @@ class GetZPAServiceEdgeGroupTrustedNetworkResult(dict):
     @property
     @pulumi.getter(name="networkId")
     def network_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "network_id")
 
     @property
     @pulumi.getter(name="zscalerCloud")
     def zscaler_cloud(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "zscaler_cloud")
 
 

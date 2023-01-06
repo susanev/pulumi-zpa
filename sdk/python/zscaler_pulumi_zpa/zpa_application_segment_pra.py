@@ -47,8 +47,8 @@ class ZPAApplicationSegmentPRAArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] domain_names: List of domains and IPs.
         :param pulumi.Input[bool] double_encrypt: (Optional) Whether Double Encryption is enabled or disabled for the app.
         :param pulumi.Input[bool] enabled: Whether this application is enabled or not
+        :param pulumi.Input[str] health_check_type: (Optional)
         :param pulumi.Input[str] health_reporting: (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-               * `health_check_type` (Optional)
         :param pulumi.Input[str] icmp_access_type: (Optional)
         :param pulumi.Input[bool] ip_anchored: (Optional)
         :param pulumi.Input[bool] is_cname_enabled: (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
@@ -206,6 +206,9 @@ class ZPAApplicationSegmentPRAArgs:
     @property
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "health_check_type")
 
     @health_check_type.setter
@@ -217,7 +220,6 @@ class ZPAApplicationSegmentPRAArgs:
     def health_reporting(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-        * `health_check_type` (Optional)
         """
         return pulumi.get(self, "health_reporting")
 
@@ -351,8 +353,8 @@ class _ZPAApplicationSegmentPRAState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] domain_names: List of domains and IPs.
         :param pulumi.Input[bool] double_encrypt: (Optional) Whether Double Encryption is enabled or disabled for the app.
         :param pulumi.Input[bool] enabled: Whether this application is enabled or not
+        :param pulumi.Input[str] health_check_type: (Optional)
         :param pulumi.Input[str] health_reporting: (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-               * `health_check_type` (Optional)
         :param pulumi.Input[str] icmp_access_type: (Optional)
         :param pulumi.Input[bool] ip_anchored: (Optional)
         :param pulumi.Input[bool] is_cname_enabled: (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
@@ -490,6 +492,9 @@ class _ZPAApplicationSegmentPRAState:
     @property
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "health_check_type")
 
     @health_check_type.setter
@@ -501,7 +506,6 @@ class _ZPAApplicationSegmentPRAState:
     def health_reporting(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-        * `health_check_type` (Optional)
         """
         return pulumi.get(self, "health_reporting")
 
@@ -728,8 +732,8 @@ class ZPAApplicationSegmentPRA(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] domain_names: List of domains and IPs.
         :param pulumi.Input[bool] double_encrypt: (Optional) Whether Double Encryption is enabled or disabled for the app.
         :param pulumi.Input[bool] enabled: Whether this application is enabled or not
+        :param pulumi.Input[str] health_check_type: (Optional)
         :param pulumi.Input[str] health_reporting: (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-               * `health_check_type` (Optional)
         :param pulumi.Input[str] icmp_access_type: (Optional)
         :param pulumi.Input[bool] ip_anchored: (Optional)
         :param pulumi.Input[bool] is_cname_enabled: (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
@@ -922,8 +926,8 @@ class ZPAApplicationSegmentPRA(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] domain_names: List of domains and IPs.
         :param pulumi.Input[bool] double_encrypt: (Optional) Whether Double Encryption is enabled or disabled for the app.
         :param pulumi.Input[bool] enabled: Whether this application is enabled or not
+        :param pulumi.Input[str] health_check_type: (Optional)
         :param pulumi.Input[str] health_reporting: (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-               * `health_check_type` (Optional)
         :param pulumi.Input[str] icmp_access_type: (Optional)
         :param pulumi.Input[bool] ip_anchored: (Optional)
         :param pulumi.Input[bool] is_cname_enabled: (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
@@ -1019,6 +1023,9 @@ class ZPAApplicationSegmentPRA(pulumi.CustomResource):
     @property
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "health_check_type")
 
     @property
@@ -1026,7 +1033,6 @@ class ZPAApplicationSegmentPRA(pulumi.CustomResource):
     def health_reporting(self) -> pulumi.Output[Optional[str]]:
         """
         (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-        * `health_check_type` (Optional)
         """
         return pulumi.get(self, "health_reporting")
 

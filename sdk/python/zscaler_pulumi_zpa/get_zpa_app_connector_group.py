@@ -134,6 +134,9 @@ class GetZPAAppConnectorGroupResult:
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (String) Description of the App Connector Group.
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -141,9 +144,6 @@ class GetZPAAppConnectorGroupResult:
     def dns_query_type(self) -> str:
         """
         (String)
-        * ``0`` = ``Default``
-        * ``1`` = ``Previous Default``
-        * ``2`` = ``New Release``
         """
         return pulumi.get(self, "dns_query_type")
 
@@ -267,9 +267,6 @@ class GetZPAAppConnectorGroupResult:
         """
         (String) ID of the version profile.
         Exported values are:
-        * ``0`` = ``Default``
-        * ``1`` = ``Previous Default``
-        * ``2`` = ``New Release``
         """
         return pulumi.get(self, "version_profile_id")
 
@@ -279,9 +276,6 @@ class GetZPAAppConnectorGroupResult:
         """
         (String)
         Exported values are:
-        * ``Default`` = ``0``
-        * ``Previous Default`` = ``1``
-        * ``New Release`` = ``2``
         """
         return pulumi.get(self, "version_profile_name")
 
@@ -291,9 +285,6 @@ class GetZPAAppConnectorGroupResult:
         """
         (String)
         Exported values are:
-        * ``"IPV4_IPV6"``
-        * ``"IPV4"``
-        * ``"IPV6``
         """
         return pulumi.get(self, "version_profile_visibility_scope")
 

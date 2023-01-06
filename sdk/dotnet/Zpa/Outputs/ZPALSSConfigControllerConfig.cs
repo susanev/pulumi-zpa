@@ -35,7 +35,7 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// </summary>
         public readonly string Format;
         /// <summary>
-        /// - App Connector Group ID(s) where logs will be forwarded to.
+        /// App Connector Group ID(s) where logs will be forwarded to.
         /// </summary>
         public readonly string? Id;
         /// <summary>

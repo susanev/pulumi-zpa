@@ -62,7 +62,6 @@ import (
 //
 // ```
 func GetZPAEnrollmentCert(ctx *pulumi.Context, args *GetZPAEnrollmentCertArgs, opts ...pulumi.InvokeOption) (*GetZPAEnrollmentCertResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAEnrollmentCertResult
 	err := ctx.Invoke("zpa:index/getZPAEnrollmentCert:getZPAEnrollmentCert", args, &rv, opts...)
 	if err != nil {
@@ -86,9 +85,6 @@ type GetZPAEnrollmentCertResult struct {
 	// (string) The certificate text is in PEM format.
 	Certificate string `pulumi:"certificate"`
 	// (string) Returned values are:
-	// * `ZAPP_CLIENT`
-	// * `ISOLATION_CLIENT`
-	// * `NONE`
 	ClientCertType string `pulumi:"clientCertType"`
 	// (string)
 	Cname string `pulumi:"cname"`
@@ -174,9 +170,6 @@ func (o GetZPAEnrollmentCertResultOutput) Certificate() pulumi.StringOutput {
 }
 
 // (string) Returned values are:
-// * `ZAPP_CLIENT`
-// * `ISOLATION_CLIENT`
-// * `NONE`
 func (o GetZPAEnrollmentCertResultOutput) ClientCertType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAEnrollmentCertResult) string { return v.ClientCertType }).(pulumi.StringOutput)
 }

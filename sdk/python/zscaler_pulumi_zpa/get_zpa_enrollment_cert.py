@@ -110,9 +110,6 @@ class GetZPAEnrollmentCertResult:
     def client_cert_type(self) -> str:
         """
         (string) Returned values are:
-        * `ZAPP_CLIENT`
-        * `ISOLATION_CLIENT`
-        * `NONE`
         """
         return pulumi.get(self, "client_cert_type")
 

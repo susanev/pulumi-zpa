@@ -18,10 +18,25 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// (Optional) The ID of a server group resource
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly string? IdpId;
+        /// <summary>
+        /// (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+        /// </summary>
         public readonly string Lhs;
+        /// <summary>
+        /// (Optional)
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+        /// </summary>
         public readonly string ObjectType;
+        /// <summary>
+        /// (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+        /// </summary>
         public readonly string? Rhs;
         public readonly ImmutableArray<string> RhsLists;
 

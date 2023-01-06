@@ -142,13 +142,37 @@ namespace zscaler.PulumiPackage.Zpa
     [OutputType]
     public sealed class GetZPAMachineGroupResult
     {
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string CreationTime;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAMachineGroupMachineResult> Machines;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedBy;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedTime;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string? Name;
 
         [OutputConstructor]

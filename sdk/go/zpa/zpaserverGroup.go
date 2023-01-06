@@ -162,17 +162,16 @@ type ZPAServerGroup struct {
 	// This field is a json array of app-connector-id only.
 	Applications ZPAServerGroupApplicationArrayOutput `pulumi:"applications"`
 	ConfigSpace  pulumi.StringPtrOutput               `pulumi:"configSpace"`
-	// This field is the description of the server group.
+	// (Optional) This field is the description of the server group.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// This field controls dynamic discovery of the servers.
+	// (Optional) This field controls dynamic discovery of the servers.
 	DynamicDiscovery pulumi.BoolPtrOutput `pulumi:"dynamicDiscovery"`
-	// This field defines if the server group is enabled or disabled.
+	// (Optional) This field defines if the server group is enabled or disabled.
 	Enabled    pulumi.BoolPtrOutput `pulumi:"enabled"`
 	IpAnchored pulumi.BoolPtrOutput `pulumi:"ipAnchored"`
 	// This field defines the name of the server group.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-	// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+	// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
 	Servers ZPAServerGroupServerArrayOutput `pulumi:"servers"`
 }
 
@@ -183,7 +182,6 @@ func NewZPAServerGroup(ctx *pulumi.Context,
 		args = &ZPAServerGroupArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAServerGroup
 	err := ctx.RegisterResource("zpa:index/zPAServerGroup:ZPAServerGroup", name, args, &resource, opts...)
 	if err != nil {
@@ -211,17 +209,16 @@ type zpaserverGroupState struct {
 	// This field is a json array of app-connector-id only.
 	Applications []ZPAServerGroupApplication `pulumi:"applications"`
 	ConfigSpace  *string                     `pulumi:"configSpace"`
-	// This field is the description of the server group.
+	// (Optional) This field is the description of the server group.
 	Description *string `pulumi:"description"`
-	// This field controls dynamic discovery of the servers.
+	// (Optional) This field controls dynamic discovery of the servers.
 	DynamicDiscovery *bool `pulumi:"dynamicDiscovery"`
-	// This field defines if the server group is enabled or disabled.
+	// (Optional) This field defines if the server group is enabled or disabled.
 	Enabled    *bool `pulumi:"enabled"`
 	IpAnchored *bool `pulumi:"ipAnchored"`
 	// This field defines the name of the server group.
 	Name *string `pulumi:"name"`
-	// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-	// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+	// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
 	Servers []ZPAServerGroupServer `pulumi:"servers"`
 }
 
@@ -231,17 +228,16 @@ type ZPAServerGroupState struct {
 	// This field is a json array of app-connector-id only.
 	Applications ZPAServerGroupApplicationArrayInput
 	ConfigSpace  pulumi.StringPtrInput
-	// This field is the description of the server group.
+	// (Optional) This field is the description of the server group.
 	Description pulumi.StringPtrInput
-	// This field controls dynamic discovery of the servers.
+	// (Optional) This field controls dynamic discovery of the servers.
 	DynamicDiscovery pulumi.BoolPtrInput
-	// This field defines if the server group is enabled or disabled.
+	// (Optional) This field defines if the server group is enabled or disabled.
 	Enabled    pulumi.BoolPtrInput
 	IpAnchored pulumi.BoolPtrInput
 	// This field defines the name of the server group.
 	Name pulumi.StringPtrInput
-	// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-	// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+	// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
 	Servers ZPAServerGroupServerArrayInput
 }
 
@@ -255,17 +251,16 @@ type zpaserverGroupArgs struct {
 	// This field is a json array of app-connector-id only.
 	Applications []ZPAServerGroupApplication `pulumi:"applications"`
 	ConfigSpace  *string                     `pulumi:"configSpace"`
-	// This field is the description of the server group.
+	// (Optional) This field is the description of the server group.
 	Description *string `pulumi:"description"`
-	// This field controls dynamic discovery of the servers.
+	// (Optional) This field controls dynamic discovery of the servers.
 	DynamicDiscovery *bool `pulumi:"dynamicDiscovery"`
-	// This field defines if the server group is enabled or disabled.
+	// (Optional) This field defines if the server group is enabled or disabled.
 	Enabled    *bool `pulumi:"enabled"`
 	IpAnchored *bool `pulumi:"ipAnchored"`
 	// This field defines the name of the server group.
 	Name *string `pulumi:"name"`
-	// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-	// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+	// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
 	Servers []ZPAServerGroupServer `pulumi:"servers"`
 }
 
@@ -276,17 +271,16 @@ type ZPAServerGroupArgs struct {
 	// This field is a json array of app-connector-id only.
 	Applications ZPAServerGroupApplicationArrayInput
 	ConfigSpace  pulumi.StringPtrInput
-	// This field is the description of the server group.
+	// (Optional) This field is the description of the server group.
 	Description pulumi.StringPtrInput
-	// This field controls dynamic discovery of the servers.
+	// (Optional) This field controls dynamic discovery of the servers.
 	DynamicDiscovery pulumi.BoolPtrInput
-	// This field defines if the server group is enabled or disabled.
+	// (Optional) This field defines if the server group is enabled or disabled.
 	Enabled    pulumi.BoolPtrInput
 	IpAnchored pulumi.BoolPtrInput
 	// This field defines the name of the server group.
 	Name pulumi.StringPtrInput
-	// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-	// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+	// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
 	Servers ZPAServerGroupServerArrayInput
 }
 
@@ -391,17 +385,17 @@ func (o ZPAServerGroupOutput) ConfigSpace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAServerGroup) pulumi.StringPtrOutput { return v.ConfigSpace }).(pulumi.StringPtrOutput)
 }
 
-// This field is the description of the server group.
+// (Optional) This field is the description of the server group.
 func (o ZPAServerGroupOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAServerGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// This field controls dynamic discovery of the servers.
+// (Optional) This field controls dynamic discovery of the servers.
 func (o ZPAServerGroupOutput) DynamicDiscovery() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPAServerGroup) pulumi.BoolPtrOutput { return v.DynamicDiscovery }).(pulumi.BoolPtrOutput)
 }
 
-// This field defines if the server group is enabled or disabled.
+// (Optional) This field defines if the server group is enabled or disabled.
 func (o ZPAServerGroupOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPAServerGroup) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
@@ -415,8 +409,7 @@ func (o ZPAServerGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ZPAServerGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-// only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+// (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
 func (o ZPAServerGroupOutput) Servers() ZPAServerGroupServerArrayOutput {
 	return o.ApplyT(func(v *ZPAServerGroup) ZPAServerGroupServerArrayOutput { return v.Servers }).(ZPAServerGroupServerArrayOutput)
 }

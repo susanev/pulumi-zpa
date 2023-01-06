@@ -86,14 +86,6 @@ namespace zscaler.PulumiPackage.Zpa
     {
         /// <summary>
         /// (string) The ID of the IdP corresponding to the SAML attribute.
-        /// * `modified_by`(string)
-        /// * `modified_time` (string)
-        /// * `multivalued` (bool)
-        /// * `mutability` (string)
-        /// * `required` (bool)
-        /// * `returned` (string)
-        /// * `schema_uri` (string)
-        /// * `uniqueness` (bool)
         /// </summary>
         [Input("idpId")]
         public string? IdpId { get; set; }
@@ -120,14 +112,6 @@ namespace zscaler.PulumiPackage.Zpa
     {
         /// <summary>
         /// (string) The ID of the IdP corresponding to the SAML attribute.
-        /// * `modified_by`(string)
-        /// * `modified_time` (string)
-        /// * `multivalued` (bool)
-        /// * `mutability` (string)
-        /// * `required` (bool)
-        /// * `returned` (string)
-        /// * `schema_uri` (string)
-        /// * `uniqueness` (bool)
         /// </summary>
         [Input("idpId")]
         public Input<string>? IdpId { get; set; }
@@ -180,25 +164,38 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly string Id;
         /// <summary>
         /// (string) The ID of the IdP corresponding to the SAML attribute.
-        /// * `modified_by`(string)
-        /// * `modified_time` (string)
-        /// * `multivalued` (bool)
-        /// * `mutability` (string)
-        /// * `required` (bool)
-        /// * `returned` (string)
-        /// * `schema_uri` (string)
-        /// * `uniqueness` (bool)
         /// </summary>
         public readonly string? IdpId;
         public readonly string? IdpName;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool Multivalued;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Mutability;
         public readonly string? Name;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool Required;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Returned;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string SchemaUri;
+        /// <summary>
+        /// (bool)
+        /// </summary>
         public readonly bool Uniqueness;
         public readonly ImmutableArray<string> Values;
 

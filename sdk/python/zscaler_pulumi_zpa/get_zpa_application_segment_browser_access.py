@@ -107,7 +107,7 @@ class GetZPAApplicationSegmentBrowserAccessResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        (string) Description of the application.
+        (string)
         """
         return pulumi.get(self, "description")
 
@@ -131,7 +131,7 @@ class GetZPAApplicationSegmentBrowserAccessResult:
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+        (bool)
         """
         return pulumi.get(self, "enabled")
 

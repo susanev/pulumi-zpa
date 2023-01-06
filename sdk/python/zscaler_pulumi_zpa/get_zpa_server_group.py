@@ -66,6 +66,9 @@ class GetZPAServerGroupResult:
     @property
     @pulumi.getter(name="appConnectorGroups")
     def app_connector_groups(self) -> Sequence['outputs.GetZPAServerGroupAppConnectorGroupResult']:
+        """
+        (string)This field is a json array of app-connector-id only.
+        """
         return pulumi.get(self, "app_connector_groups")
 
     @property
@@ -120,7 +123,6 @@ class GetZPAServerGroupResult:
     def ip_anchored(self) -> bool:
         """
         (bool)
-        * `app_connector_groups` (string)This field is a json array of app-connector-id only.
         """
         return pulumi.get(self, "ip_anchored")
 

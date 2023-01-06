@@ -53,7 +53,7 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - App Connector Group ID(s) where logs will be forwarded to.
+        /// App Connector Group ID(s) where logs will be forwarded to.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -67,6 +67,9 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// (Optional) - Supported values are: `AND` or `OR`
+        /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 

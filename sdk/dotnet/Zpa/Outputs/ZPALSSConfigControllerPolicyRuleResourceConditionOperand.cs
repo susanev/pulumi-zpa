@@ -14,7 +14,13 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     [OutputType]
     public sealed class ZPALSSConfigControllerPolicyRuleResourceConditionOperand
     {
+        /// <summary>
+        /// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+        /// </summary>
         public readonly string ObjectType;
+        /// <summary>
+        /// (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

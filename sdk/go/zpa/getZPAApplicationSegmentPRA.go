@@ -62,7 +62,6 @@ import (
 //
 // ```
 func LookupZPAApplicationSegmentPRA(ctx *pulumi.Context, args *LookupZPAApplicationSegmentPRAArgs, opts ...pulumi.InvokeOption) (*LookupZPAApplicationSegmentPRAResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAApplicationSegmentPRAResult
 	err := ctx.Invoke("zpa:index/getZPAApplicationSegmentPRA:getZPAApplicationSegmentPRA", args, &rv, opts...)
 	if err != nil {
@@ -99,10 +98,10 @@ type LookupZPAApplicationSegmentPRAResult struct {
 	// (bool) Whether Double Encryption is enabled or disabled for the app.
 	DoubleEncrypt bool `pulumi:"doubleEncrypt"`
 	// (bool) Whether this application is enabled or not
-	Enabled         bool   `pulumi:"enabled"`
+	Enabled bool `pulumi:"enabled"`
+	// (string)
 	HealthCheckType string `pulumi:"healthCheckType"`
 	// (string) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-	// * `healthCheckType` (string)
 	HealthReporting string  `pulumi:"healthReporting"`
 	Id              *string `pulumi:"id"`
 	// (bool)
@@ -207,12 +206,12 @@ func (o LookupZPAApplicationSegmentPRAResultOutput) Enabled() pulumi.BoolOutput 
 	return o.ApplyT(func(v LookupZPAApplicationSegmentPRAResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o LookupZPAApplicationSegmentPRAResultOutput) HealthCheckType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAApplicationSegmentPRAResult) string { return v.HealthCheckType }).(pulumi.StringOutput)
 }
 
 // (string) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
-// * `healthCheckType` (string)
 func (o LookupZPAApplicationSegmentPRAResultOutput) HealthReporting() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZPAApplicationSegmentPRAResult) string { return v.HealthReporting }).(pulumi.StringOutput)
 }

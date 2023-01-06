@@ -16,9 +16,6 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     {
         /// <summary>
         /// (string)
-        /// * `PASS`
-        /// * `BLOCK`
-        /// * `REDIRECT`
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -27,8 +24,6 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         public readonly string ActionValue;
         /// <summary>
         /// (string)
-        /// * `id`- (string)
-        /// * `name`- (string)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameResult> AssociatedInspectionProfileNames;
         /// <summary>
@@ -49,9 +44,6 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         public readonly string CreationTime;
         /// <summary>
         /// (string)
-        /// * `PASS`
-        /// * `BLOCK`
-        /// * `REDIRECT`
         /// </summary>
         public readonly string DefaultAction;
         /// <summary>
@@ -71,6 +63,9 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Name;
         /// <summary>
         /// (string)
@@ -78,10 +73,6 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         public readonly string ParanoiaLevel;
         /// <summary>
         /// (string)
-        /// * `CRITICAL`
-        /// * `ERROR`
-        /// * `WARNING`
-        /// * `INFO`
         /// </summary>
         public readonly string Severity;
         /// <summary>

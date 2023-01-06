@@ -73,6 +73,9 @@ export interface GetZPAServiceEdgeGroupResult {
      * (string)
      */
     readonly creationTime: string;
+    /**
+     * (string) Description of the Service Edge Group.
+     */
     readonly description: string;
     /**
      * (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
@@ -82,21 +85,24 @@ export interface GetZPAServiceEdgeGroupResult {
      * (string)
      */
     readonly geoLocationId: string;
+    /**
+     * (string)
+     */
     readonly id: string;
     /**
      * (string)
      */
     readonly isPublic: string;
     /**
-     * (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+     * (string)
      */
     readonly latitude: string;
     /**
-     * (string) Location of the Service Edge Group.
+     * (string)
      */
     readonly location: string;
     /**
-     * (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+     * (string)
      */
     readonly longitude: string;
     /**
@@ -104,6 +110,9 @@ export interface GetZPAServiceEdgeGroupResult {
      */
     readonly modifiedTime: string;
     readonly modifiedby: string;
+    /**
+     * (string)
+     */
     readonly name: string;
     /**
      * (bool) Whether the default version profile of the App Connector Group is applied or overridden. Default: `false` Supported values: `true`, `false`
@@ -111,54 +120,10 @@ export interface GetZPAServiceEdgeGroupResult {
     readonly overrideVersionProfile: boolean;
     /**
      * (string)
-     * * `name` (string)
-     * * `applicationStartTime` (string)
-     * * `serviceEdgeGroupId` (string)
-     * * `serviceEdgeGroupName` (string)
-     * * `controlChannelStatus` (string)
-     * * `creationTime` (string)
-     * * `modifiedBy` (string)
-     * * `modifiedTime` (string)
-     * * `ctrlBrokerName` (string)
-     * * `currentVersion` (string)
-     * * `expectedUpgradeTime` (string)
-     * * `expectedVersion` (string)
-     * * `figerprint` (string)
-     * * `ipAcl` (string)
-     * * `issuedCertId` (string)
-     * * `lastBrokerConnectTime` (string)
-     * * `lastBrokerConnectTimeDuration` (string)
-     * * `lastBrokerDisconnectTime` (string)
-     * * `lastBrokerDisconnectTimeDuration` (string)
-     * * `lastUpgradeTime` (string)
-     * * `latitude` (string)
-     * * `listenIps` (string)
-     * * `location` (string)
-     * * `longitude` (string)
-     * * `provisioningKeyId` (string)
-     * * `provisioningKeyName` (string)
-     * * `platform` (string)
-     * * `previousVersion` (string)
-     * * `privateIp` (string)
-     * * `publicIp` (string)
-     * * `publishIps` (string)
-     * * `sargeVersion` (string)
-     * * `enrollmentCert` (string)
-     * * `upgradeAttempt` (string)
-     * * `upgradeStatus` (string)
      */
     readonly serviceEdges: outputs.GetZPAServiceEdgeGroupServiceEdge[];
     /**
      * (string)
-     * * `creationTime` (string)
-     * * `domain` (string)
-     * * `id` (string)
-     * * `masterCustomerId` (string)
-     * * `modifiedBy` (string)
-     * * `modifiedTime` (string)
-     * * `name` (string)
-     * * `networkId` (string)
-     * * `zscalerCloud` (string)
      */
     readonly trustedNetworks: outputs.GetZPAServiceEdgeGroupTrustedNetwork[];
     /**
@@ -172,25 +137,16 @@ export interface GetZPAServiceEdgeGroupResult {
     /**
      * (String) ID of the version profile.
      * Exported values are:
-     * * ``0`` = ``Default``
-     * * ``1`` = ``Previous Default``
-     * * ``2`` = ``New Release``
      */
     readonly versionProfileId: string;
     /**
      * (String)
      * Exported values are:
-     * * ``Default`` = ``0``
-     * * ``Previous Default`` = ``1``
-     * * ``New Release`` = ``2``
      */
     readonly versionProfileName: string;
     /**
      * (string)
      * Exported values are:
-     * * ``ALL``
-     * * ``NONE``
-     * * ``CUSTOM``
      */
     readonly versionProfileVisibilityScope: string;
 }

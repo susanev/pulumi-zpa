@@ -79,7 +79,7 @@ export interface GetZPAApplicationSegmentBrowserAccessResult {
      */
     readonly configSpace: string;
     /**
-     * (string) Description of the application.
+     * (string)
      */
     readonly description: string;
     /**
@@ -91,7 +91,7 @@ export interface GetZPAApplicationSegmentBrowserAccessResult {
      */
     readonly doubleEncrypt: boolean;
     /**
-     * (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+     * (bool)
      */
     readonly enabled: boolean;
     readonly healthCheckType: string;

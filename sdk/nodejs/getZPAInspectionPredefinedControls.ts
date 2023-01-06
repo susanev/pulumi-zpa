@@ -65,8 +65,6 @@ export interface GetZPAInspectionPredefinedControlsResult {
     readonly actionValue: string;
     /**
      * (Computed)
-     * * `id`- (Computed)
-     * * `name`- (Computed)
      */
     readonly associatedInspectionProfileNames: outputs.GetZPAInspectionPredefinedControlsAssociatedInspectionProfileName[];
     /**
@@ -106,6 +104,9 @@ export interface GetZPAInspectionPredefinedControlsResult {
      */
     readonly modifiedTime: string;
     readonly modifiedby: string;
+    /**
+     * (Computed)
+     */
     readonly name: string;
     /**
      * (Computed)

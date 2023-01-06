@@ -68,7 +68,6 @@ import (
 //
 // ```
 func GetZPAIdPController(ctx *pulumi.Context, args *GetZPAIdPControllerArgs, opts ...pulumi.InvokeOption) (*GetZPAIdPControllerResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAIdPControllerResult
 	err := ctx.Invoke("zpa:index/getZPAIdPController:getZPAIdPController", args, &rv, opts...)
 	if err != nil {
@@ -87,32 +86,53 @@ type GetZPAIdPControllerArgs struct {
 
 // A collection of values returned by getZPAIdPController.
 type GetZPAIdPControllerResult struct {
-	AdminMetadatas              []GetZPAIdPControllerAdminMetadata `pulumi:"adminMetadatas"`
-	AdminSpSigningCertId        string                             `pulumi:"adminSpSigningCertId"`
-	AutoProvision               string                             `pulumi:"autoProvision"`
-	CreationTime                string                             `pulumi:"creationTime"`
-	Description                 string                             `pulumi:"description"`
-	DisableSamlBasedPolicy      bool                               `pulumi:"disableSamlBasedPolicy"`
-	DomainLists                 []string                           `pulumi:"domainLists"`
-	EnableScimBasedPolicy       bool                               `pulumi:"enableScimBasedPolicy"`
-	Enabled                     bool                               `pulumi:"enabled"`
-	Id                          string                             `pulumi:"id"`
-	IdpEntityId                 string                             `pulumi:"idpEntityId"`
-	LoginNameAttribute          string                             `pulumi:"loginNameAttribute"`
-	LoginUrl                    string                             `pulumi:"loginUrl"`
-	ModifiedTime                string                             `pulumi:"modifiedTime"`
-	Modifiedby                  string                             `pulumi:"modifiedby"`
-	Name                        string                             `pulumi:"name"`
-	ReauthOnUserUpdate          bool                               `pulumi:"reauthOnUserUpdate"`
-	RedirectBinding             bool                               `pulumi:"redirectBinding"`
-	ScimEnabled                 bool                               `pulumi:"scimEnabled"`
-	ScimServiceProviderEndpoint string                             `pulumi:"scimServiceProviderEndpoint"`
-	ScimSharedSecretExists      bool                               `pulumi:"scimSharedSecretExists"`
-	SignSamlRequest             string                             `pulumi:"signSamlRequest"`
-	SsoTypes                    []string                           `pulumi:"ssoTypes"`
-	UseCustomSpMetadata         bool                               `pulumi:"useCustomSpMetadata"`
-	UserMetadatas               []GetZPAIdPControllerUserMetadata  `pulumi:"userMetadatas"`
-	UserSpSigningCertId         string                             `pulumi:"userSpSigningCertId"`
+	// (Computed)
+	AdminMetadatas       []GetZPAIdPControllerAdminMetadata `pulumi:"adminMetadatas"`
+	AdminSpSigningCertId string                             `pulumi:"adminSpSigningCertId"`
+	// (string)
+	AutoProvision string `pulumi:"autoProvision"`
+	// (string)
+	CreationTime string `pulumi:"creationTime"`
+	// (string)
+	Description string `pulumi:"description"`
+	// (bool)
+	DisableSamlBasedPolicy bool `pulumi:"disableSamlBasedPolicy"`
+	// (string)
+	DomainLists []string `pulumi:"domainLists"`
+	// (bool)
+	EnableScimBasedPolicy bool `pulumi:"enableScimBasedPolicy"`
+	// (bool) Default value if null is True
+	Enabled bool   `pulumi:"enabled"`
+	Id      string `pulumi:"id"`
+	// (string)
+	IdpEntityId string `pulumi:"idpEntityId"`
+	// (string)
+	LoginNameAttribute string `pulumi:"loginNameAttribute"`
+	// (string)
+	LoginUrl string `pulumi:"loginUrl"`
+	// (string)
+	ModifiedTime string `pulumi:"modifiedTime"`
+	Modifiedby   string `pulumi:"modifiedby"`
+	Name         string `pulumi:"name"`
+	// (bool)
+	ReauthOnUserUpdate bool `pulumi:"reauthOnUserUpdate"`
+	// (bool)
+	RedirectBinding bool `pulumi:"redirectBinding"`
+	// (bool)
+	ScimEnabled bool `pulumi:"scimEnabled"`
+	// (string)
+	ScimServiceProviderEndpoint string `pulumi:"scimServiceProviderEndpoint"`
+	// (bool)
+	ScimSharedSecretExists bool `pulumi:"scimSharedSecretExists"`
+	// (string)
+	SignSamlRequest string `pulumi:"signSamlRequest"`
+	// (string)
+	SsoTypes []string `pulumi:"ssoTypes"`
+	// (bool)
+	UseCustomSpMetadata bool `pulumi:"useCustomSpMetadata"`
+	// (Computed)
+	UserMetadatas       []GetZPAIdPControllerUserMetadata `pulumi:"userMetadatas"`
+	UserSpSigningCertId string                            `pulumi:"userSpSigningCertId"`
 }
 
 func GetZPAIdPControllerOutput(ctx *pulumi.Context, args GetZPAIdPControllerOutputArgs, opts ...pulumi.InvokeOption) GetZPAIdPControllerResultOutput {
@@ -155,6 +175,7 @@ func (o GetZPAIdPControllerResultOutput) ToGetZPAIdPControllerResultOutputWithCo
 	return o
 }
 
+// (Computed)
 func (o GetZPAIdPControllerResultOutput) AdminMetadatas() GetZPAIdPControllerAdminMetadataArrayOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) []GetZPAIdPControllerAdminMetadata { return v.AdminMetadatas }).(GetZPAIdPControllerAdminMetadataArrayOutput)
 }
@@ -163,30 +184,37 @@ func (o GetZPAIdPControllerResultOutput) AdminSpSigningCertId() pulumi.StringOut
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.AdminSpSigningCertId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) AutoProvision() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.AutoProvision }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) DisableSamlBasedPolicy() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.DisableSamlBasedPolicy }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) DomainLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) []string { return v.DomainLists }).(pulumi.StringArrayOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) EnableScimBasedPolicy() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.EnableScimBasedPolicy }).(pulumi.BoolOutput)
 }
 
+// (bool) Default value if null is True
 func (o GetZPAIdPControllerResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
@@ -195,18 +223,22 @@ func (o GetZPAIdPControllerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) IdpEntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.IdpEntityId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) LoginNameAttribute() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.LoginNameAttribute }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) LoginUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.LoginUrl }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) ModifiedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
@@ -219,38 +251,47 @@ func (o GetZPAIdPControllerResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) ReauthOnUserUpdate() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.ReauthOnUserUpdate }).(pulumi.BoolOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) RedirectBinding() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.RedirectBinding }).(pulumi.BoolOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) ScimEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.ScimEnabled }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) ScimServiceProviderEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.ScimServiceProviderEndpoint }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) ScimSharedSecretExists() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.ScimSharedSecretExists }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) SignSamlRequest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) string { return v.SignSamlRequest }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerResultOutput) SsoTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) []string { return v.SsoTypes }).(pulumi.StringArrayOutput)
 }
 
+// (bool)
 func (o GetZPAIdPControllerResultOutput) UseCustomSpMetadata() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) bool { return v.UseCustomSpMetadata }).(pulumi.BoolOutput)
 }
 
+// (Computed)
 func (o GetZPAIdPControllerResultOutput) UserMetadatas() GetZPAIdPControllerUserMetadataArrayOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerResult) []GetZPAIdPControllerUserMetadata { return v.UserMetadatas }).(GetZPAIdPControllerUserMetadataArrayOutput)
 }

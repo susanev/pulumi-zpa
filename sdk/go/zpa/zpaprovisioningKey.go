@@ -81,7 +81,6 @@ func NewZPAProvisioningKey(ctx *pulumi.Context,
 		"key",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAProvisioningKey
 	err := ctx.RegisterResource("zpa:index/zPAProvisioningKey:ZPAProvisioningKey", name, args, &resource, opts...)
 	if err != nil {

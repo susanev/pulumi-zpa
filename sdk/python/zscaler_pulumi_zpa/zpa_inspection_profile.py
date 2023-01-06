@@ -32,8 +32,6 @@ class ZPAInspectionProfileArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] common_global_override_actions_config: (Optional)
         :param pulumi.Input[Sequence[pulumi.Input['ZPAInspectionProfileControlsInfoArgs']]] controls_infos: (Optional) Types for custom controls
         :param pulumi.Input[Sequence[pulumi.Input['ZPAInspectionProfileCustomControlArgs']]] custom_controls: (Optional) Types for custom controls
-               * `type` (Optional) Types for custom controls
-               * `control_rule_json` (Optional) Custom controls string in JSON format
         :param pulumi.Input[str] description: Description of the inspection profile.
         :param pulumi.Input[str] name: The name of the inspection profile.
         :param pulumi.Input[str] paranoia_level: OWASP Predefined Paranoia Level. Range: [1-4], inclusive
@@ -100,8 +98,6 @@ class ZPAInspectionProfileArgs:
     def custom_controls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZPAInspectionProfileCustomControlArgs']]]]:
         """
         (Optional) Types for custom controls
-        * `type` (Optional) Types for custom controls
-        * `control_rule_json` (Optional) Custom controls string in JSON format
         """
         return pulumi.get(self, "custom_controls")
 
@@ -204,8 +200,6 @@ class _ZPAInspectionProfileState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] common_global_override_actions_config: (Optional)
         :param pulumi.Input[Sequence[pulumi.Input['ZPAInspectionProfileControlsInfoArgs']]] controls_infos: (Optional) Types for custom controls
         :param pulumi.Input[Sequence[pulumi.Input['ZPAInspectionProfileCustomControlArgs']]] custom_controls: (Optional) Types for custom controls
-               * `type` (Optional) Types for custom controls
-               * `control_rule_json` (Optional) Custom controls string in JSON format
         :param pulumi.Input[str] description: Description of the inspection profile.
         :param pulumi.Input[str] name: The name of the inspection profile.
         :param pulumi.Input[str] paranoia_level: OWASP Predefined Paranoia Level. Range: [1-4], inclusive
@@ -272,8 +266,6 @@ class _ZPAInspectionProfileState:
     def custom_controls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZPAInspectionProfileCustomControlArgs']]]]:
         """
         (Optional) Types for custom controls
-        * `type` (Optional) Types for custom controls
-        * `control_rule_json` (Optional) Custom controls string in JSON format
         """
         return pulumi.get(self, "custom_controls")
 
@@ -386,8 +378,6 @@ class ZPAInspectionProfile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] common_global_override_actions_config: (Optional)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAInspectionProfileControlsInfoArgs']]]] controls_infos: (Optional) Types for custom controls
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAInspectionProfileCustomControlArgs']]]] custom_controls: (Optional) Types for custom controls
-               * `type` (Optional) Types for custom controls
-               * `control_rule_json` (Optional) Custom controls string in JSON format
         :param pulumi.Input[str] description: Description of the inspection profile.
         :param pulumi.Input[str] name: The name of the inspection profile.
         :param pulumi.Input[str] paranoia_level: OWASP Predefined Paranoia Level. Range: [1-4], inclusive
@@ -483,8 +473,6 @@ class ZPAInspectionProfile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] common_global_override_actions_config: (Optional)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAInspectionProfileControlsInfoArgs']]]] controls_infos: (Optional) Types for custom controls
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAInspectionProfileCustomControlArgs']]]] custom_controls: (Optional) Types for custom controls
-               * `type` (Optional) Types for custom controls
-               * `control_rule_json` (Optional) Custom controls string in JSON format
         :param pulumi.Input[str] description: Description of the inspection profile.
         :param pulumi.Input[str] name: The name of the inspection profile.
         :param pulumi.Input[str] paranoia_level: OWASP Predefined Paranoia Level. Range: [1-4], inclusive
@@ -533,8 +521,6 @@ class ZPAInspectionProfile(pulumi.CustomResource):
     def custom_controls(self) -> pulumi.Output[Sequence['outputs.ZPAInspectionProfileCustomControl']]:
         """
         (Optional) Types for custom controls
-        * `type` (Optional) Types for custom controls
-        * `control_rule_json` (Optional) Custom controls string in JSON format
         """
         return pulumi.get(self, "custom_controls")
 

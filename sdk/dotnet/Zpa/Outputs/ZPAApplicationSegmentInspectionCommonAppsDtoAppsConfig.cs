@@ -29,7 +29,7 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// </summary>
         public readonly string? ApplicationProtocol;
         /// <summary>
-        /// - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+        /// ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
         /// </summary>
         public readonly string? CertificateId;
         public readonly string? CertificateName;

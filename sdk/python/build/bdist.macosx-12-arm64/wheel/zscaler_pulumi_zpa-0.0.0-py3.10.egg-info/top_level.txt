@@ -1,1 +1,0 @@
-zscaler_pulumi_zpa

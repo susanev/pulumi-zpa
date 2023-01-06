@@ -56,7 +56,6 @@ func NewZPAInspectionCustomControls(ctx *pulumi.Context,
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAInspectionCustomControls
 	err := ctx.RegisterResource("zpa:index/zPAInspectionCustomControls:ZPAInspectionCustomControls", name, args, &resource, opts...)
 	if err != nil {

@@ -1,5 +1,4 @@
 {
   "resource": true,
-  "name": "zpa",
-  "server": "github://api.github.com/zscaler"
+  "name": "zpa"
 }

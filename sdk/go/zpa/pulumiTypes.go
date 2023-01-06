@@ -11,25 +11,32 @@ import (
 )
 
 type ZPAApplicationSegmentBrowserAccessClientlessApp struct {
-	// - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+	// If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
 	AllowOptions *bool `pulumi:"allowOptions"`
-	// - Port for the BA app.
+	// Port for the BA app.
 	ApplicationPort string `pulumi:"applicationPort"`
-	// - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
-	ApplicationProtocol string  `pulumi:"applicationProtocol"`
-	CertificateId       string  `pulumi:"certificateId"`
-	Cname               *string `pulumi:"cname"`
-	Description         *string `pulumi:"description"`
-	// - Domain name or IP address of the BA app.
-	Domain      *string `pulumi:"domain"`
-	Enabled     *bool   `pulumi:"enabled"`
-	Hidden      *bool   `pulumi:"hidden"`
-	Id          *string `pulumi:"id"`
+	// Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+	ApplicationProtocol string `pulumi:"applicationProtocol"`
+	CertificateId       string `pulumi:"certificateId"`
+	// (Optional)
+	Cname *string `pulumi:"cname"`
+	// (Optional) Description of the application.
+	Description *string `pulumi:"description"`
+	// Domain name or IP address of the BA app.
+	Domain *string `pulumi:"domain"`
+	// (Optional) - Whether this app is enabled or not.
+	Enabled *bool `pulumi:"enabled"`
+	// (Optional)
+	Hidden *bool   `pulumi:"hidden"`
+	Id     *string `pulumi:"id"`
+	// (Optional)
 	LocalDomain *string `pulumi:"localDomain"`
-	// - Name of BA app.
-	Name               string  `pulumi:"name"`
-	Path               *string `pulumi:"path"`
-	TrustUntrustedCert *bool   `pulumi:"trustUntrustedCert"`
+	// Name of the application.
+	Name string `pulumi:"name"`
+	// (Optional)
+	Path *string `pulumi:"path"`
+	// (Optional)
+	TrustUntrustedCert *bool `pulumi:"trustUntrustedCert"`
 }
 
 // ZPAApplicationSegmentBrowserAccessClientlessAppInput is an input type that accepts ZPAApplicationSegmentBrowserAccessClientlessAppArgs and ZPAApplicationSegmentBrowserAccessClientlessAppOutput values.
@@ -44,25 +51,32 @@ type ZPAApplicationSegmentBrowserAccessClientlessAppInput interface {
 }
 
 type ZPAApplicationSegmentBrowserAccessClientlessAppArgs struct {
-	// - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+	// If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
 	AllowOptions pulumi.BoolPtrInput `pulumi:"allowOptions"`
-	// - Port for the BA app.
+	// Port for the BA app.
 	ApplicationPort pulumi.StringInput `pulumi:"applicationPort"`
-	// - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
-	ApplicationProtocol pulumi.StringInput    `pulumi:"applicationProtocol"`
-	CertificateId       pulumi.StringInput    `pulumi:"certificateId"`
-	Cname               pulumi.StringPtrInput `pulumi:"cname"`
-	Description         pulumi.StringPtrInput `pulumi:"description"`
-	// - Domain name or IP address of the BA app.
-	Domain      pulumi.StringPtrInput `pulumi:"domain"`
-	Enabled     pulumi.BoolPtrInput   `pulumi:"enabled"`
-	Hidden      pulumi.BoolPtrInput   `pulumi:"hidden"`
-	Id          pulumi.StringPtrInput `pulumi:"id"`
+	// Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+	ApplicationProtocol pulumi.StringInput `pulumi:"applicationProtocol"`
+	CertificateId       pulumi.StringInput `pulumi:"certificateId"`
+	// (Optional)
+	Cname pulumi.StringPtrInput `pulumi:"cname"`
+	// (Optional) Description of the application.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Domain name or IP address of the BA app.
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// (Optional) - Whether this app is enabled or not.
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// (Optional)
+	Hidden pulumi.BoolPtrInput   `pulumi:"hidden"`
+	Id     pulumi.StringPtrInput `pulumi:"id"`
+	// (Optional)
 	LocalDomain pulumi.StringPtrInput `pulumi:"localDomain"`
-	// - Name of BA app.
-	Name               pulumi.StringInput    `pulumi:"name"`
-	Path               pulumi.StringPtrInput `pulumi:"path"`
-	TrustUntrustedCert pulumi.BoolPtrInput   `pulumi:"trustUntrustedCert"`
+	// Name of the application.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Optional)
+	Path pulumi.StringPtrInput `pulumi:"path"`
+	// (Optional)
+	TrustUntrustedCert pulumi.BoolPtrInput `pulumi:"trustUntrustedCert"`
 }
 
 func (ZPAApplicationSegmentBrowserAccessClientlessAppArgs) ElementType() reflect.Type {
@@ -116,17 +130,17 @@ func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) ToZPAApplicationS
 	return o
 }
 
-// - If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+// If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) AllowOptions() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *bool { return v.AllowOptions }).(pulumi.BoolPtrOutput)
 }
 
-// - Port for the BA app.
+// Port for the BA app.
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) ApplicationPort() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.ApplicationPort }).(pulumi.StringOutput)
 }
 
-// - Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+// Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) ApplicationProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.ApplicationProtocol }).(pulumi.StringOutput)
 }
@@ -135,23 +149,27 @@ func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) CertificateId() p
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
+// (Optional)
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Cname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *string { return v.Cname }).(pulumi.StringPtrOutput)
 }
 
+// (Optional) Description of the application.
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// - Domain name or IP address of the BA app.
+// Domain name or IP address of the BA app.
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
+// (Optional) - Whether this app is enabled or not.
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
+// (Optional)
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Hidden() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *bool { return v.Hidden }).(pulumi.BoolPtrOutput)
 }
@@ -160,19 +178,22 @@ func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Id() pulumi.Strin
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// (Optional)
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) LocalDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *string { return v.LocalDomain }).(pulumi.StringPtrOutput)
 }
 
-// - Name of BA app.
+// Name of the application.
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (Optional)
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
+// (Optional)
 func (o ZPAApplicationSegmentBrowserAccessClientlessAppOutput) TrustUntrustedCert() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentBrowserAccessClientlessApp) *bool { return v.TrustUntrustedCert }).(pulumi.BoolPtrOutput)
 }
@@ -545,7 +566,7 @@ type ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig struct {
 	ApplicationPort *string `pulumi:"applicationPort"`
 	// Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
 	ApplicationProtocol *string `pulumi:"applicationProtocol"`
-	// - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+	// ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
 	CertificateId   *string `pulumi:"certificateId"`
 	CertificateName *string `pulumi:"certificateName"`
 	Cname           *string `pulumi:"cname"`
@@ -584,7 +605,7 @@ type ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfigArgs struct {
 	ApplicationPort pulumi.StringPtrInput `pulumi:"applicationPort"`
 	// Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
 	ApplicationProtocol pulumi.StringPtrInput `pulumi:"applicationProtocol"`
-	// - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+	// ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
 	CertificateId   pulumi.StringPtrInput `pulumi:"certificateId"`
 	CertificateName pulumi.StringPtrInput `pulumi:"certificateName"`
 	Cname           pulumi.StringPtrInput `pulumi:"cname"`
@@ -677,7 +698,7 @@ func (o ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfigOutput) Applicatio
 	return o.ApplyT(func(v ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig) *string { return v.ApplicationProtocol }).(pulumi.StringPtrOutput)
 }
 
-// - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+// ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
 func (o ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfigOutput) CertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentInspectionCommonAppsDtoAppsConfig) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
@@ -1099,7 +1120,7 @@ type ZPAApplicationSegmentPRACommonAppsDtoAppsConfig struct {
 	// Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
 	ApplicationProtocol *string `pulumi:"applicationProtocol"`
 	Cname               *string `pulumi:"cname"`
-	// - Parameter required when `applicationProtocol` is of type `RDP`
+	// Parameter required when `applicationProtocol` is of type `RDP`
 	ConnectionSecurity *string `pulumi:"connectionSecurity"`
 	// (Optional) Description of the application.
 	Description *string `pulumi:"description"`
@@ -1136,7 +1157,7 @@ type ZPAApplicationSegmentPRACommonAppsDtoAppsConfigArgs struct {
 	// Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
 	ApplicationProtocol pulumi.StringPtrInput `pulumi:"applicationProtocol"`
 	Cname               pulumi.StringPtrInput `pulumi:"cname"`
-	// - Parameter required when `applicationProtocol` is of type `RDP`
+	// Parameter required when `applicationProtocol` is of type `RDP`
 	ConnectionSecurity pulumi.StringPtrInput `pulumi:"connectionSecurity"`
 	// (Optional) Description of the application.
 	Description pulumi.StringPtrInput `pulumi:"description"`
@@ -1230,7 +1251,7 @@ func (o ZPAApplicationSegmentPRACommonAppsDtoAppsConfigOutput) Cname() pulumi.St
 	return o.ApplyT(func(v ZPAApplicationSegmentPRACommonAppsDtoAppsConfig) *string { return v.Cname }).(pulumi.StringPtrOutput)
 }
 
-// - Parameter required when `applicationProtocol` is of type `RDP`
+// Parameter required when `applicationProtocol` is of type `RDP`
 func (o ZPAApplicationSegmentPRACommonAppsDtoAppsConfigOutput) ConnectionSecurity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAApplicationSegmentPRACommonAppsDtoAppsConfig) *string { return v.ConnectionSecurity }).(pulumi.StringPtrOutput)
 }
@@ -2787,7 +2808,7 @@ type ZPALSSConfigControllerConfig struct {
 	Filters []string `pulumi:"filters"`
 	// The format of the LSS resource. The supported formats are: `JSON`, `CSV`, and `TSV`
 	Format string `pulumi:"format"`
-	// - App Connector Group ID(s) where logs will be forwarded to.
+	// App Connector Group ID(s) where logs will be forwarded to.
 	Id *string `pulumi:"id"`
 	// The IP or FQDN of the SIEM (Log Receiver) where logs will be forwarded to.
 	LssHost string `pulumi:"lssHost"`
@@ -2823,7 +2844,7 @@ type ZPALSSConfigControllerConfigArgs struct {
 	Filters pulumi.StringArrayInput `pulumi:"filters"`
 	// The format of the LSS resource. The supported formats are: `JSON`, `CSV`, and `TSV`
 	Format pulumi.StringInput `pulumi:"format"`
-	// - App Connector Group ID(s) where logs will be forwarded to.
+	// App Connector Group ID(s) where logs will be forwarded to.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP or FQDN of the SIEM (Log Receiver) where logs will be forwarded to.
 	LssHost pulumi.StringInput `pulumi:"lssHost"`
@@ -2939,7 +2960,7 @@ func (o ZPALSSConfigControllerConfigOutput) Format() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerConfig) string { return v.Format }).(pulumi.StringOutput)
 }
 
-// - App Connector Group ID(s) where logs will be forwarded to.
+// App Connector Group ID(s) where logs will be forwarded to.
 func (o ZPALSSConfigControllerConfigOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerConfig) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -3043,7 +3064,7 @@ func (o ZPALSSConfigControllerConfigPtrOutput) Format() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - App Connector Group ID(s) where logs will be forwarded to.
+// App Connector Group ID(s) where logs will be forwarded to.
 func (o ZPALSSConfigControllerConfigPtrOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPALSSConfigControllerConfig) *string {
 		if v == nil {
@@ -3104,7 +3125,7 @@ func (o ZPALSSConfigControllerConfigPtrOutput) UseTls() pulumi.BoolPtrOutput {
 }
 
 type ZPALSSConfigControllerConnectorGroup struct {
-	// - App Connector Group ID(s) where logs will be forwarded to.
+	// App Connector Group ID(s) where logs will be forwarded to.
 	Ids []string `pulumi:"ids"`
 }
 
@@ -3120,7 +3141,7 @@ type ZPALSSConfigControllerConnectorGroupInput interface {
 }
 
 type ZPALSSConfigControllerConnectorGroupArgs struct {
-	// - App Connector Group ID(s) where logs will be forwarded to.
+	// App Connector Group ID(s) where logs will be forwarded to.
 	Ids pulumi.StringArrayInput `pulumi:"ids"`
 }
 
@@ -3175,7 +3196,7 @@ func (o ZPALSSConfigControllerConnectorGroupOutput) ToZPALSSConfigControllerConn
 	return o
 }
 
-// - App Connector Group ID(s) where logs will be forwarded to.
+// App Connector Group ID(s) where logs will be forwarded to.
 func (o ZPALSSConfigControllerConnectorGroupOutput) Ids() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerConnectorGroup) []string { return v.Ids }).(pulumi.StringArrayOutput)
 }
@@ -3212,11 +3233,12 @@ type ZPALSSConfigControllerPolicyRuleResource struct {
 	DefaultRule *bool   `pulumi:"defaultRule"`
 	// (Optional)
 	Description *string `pulumi:"description"`
-	// - App Connector Group ID(s) where logs will be forwarded to.
+	// App Connector Group ID(s) where logs will be forwarded to.
 	Id             *string `pulumi:"id"`
 	LssDefaultRule *bool   `pulumi:"lssDefaultRule"`
 	// (Optional)
-	Name                   string  `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// (Optional) - Supported values are: `AND` or `OR`
 	Operator               *string `pulumi:"operator"`
 	PolicySetId            *string `pulumi:"policySetId"`
 	PolicyType             *string `pulumi:"policyType"`
@@ -3251,11 +3273,12 @@ type ZPALSSConfigControllerPolicyRuleResourceArgs struct {
 	DefaultRule pulumi.BoolPtrInput   `pulumi:"defaultRule"`
 	// (Optional)
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// - App Connector Group ID(s) where logs will be forwarded to.
+	// App Connector Group ID(s) where logs will be forwarded to.
 	Id             pulumi.StringPtrInput `pulumi:"id"`
 	LssDefaultRule pulumi.BoolPtrInput   `pulumi:"lssDefaultRule"`
 	// (Optional)
-	Name                   pulumi.StringInput    `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Optional) - Supported values are: `AND` or `OR`
 	Operator               pulumi.StringPtrInput `pulumi:"operator"`
 	PolicySetId            pulumi.StringPtrInput `pulumi:"policySetId"`
 	PolicyType             pulumi.StringPtrInput `pulumi:"policyType"`
@@ -3378,7 +3401,7 @@ func (o ZPALSSConfigControllerPolicyRuleResourceOutput) Description() pulumi.Str
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// - App Connector Group ID(s) where logs will be forwarded to.
+// App Connector Group ID(s) where logs will be forwarded to.
 func (o ZPALSSConfigControllerPolicyRuleResourceOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -3392,6 +3415,7 @@ func (o ZPALSSConfigControllerPolicyRuleResourceOutput) Name() pulumi.StringOutp
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResource) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (Optional) - Supported values are: `AND` or `OR`
 func (o ZPALSSConfigControllerPolicyRuleResourceOutput) Operator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResource) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
@@ -3519,7 +3543,7 @@ func (o ZPALSSConfigControllerPolicyRuleResourcePtrOutput) Description() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// - App Connector Group ID(s) where logs will be forwarded to.
+// App Connector Group ID(s) where logs will be forwarded to.
 func (o ZPALSSConfigControllerPolicyRuleResourcePtrOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPALSSConfigControllerPolicyRuleResource) *string {
 		if v == nil {
@@ -3548,6 +3572,7 @@ func (o ZPALSSConfigControllerPolicyRuleResourcePtrOutput) Name() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Optional) - Supported values are: `AND` or `OR`
 func (o ZPALSSConfigControllerPolicyRuleResourcePtrOutput) Operator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPALSSConfigControllerPolicyRuleResource) *string {
 		if v == nil {
@@ -3631,19 +3656,10 @@ func (o ZPALSSConfigControllerPolicyRuleResourcePtrOutput) ZpnInspectionProfileI
 
 type ZPALSSConfigControllerPolicyRuleResourceCondition struct {
 	// (Optional)
-	// * `operator` (Optional) - Supported values are: `AND` or `OR`
-	// * `operands`
-	// * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-	// * `values` (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
-	// - `zpnClientTypeExporter`
-	// - `zpnClientTypeBrowserIsolation`
-	// - `zpnClientTypeMachineTunnel`
-	// - `zpnClientTypeIpAnchoring`
-	// - `zpnClientTypeEdgeConnector`
-	// - `zpnClientTypeZapp`
 	Negated  *bool                                                      `pulumi:"negated"`
 	Operands []ZPALSSConfigControllerPolicyRuleResourceConditionOperand `pulumi:"operands"`
-	Operator string                                                     `pulumi:"operator"`
+	// (Optional) - Supported values are: `AND` or `OR`
+	Operator string `pulumi:"operator"`
 }
 
 // ZPALSSConfigControllerPolicyRuleResourceConditionInput is an input type that accepts ZPALSSConfigControllerPolicyRuleResourceConditionArgs and ZPALSSConfigControllerPolicyRuleResourceConditionOutput values.
@@ -3659,19 +3675,10 @@ type ZPALSSConfigControllerPolicyRuleResourceConditionInput interface {
 
 type ZPALSSConfigControllerPolicyRuleResourceConditionArgs struct {
 	// (Optional)
-	// * `operator` (Optional) - Supported values are: `AND` or `OR`
-	// * `operands`
-	// * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-	// * `values` (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
-	// - `zpnClientTypeExporter`
-	// - `zpnClientTypeBrowserIsolation`
-	// - `zpnClientTypeMachineTunnel`
-	// - `zpnClientTypeIpAnchoring`
-	// - `zpnClientTypeEdgeConnector`
-	// - `zpnClientTypeZapp`
 	Negated  pulumi.BoolPtrInput                                                `pulumi:"negated"`
 	Operands ZPALSSConfigControllerPolicyRuleResourceConditionOperandArrayInput `pulumi:"operands"`
-	Operator pulumi.StringInput                                                 `pulumi:"operator"`
+	// (Optional) - Supported values are: `AND` or `OR`
+	Operator pulumi.StringInput `pulumi:"operator"`
 }
 
 func (ZPALSSConfigControllerPolicyRuleResourceConditionArgs) ElementType() reflect.Type {
@@ -3726,16 +3733,6 @@ func (o ZPALSSConfigControllerPolicyRuleResourceConditionOutput) ToZPALSSConfigC
 }
 
 // (Optional)
-// * `operator` (Optional) - Supported values are: `AND` or `OR`
-// * `operands`
-// * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-// * `values` (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
-// - `zpnClientTypeExporter`
-// - `zpnClientTypeBrowserIsolation`
-// - `zpnClientTypeMachineTunnel`
-// - `zpnClientTypeIpAnchoring`
-// - `zpnClientTypeEdgeConnector`
-// - `zpnClientTypeZapp`
 func (o ZPALSSConfigControllerPolicyRuleResourceConditionOutput) Negated() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResourceCondition) *bool { return v.Negated }).(pulumi.BoolPtrOutput)
 }
@@ -3746,6 +3743,7 @@ func (o ZPALSSConfigControllerPolicyRuleResourceConditionOutput) Operands() ZPAL
 	}).(ZPALSSConfigControllerPolicyRuleResourceConditionOperandArrayOutput)
 }
 
+// (Optional) - Supported values are: `AND` or `OR`
 func (o ZPALSSConfigControllerPolicyRuleResourceConditionOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResourceCondition) string { return v.Operator }).(pulumi.StringOutput)
 }
@@ -3771,8 +3769,10 @@ func (o ZPALSSConfigControllerPolicyRuleResourceConditionArrayOutput) Index(i pu
 }
 
 type ZPALSSConfigControllerPolicyRuleResourceConditionOperand struct {
-	ObjectType string   `pulumi:"objectType"`
-	Values     []string `pulumi:"values"`
+	// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+	ObjectType string `pulumi:"objectType"`
+	// (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
+	Values []string `pulumi:"values"`
 }
 
 // ZPALSSConfigControllerPolicyRuleResourceConditionOperandInput is an input type that accepts ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs and ZPALSSConfigControllerPolicyRuleResourceConditionOperandOutput values.
@@ -3787,8 +3787,10 @@ type ZPALSSConfigControllerPolicyRuleResourceConditionOperandInput interface {
 }
 
 type ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs struct {
-	ObjectType pulumi.StringInput      `pulumi:"objectType"`
-	Values     pulumi.StringArrayInput `pulumi:"values"`
+	// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
+	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
 func (ZPALSSConfigControllerPolicyRuleResourceConditionOperandArgs) ElementType() reflect.Type {
@@ -3842,10 +3844,12 @@ func (o ZPALSSConfigControllerPolicyRuleResourceConditionOperandOutput) ToZPALSS
 	return o
 }
 
+// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
 func (o ZPALSSConfigControllerPolicyRuleResourceConditionOperandOutput) ObjectType() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResourceConditionOperand) string { return v.ObjectType }).(pulumi.StringOutput)
 }
 
+// (Optional) The below values are supported when choosing `objectType` of type `CLIENT_TYPE`.
 func (o ZPALSSConfigControllerPolicyRuleResourceConditionOperandOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ZPALSSConfigControllerPolicyRuleResourceConditionOperand) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -4556,23 +4560,11 @@ type ZPAPolicyAccessRuleCondition struct {
 	// (Optional) The ID of a server group resource
 	Id *string `pulumi:"id"`
 	// (Optional) Supported values: ``true`` or ``false``
-	// * `operator` (Optional) Supported values: ``AND``, and ``OR``
-	// * `operands` (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
-	// * `name` (Optional)
-	// * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-	// * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-	// * `idpId` (Optional)
-	// * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-	// * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-	// * `zpnClientTypeExporter`
-	// * `zpnClientTypeBrowserIsolation`
-	// * `zpnClientTypeMachineTunnel`
-	// * `zpnClientTypeIpAnchoring`
-	// * `zpnClientTypeEdgeConnector`
-	// * `zpnClientTypeZapp`
-	Negated  *bool                                 `pulumi:"negated"`
+	Negated *bool `pulumi:"negated"`
+	// (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
 	Operands []ZPAPolicyAccessRuleConditionOperand `pulumi:"operands"`
-	Operator string                                `pulumi:"operator"`
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator string `pulumi:"operator"`
 }
 
 // ZPAPolicyAccessRuleConditionInput is an input type that accepts ZPAPolicyAccessRuleConditionArgs and ZPAPolicyAccessRuleConditionOutput values.
@@ -4590,23 +4582,11 @@ type ZPAPolicyAccessRuleConditionArgs struct {
 	// (Optional) The ID of a server group resource
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// (Optional) Supported values: ``true`` or ``false``
-	// * `operator` (Optional) Supported values: ``AND``, and ``OR``
-	// * `operands` (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
-	// * `name` (Optional)
-	// * `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
-	// * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-	// * `idpId` (Optional)
-	// * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-	// * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-	// * `zpnClientTypeExporter`
-	// * `zpnClientTypeBrowserIsolation`
-	// * `zpnClientTypeMachineTunnel`
-	// * `zpnClientTypeIpAnchoring`
-	// * `zpnClientTypeEdgeConnector`
-	// * `zpnClientTypeZapp`
-	Negated  pulumi.BoolPtrInput                           `pulumi:"negated"`
+	Negated pulumi.BoolPtrInput `pulumi:"negated"`
+	// (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
 	Operands ZPAPolicyAccessRuleConditionOperandArrayInput `pulumi:"operands"`
-	Operator pulumi.StringInput                            `pulumi:"operator"`
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator pulumi.StringInput `pulumi:"operator"`
 }
 
 func (ZPAPolicyAccessRuleConditionArgs) ElementType() reflect.Type {
@@ -4666,28 +4646,16 @@ func (o ZPAPolicyAccessRuleConditionOutput) Id() pulumi.StringPtrOutput {
 }
 
 // (Optional) Supported values: “true“ or “false“
-// * `operator` (Optional) Supported values: “AND“, and “OR“
-// * `operands` (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
-// * `name` (Optional)
-// * `lhs` (Optional) LHS must always carry the string value “id“ or the attribute ID of the resource being associated with the rule.
-// * `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
-// * `idpId` (Optional)
-// * `objectType` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
-// * `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.
-// * `zpnClientTypeExporter`
-// * `zpnClientTypeBrowserIsolation`
-// * `zpnClientTypeMachineTunnel`
-// * `zpnClientTypeIpAnchoring`
-// * `zpnClientTypeEdgeConnector`
-// * `zpnClientTypeZapp`
 func (o ZPAPolicyAccessRuleConditionOutput) Negated() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleCondition) *bool { return v.Negated }).(pulumi.BoolPtrOutput)
 }
 
+// (Optional) - Operands block must be repeated if multiple per `objectType` conditions are to be added to the rule.
 func (o ZPAPolicyAccessRuleConditionOutput) Operands() ZPAPolicyAccessRuleConditionOperandArrayOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleCondition) []ZPAPolicyAccessRuleConditionOperand { return v.Operands }).(ZPAPolicyAccessRuleConditionOperandArrayOutput)
 }
 
+// (Optional) Supported values: “AND“, and “OR“
 func (o ZPAPolicyAccessRuleConditionOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleCondition) string { return v.Operator }).(pulumi.StringOutput)
 }
@@ -4714,13 +4682,18 @@ func (o ZPAPolicyAccessRuleConditionArrayOutput) Index(i pulumi.IntInput) ZPAPol
 
 type ZPAPolicyAccessRuleConditionOperand struct {
 	// (Optional) The ID of a server group resource
-	Id         *string  `pulumi:"id"`
-	IdpId      *string  `pulumi:"idpId"`
-	Lhs        string   `pulumi:"lhs"`
-	Name       *string  `pulumi:"name"`
-	ObjectType string   `pulumi:"objectType"`
-	Rhs        *string  `pulumi:"rhs"`
-	RhsLists   []string `pulumi:"rhsLists"`
+	Id *string `pulumi:"id"`
+	// (Optional)
+	IdpId *string `pulumi:"idpId"`
+	// (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+	Lhs string `pulumi:"lhs"`
+	// (Optional)
+	Name *string `pulumi:"name"`
+	// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+	ObjectType string `pulumi:"objectType"`
+	// (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+	Rhs      *string  `pulumi:"rhs"`
+	RhsLists []string `pulumi:"rhsLists"`
 }
 
 // ZPAPolicyAccessRuleConditionOperandInput is an input type that accepts ZPAPolicyAccessRuleConditionOperandArgs and ZPAPolicyAccessRuleConditionOperandOutput values.
@@ -4736,13 +4709,18 @@ type ZPAPolicyAccessRuleConditionOperandInput interface {
 
 type ZPAPolicyAccessRuleConditionOperandArgs struct {
 	// (Optional) The ID of a server group resource
-	Id         pulumi.StringPtrInput   `pulumi:"id"`
-	IdpId      pulumi.StringPtrInput   `pulumi:"idpId"`
-	Lhs        pulumi.StringInput      `pulumi:"lhs"`
-	Name       pulumi.StringPtrInput   `pulumi:"name"`
-	ObjectType pulumi.StringInput      `pulumi:"objectType"`
-	Rhs        pulumi.StringPtrInput   `pulumi:"rhs"`
-	RhsLists   pulumi.StringArrayInput `pulumi:"rhsLists"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Optional)
+	IdpId pulumi.StringPtrInput `pulumi:"idpId"`
+	// (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.
+	Lhs pulumi.StringInput `pulumi:"lhs"`
+	// (Optional)
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
+	Rhs      pulumi.StringPtrInput   `pulumi:"rhs"`
+	RhsLists pulumi.StringArrayInput `pulumi:"rhsLists"`
 }
 
 func (ZPAPolicyAccessRuleConditionOperandArgs) ElementType() reflect.Type {
@@ -4801,22 +4779,27 @@ func (o ZPAPolicyAccessRuleConditionOperandOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleConditionOperand) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// (Optional)
 func (o ZPAPolicyAccessRuleConditionOperandOutput) IdpId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleConditionOperand) *string { return v.IdpId }).(pulumi.StringPtrOutput)
 }
 
+// (Optional) LHS must always carry the string value “id“ or the attribute ID of the resource being associated with the rule.
 func (o ZPAPolicyAccessRuleConditionOperandOutput) Lhs() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleConditionOperand) string { return v.Lhs }).(pulumi.StringOutput)
 }
 
+// (Optional)
 func (o ZPAPolicyAccessRuleConditionOperandOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleConditionOperand) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.
 func (o ZPAPolicyAccessRuleConditionOperandOutput) ObjectType() pulumi.StringOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleConditionOperand) string { return v.ObjectType }).(pulumi.StringOutput)
 }
 
+// (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.
 func (o ZPAPolicyAccessRuleConditionOperandOutput) Rhs() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZPAPolicyAccessRuleConditionOperand) *string { return v.Rhs }).(pulumi.StringPtrOutput)
 }
@@ -5661,7 +5644,8 @@ type GetZPAAppConnectorGroupConnector struct {
 	CreationTime          string `pulumi:"creationTime"`
 	CtrlBrokerName        string `pulumi:"ctrlBrokerName"`
 	CurrentVersion        string `pulumi:"currentVersion"`
-	Description           string `pulumi:"description"`
+	// (String) Description of the App Connector Group.
+	Description string `pulumi:"description"`
 	// (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled             bool                   `pulumi:"enabled"`
 	EnrollmentCert      map[string]interface{} `pulumi:"enrollmentCert"`
@@ -5717,7 +5701,8 @@ type GetZPAAppConnectorGroupConnectorArgs struct {
 	CreationTime          pulumi.StringInput `pulumi:"creationTime"`
 	CtrlBrokerName        pulumi.StringInput `pulumi:"ctrlBrokerName"`
 	CurrentVersion        pulumi.StringInput `pulumi:"currentVersion"`
-	Description           pulumi.StringInput `pulumi:"description"`
+	// (String) Description of the App Connector Group.
+	Description pulumi.StringInput `pulumi:"description"`
 	// (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
 	Enabled             pulumi.BoolInput   `pulumi:"enabled"`
 	EnrollmentCert      pulumi.MapInput    `pulumi:"enrollmentCert"`
@@ -5833,6 +5818,7 @@ func (o GetZPAAppConnectorGroupConnectorOutput) CurrentVersion() pulumi.StringOu
 	return o.ApplyT(func(v GetZPAAppConnectorGroupConnector) string { return v.CurrentVersion }).(pulumi.StringOutput)
 }
 
+// (String) Description of the App Connector Group.
 func (o GetZPAAppConnectorGroupConnectorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAAppConnectorGroupConnector) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -5976,8 +5962,9 @@ func (o GetZPAAppConnectorGroupConnectorArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetZPAAppConnectorGroupServerGroup struct {
-	ConfigSpace      string `pulumi:"configSpace"`
-	CreationTime     string `pulumi:"creationTime"`
+	ConfigSpace  string `pulumi:"configSpace"`
+	CreationTime string `pulumi:"creationTime"`
+	// (String) Description of the App Connector Group.
 	Description      string `pulumi:"description"`
 	DynamicDiscovery bool   `pulumi:"dynamicDiscovery"`
 	// (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
@@ -6002,8 +5989,9 @@ type GetZPAAppConnectorGroupServerGroupInput interface {
 }
 
 type GetZPAAppConnectorGroupServerGroupArgs struct {
-	ConfigSpace      pulumi.StringInput `pulumi:"configSpace"`
-	CreationTime     pulumi.StringInput `pulumi:"creationTime"`
+	ConfigSpace  pulumi.StringInput `pulumi:"configSpace"`
+	CreationTime pulumi.StringInput `pulumi:"creationTime"`
+	// (String) Description of the App Connector Group.
 	Description      pulumi.StringInput `pulumi:"description"`
 	DynamicDiscovery pulumi.BoolInput   `pulumi:"dynamicDiscovery"`
 	// (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
@@ -6075,6 +6063,7 @@ func (o GetZPAAppConnectorGroupServerGroupOutput) CreationTime() pulumi.StringOu
 	return o.ApplyT(func(v GetZPAAppConnectorGroupServerGroup) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (String) Description of the App Connector Group.
 func (o GetZPAAppConnectorGroupServerGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAAppConnectorGroupServerGroup) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -6128,13 +6117,6 @@ func (o GetZPAAppConnectorGroupServerGroupArrayOutput) Index(i pulumi.IntInput) 
 
 type GetZPAApplicationSegmentBrowserAccessClientlessApp struct {
 	// (bool)
-	// * `cname` (string)
-	// * `description` (string)
-	// * `enabled` (bool)
-	// * `hidden` (bool)
-	// * `localDomain` (string)
-	// * `path` (string)
-	// * `trustUntrustedCert` (bool)
 	AllowOptions bool   `pulumi:"allowOptions"`
 	AppId        string `pulumi:"appId"`
 	// (string)
@@ -6145,21 +6127,26 @@ type GetZPAApplicationSegmentBrowserAccessClientlessApp struct {
 	CertificateId string `pulumi:"certificateId"`
 	// (string)
 	CertificateName string `pulumi:"certificateName"`
-	Cname           string `pulumi:"cname"`
-	// (string) Description of the application.
+	// (string)
+	Cname string `pulumi:"cname"`
+	// (string)
 	Description string `pulumi:"description"`
 	// (string)
 	Domain string `pulumi:"domain"`
-	// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+	// (bool)
 	Enabled bool `pulumi:"enabled"`
-	Hidden  bool `pulumi:"hidden"`
+	// (bool)
+	Hidden bool `pulumi:"hidden"`
 	// This field defines the id of the application server.
-	Id          string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// (string)
 	LocalDomain string `pulumi:"localDomain"`
 	// This field defines the name of the server.
-	Name               string `pulumi:"name"`
-	Path               string `pulumi:"path"`
-	TrustUntrustedCert bool   `pulumi:"trustUntrustedCert"`
+	Name string `pulumi:"name"`
+	// (string)
+	Path string `pulumi:"path"`
+	// (bool)
+	TrustUntrustedCert bool `pulumi:"trustUntrustedCert"`
 }
 
 // GetZPAApplicationSegmentBrowserAccessClientlessAppInput is an input type that accepts GetZPAApplicationSegmentBrowserAccessClientlessAppArgs and GetZPAApplicationSegmentBrowserAccessClientlessAppOutput values.
@@ -6175,13 +6162,6 @@ type GetZPAApplicationSegmentBrowserAccessClientlessAppInput interface {
 
 type GetZPAApplicationSegmentBrowserAccessClientlessAppArgs struct {
 	// (bool)
-	// * `cname` (string)
-	// * `description` (string)
-	// * `enabled` (bool)
-	// * `hidden` (bool)
-	// * `localDomain` (string)
-	// * `path` (string)
-	// * `trustUntrustedCert` (bool)
 	AllowOptions pulumi.BoolInput   `pulumi:"allowOptions"`
 	AppId        pulumi.StringInput `pulumi:"appId"`
 	// (string)
@@ -6192,21 +6172,26 @@ type GetZPAApplicationSegmentBrowserAccessClientlessAppArgs struct {
 	CertificateId pulumi.StringInput `pulumi:"certificateId"`
 	// (string)
 	CertificateName pulumi.StringInput `pulumi:"certificateName"`
-	Cname           pulumi.StringInput `pulumi:"cname"`
-	// (string) Description of the application.
+	// (string)
+	Cname pulumi.StringInput `pulumi:"cname"`
+	// (string)
 	Description pulumi.StringInput `pulumi:"description"`
 	// (string)
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+	// (bool)
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	Hidden  pulumi.BoolInput `pulumi:"hidden"`
+	// (bool)
+	Hidden pulumi.BoolInput `pulumi:"hidden"`
 	// This field defines the id of the application server.
-	Id          pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// (string)
 	LocalDomain pulumi.StringInput `pulumi:"localDomain"`
 	// This field defines the name of the server.
-	Name               pulumi.StringInput `pulumi:"name"`
-	Path               pulumi.StringInput `pulumi:"path"`
-	TrustUntrustedCert pulumi.BoolInput   `pulumi:"trustUntrustedCert"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// (string)
+	Path pulumi.StringInput `pulumi:"path"`
+	// (bool)
+	TrustUntrustedCert pulumi.BoolInput `pulumi:"trustUntrustedCert"`
 }
 
 func (GetZPAApplicationSegmentBrowserAccessClientlessAppArgs) ElementType() reflect.Type {
@@ -6261,13 +6246,6 @@ func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) ToGetZPAApplic
 }
 
 // (bool)
-// * `cname` (string)
-// * `description` (string)
-// * `enabled` (bool)
-// * `hidden` (bool)
-// * `localDomain` (string)
-// * `path` (string)
-// * `trustUntrustedCert` (bool)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) AllowOptions() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) bool { return v.AllowOptions }).(pulumi.BoolOutput)
 }
@@ -6296,11 +6274,12 @@ func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) CertificateNam
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.CertificateName }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Cname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Cname }).(pulumi.StringOutput)
 }
 
-// (string) Description of the application.
+// (string)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -6310,11 +6289,12 @@ func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Domain() pulum
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+// (bool)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// (bool)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Hidden() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) bool { return v.Hidden }).(pulumi.BoolOutput)
 }
@@ -6324,6 +6304,7 @@ func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Id() pulumi.St
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) LocalDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.LocalDomain }).(pulumi.StringOutput)
 }
@@ -6333,10 +6314,12 @@ func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Name() pulumi.
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) string { return v.Path }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPAApplicationSegmentBrowserAccessClientlessAppOutput) TrustUntrustedCert() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAApplicationSegmentBrowserAccessClientlessApp) bool { return v.TrustUntrustedCert }).(pulumi.BoolOutput)
 }
@@ -7957,16 +7940,21 @@ func (o GetZPAApplicationSegmentUdpPortRangeArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetZPACloudConnectorGroupCloudConnector struct {
+	// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 	CreationTime string `pulumi:"creationTime"`
-	Description  string `pulumi:"description"`
-	Enabled      bool   `pulumi:"enabled"`
-	Fingerprint  string `pulumi:"fingerprint"`
+	// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+	Description string `pulumi:"description"`
+	// (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+	Enabled     bool   `pulumi:"enabled"`
+	Fingerprint string `pulumi:"fingerprint"`
 	// This field defines the id of the cloud connector group.
-	Id           string        `pulumi:"id"`
-	Ipacls       []interface{} `pulumi:"ipacls"`
-	IssuedCertId string        `pulumi:"issuedCertId"`
-	ModifiedTime string        `pulumi:"modifiedTime"`
-	Modifiedby   string        `pulumi:"modifiedby"`
+	Id     string        `pulumi:"id"`
+	Ipacls []interface{} `pulumi:"ipacls"`
+	// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+	IssuedCertId string `pulumi:"issuedCertId"`
+	// (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+	ModifiedTime string `pulumi:"modifiedTime"`
+	Modifiedby   string `pulumi:"modifiedby"`
 	// This field defines the name of the cloud connector group.
 	Name        string                 `pulumi:"name"`
 	SigningCert map[string]interface{} `pulumi:"signingCert"`
@@ -7984,14 +7972,19 @@ type GetZPACloudConnectorGroupCloudConnectorInput interface {
 }
 
 type GetZPACloudConnectorGroupCloudConnectorArgs struct {
+	// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	Description  pulumi.StringInput `pulumi:"description"`
-	Enabled      pulumi.BoolInput   `pulumi:"enabled"`
-	Fingerprint  pulumi.StringInput `pulumi:"fingerprint"`
+	// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+	Description pulumi.StringInput `pulumi:"description"`
+	// (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+	Enabled     pulumi.BoolInput   `pulumi:"enabled"`
+	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
 	// This field defines the id of the cloud connector group.
-	Id           pulumi.StringInput `pulumi:"id"`
-	Ipacls       pulumi.ArrayInput  `pulumi:"ipacls"`
+	Id     pulumi.StringInput `pulumi:"id"`
+	Ipacls pulumi.ArrayInput  `pulumi:"ipacls"`
+	// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 	IssuedCertId pulumi.StringInput `pulumi:"issuedCertId"`
+	// (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 	ModifiedTime pulumi.StringInput `pulumi:"modifiedTime"`
 	Modifiedby   pulumi.StringInput `pulumi:"modifiedby"`
 	// This field defines the name of the cloud connector group.
@@ -8050,14 +8043,17 @@ func (o GetZPACloudConnectorGroupCloudConnectorOutput) ToGetZPACloudConnectorGro
 	return o
 }
 
+// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 func (o GetZPACloudConnectorGroupCloudConnectorOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPACloudConnectorGroupCloudConnector) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 func (o GetZPACloudConnectorGroupCloudConnectorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPACloudConnectorGroupCloudConnector) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 func (o GetZPACloudConnectorGroupCloudConnectorOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPACloudConnectorGroupCloudConnector) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
@@ -8075,10 +8071,12 @@ func (o GetZPACloudConnectorGroupCloudConnectorOutput) Ipacls() pulumi.ArrayOutp
 	return o.ApplyT(func(v GetZPACloudConnectorGroupCloudConnector) []interface{} { return v.Ipacls }).(pulumi.ArrayOutput)
 }
 
+// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 func (o GetZPACloudConnectorGroupCloudConnectorOutput) IssuedCertId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPACloudConnectorGroupCloudConnector) string { return v.IssuedCertId }).(pulumi.StringOutput)
 }
 
+// (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
 func (o GetZPACloudConnectorGroupCloudConnectorOutput) ModifiedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPACloudConnectorGroupCloudConnector) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
@@ -8117,11 +8115,15 @@ func (o GetZPACloudConnectorGroupCloudConnectorArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetZPAIdPControllerAdminMetadata struct {
+	// (string)
 	CertificateUrl string `pulumi:"certificateUrl"`
 	SpBaseUrl      string `pulumi:"spBaseUrl"`
-	SpEntityId     string `pulumi:"spEntityId"`
-	SpMetadataUrl  string `pulumi:"spMetadataUrl"`
-	SpPostUrl      string `pulumi:"spPostUrl"`
+	// (string)
+	SpEntityId string `pulumi:"spEntityId"`
+	// (string)
+	SpMetadataUrl string `pulumi:"spMetadataUrl"`
+	// (string)
+	SpPostUrl string `pulumi:"spPostUrl"`
 }
 
 // GetZPAIdPControllerAdminMetadataInput is an input type that accepts GetZPAIdPControllerAdminMetadataArgs and GetZPAIdPControllerAdminMetadataOutput values.
@@ -8136,11 +8138,15 @@ type GetZPAIdPControllerAdminMetadataInput interface {
 }
 
 type GetZPAIdPControllerAdminMetadataArgs struct {
+	// (string)
 	CertificateUrl pulumi.StringInput `pulumi:"certificateUrl"`
 	SpBaseUrl      pulumi.StringInput `pulumi:"spBaseUrl"`
-	SpEntityId     pulumi.StringInput `pulumi:"spEntityId"`
-	SpMetadataUrl  pulumi.StringInput `pulumi:"spMetadataUrl"`
-	SpPostUrl      pulumi.StringInput `pulumi:"spPostUrl"`
+	// (string)
+	SpEntityId pulumi.StringInput `pulumi:"spEntityId"`
+	// (string)
+	SpMetadataUrl pulumi.StringInput `pulumi:"spMetadataUrl"`
+	// (string)
+	SpPostUrl pulumi.StringInput `pulumi:"spPostUrl"`
 }
 
 func (GetZPAIdPControllerAdminMetadataArgs) ElementType() reflect.Type {
@@ -8194,6 +8200,7 @@ func (o GetZPAIdPControllerAdminMetadataOutput) ToGetZPAIdPControllerAdminMetada
 	return o
 }
 
+// (string)
 func (o GetZPAIdPControllerAdminMetadataOutput) CertificateUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerAdminMetadata) string { return v.CertificateUrl }).(pulumi.StringOutput)
 }
@@ -8202,14 +8209,17 @@ func (o GetZPAIdPControllerAdminMetadataOutput) SpBaseUrl() pulumi.StringOutput 
 	return o.ApplyT(func(v GetZPAIdPControllerAdminMetadata) string { return v.SpBaseUrl }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerAdminMetadataOutput) SpEntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerAdminMetadata) string { return v.SpEntityId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerAdminMetadataOutput) SpMetadataUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerAdminMetadata) string { return v.SpMetadataUrl }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerAdminMetadataOutput) SpPostUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerAdminMetadata) string { return v.SpPostUrl }).(pulumi.StringOutput)
 }
@@ -8235,11 +8245,15 @@ func (o GetZPAIdPControllerAdminMetadataArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetZPAIdPControllerUserMetadata struct {
+	// (string)
 	CertificateUrl string `pulumi:"certificateUrl"`
 	SpBaseUrl      string `pulumi:"spBaseUrl"`
-	SpEntityId     string `pulumi:"spEntityId"`
-	SpMetadataUrl  string `pulumi:"spMetadataUrl"`
-	SpPostUrl      string `pulumi:"spPostUrl"`
+	// (string)
+	SpEntityId string `pulumi:"spEntityId"`
+	// (string)
+	SpMetadataUrl string `pulumi:"spMetadataUrl"`
+	// (string)
+	SpPostUrl string `pulumi:"spPostUrl"`
 }
 
 // GetZPAIdPControllerUserMetadataInput is an input type that accepts GetZPAIdPControllerUserMetadataArgs and GetZPAIdPControllerUserMetadataOutput values.
@@ -8254,11 +8268,15 @@ type GetZPAIdPControllerUserMetadataInput interface {
 }
 
 type GetZPAIdPControllerUserMetadataArgs struct {
+	// (string)
 	CertificateUrl pulumi.StringInput `pulumi:"certificateUrl"`
 	SpBaseUrl      pulumi.StringInput `pulumi:"spBaseUrl"`
-	SpEntityId     pulumi.StringInput `pulumi:"spEntityId"`
-	SpMetadataUrl  pulumi.StringInput `pulumi:"spMetadataUrl"`
-	SpPostUrl      pulumi.StringInput `pulumi:"spPostUrl"`
+	// (string)
+	SpEntityId pulumi.StringInput `pulumi:"spEntityId"`
+	// (string)
+	SpMetadataUrl pulumi.StringInput `pulumi:"spMetadataUrl"`
+	// (string)
+	SpPostUrl pulumi.StringInput `pulumi:"spPostUrl"`
 }
 
 func (GetZPAIdPControllerUserMetadataArgs) ElementType() reflect.Type {
@@ -8312,6 +8330,7 @@ func (o GetZPAIdPControllerUserMetadataOutput) ToGetZPAIdPControllerUserMetadata
 	return o
 }
 
+// (string)
 func (o GetZPAIdPControllerUserMetadataOutput) CertificateUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerUserMetadata) string { return v.CertificateUrl }).(pulumi.StringOutput)
 }
@@ -8320,14 +8339,17 @@ func (o GetZPAIdPControllerUserMetadataOutput) SpBaseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerUserMetadata) string { return v.SpBaseUrl }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerUserMetadataOutput) SpEntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerUserMetadata) string { return v.SpEntityId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerUserMetadataOutput) SpMetadataUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerUserMetadata) string { return v.SpMetadataUrl }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAIdPControllerUserMetadataOutput) SpPostUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAIdPControllerUserMetadata) string { return v.SpPostUrl }).(pulumi.StringOutput)
 }
@@ -8354,15 +8376,10 @@ func (o GetZPAIdPControllerUserMetadataArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetZPAInspectionAllPredefinedControlsList struct {
 	// (string)
-	// * `PASS`
-	// * `BLOCK`
-	// * `REDIRECT`
 	Action string `pulumi:"action"`
 	// (string)
 	ActionValue string `pulumi:"actionValue"`
 	// (string)
-	// * `id`- (string)
-	// * `name`- (string)
 	AssociatedInspectionProfileNames []GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName `pulumi:"associatedInspectionProfileNames"`
 	// (string)
 	Attachment string `pulumi:"attachment"`
@@ -8373,9 +8390,6 @@ type GetZPAInspectionAllPredefinedControlsList struct {
 	// (string)
 	CreationTime string `pulumi:"creationTime"`
 	// (string)
-	// * `PASS`
-	// * `BLOCK`
-	// * `REDIRECT`
 	DefaultAction string `pulumi:"defaultAction"`
 	// (string)
 	DefaultActionValue string `pulumi:"defaultActionValue"`
@@ -8386,14 +8400,11 @@ type GetZPAInspectionAllPredefinedControlsList struct {
 	// (string)
 	ModifiedTime string `pulumi:"modifiedTime"`
 	Modifiedby   string `pulumi:"modifiedby"`
-	Name         string `pulumi:"name"`
+	// (string)
+	Name string `pulumi:"name"`
 	// (string)
 	ParanoiaLevel string `pulumi:"paranoiaLevel"`
 	// (string)
-	// * `CRITICAL`
-	// * `ERROR`
-	// * `WARNING`
-	// * `INFO`
 	Severity string `pulumi:"severity"`
 	// The version of the predefined control, the default is: `OWASP_CRS/3.3.0`
 	Version string `pulumi:"version"`
@@ -8412,15 +8423,10 @@ type GetZPAInspectionAllPredefinedControlsListInput interface {
 
 type GetZPAInspectionAllPredefinedControlsListArgs struct {
 	// (string)
-	// * `PASS`
-	// * `BLOCK`
-	// * `REDIRECT`
 	Action pulumi.StringInput `pulumi:"action"`
 	// (string)
 	ActionValue pulumi.StringInput `pulumi:"actionValue"`
 	// (string)
-	// * `id`- (string)
-	// * `name`- (string)
 	AssociatedInspectionProfileNames GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameArrayInput `pulumi:"associatedInspectionProfileNames"`
 	// (string)
 	Attachment pulumi.StringInput `pulumi:"attachment"`
@@ -8431,9 +8437,6 @@ type GetZPAInspectionAllPredefinedControlsListArgs struct {
 	// (string)
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
 	// (string)
-	// * `PASS`
-	// * `BLOCK`
-	// * `REDIRECT`
 	DefaultAction pulumi.StringInput `pulumi:"defaultAction"`
 	// (string)
 	DefaultActionValue pulumi.StringInput `pulumi:"defaultActionValue"`
@@ -8444,14 +8447,11 @@ type GetZPAInspectionAllPredefinedControlsListArgs struct {
 	// (string)
 	ModifiedTime pulumi.StringInput `pulumi:"modifiedTime"`
 	Modifiedby   pulumi.StringInput `pulumi:"modifiedby"`
-	Name         pulumi.StringInput `pulumi:"name"`
+	// (string)
+	Name pulumi.StringInput `pulumi:"name"`
 	// (string)
 	ParanoiaLevel pulumi.StringInput `pulumi:"paranoiaLevel"`
 	// (string)
-	// * `CRITICAL`
-	// * `ERROR`
-	// * `WARNING`
-	// * `INFO`
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// The version of the predefined control, the default is: `OWASP_CRS/3.3.0`
 	Version pulumi.StringInput `pulumi:"version"`
@@ -8509,9 +8509,6 @@ func (o GetZPAInspectionAllPredefinedControlsListOutput) ToGetZPAInspectionAllPr
 }
 
 // (string)
-// * `PASS`
-// * `BLOCK`
-// * `REDIRECT`
 func (o GetZPAInspectionAllPredefinedControlsListOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsList) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -8522,8 +8519,6 @@ func (o GetZPAInspectionAllPredefinedControlsListOutput) ActionValue() pulumi.St
 }
 
 // (string)
-// * `id`- (string)
-// * `name`- (string)
 func (o GetZPAInspectionAllPredefinedControlsListOutput) AssociatedInspectionProfileNames() GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameArrayOutput {
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsList) []GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName {
 		return v.AssociatedInspectionProfileNames
@@ -8551,9 +8546,6 @@ func (o GetZPAInspectionAllPredefinedControlsListOutput) CreationTime() pulumi.S
 }
 
 // (string)
-// * `PASS`
-// * `BLOCK`
-// * `REDIRECT`
 func (o GetZPAInspectionAllPredefinedControlsListOutput) DefaultAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsList) string { return v.DefaultAction }).(pulumi.StringOutput)
 }
@@ -8582,6 +8574,7 @@ func (o GetZPAInspectionAllPredefinedControlsListOutput) Modifiedby() pulumi.Str
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsList) string { return v.Modifiedby }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAInspectionAllPredefinedControlsListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsList) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -8592,10 +8585,6 @@ func (o GetZPAInspectionAllPredefinedControlsListOutput) ParanoiaLevel() pulumi.
 }
 
 // (string)
-// * `CRITICAL`
-// * `ERROR`
-// * `WARNING`
-// * `INFO`
 func (o GetZPAInspectionAllPredefinedControlsListOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsList) string { return v.Severity }).(pulumi.StringOutput)
 }
@@ -8627,7 +8616,8 @@ func (o GetZPAInspectionAllPredefinedControlsListArrayOutput) Index(i pulumi.Int
 
 type GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName struct {
 	// (string)
-	Id   string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// (string)
 	Name string `pulumi:"name"`
 }
 
@@ -8644,7 +8634,8 @@ type GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameInp
 
 type GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameArgs struct {
 	// (string)
-	Id   pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// (string)
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -8704,6 +8695,7 @@ func (o GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileNameOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -9158,18 +9150,15 @@ type GetZPAInspectionProfileCustomControl struct {
 	// (string) The action of the predefined control. Supported values: `PASS`, `BLOCK` and `REDIRECT`
 	Action string `pulumi:"action"`
 	// (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-	// * `attachment` (string) Control attachment
-	// * `controlGroup` (string) Control group
 	ActionValue string `pulumi:"actionValue"`
 	// (string) Name of the inspection profile
-	// * `id`- (string)
-	// * `name`- (string)
 	AssociatedInspectionProfileNames []GetZPAInspectionProfileCustomControlAssociatedInspectionProfileName `pulumi:"associatedInspectionProfileNames"`
 	ControlNumber                    string                                                                `pulumi:"controlNumber"`
-	ControlRuleJson                  string                                                                `pulumi:"controlRuleJson"`
-	CreationTime                     string                                                                `pulumi:"creationTime"`
-	DefaultAction                    string                                                                `pulumi:"defaultAction"`
-	DefaultActionValue               string                                                                `pulumi:"defaultActionValue"`
+	// (string) Custom controls string in JSON format
+	ControlRuleJson    string `pulumi:"controlRuleJson"`
+	CreationTime       string `pulumi:"creationTime"`
+	DefaultAction      string `pulumi:"defaultAction"`
+	DefaultActionValue string `pulumi:"defaultActionValue"`
 	// (string) Description of the inspection profile.
 	Description string `pulumi:"description"`
 	// This field defines the id of the application server.
@@ -9204,18 +9193,15 @@ type GetZPAInspectionProfileCustomControlArgs struct {
 	// (string) The action of the predefined control. Supported values: `PASS`, `BLOCK` and `REDIRECT`
 	Action pulumi.StringInput `pulumi:"action"`
 	// (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-	// * `attachment` (string) Control attachment
-	// * `controlGroup` (string) Control group
 	ActionValue pulumi.StringInput `pulumi:"actionValue"`
 	// (string) Name of the inspection profile
-	// * `id`- (string)
-	// * `name`- (string)
 	AssociatedInspectionProfileNames GetZPAInspectionProfileCustomControlAssociatedInspectionProfileNameArrayInput `pulumi:"associatedInspectionProfileNames"`
 	ControlNumber                    pulumi.StringInput                                                            `pulumi:"controlNumber"`
-	ControlRuleJson                  pulumi.StringInput                                                            `pulumi:"controlRuleJson"`
-	CreationTime                     pulumi.StringInput                                                            `pulumi:"creationTime"`
-	DefaultAction                    pulumi.StringInput                                                            `pulumi:"defaultAction"`
-	DefaultActionValue               pulumi.StringInput                                                            `pulumi:"defaultActionValue"`
+	// (string) Custom controls string in JSON format
+	ControlRuleJson    pulumi.StringInput `pulumi:"controlRuleJson"`
+	CreationTime       pulumi.StringInput `pulumi:"creationTime"`
+	DefaultAction      pulumi.StringInput `pulumi:"defaultAction"`
+	DefaultActionValue pulumi.StringInput `pulumi:"defaultActionValue"`
 	// (string) Description of the inspection profile.
 	Description pulumi.StringInput `pulumi:"description"`
 	// This field defines the id of the application server.
@@ -9292,15 +9278,11 @@ func (o GetZPAInspectionProfileCustomControlOutput) Action() pulumi.StringOutput
 }
 
 // (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-// * `attachment` (string) Control attachment
-// * `controlGroup` (string) Control group
 func (o GetZPAInspectionProfileCustomControlOutput) ActionValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfileCustomControl) string { return v.ActionValue }).(pulumi.StringOutput)
 }
 
 // (string) Name of the inspection profile
-// * `id`- (string)
-// * `name`- (string)
 func (o GetZPAInspectionProfileCustomControlOutput) AssociatedInspectionProfileNames() GetZPAInspectionProfileCustomControlAssociatedInspectionProfileNameArrayOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfileCustomControl) []GetZPAInspectionProfileCustomControlAssociatedInspectionProfileName {
 		return v.AssociatedInspectionProfileNames
@@ -9311,6 +9293,7 @@ func (o GetZPAInspectionProfileCustomControlOutput) ControlNumber() pulumi.Strin
 	return o.ApplyT(func(v GetZPAInspectionProfileCustomControl) string { return v.ControlNumber }).(pulumi.StringOutput)
 }
 
+// (string) Custom controls string in JSON format
 func (o GetZPAInspectionProfileCustomControlOutput) ControlRuleJson() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfileCustomControl) string { return v.ControlRuleJson }).(pulumi.StringOutput)
 }
@@ -9738,19 +9721,17 @@ type GetZPAInspectionProfilePredefinedControl struct {
 	// (string) The action of the predefined control. Supported values: `PASS`, `BLOCK` and `REDIRECT`
 	Action string `pulumi:"action"`
 	// (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-	// * `attachment` (string) Control attachment
-	// * `controlGroup` (string) Control group
 	ActionValue string `pulumi:"actionValue"`
 	// (string) Name of the inspection profile
-	// * `id`- (string)
-	// * `name`- (string)
 	AssociatedInspectionProfileNames []GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileName `pulumi:"associatedInspectionProfileNames"`
-	Attachment                       string                                                                    `pulumi:"attachment"`
-	ControlGroup                     string                                                                    `pulumi:"controlGroup"`
-	ControlNumber                    string                                                                    `pulumi:"controlNumber"`
-	CreationTime                     string                                                                    `pulumi:"creationTime"`
-	DefaultAction                    string                                                                    `pulumi:"defaultAction"`
-	DefaultActionValue               string                                                                    `pulumi:"defaultActionValue"`
+	// (string) Control attachment
+	Attachment string `pulumi:"attachment"`
+	// (string) Control group
+	ControlGroup       string `pulumi:"controlGroup"`
+	ControlNumber      string `pulumi:"controlNumber"`
+	CreationTime       string `pulumi:"creationTime"`
+	DefaultAction      string `pulumi:"defaultAction"`
+	DefaultActionValue string `pulumi:"defaultActionValue"`
 	// (string) Description of the inspection profile.
 	Description string `pulumi:"description"`
 	// This field defines the id of the application server.
@@ -9781,19 +9762,17 @@ type GetZPAInspectionProfilePredefinedControlArgs struct {
 	// (string) The action of the predefined control. Supported values: `PASS`, `BLOCK` and `REDIRECT`
 	Action pulumi.StringInput `pulumi:"action"`
 	// (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-	// * `attachment` (string) Control attachment
-	// * `controlGroup` (string) Control group
 	ActionValue pulumi.StringInput `pulumi:"actionValue"`
 	// (string) Name of the inspection profile
-	// * `id`- (string)
-	// * `name`- (string)
 	AssociatedInspectionProfileNames GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileNameArrayInput `pulumi:"associatedInspectionProfileNames"`
-	Attachment                       pulumi.StringInput                                                                `pulumi:"attachment"`
-	ControlGroup                     pulumi.StringInput                                                                `pulumi:"controlGroup"`
-	ControlNumber                    pulumi.StringInput                                                                `pulumi:"controlNumber"`
-	CreationTime                     pulumi.StringInput                                                                `pulumi:"creationTime"`
-	DefaultAction                    pulumi.StringInput                                                                `pulumi:"defaultAction"`
-	DefaultActionValue               pulumi.StringInput                                                                `pulumi:"defaultActionValue"`
+	// (string) Control attachment
+	Attachment pulumi.StringInput `pulumi:"attachment"`
+	// (string) Control group
+	ControlGroup       pulumi.StringInput `pulumi:"controlGroup"`
+	ControlNumber      pulumi.StringInput `pulumi:"controlNumber"`
+	CreationTime       pulumi.StringInput `pulumi:"creationTime"`
+	DefaultAction      pulumi.StringInput `pulumi:"defaultAction"`
+	DefaultActionValue pulumi.StringInput `pulumi:"defaultActionValue"`
 	// (string) Description of the inspection profile.
 	Description pulumi.StringInput `pulumi:"description"`
 	// This field defines the id of the application server.
@@ -9866,25 +9845,23 @@ func (o GetZPAInspectionProfilePredefinedControlOutput) Action() pulumi.StringOu
 }
 
 // (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-// * `attachment` (string) Control attachment
-// * `controlGroup` (string) Control group
 func (o GetZPAInspectionProfilePredefinedControlOutput) ActionValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfilePredefinedControl) string { return v.ActionValue }).(pulumi.StringOutput)
 }
 
 // (string) Name of the inspection profile
-// * `id`- (string)
-// * `name`- (string)
 func (o GetZPAInspectionProfilePredefinedControlOutput) AssociatedInspectionProfileNames() GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileNameArrayOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfilePredefinedControl) []GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileName {
 		return v.AssociatedInspectionProfileNames
 	}).(GetZPAInspectionProfilePredefinedControlAssociatedInspectionProfileNameArrayOutput)
 }
 
+// (string) Control attachment
 func (o GetZPAInspectionProfilePredefinedControlOutput) Attachment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfilePredefinedControl) string { return v.Attachment }).(pulumi.StringOutput)
 }
 
+// (string) Control group
 func (o GetZPAInspectionProfilePredefinedControlOutput) ControlGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAInspectionProfilePredefinedControl) string { return v.ControlGroup }).(pulumi.StringOutput)
 }
@@ -10906,19 +10883,29 @@ func (o GetZPALSSConfigControllerPolicyRuleConditionOperandArrayOutput) Index(i 
 }
 
 type GetZPAMachineGroupMachine struct {
+	// (string)
 	CreationTime string `pulumi:"creationTime"`
-	Description  string `pulumi:"description"`
-	Fingerprint  string `pulumi:"fingerprint"`
+	// (string)
+	Description string `pulumi:"description"`
+	// (string)
+	Fingerprint string `pulumi:"fingerprint"`
 	// The ID of the machine group to be exported.
-	Id               string `pulumi:"id"`
-	IssuedCertId     string `pulumi:"issuedCertId"`
-	MachineGroupId   string `pulumi:"machineGroupId"`
+	Id string `pulumi:"id"`
+	// (string)
+	IssuedCertId string `pulumi:"issuedCertId"`
+	// (string)
+	MachineGroupId string `pulumi:"machineGroupId"`
+	// (string)
 	MachineGroupName string `pulumi:"machineGroupName"`
-	MachineTokenId   string `pulumi:"machineTokenId"`
-	ModifiedBy       string `pulumi:"modifiedBy"`
-	ModifiedTime     string `pulumi:"modifiedTime"`
+	// (string)
+	MachineTokenId string `pulumi:"machineTokenId"`
+	// (string)
+	ModifiedBy string `pulumi:"modifiedBy"`
+	// (string)
+	ModifiedTime string `pulumi:"modifiedTime"`
 	// The name of the machine group to be exported.
-	Name        string            `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// (string)
 	SigningCert map[string]string `pulumi:"signingCert"`
 }
 
@@ -10934,19 +10921,29 @@ type GetZPAMachineGroupMachineInput interface {
 }
 
 type GetZPAMachineGroupMachineArgs struct {
+	// (string)
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	Description  pulumi.StringInput `pulumi:"description"`
-	Fingerprint  pulumi.StringInput `pulumi:"fingerprint"`
+	// (string)
+	Description pulumi.StringInput `pulumi:"description"`
+	// (string)
+	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
 	// The ID of the machine group to be exported.
-	Id               pulumi.StringInput `pulumi:"id"`
-	IssuedCertId     pulumi.StringInput `pulumi:"issuedCertId"`
-	MachineGroupId   pulumi.StringInput `pulumi:"machineGroupId"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// (string)
+	IssuedCertId pulumi.StringInput `pulumi:"issuedCertId"`
+	// (string)
+	MachineGroupId pulumi.StringInput `pulumi:"machineGroupId"`
+	// (string)
 	MachineGroupName pulumi.StringInput `pulumi:"machineGroupName"`
-	MachineTokenId   pulumi.StringInput `pulumi:"machineTokenId"`
-	ModifiedBy       pulumi.StringInput `pulumi:"modifiedBy"`
-	ModifiedTime     pulumi.StringInput `pulumi:"modifiedTime"`
+	// (string)
+	MachineTokenId pulumi.StringInput `pulumi:"machineTokenId"`
+	// (string)
+	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
+	// (string)
+	ModifiedTime pulumi.StringInput `pulumi:"modifiedTime"`
 	// The name of the machine group to be exported.
-	Name        pulumi.StringInput    `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// (string)
 	SigningCert pulumi.StringMapInput `pulumi:"signingCert"`
 }
 
@@ -11001,14 +10998,17 @@ func (o GetZPAMachineGroupMachineOutput) ToGetZPAMachineGroupMachineOutputWithCo
 	return o
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) Fingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.Fingerprint }).(pulumi.StringOutput)
 }
@@ -11018,26 +11018,32 @@ func (o GetZPAMachineGroupMachineOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) IssuedCertId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.IssuedCertId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) MachineGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.MachineGroupId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) MachineGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.MachineGroupName }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) MachineTokenId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.MachineTokenId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) ModifiedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.ModifiedBy }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) ModifiedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
@@ -11047,6 +11053,7 @@ func (o GetZPAMachineGroupMachineOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAMachineGroupMachineOutput) SigningCert() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetZPAMachineGroupMachine) map[string]string { return v.SigningCert }).(pulumi.StringMapOutput)
 }
@@ -12849,52 +12856,79 @@ func (o GetZPAServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetZPAServe
 }
 
 type GetZPAServiceEdgeGroupServiceEdge struct {
+	// (string)
 	ApplicationStartTime string `pulumi:"applicationStartTime"`
+	// (string)
 	ControlChannelStatus string `pulumi:"controlChannelStatus"`
 	// (string)
-	CreationTime   string `pulumi:"creationTime"`
+	CreationTime string `pulumi:"creationTime"`
+	// (string)
 	CtrlBrokerName string `pulumi:"ctrlBrokerName"`
+	// (string)
 	CurrentVersion string `pulumi:"currentVersion"`
-	Description    string `pulumi:"description"`
+	// (string) Description of the Service Edge Group.
+	Description string `pulumi:"description"`
 	// (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
-	Enabled             bool                   `pulumi:"enabled"`
-	EnrollmentCert      map[string]interface{} `pulumi:"enrollmentCert"`
-	ExpectedUpgradeTime string                 `pulumi:"expectedUpgradeTime"`
-	ExpectedVersion     string                 `pulumi:"expectedVersion"`
-	Fingerprint         string                 `pulumi:"fingerprint"`
+	Enabled bool `pulumi:"enabled"`
+	// (string)
+	EnrollmentCert map[string]interface{} `pulumi:"enrollmentCert"`
+	// (string)
+	ExpectedUpgradeTime string `pulumi:"expectedUpgradeTime"`
+	// (string)
+	ExpectedVersion string `pulumi:"expectedVersion"`
+	Fingerprint     string `pulumi:"fingerprint"`
 	// The ID of the service edge group to be exported.
-	Id                               string `pulumi:"id"`
-	Ipacl                            string `pulumi:"ipacl"`
-	IssuedCertId                     string `pulumi:"issuedCertId"`
-	LastBrokerConnectTime            string `pulumi:"lastBrokerConnectTime"`
-	LastBrokerConnectTimeDuration    string `pulumi:"lastBrokerConnectTimeDuration"`
-	LastBrokerDisconnectTime         string `pulumi:"lastBrokerDisconnectTime"`
+	Id    string `pulumi:"id"`
+	Ipacl string `pulumi:"ipacl"`
+	// (string)
+	IssuedCertId string `pulumi:"issuedCertId"`
+	// (string)
+	LastBrokerConnectTime string `pulumi:"lastBrokerConnectTime"`
+	// (string)
+	LastBrokerConnectTimeDuration string `pulumi:"lastBrokerConnectTimeDuration"`
+	// (string)
+	LastBrokerDisconnectTime string `pulumi:"lastBrokerDisconnectTime"`
+	// (string)
 	LastBrokerDisconnectTimeDuration string `pulumi:"lastBrokerDisconnectTimeDuration"`
-	LastUpgradeTime                  string `pulumi:"lastUpgradeTime"`
-	// (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
-	Latitude  string `pulumi:"latitude"`
+	// (string)
+	LastUpgradeTime string `pulumi:"lastUpgradeTime"`
+	// (string)
+	Latitude string `pulumi:"latitude"`
+	// (string)
 	ListenIps string `pulumi:"listenIps"`
-	// (string) Location of the Service Edge Group.
+	// (string)
 	Location string `pulumi:"location"`
-	// (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+	// (string)
 	Longitude string `pulumi:"longitude"`
 	// (string)
 	ModifiedTime string `pulumi:"modifiedTime"`
 	Modifiedby   string `pulumi:"modifiedby"`
 	// The name of the service edge group to be exported.
-	Name                 string `pulumi:"name"`
-	Platform             string `pulumi:"platform"`
-	PreviousVersion      string `pulumi:"previousVersion"`
-	PrivateIp            string `pulumi:"privateIp"`
-	ProvisioningKeyId    string `pulumi:"provisioningKeyId"`
-	ProvisioningKeyName  string `pulumi:"provisioningKeyName"`
-	PublicIp             string `pulumi:"publicIp"`
-	PublishIps           string `pulumi:"publishIps"`
-	SargeVersion         string `pulumi:"sargeVersion"`
-	ServiceEdgeGroupId   string `pulumi:"serviceEdgeGroupId"`
+	Name string `pulumi:"name"`
+	// (string)
+	Platform string `pulumi:"platform"`
+	// (string)
+	PreviousVersion string `pulumi:"previousVersion"`
+	// (string)
+	PrivateIp string `pulumi:"privateIp"`
+	// (string)
+	ProvisioningKeyId string `pulumi:"provisioningKeyId"`
+	// (string)
+	ProvisioningKeyName string `pulumi:"provisioningKeyName"`
+	// (string)
+	PublicIp string `pulumi:"publicIp"`
+	// (string)
+	PublishIps string `pulumi:"publishIps"`
+	// (string)
+	SargeVersion string `pulumi:"sargeVersion"`
+	// (string)
+	ServiceEdgeGroupId string `pulumi:"serviceEdgeGroupId"`
+	// (string)
 	ServiceEdgeGroupName string `pulumi:"serviceEdgeGroupName"`
-	UpgradeAttempt       string `pulumi:"upgradeAttempt"`
-	UpgradeStatus        string `pulumi:"upgradeStatus"`
+	// (string)
+	UpgradeAttempt string `pulumi:"upgradeAttempt"`
+	// (string)
+	UpgradeStatus string `pulumi:"upgradeStatus"`
 }
 
 // GetZPAServiceEdgeGroupServiceEdgeInput is an input type that accepts GetZPAServiceEdgeGroupServiceEdgeArgs and GetZPAServiceEdgeGroupServiceEdgeOutput values.
@@ -12909,52 +12943,79 @@ type GetZPAServiceEdgeGroupServiceEdgeInput interface {
 }
 
 type GetZPAServiceEdgeGroupServiceEdgeArgs struct {
+	// (string)
 	ApplicationStartTime pulumi.StringInput `pulumi:"applicationStartTime"`
+	// (string)
 	ControlChannelStatus pulumi.StringInput `pulumi:"controlChannelStatus"`
 	// (string)
-	CreationTime   pulumi.StringInput `pulumi:"creationTime"`
+	CreationTime pulumi.StringInput `pulumi:"creationTime"`
+	// (string)
 	CtrlBrokerName pulumi.StringInput `pulumi:"ctrlBrokerName"`
+	// (string)
 	CurrentVersion pulumi.StringInput `pulumi:"currentVersion"`
-	Description    pulumi.StringInput `pulumi:"description"`
+	// (string) Description of the Service Edge Group.
+	Description pulumi.StringInput `pulumi:"description"`
 	// (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
-	Enabled             pulumi.BoolInput   `pulumi:"enabled"`
-	EnrollmentCert      pulumi.MapInput    `pulumi:"enrollmentCert"`
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// (string)
+	EnrollmentCert pulumi.MapInput `pulumi:"enrollmentCert"`
+	// (string)
 	ExpectedUpgradeTime pulumi.StringInput `pulumi:"expectedUpgradeTime"`
-	ExpectedVersion     pulumi.StringInput `pulumi:"expectedVersion"`
-	Fingerprint         pulumi.StringInput `pulumi:"fingerprint"`
+	// (string)
+	ExpectedVersion pulumi.StringInput `pulumi:"expectedVersion"`
+	Fingerprint     pulumi.StringInput `pulumi:"fingerprint"`
 	// The ID of the service edge group to be exported.
-	Id                               pulumi.StringInput `pulumi:"id"`
-	Ipacl                            pulumi.StringInput `pulumi:"ipacl"`
-	IssuedCertId                     pulumi.StringInput `pulumi:"issuedCertId"`
-	LastBrokerConnectTime            pulumi.StringInput `pulumi:"lastBrokerConnectTime"`
-	LastBrokerConnectTimeDuration    pulumi.StringInput `pulumi:"lastBrokerConnectTimeDuration"`
-	LastBrokerDisconnectTime         pulumi.StringInput `pulumi:"lastBrokerDisconnectTime"`
+	Id    pulumi.StringInput `pulumi:"id"`
+	Ipacl pulumi.StringInput `pulumi:"ipacl"`
+	// (string)
+	IssuedCertId pulumi.StringInput `pulumi:"issuedCertId"`
+	// (string)
+	LastBrokerConnectTime pulumi.StringInput `pulumi:"lastBrokerConnectTime"`
+	// (string)
+	LastBrokerConnectTimeDuration pulumi.StringInput `pulumi:"lastBrokerConnectTimeDuration"`
+	// (string)
+	LastBrokerDisconnectTime pulumi.StringInput `pulumi:"lastBrokerDisconnectTime"`
+	// (string)
 	LastBrokerDisconnectTimeDuration pulumi.StringInput `pulumi:"lastBrokerDisconnectTimeDuration"`
-	LastUpgradeTime                  pulumi.StringInput `pulumi:"lastUpgradeTime"`
-	// (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
-	Latitude  pulumi.StringInput `pulumi:"latitude"`
+	// (string)
+	LastUpgradeTime pulumi.StringInput `pulumi:"lastUpgradeTime"`
+	// (string)
+	Latitude pulumi.StringInput `pulumi:"latitude"`
+	// (string)
 	ListenIps pulumi.StringInput `pulumi:"listenIps"`
-	// (string) Location of the Service Edge Group.
+	// (string)
 	Location pulumi.StringInput `pulumi:"location"`
-	// (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+	// (string)
 	Longitude pulumi.StringInput `pulumi:"longitude"`
 	// (string)
 	ModifiedTime pulumi.StringInput `pulumi:"modifiedTime"`
 	Modifiedby   pulumi.StringInput `pulumi:"modifiedby"`
 	// The name of the service edge group to be exported.
-	Name                 pulumi.StringInput `pulumi:"name"`
-	Platform             pulumi.StringInput `pulumi:"platform"`
-	PreviousVersion      pulumi.StringInput `pulumi:"previousVersion"`
-	PrivateIp            pulumi.StringInput `pulumi:"privateIp"`
-	ProvisioningKeyId    pulumi.StringInput `pulumi:"provisioningKeyId"`
-	ProvisioningKeyName  pulumi.StringInput `pulumi:"provisioningKeyName"`
-	PublicIp             pulumi.StringInput `pulumi:"publicIp"`
-	PublishIps           pulumi.StringInput `pulumi:"publishIps"`
-	SargeVersion         pulumi.StringInput `pulumi:"sargeVersion"`
-	ServiceEdgeGroupId   pulumi.StringInput `pulumi:"serviceEdgeGroupId"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// (string)
+	Platform pulumi.StringInput `pulumi:"platform"`
+	// (string)
+	PreviousVersion pulumi.StringInput `pulumi:"previousVersion"`
+	// (string)
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// (string)
+	ProvisioningKeyId pulumi.StringInput `pulumi:"provisioningKeyId"`
+	// (string)
+	ProvisioningKeyName pulumi.StringInput `pulumi:"provisioningKeyName"`
+	// (string)
+	PublicIp pulumi.StringInput `pulumi:"publicIp"`
+	// (string)
+	PublishIps pulumi.StringInput `pulumi:"publishIps"`
+	// (string)
+	SargeVersion pulumi.StringInput `pulumi:"sargeVersion"`
+	// (string)
+	ServiceEdgeGroupId pulumi.StringInput `pulumi:"serviceEdgeGroupId"`
+	// (string)
 	ServiceEdgeGroupName pulumi.StringInput `pulumi:"serviceEdgeGroupName"`
-	UpgradeAttempt       pulumi.StringInput `pulumi:"upgradeAttempt"`
-	UpgradeStatus        pulumi.StringInput `pulumi:"upgradeStatus"`
+	// (string)
+	UpgradeAttempt pulumi.StringInput `pulumi:"upgradeAttempt"`
+	// (string)
+	UpgradeStatus pulumi.StringInput `pulumi:"upgradeStatus"`
 }
 
 func (GetZPAServiceEdgeGroupServiceEdgeArgs) ElementType() reflect.Type {
@@ -13008,10 +13069,12 @@ func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ToGetZPAServiceEdgeGroupService
 	return o
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ApplicationStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ApplicationStartTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ControlChannelStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ControlChannelStatus }).(pulumi.StringOutput)
 }
@@ -13021,14 +13084,17 @@ func (o GetZPAServiceEdgeGroupServiceEdgeOutput) CreationTime() pulumi.StringOut
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) CtrlBrokerName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.CtrlBrokerName }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) CurrentVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.CurrentVersion }).(pulumi.StringOutput)
 }
 
+// (string) Description of the Service Edge Group.
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -13038,14 +13104,17 @@ func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) EnrollmentCert() pulumi.MapOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) map[string]interface{} { return v.EnrollmentCert }).(pulumi.MapOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ExpectedUpgradeTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ExpectedUpgradeTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ExpectedVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ExpectedVersion }).(pulumi.StringOutput)
 }
@@ -13063,45 +13132,52 @@ func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Ipacl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Ipacl }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) IssuedCertId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.IssuedCertId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) LastBrokerConnectTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.LastBrokerConnectTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) LastBrokerConnectTimeDuration() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.LastBrokerConnectTimeDuration }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) LastBrokerDisconnectTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.LastBrokerDisconnectTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) LastBrokerDisconnectTimeDuration() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.LastBrokerDisconnectTimeDuration }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) LastUpgradeTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.LastUpgradeTime }).(pulumi.StringOutput)
 }
 
-// (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Latitude() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Latitude }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ListenIps() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ListenIps }).(pulumi.StringOutput)
 }
 
-// (string) Location of the Service Edge Group.
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Location() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Location }).(pulumi.StringOutput)
 }
 
-// (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Longitude() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Longitude }).(pulumi.StringOutput)
 }
@@ -13120,50 +13196,62 @@ func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) Platform() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.Platform }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) PreviousVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.PreviousVersion }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ProvisioningKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ProvisioningKeyId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ProvisioningKeyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ProvisioningKeyName }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) PublicIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.PublicIp }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) PublishIps() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.PublishIps }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) SargeVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.SargeVersion }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ServiceEdgeGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ServiceEdgeGroupId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) ServiceEdgeGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.ServiceEdgeGroupName }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) UpgradeAttempt() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.UpgradeAttempt }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupServiceEdgeOutput) UpgradeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupServiceEdge) string { return v.UpgradeStatus }).(pulumi.StringOutput)
 }
@@ -13191,16 +13279,20 @@ func (o GetZPAServiceEdgeGroupServiceEdgeArrayOutput) Index(i pulumi.IntInput) G
 type GetZPAServiceEdgeGroupTrustedNetwork struct {
 	// (string)
 	CreationTime string `pulumi:"creationTime"`
-	Domain       string `pulumi:"domain"`
+	// (string)
+	Domain string `pulumi:"domain"`
 	// The ID of the service edge group to be exported.
-	Id               string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// (string)
 	MasterCustomerId string `pulumi:"masterCustomerId"`
 	// (string)
 	ModifiedTime string `pulumi:"modifiedTime"`
 	Modifiedby   string `pulumi:"modifiedby"`
 	// The name of the service edge group to be exported.
-	Name         string `pulumi:"name"`
-	NetworkId    string `pulumi:"networkId"`
+	Name string `pulumi:"name"`
+	// (string)
+	NetworkId string `pulumi:"networkId"`
+	// (string)
 	ZscalerCloud string `pulumi:"zscalerCloud"`
 }
 
@@ -13218,16 +13310,20 @@ type GetZPAServiceEdgeGroupTrustedNetworkInput interface {
 type GetZPAServiceEdgeGroupTrustedNetworkArgs struct {
 	// (string)
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	Domain       pulumi.StringInput `pulumi:"domain"`
+	// (string)
+	Domain pulumi.StringInput `pulumi:"domain"`
 	// The ID of the service edge group to be exported.
-	Id               pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// (string)
 	MasterCustomerId pulumi.StringInput `pulumi:"masterCustomerId"`
 	// (string)
 	ModifiedTime pulumi.StringInput `pulumi:"modifiedTime"`
 	Modifiedby   pulumi.StringInput `pulumi:"modifiedby"`
 	// The name of the service edge group to be exported.
-	Name         pulumi.StringInput `pulumi:"name"`
-	NetworkId    pulumi.StringInput `pulumi:"networkId"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// (string)
+	NetworkId pulumi.StringInput `pulumi:"networkId"`
+	// (string)
 	ZscalerCloud pulumi.StringInput `pulumi:"zscalerCloud"`
 }
 
@@ -13287,6 +13383,7 @@ func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) CreationTime() pulumi.String
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.Domain }).(pulumi.StringOutput)
 }
@@ -13296,6 +13393,7 @@ func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) MasterCustomerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.MasterCustomerId }).(pulumi.StringOutput)
 }
@@ -13314,10 +13412,12 @@ func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) NetworkId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.NetworkId }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPAServiceEdgeGroupTrustedNetworkOutput) ZscalerCloud() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPAServiceEdgeGroupTrustedNetwork) string { return v.ZscalerCloud }).(pulumi.StringOutput)
 }

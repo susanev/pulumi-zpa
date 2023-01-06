@@ -34,7 +34,7 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// - App Connector Group ID(s) where logs will be forwarded to.
+        /// App Connector Group ID(s) where logs will be forwarded to.
         /// </summary>
         public readonly string? Id;
         public readonly bool? LssDefaultRule;
@@ -42,6 +42,9 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// (Optional)
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// (Optional) - Supported values are: `AND` or `OR`
+        /// </summary>
         public readonly string? Operator;
         public readonly string? PolicySetId;
         public readonly string? PolicyType;

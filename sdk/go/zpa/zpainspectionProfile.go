@@ -24,8 +24,6 @@ type ZPAInspectionProfile struct {
 	// (Optional) Types for custom controls
 	ControlsInfos ZPAInspectionProfileControlsInfoArrayOutput `pulumi:"controlsInfos"`
 	// (Optional) Types for custom controls
-	// * `type` (Optional) Types for custom controls
-	// * `controlRuleJson` (Optional) Custom controls string in JSON format
 	CustomControls ZPAInspectionProfileCustomControlArrayOutput `pulumi:"customControls"`
 	// Description of the inspection profile.
 	Description          pulumi.StringOutput      `pulumi:"description"`
@@ -47,7 +45,6 @@ func NewZPAInspectionProfile(ctx *pulumi.Context,
 		args = &ZPAInspectionProfileArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAInspectionProfile
 	err := ctx.RegisterResource("zpa:index/zPAInspectionProfile:ZPAInspectionProfile", name, args, &resource, opts...)
 	if err != nil {
@@ -76,8 +73,6 @@ type zpainspectionProfileState struct {
 	// (Optional) Types for custom controls
 	ControlsInfos []ZPAInspectionProfileControlsInfo `pulumi:"controlsInfos"`
 	// (Optional) Types for custom controls
-	// * `type` (Optional) Types for custom controls
-	// * `controlRuleJson` (Optional) Custom controls string in JSON format
 	CustomControls []ZPAInspectionProfileCustomControl `pulumi:"customControls"`
 	// Description of the inspection profile.
 	Description          *string  `pulumi:"description"`
@@ -99,8 +94,6 @@ type ZPAInspectionProfileState struct {
 	// (Optional) Types for custom controls
 	ControlsInfos ZPAInspectionProfileControlsInfoArrayInput
 	// (Optional) Types for custom controls
-	// * `type` (Optional) Types for custom controls
-	// * `controlRuleJson` (Optional) Custom controls string in JSON format
 	CustomControls ZPAInspectionProfileCustomControlArrayInput
 	// Description of the inspection profile.
 	Description          pulumi.StringPtrInput
@@ -126,8 +119,6 @@ type zpainspectionProfileArgs struct {
 	// (Optional) Types for custom controls
 	ControlsInfos []ZPAInspectionProfileControlsInfo `pulumi:"controlsInfos"`
 	// (Optional) Types for custom controls
-	// * `type` (Optional) Types for custom controls
-	// * `controlRuleJson` (Optional) Custom controls string in JSON format
 	CustomControls []ZPAInspectionProfileCustomControl `pulumi:"customControls"`
 	// Description of the inspection profile.
 	Description          *string  `pulumi:"description"`
@@ -150,8 +141,6 @@ type ZPAInspectionProfileArgs struct {
 	// (Optional) Types for custom controls
 	ControlsInfos ZPAInspectionProfileControlsInfoArrayInput
 	// (Optional) Types for custom controls
-	// * `type` (Optional) Types for custom controls
-	// * `controlRuleJson` (Optional) Custom controls string in JSON format
 	CustomControls ZPAInspectionProfileCustomControlArrayInput
 	// Description of the inspection profile.
 	Description          pulumi.StringPtrInput
@@ -268,8 +257,6 @@ func (o ZPAInspectionProfileOutput) ControlsInfos() ZPAInspectionProfileControls
 }
 
 // (Optional) Types for custom controls
-// * `type` (Optional) Types for custom controls
-// * `controlRuleJson` (Optional) Custom controls string in JSON format
 func (o ZPAInspectionProfileOutput) CustomControls() ZPAInspectionProfileCustomControlArrayOutput {
 	return o.ApplyT(func(v *ZPAInspectionProfile) ZPAInspectionProfileCustomControlArrayOutput { return v.CustomControls }).(ZPAInspectionProfileCustomControlArrayOutput)
 }

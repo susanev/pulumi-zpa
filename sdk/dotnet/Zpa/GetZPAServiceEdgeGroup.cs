@@ -162,6 +162,9 @@ namespace zscaler.PulumiPackage.Zpa
         /// (string)
         /// </summary>
         public readonly string CreationTime;
+        /// <summary>
+        /// (string) Description of the Service Edge Group.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// (bool) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
@@ -171,21 +174,24 @@ namespace zscaler.PulumiPackage.Zpa
         /// (string)
         /// </summary>
         public readonly string GeoLocationId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Id;
         /// <summary>
         /// (string)
         /// </summary>
         public readonly string IsPublic;
         /// <summary>
-        /// (string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`
+        /// (string)
         /// </summary>
         public readonly string Latitude;
         /// <summary>
-        /// (string) Location of the Service Edge Group.
+        /// (string)
         /// </summary>
         public readonly string Location;
         /// <summary>
-        /// (string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`
+        /// (string)
         /// </summary>
         public readonly string Longitude;
         /// <summary>
@@ -193,6 +199,9 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Name;
         /// <summary>
         /// (bool) Whether the default version profile of the App Connector Group is applied or overridden. Default: `false` Supported values: `true`, `false`
@@ -200,54 +209,10 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly bool OverrideVersionProfile;
         /// <summary>
         /// (string)
-        /// * `name` (string)
-        /// * `application_start_time` (string)
-        /// * `service_edge_group_id` (string)
-        /// * `service_edge_group_name` (string)
-        /// * `control_channel_status` (string)
-        /// * `creation_time` (string)
-        /// * `modified_by` (string)
-        /// * `modified_time` (string)
-        /// * `ctrl_broker_name` (string)
-        /// * `current_version` (string)
-        /// * `expected_upgrade_time` (string)
-        /// * `expected_version` (string)
-        /// * `figerprint` (string)
-        /// * `ip_acl` (string)
-        /// * `issued_cert_id` (string)
-        /// * `last_broker_connect_time` (string)
-        /// * `last_broker_connect_time_duration` (string)
-        /// * `last_broker_disconnect_time` (string)
-        /// * `last_broker_disconnect_time_duration` (string)
-        /// * `last_upgrade_time` (string)
-        /// * `latitude` (string)
-        /// * `listen_ips` (string)
-        /// * `location` (string)
-        /// * `longitude` (string)
-        /// * `provisioning_key_id` (string)
-        /// * `provisioning_key_name` (string)
-        /// * `platform` (string)
-        /// * `previous_version` (string)
-        /// * `private_ip` (string)
-        /// * `public_ip` (string)
-        /// * `publish_ips` (string)
-        /// * `sarge_version` (string)
-        /// * `enrollment_cert` (string)
-        /// * `upgrade_attempt` (string)
-        /// * `upgrade_status` (string)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAServiceEdgeGroupServiceEdgeResult> ServiceEdges;
         /// <summary>
         /// (string)
-        /// * `creation_time` (string)
-        /// * `domain` (string)
-        /// * `id` (string)
-        /// * `master_customer_id` (string)
-        /// * `modified_by` (string)
-        /// * `modified_time` (string)
-        /// * `name` (string)
-        /// * `network_id` (string)
-        /// * `zscaler_cloud` (string)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAServiceEdgeGroupTrustedNetworkResult> TrustedNetworks;
         /// <summary>
@@ -261,25 +226,16 @@ namespace zscaler.PulumiPackage.Zpa
         /// <summary>
         /// (String) ID of the version profile.
         /// Exported values are:
-        /// * ``0`` = ``Default``
-        /// * ``1`` = ``Previous Default``
-        /// * ``2`` = ``New Release``
         /// </summary>
         public readonly string VersionProfileId;
         /// <summary>
         /// (String)
         /// Exported values are:
-        /// * ``Default`` = ``0``
-        /// * ``Previous Default`` = ``1``
-        /// * ``New Release`` = ``2``
         /// </summary>
         public readonly string VersionProfileName;
         /// <summary>
         /// (string)
         /// Exported values are:
-        /// * ``ALL``
-        /// * ``NONE``
-        /// * ``CUSTOM``
         /// </summary>
         public readonly string VersionProfileVisibilityScope;
 

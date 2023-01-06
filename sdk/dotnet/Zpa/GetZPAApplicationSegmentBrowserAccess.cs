@@ -204,7 +204,7 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly string ConfigSpace;
         /// <summary>
-        /// (string) Description of the application.
+        /// (string)
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -216,7 +216,7 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly bool DoubleEncrypt;
         /// <summary>
-        /// (Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+        /// (bool)
         /// </summary>
         public readonly bool Enabled;
         public readonly string HealthCheckType;

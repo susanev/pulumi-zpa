@@ -68,9 +68,6 @@ export interface GetZPAEnrollmentCertResult {
     readonly certificate: string;
     /**
      * (string) Returned values are:
-     * * `ZAPP_CLIENT`
-     * * `ISOLATION_CLIENT`
-     * * `NONE`
      */
     readonly clientCertType: string;
     /**

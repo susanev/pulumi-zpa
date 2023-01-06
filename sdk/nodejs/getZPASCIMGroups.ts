@@ -38,8 +38,6 @@ export interface GetZPASCIMGroupsArgs {
     id?: string;
     /**
      * (string) The ID of the IdP corresponding to the SAML attribute.
-     * * `idpGroupId`(string)
-     * * `modifiedTime` (string)
      */
     idpId?: number;
     /**
@@ -61,14 +59,18 @@ export interface GetZPASCIMGroupsResult {
      */
     readonly creationTime: number;
     readonly id?: string;
+    /**
+     * (string)
+     */
     readonly idpGroupId: string;
     /**
      * (string) The ID of the IdP corresponding to the SAML attribute.
-     * * `idpGroupId`(string)
-     * * `modifiedTime` (string)
      */
     readonly idpId?: number;
     readonly idpName?: string;
+    /**
+     * (string)
+     */
     readonly modifiedTime: number;
     readonly name?: string;
 }
@@ -98,8 +100,6 @@ export interface GetZPASCIMGroupsOutputArgs {
     id?: pulumi.Input<string>;
     /**
      * (string) The ID of the IdP corresponding to the SAML attribute.
-     * * `idpGroupId`(string)
-     * * `modifiedTime` (string)
      */
     idpId?: pulumi.Input<number>;
     /**

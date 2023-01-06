@@ -70,12 +70,13 @@ export interface GetZPASAMLAttributeResult {
      */
     readonly idpId: string;
     readonly idpName?: string;
+    /**
+     * (string)
+     */
     readonly modifiedTime: string;
     readonly modifiedby: string;
     /**
      * (string)
-     * * `modifiedBy` (string)
-     * * `modifiedTime` (string)
      */
     readonly name: string;
     /**

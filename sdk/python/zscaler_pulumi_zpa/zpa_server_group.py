@@ -29,12 +29,11 @@ class ZPAServerGroupArgs:
         The set of arguments for constructing a ZPAServerGroup resource.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupAppConnectorGroupArgs']]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupApplicationArgs']]] applications: This field is a json array of app-connector-id only.
-        :param pulumi.Input[str] description: This field is the description of the server group.
-        :param pulumi.Input[bool] dynamic_discovery: This field controls dynamic discovery of the servers.
-        :param pulumi.Input[bool] enabled: This field defines if the server group is enabled or disabled.
+        :param pulumi.Input[str] description: (Optional) This field is the description of the server group.
+        :param pulumi.Input[bool] dynamic_discovery: (Optional) This field controls dynamic discovery of the servers.
+        :param pulumi.Input[bool] enabled: (Optional) This field defines if the server group is enabled or disabled.
         :param pulumi.Input[str] name: This field defines the name of the server group.
-        :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupServerArgs']]] servers: This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-               only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupServerArgs']]] servers: (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         if app_connector_groups is not None:
             pulumi.set(__self__, "app_connector_groups", app_connector_groups)
@@ -92,7 +91,7 @@ class ZPAServerGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        This field is the description of the server group.
+        (Optional) This field is the description of the server group.
         """
         return pulumi.get(self, "description")
 
@@ -104,7 +103,7 @@ class ZPAServerGroupArgs:
     @pulumi.getter(name="dynamicDiscovery")
     def dynamic_discovery(self) -> Optional[pulumi.Input[bool]]:
         """
-        This field controls dynamic discovery of the servers.
+        (Optional) This field controls dynamic discovery of the servers.
         """
         return pulumi.get(self, "dynamic_discovery")
 
@@ -116,7 +115,7 @@ class ZPAServerGroupArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        This field defines if the server group is enabled or disabled.
+        (Optional) This field defines if the server group is enabled or disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -149,8 +148,7 @@ class ZPAServerGroupArgs:
     @pulumi.getter
     def servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupServerArgs']]]]:
         """
-        This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-        only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         return pulumi.get(self, "servers")
 
@@ -175,12 +173,11 @@ class _ZPAServerGroupState:
         Input properties used for looking up and filtering ZPAServerGroup resources.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupAppConnectorGroupArgs']]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupApplicationArgs']]] applications: This field is a json array of app-connector-id only.
-        :param pulumi.Input[str] description: This field is the description of the server group.
-        :param pulumi.Input[bool] dynamic_discovery: This field controls dynamic discovery of the servers.
-        :param pulumi.Input[bool] enabled: This field defines if the server group is enabled or disabled.
+        :param pulumi.Input[str] description: (Optional) This field is the description of the server group.
+        :param pulumi.Input[bool] dynamic_discovery: (Optional) This field controls dynamic discovery of the servers.
+        :param pulumi.Input[bool] enabled: (Optional) This field defines if the server group is enabled or disabled.
         :param pulumi.Input[str] name: This field defines the name of the server group.
-        :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupServerArgs']]] servers: This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-               only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        :param pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupServerArgs']]] servers: (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         if app_connector_groups is not None:
             pulumi.set(__self__, "app_connector_groups", app_connector_groups)
@@ -238,7 +235,7 @@ class _ZPAServerGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        This field is the description of the server group.
+        (Optional) This field is the description of the server group.
         """
         return pulumi.get(self, "description")
 
@@ -250,7 +247,7 @@ class _ZPAServerGroupState:
     @pulumi.getter(name="dynamicDiscovery")
     def dynamic_discovery(self) -> Optional[pulumi.Input[bool]]:
         """
-        This field controls dynamic discovery of the servers.
+        (Optional) This field controls dynamic discovery of the servers.
         """
         return pulumi.get(self, "dynamic_discovery")
 
@@ -262,7 +259,7 @@ class _ZPAServerGroupState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        This field defines if the server group is enabled or disabled.
+        (Optional) This field defines if the server group is enabled or disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -295,8 +292,7 @@ class _ZPAServerGroupState:
     @pulumi.getter
     def servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZPAServerGroupServerArgs']]]]:
         """
-        This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-        only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         return pulumi.get(self, "servers")
 
@@ -415,12 +411,11 @@ class ZPAServerGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupAppConnectorGroupArgs']]]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupApplicationArgs']]]] applications: This field is a json array of app-connector-id only.
-        :param pulumi.Input[str] description: This field is the description of the server group.
-        :param pulumi.Input[bool] dynamic_discovery: This field controls dynamic discovery of the servers.
-        :param pulumi.Input[bool] enabled: This field defines if the server group is enabled or disabled.
+        :param pulumi.Input[str] description: (Optional) This field is the description of the server group.
+        :param pulumi.Input[bool] dynamic_discovery: (Optional) This field controls dynamic discovery of the servers.
+        :param pulumi.Input[bool] enabled: (Optional) This field defines if the server group is enabled or disabled.
         :param pulumi.Input[str] name: This field defines the name of the server group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupServerArgs']]]] servers: This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-               only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupServerArgs']]]] servers: (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         ...
     @overload
@@ -589,12 +584,11 @@ class ZPAServerGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupAppConnectorGroupArgs']]]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupApplicationArgs']]]] applications: This field is a json array of app-connector-id only.
-        :param pulumi.Input[str] description: This field is the description of the server group.
-        :param pulumi.Input[bool] dynamic_discovery: This field controls dynamic discovery of the servers.
-        :param pulumi.Input[bool] enabled: This field defines if the server group is enabled or disabled.
+        :param pulumi.Input[str] description: (Optional) This field is the description of the server group.
+        :param pulumi.Input[bool] dynamic_discovery: (Optional) This field controls dynamic discovery of the servers.
+        :param pulumi.Input[bool] enabled: (Optional) This field defines if the server group is enabled or disabled.
         :param pulumi.Input[str] name: This field defines the name of the server group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupServerArgs']]]] servers: This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-               only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAServerGroupServerArgs']]]] servers: (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -636,7 +630,7 @@ class ZPAServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        This field is the description of the server group.
+        (Optional) This field is the description of the server group.
         """
         return pulumi.get(self, "description")
 
@@ -644,7 +638,7 @@ class ZPAServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="dynamicDiscovery")
     def dynamic_discovery(self) -> pulumi.Output[Optional[bool]]:
         """
-        This field controls dynamic discovery of the servers.
+        (Optional) This field controls dynamic discovery of the servers.
         """
         return pulumi.get(self, "dynamic_discovery")
 
@@ -652,7 +646,7 @@ class ZPAServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[Optional[bool]]:
         """
-        This field defines if the server group is enabled or disabled.
+        (Optional) This field defines if the server group is enabled or disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -673,8 +667,7 @@ class ZPAServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def servers(self) -> pulumi.Output[Sequence['outputs.ZPAServerGroupServer']]:
         """
-        This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required
-        only in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.
+        (Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.
         """
         return pulumi.get(self, "servers")
 

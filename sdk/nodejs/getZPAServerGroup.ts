@@ -46,6 +46,9 @@ export interface GetZPAServerGroupArgs {
  * A collection of values returned by getZPAServerGroup.
  */
 export interface GetZPAServerGroupResult {
+    /**
+     * (string)This field is a json array of app-connector-id only.
+     */
     readonly appConnectorGroups: outputs.GetZPAServerGroupAppConnectorGroup[];
     readonly applications: outputs.GetZPAServerGroupApplication[];
     /**
@@ -68,7 +71,6 @@ export interface GetZPAServerGroupResult {
     readonly id?: string;
     /**
      * (bool)
-     * * `appConnectorGroups` (string)This field is a json array of app-connector-id only.
      */
     readonly ipAnchored: boolean;
     readonly modifiedTime: string;

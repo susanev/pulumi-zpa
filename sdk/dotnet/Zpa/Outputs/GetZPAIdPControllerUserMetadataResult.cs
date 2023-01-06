@@ -14,10 +14,22 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     [OutputType]
     public sealed class GetZPAIdPControllerUserMetadataResult
     {
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string CertificateUrl;
         public readonly string SpBaseUrl;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string SpEntityId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string SpMetadataUrl;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string SpPostUrl;
 
         [OutputConstructor]

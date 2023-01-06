@@ -63,30 +63,93 @@ export interface GetZPAIdPControllerArgs {
  * A collection of values returned by getZPAIdPController.
  */
 export interface GetZPAIdPControllerResult {
+    /**
+     * (Computed)
+     */
     readonly adminMetadatas: outputs.GetZPAIdPControllerAdminMetadata[];
     readonly adminSpSigningCertId: string;
+    /**
+     * (string)
+     */
     readonly autoProvision: string;
+    /**
+     * (string)
+     */
     readonly creationTime: string;
+    /**
+     * (string)
+     */
     readonly description: string;
+    /**
+     * (bool)
+     */
     readonly disableSamlBasedPolicy: boolean;
+    /**
+     * (string)
+     */
     readonly domainLists: string[];
+    /**
+     * (bool)
+     */
     readonly enableScimBasedPolicy: boolean;
+    /**
+     * (bool) Default value if null is True
+     */
     readonly enabled: boolean;
     readonly id: string;
+    /**
+     * (string)
+     */
     readonly idpEntityId: string;
+    /**
+     * (string)
+     */
     readonly loginNameAttribute: string;
+    /**
+     * (string)
+     */
     readonly loginUrl: string;
+    /**
+     * (string)
+     */
     readonly modifiedTime: string;
     readonly modifiedby: string;
     readonly name: string;
+    /**
+     * (bool)
+     */
     readonly reauthOnUserUpdate: boolean;
+    /**
+     * (bool)
+     */
     readonly redirectBinding: boolean;
+    /**
+     * (bool)
+     */
     readonly scimEnabled: boolean;
+    /**
+     * (string)
+     */
     readonly scimServiceProviderEndpoint: string;
+    /**
+     * (bool)
+     */
     readonly scimSharedSecretExists: boolean;
+    /**
+     * (string)
+     */
     readonly signSamlRequest: string;
+    /**
+     * (string)
+     */
     readonly ssoTypes: string[];
+    /**
+     * (bool)
+     */
     readonly useCustomSpMetadata: boolean;
+    /**
+     * (Computed)
+     */
     readonly userMetadatas: outputs.GetZPAIdPControllerUserMetadata[];
     readonly userSpSigningCertId: string;
 }

@@ -36,7 +36,6 @@ import (
 //
 // ```
 func LookupZPAServerGroup(ctx *pulumi.Context, args *LookupZPAServerGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPAServerGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAServerGroupResult
 	err := ctx.Invoke("zpa:index/getZPAServerGroup:getZPAServerGroup", args, &rv, opts...)
 	if err != nil {
@@ -55,6 +54,7 @@ type LookupZPAServerGroupArgs struct {
 
 // A collection of values returned by getZPAServerGroup.
 type LookupZPAServerGroupResult struct {
+	// (string)This field is a json array of app-connector-id only.
 	AppConnectorGroups []GetZPAServerGroupAppConnectorGroup `pulumi:"appConnectorGroups"`
 	Applications       []GetZPAServerGroupApplication       `pulumi:"applications"`
 	// (string)
@@ -68,7 +68,6 @@ type LookupZPAServerGroupResult struct {
 	Enabled bool    `pulumi:"enabled"`
 	Id      *string `pulumi:"id"`
 	// (bool)
-	// * `appConnectorGroups` (string)This field is a json array of app-connector-id only.
 	IpAnchored   bool                      `pulumi:"ipAnchored"`
 	ModifiedTime string                    `pulumi:"modifiedTime"`
 	Modifiedby   string                    `pulumi:"modifiedby"`
@@ -116,6 +115,7 @@ func (o LookupZPAServerGroupResultOutput) ToLookupZPAServerGroupResultOutputWith
 	return o
 }
 
+// (string)This field is a json array of app-connector-id only.
 func (o LookupZPAServerGroupResultOutput) AppConnectorGroups() GetZPAServerGroupAppConnectorGroupArrayOutput {
 	return o.ApplyT(func(v LookupZPAServerGroupResult) []GetZPAServerGroupAppConnectorGroup { return v.AppConnectorGroups }).(GetZPAServerGroupAppConnectorGroupArrayOutput)
 }
@@ -153,7 +153,6 @@ func (o LookupZPAServerGroupResultOutput) Id() pulumi.StringPtrOutput {
 }
 
 // (bool)
-// * `appConnectorGroups` (string)This field is a json array of app-connector-id only.
 func (o LookupZPAServerGroupResultOutput) IpAnchored() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupZPAServerGroupResult) bool { return v.IpAnchored }).(pulumi.BoolOutput)
 }

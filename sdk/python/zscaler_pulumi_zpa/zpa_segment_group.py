@@ -25,9 +25,11 @@ class ZPASegmentGroupArgs:
                  tcp_keep_alive_enabled: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ZPASegmentGroup resource.
-        :param pulumi.Input[str] description: Description of the app group.
-        :param pulumi.Input[bool] enabled: Whether this app group is enabled or not.
+        :param pulumi.Input[str] config_space: (Optional)
+        :param pulumi.Input[str] description: (Optional) Description of the segment group.
+        :param pulumi.Input[bool] enabled: (Optional) Whether this segment group is enabled or not.
         :param pulumi.Input[str] name: (Required) Name of the segment group.
+        :param pulumi.Input[str] tcp_keep_alive_enabled: (Optional)
         """
         if applications is not None:
             pulumi.set(__self__, "applications", applications)
@@ -56,6 +58,9 @@ class ZPASegmentGroupArgs:
     @property
     @pulumi.getter(name="configSpace")
     def config_space(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "config_space")
 
     @config_space.setter
@@ -66,7 +71,7 @@ class ZPASegmentGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        Description of the app group.
+        (Optional) Description of the segment group.
         """
         return pulumi.get(self, "description")
 
@@ -78,7 +83,7 @@ class ZPASegmentGroupArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether this app group is enabled or not.
+        (Optional) Whether this segment group is enabled or not.
         """
         return pulumi.get(self, "enabled")
 
@@ -110,6 +115,9 @@ class ZPASegmentGroupArgs:
     @property
     @pulumi.getter(name="tcpKeepAliveEnabled")
     def tcp_keep_alive_enabled(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "tcp_keep_alive_enabled")
 
     @tcp_keep_alive_enabled.setter
@@ -129,9 +137,11 @@ class _ZPASegmentGroupState:
                  tcp_keep_alive_enabled: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ZPASegmentGroup resources.
-        :param pulumi.Input[str] description: Description of the app group.
-        :param pulumi.Input[bool] enabled: Whether this app group is enabled or not.
+        :param pulumi.Input[str] config_space: (Optional)
+        :param pulumi.Input[str] description: (Optional) Description of the segment group.
+        :param pulumi.Input[bool] enabled: (Optional) Whether this segment group is enabled or not.
         :param pulumi.Input[str] name: (Required) Name of the segment group.
+        :param pulumi.Input[str] tcp_keep_alive_enabled: (Optional)
         """
         if applications is not None:
             pulumi.set(__self__, "applications", applications)
@@ -160,6 +170,9 @@ class _ZPASegmentGroupState:
     @property
     @pulumi.getter(name="configSpace")
     def config_space(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "config_space")
 
     @config_space.setter
@@ -170,7 +183,7 @@ class _ZPASegmentGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        Description of the app group.
+        (Optional) Description of the segment group.
         """
         return pulumi.get(self, "description")
 
@@ -182,7 +195,7 @@ class _ZPASegmentGroupState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether this app group is enabled or not.
+        (Optional) Whether this segment group is enabled or not.
         """
         return pulumi.get(self, "enabled")
 
@@ -214,6 +227,9 @@ class _ZPASegmentGroupState:
     @property
     @pulumi.getter(name="tcpKeepAliveEnabled")
     def tcp_keep_alive_enabled(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "tcp_keep_alive_enabled")
 
     @tcp_keep_alive_enabled.setter
@@ -264,9 +280,11 @@ class ZPASegmentGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: Description of the app group.
-        :param pulumi.Input[bool] enabled: Whether this app group is enabled or not.
+        :param pulumi.Input[str] config_space: (Optional)
+        :param pulumi.Input[str] description: (Optional) Description of the segment group.
+        :param pulumi.Input[bool] enabled: (Optional) Whether this segment group is enabled or not.
         :param pulumi.Input[str] name: (Required) Name of the segment group.
+        :param pulumi.Input[str] tcp_keep_alive_enabled: (Optional)
         """
         ...
     @overload
@@ -364,9 +382,11 @@ class ZPASegmentGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: Description of the app group.
-        :param pulumi.Input[bool] enabled: Whether this app group is enabled or not.
+        :param pulumi.Input[str] config_space: (Optional)
+        :param pulumi.Input[str] description: (Optional) Description of the segment group.
+        :param pulumi.Input[bool] enabled: (Optional) Whether this segment group is enabled or not.
         :param pulumi.Input[str] name: (Required) Name of the segment group.
+        :param pulumi.Input[str] tcp_keep_alive_enabled: (Optional)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -389,13 +409,16 @@ class ZPASegmentGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="configSpace")
     def config_space(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "config_space")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        Description of the app group.
+        (Optional) Description of the segment group.
         """
         return pulumi.get(self, "description")
 
@@ -403,7 +426,7 @@ class ZPASegmentGroup(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[Optional[bool]]:
         """
-        Whether this app group is enabled or not.
+        (Optional) Whether this segment group is enabled or not.
         """
         return pulumi.get(self, "enabled")
 
@@ -423,5 +446,8 @@ class ZPASegmentGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="tcpKeepAliveEnabled")
     def tcp_keep_alive_enabled(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "tcp_keep_alive_enabled")
 

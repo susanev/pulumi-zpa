@@ -17,7 +17,7 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         private InputList<string>? _ids;
 
         /// <summary>
-        /// - App Connector Group ID(s) where logs will be forwarded to.
+        /// App Connector Group ID(s) where logs will be forwarded to.
         /// </summary>
         public InputList<string> Ids
         {

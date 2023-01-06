@@ -60,6 +60,9 @@ class GetZPASCIMGroupsResult:
     @property
     @pulumi.getter(name="idpGroupId")
     def idp_group_id(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "idp_group_id")
 
     @property
@@ -67,8 +70,6 @@ class GetZPASCIMGroupsResult:
     def idp_id(self) -> Optional[int]:
         """
         (string) The ID of the IdP corresponding to the SAML attribute.
-        * `idp_group_id`(string)
-        * `modified_time` (string)
         """
         return pulumi.get(self, "idp_id")
 
@@ -80,6 +81,9 @@ class GetZPASCIMGroupsResult:
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> int:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -123,8 +127,6 @@ def get_zpascim_groups(id: Optional[str] = None,
 
 
     :param int idp_id: (string) The ID of the IdP corresponding to the SAML attribute.
-           * `idp_group_id`(string)
-           * `modified_time` (string)
     :param str idp_name: Name. The name of the IdP where the scim group must be exported from.
     :param str name: Name. The name of the scim group to be exported.
     """
@@ -167,8 +169,6 @@ def get_zpascim_groups_output(id: Optional[pulumi.Input[Optional[str]]] = None,
 
 
     :param int idp_id: (string) The ID of the IdP corresponding to the SAML attribute.
-           * `idp_group_id`(string)
-           * `modified_time` (string)
     :param str idp_name: Name. The name of the IdP where the scim group must be exported from.
     :param str name: Name. The name of the scim group to be exported.
     """

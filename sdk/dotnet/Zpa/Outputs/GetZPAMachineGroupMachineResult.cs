@@ -14,23 +14,53 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     [OutputType]
     public sealed class GetZPAMachineGroupMachineResult
     {
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string CreationTime;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Fingerprint;
         /// <summary>
         /// The ID of the machine group to be exported.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string IssuedCertId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string MachineGroupId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string MachineGroupName;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string MachineTokenId;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedBy;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string ModifiedTime;
         /// <summary>
         /// The name of the machine group to be exported.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SigningCert;
 
         [OutputConstructor]

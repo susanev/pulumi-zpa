@@ -103,14 +103,6 @@ def get_zpalss_log_type_formats(log_type: Optional[str] = None,
 
 
     :param str log_type: The type of log to be exported.
-           * `zpn_trans_log`
-           * `zpn_auth_log`
-           * `zpn_ast_auth_log`
-           * `zpn_http_trans_log`
-           * `zpn_audit_log`
-           * `zpn_sys_auth_log`
-           * `zpn_ast_comprehensive_stats`
-           * `zpn_waf_http_exchanges_log`
     """
     __args__ = dict()
     __args__['logType'] = log_type
@@ -149,13 +141,5 @@ def get_zpalss_log_type_formats_output(log_type: Optional[pulumi.Input[str]] = N
 
 
     :param str log_type: The type of log to be exported.
-           * `zpn_trans_log`
-           * `zpn_auth_log`
-           * `zpn_ast_auth_log`
-           * `zpn_http_trans_log`
-           * `zpn_audit_log`
-           * `zpn_sys_auth_log`
-           * `zpn_ast_comprehensive_stats`
-           * `zpn_waf_http_exchanges_log`
     """
     ...

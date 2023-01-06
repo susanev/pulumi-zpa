@@ -46,7 +46,6 @@ import (
 //
 // ```
 func GetZPASCIMAttributeHeader(ctx *pulumi.Context, args *GetZPASCIMAttributeHeaderArgs, opts ...pulumi.InvokeOption) (*GetZPASCIMAttributeHeaderResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPASCIMAttributeHeaderResult
 	err := ctx.Invoke("zpa:index/getZPASCIMAttributeHeader:getZPASCIMAttributeHeader", args, &rv, opts...)
 	if err != nil {
@@ -58,14 +57,6 @@ func GetZPASCIMAttributeHeader(ctx *pulumi.Context, args *GetZPASCIMAttributeHea
 // A collection of arguments for invoking getZPASCIMAttributeHeader.
 type GetZPASCIMAttributeHeaderArgs struct {
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	// * `modifiedBy`(string)
-	// * `modifiedTime` (string)
-	// * `multivalued` (bool)
-	// * `mutability` (string)
-	// * `required` (bool)
-	// * `returned` (string)
-	// * `schemaUri` (string)
-	// * `uniqueness` (bool)
 	IdpId *string `pulumi:"idpId"`
 	// The name of the scim attribute header that must be exported.
 	IdpName *string `pulumi:"idpName"`
@@ -88,26 +79,25 @@ type GetZPASCIMAttributeHeaderResult struct {
 	// (string)
 	Id string `pulumi:"id"`
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	// * `modifiedBy`(string)
-	// * `modifiedTime` (string)
-	// * `multivalued` (bool)
-	// * `mutability` (string)
-	// * `required` (bool)
-	// * `returned` (string)
-	// * `schemaUri` (string)
-	// * `uniqueness` (bool)
-	IdpId        *string  `pulumi:"idpId"`
-	IdpName      *string  `pulumi:"idpName"`
-	ModifiedTime string   `pulumi:"modifiedTime"`
-	Modifiedby   string   `pulumi:"modifiedby"`
-	Multivalued  bool     `pulumi:"multivalued"`
-	Mutability   string   `pulumi:"mutability"`
-	Name         *string  `pulumi:"name"`
-	Required     bool     `pulumi:"required"`
-	Returned     string   `pulumi:"returned"`
-	SchemaUri    string   `pulumi:"schemaUri"`
-	Uniqueness   bool     `pulumi:"uniqueness"`
-	Values       []string `pulumi:"values"`
+	IdpId   *string `pulumi:"idpId"`
+	IdpName *string `pulumi:"idpName"`
+	// (string)
+	ModifiedTime string `pulumi:"modifiedTime"`
+	Modifiedby   string `pulumi:"modifiedby"`
+	// (bool)
+	Multivalued bool `pulumi:"multivalued"`
+	// (string)
+	Mutability string  `pulumi:"mutability"`
+	Name       *string `pulumi:"name"`
+	// (bool)
+	Required bool `pulumi:"required"`
+	// (string)
+	Returned string `pulumi:"returned"`
+	// (string)
+	SchemaUri string `pulumi:"schemaUri"`
+	// (bool)
+	Uniqueness bool     `pulumi:"uniqueness"`
+	Values     []string `pulumi:"values"`
 }
 
 func GetZPASCIMAttributeHeaderOutput(ctx *pulumi.Context, args GetZPASCIMAttributeHeaderOutputArgs, opts ...pulumi.InvokeOption) GetZPASCIMAttributeHeaderResultOutput {
@@ -126,14 +116,6 @@ func GetZPASCIMAttributeHeaderOutput(ctx *pulumi.Context, args GetZPASCIMAttribu
 // A collection of arguments for invoking getZPASCIMAttributeHeader.
 type GetZPASCIMAttributeHeaderOutputArgs struct {
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	// * `modifiedBy`(string)
-	// * `modifiedTime` (string)
-	// * `multivalued` (bool)
-	// * `mutability` (string)
-	// * `required` (bool)
-	// * `returned` (string)
-	// * `schemaUri` (string)
-	// * `uniqueness` (bool)
 	IdpId pulumi.StringPtrInput `pulumi:"idpId"`
 	// The name of the scim attribute header that must be exported.
 	IdpName pulumi.StringPtrInput `pulumi:"idpName"`
@@ -191,14 +173,6 @@ func (o GetZPASCIMAttributeHeaderResultOutput) Id() pulumi.StringOutput {
 }
 
 // (string) The ID of the IdP corresponding to the SAML attribute.
-// * `modifiedBy`(string)
-// * `modifiedTime` (string)
-// * `multivalued` (bool)
-// * `mutability` (string)
-// * `required` (bool)
-// * `returned` (string)
-// * `schemaUri` (string)
-// * `uniqueness` (bool)
 func (o GetZPASCIMAttributeHeaderResultOutput) IdpId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) *string { return v.IdpId }).(pulumi.StringPtrOutput)
 }
@@ -207,6 +181,7 @@ func (o GetZPASCIMAttributeHeaderResultOutput) IdpName() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) *string { return v.IdpName }).(pulumi.StringPtrOutput)
 }
 
+// (string)
 func (o GetZPASCIMAttributeHeaderResultOutput) ModifiedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
@@ -215,10 +190,12 @@ func (o GetZPASCIMAttributeHeaderResultOutput) Modifiedby() pulumi.StringOutput 
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) string { return v.Modifiedby }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPASCIMAttributeHeaderResultOutput) Multivalued() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) bool { return v.Multivalued }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPASCIMAttributeHeaderResultOutput) Mutability() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) string { return v.Mutability }).(pulumi.StringOutput)
 }
@@ -227,18 +204,22 @@ func (o GetZPASCIMAttributeHeaderResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// (bool)
 func (o GetZPASCIMAttributeHeaderResultOutput) Required() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) bool { return v.Required }).(pulumi.BoolOutput)
 }
 
+// (string)
 func (o GetZPASCIMAttributeHeaderResultOutput) Returned() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) string { return v.Returned }).(pulumi.StringOutput)
 }
 
+// (string)
 func (o GetZPASCIMAttributeHeaderResultOutput) SchemaUri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) string { return v.SchemaUri }).(pulumi.StringOutput)
 }
 
+// (bool)
 func (o GetZPASCIMAttributeHeaderResultOutput) Uniqueness() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZPASCIMAttributeHeaderResult) bool { return v.Uniqueness }).(pulumi.BoolOutput)
 }

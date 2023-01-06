@@ -20,17 +20,16 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         public readonly string Action;
         /// <summary>
         /// (string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.
-        /// * `attachment` (string) Control attachment
-        /// * `control_group` (string) Control group
         /// </summary>
         public readonly string ActionValue;
         /// <summary>
         /// (string) Name of the inspection profile
-        /// * `id`- (string)
-        /// * `name`- (string)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAInspectionProfileCustomControlAssociatedInspectionProfileNameResult> AssociatedInspectionProfileNames;
         public readonly string ControlNumber;
+        /// <summary>
+        /// (string) Custom controls string in JSON format
+        /// </summary>
         public readonly string ControlRuleJson;
         public readonly string CreationTime;
         public readonly string DefaultAction;

@@ -77,8 +77,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// (string) The ID of the IdP corresponding to the SAML attribute.
-        /// * `idp_group_id`(string)
-        /// * `modified_time` (string)
         /// </summary>
         [Input("idpId")]
         public int? IdpId { get; set; }
@@ -108,8 +106,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// (string) The ID of the IdP corresponding to the SAML attribute.
-        /// * `idp_group_id`(string)
-        /// * `modified_time` (string)
         /// </summary>
         [Input("idpId")]
         public Input<int>? IdpId { get; set; }
@@ -141,14 +137,18 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly int CreationTime;
         public readonly string? Id;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string IdpGroupId;
         /// <summary>
         /// (string) The ID of the IdP corresponding to the SAML attribute.
-        /// * `idp_group_id`(string)
-        /// * `modified_time` (string)
         /// </summary>
         public readonly int? IdpId;
         public readonly string? IdpName;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly int ModifiedTime;
         public readonly string? Name;
 

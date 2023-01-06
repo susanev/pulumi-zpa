@@ -144,8 +144,6 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly string ActionValue;
         /// <summary>
         /// (Computed)
-        /// * `id`- (Computed)
-        /// * `name`- (Computed)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAInspectionPredefinedControlsAssociatedInspectionProfileNameResult> AssociatedInspectionProfileNames;
         /// <summary>
@@ -185,6 +183,9 @@ namespace zscaler.PulumiPackage.Zpa
         /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
+        /// <summary>
+        /// (Computed)
+        /// </summary>
         public readonly string Name;
         /// <summary>
         /// (Computed)

@@ -77,7 +77,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// Supported values are:
-        /// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         /// </summary>
         [Output("dnsQueryType")]
         public Output<string?> DnsQueryType { get; private set; } = null!;
@@ -193,7 +192,6 @@ namespace zscaler.PulumiPackage.Zpa
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/zscaler",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -237,7 +235,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// Supported values are:
-        /// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         /// </summary>
         [Input("dnsQueryType")]
         public Input<string>? DnsQueryType { get; set; }
@@ -358,7 +355,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// Supported values are:
-        /// * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         /// </summary>
         [Input("dnsQueryType")]
         public Input<string>? DnsQueryType { get; set; }

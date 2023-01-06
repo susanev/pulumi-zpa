@@ -35,7 +35,6 @@ import (
 //
 // ```
 func GetZPALSSClientTypes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetZPALSSClientTypesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPALSSClientTypesResult
 	err := ctx.Invoke("zpa:index/getZPALSSClientTypes:getZPALSSClientTypes", nil, &rv, opts...)
 	if err != nil {

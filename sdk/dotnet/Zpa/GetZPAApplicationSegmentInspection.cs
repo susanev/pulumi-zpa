@@ -222,10 +222,12 @@ namespace zscaler.PulumiPackage.Zpa
         /// (bool) Whether this application is enabled or not
         /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string HealthCheckType;
         /// <summary>
         /// (string) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-        /// * `health_check_type` (string)
         /// </summary>
         public readonly string HealthReporting;
         /// <summary>

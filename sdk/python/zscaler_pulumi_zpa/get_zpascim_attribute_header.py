@@ -130,14 +130,6 @@ class GetZPASCIMAttributeHeaderResult:
     def idp_id(self) -> Optional[str]:
         """
         (string) The ID of the IdP corresponding to the SAML attribute.
-        * `modified_by`(string)
-        * `modified_time` (string)
-        * `multivalued` (bool)
-        * `mutability` (string)
-        * `required` (bool)
-        * `returned` (string)
-        * `schema_uri` (string)
-        * `uniqueness` (bool)
         """
         return pulumi.get(self, "idp_id")
 
@@ -149,6 +141,9 @@ class GetZPASCIMAttributeHeaderResult:
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -159,11 +154,17 @@ class GetZPASCIMAttributeHeaderResult:
     @property
     @pulumi.getter
     def multivalued(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "multivalued")
 
     @property
     @pulumi.getter
     def mutability(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "mutability")
 
     @property
@@ -174,21 +175,33 @@ class GetZPASCIMAttributeHeaderResult:
     @property
     @pulumi.getter
     def required(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "required")
 
     @property
     @pulumi.getter
     def returned(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "returned")
 
     @property
     @pulumi.getter(name="schemaUri")
     def schema_uri(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "schema_uri")
 
     @property
     @pulumi.getter
     def uniqueness(self) -> bool:
+        """
+        (bool)
+        """
         return pulumi.get(self, "uniqueness")
 
     @property
@@ -244,14 +257,6 @@ def get_zpascim_attribute_header(idp_id: Optional[str] = None,
 
 
     :param str idp_id: (string) The ID of the IdP corresponding to the SAML attribute.
-           * `modified_by`(string)
-           * `modified_time` (string)
-           * `multivalued` (bool)
-           * `mutability` (string)
-           * `required` (bool)
-           * `returned` (string)
-           * `schema_uri` (string)
-           * `uniqueness` (bool)
     :param str idp_name: The name of the scim attribute header that must be exported.
     :param str name: The name of the scim attribute header to be exported.
     """
@@ -305,14 +310,6 @@ def get_zpascim_attribute_header_output(idp_id: Optional[pulumi.Input[Optional[s
 
 
     :param str idp_id: (string) The ID of the IdP corresponding to the SAML attribute.
-           * `modified_by`(string)
-           * `modified_time` (string)
-           * `multivalued` (bool)
-           * `mutability` (string)
-           * `required` (bool)
-           * `returned` (string)
-           * `schema_uri` (string)
-           * `uniqueness` (bool)
     :param str idp_name: The name of the scim attribute header that must be exported.
     :param str name: The name of the scim attribute header to be exported.
     """

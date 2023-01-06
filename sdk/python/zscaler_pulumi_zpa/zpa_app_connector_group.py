@@ -42,7 +42,6 @@ class ZPAAppConnectorGroupArgs:
         :param pulumi.Input[str] country_code: i.e ``"US"``, ``"CA"``
         :param pulumi.Input[str] description: Description of the App Connector Group.
         :param pulumi.Input[str] dns_query_type: Supported values are:
-               * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         :param pulumi.Input[bool] enabled: Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
         :param pulumi.Input[str] name: Name of the App Connector Group.
         :param pulumi.Input[bool] override_version_profile: Whether the default version profile of the App Connector Group is applied or overridden. Default: `false` Supported values: `true`, `false`
@@ -169,7 +168,6 @@ class ZPAAppConnectorGroupArgs:
     def dns_query_type(self) -> Optional[pulumi.Input[str]]:
         """
         Supported values are:
-        * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         """
         return pulumi.get(self, "dns_query_type")
 
@@ -348,7 +346,6 @@ class _ZPAAppConnectorGroupState:
         :param pulumi.Input[str] country_code: i.e ``"US"``, ``"CA"``
         :param pulumi.Input[str] description: Description of the App Connector Group.
         :param pulumi.Input[str] dns_query_type: Supported values are:
-               * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         :param pulumi.Input[bool] enabled: Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
         :param pulumi.Input[str] latitude: Latitude of the App Connector Group. Integer or decimal. With values in the range of `-90` to `90`
         :param pulumi.Input[str] location: Location of the App Connector Group. i.e ``"San Jose, CA, USA"``
@@ -445,7 +442,6 @@ class _ZPAAppConnectorGroupState:
     def dns_query_type(self) -> Optional[pulumi.Input[str]]:
         """
         Supported values are:
-        * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         """
         return pulumi.get(self, "dns_query_type")
 
@@ -700,7 +696,6 @@ class ZPAAppConnectorGroup(pulumi.CustomResource):
         :param pulumi.Input[str] country_code: i.e ``"US"``, ``"CA"``
         :param pulumi.Input[str] description: Description of the App Connector Group.
         :param pulumi.Input[str] dns_query_type: Supported values are:
-               * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         :param pulumi.Input[bool] enabled: Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
         :param pulumi.Input[str] latitude: Latitude of the App Connector Group. Integer or decimal. With values in the range of `-90` to `90`
         :param pulumi.Input[str] location: Location of the App Connector Group. i.e ``"San Jose, CA, USA"``
@@ -868,7 +863,6 @@ class ZPAAppConnectorGroup(pulumi.CustomResource):
         :param pulumi.Input[str] country_code: i.e ``"US"``, ``"CA"``
         :param pulumi.Input[str] description: Description of the App Connector Group.
         :param pulumi.Input[str] dns_query_type: Supported values are:
-               * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         :param pulumi.Input[bool] enabled: Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`
         :param pulumi.Input[str] latitude: Latitude of the App Connector Group. Integer or decimal. With values in the range of `-90` to `90`
         :param pulumi.Input[str] location: Location of the App Connector Group. i.e ``"San Jose, CA, USA"``
@@ -939,7 +933,6 @@ class ZPAAppConnectorGroup(pulumi.CustomResource):
     def dns_query_type(self) -> pulumi.Output[Optional[str]]:
         """
         Supported values are:
-        * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
         """
         return pulumi.get(self, "dns_query_type")
 

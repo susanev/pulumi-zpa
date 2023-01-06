@@ -43,10 +43,10 @@ type ZPAApplicationSegment struct {
 	// (Optional) Whether Double Encryption is enabled or disabled for the app.
 	DoubleEncrypt pulumi.BoolPtrOutput `pulumi:"doubleEncrypt"`
 	// (Optional) Whether this application is enabled or not.
-	Enabled         pulumi.BoolPtrOutput   `pulumi:"enabled"`
+	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
+	// (Optional)
 	HealthCheckType pulumi.StringPtrOutput `pulumi:"healthCheckType"`
 	// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-	// * `healthCheckType` (Optional)
 	HealthReporting pulumi.StringPtrOutput `pulumi:"healthReporting"`
 	// (Optional)
 	IcmpAccessType pulumi.StringPtrOutput `pulumi:"icmpAccessType"`
@@ -82,7 +82,6 @@ func NewZPAApplicationSegment(ctx *pulumi.Context,
 	if args.ServerGroups == nil {
 		return nil, errors.New("invalid value for required argument 'ServerGroups'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAApplicationSegment
 	err := ctx.RegisterResource("zpa:index/zPAApplicationSegment:ZPAApplicationSegment", name, args, &resource, opts...)
 	if err != nil {
@@ -117,10 +116,10 @@ type zpaapplicationSegmentState struct {
 	// (Optional) Whether Double Encryption is enabled or disabled for the app.
 	DoubleEncrypt *bool `pulumi:"doubleEncrypt"`
 	// (Optional) Whether this application is enabled or not.
-	Enabled         *bool   `pulumi:"enabled"`
+	Enabled *bool `pulumi:"enabled"`
+	// (Optional)
 	HealthCheckType *string `pulumi:"healthCheckType"`
 	// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-	// * `healthCheckType` (Optional)
 	HealthReporting *string `pulumi:"healthReporting"`
 	// (Optional)
 	IcmpAccessType *string `pulumi:"icmpAccessType"`
@@ -156,10 +155,10 @@ type ZPAApplicationSegmentState struct {
 	// (Optional) Whether Double Encryption is enabled or disabled for the app.
 	DoubleEncrypt pulumi.BoolPtrInput
 	// (Optional) Whether this application is enabled or not.
-	Enabled         pulumi.BoolPtrInput
+	Enabled pulumi.BoolPtrInput
+	// (Optional)
 	HealthCheckType pulumi.StringPtrInput
 	// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-	// * `healthCheckType` (Optional)
 	HealthReporting pulumi.StringPtrInput
 	// (Optional)
 	IcmpAccessType pulumi.StringPtrInput
@@ -199,10 +198,10 @@ type zpaapplicationSegmentArgs struct {
 	// (Optional) Whether Double Encryption is enabled or disabled for the app.
 	DoubleEncrypt *bool `pulumi:"doubleEncrypt"`
 	// (Optional) Whether this application is enabled or not.
-	Enabled         *bool   `pulumi:"enabled"`
+	Enabled *bool `pulumi:"enabled"`
+	// (Optional)
 	HealthCheckType *string `pulumi:"healthCheckType"`
 	// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-	// * `healthCheckType` (Optional)
 	HealthReporting *string `pulumi:"healthReporting"`
 	// (Optional)
 	IcmpAccessType *string `pulumi:"icmpAccessType"`
@@ -239,10 +238,10 @@ type ZPAApplicationSegmentArgs struct {
 	// (Optional) Whether Double Encryption is enabled or disabled for the app.
 	DoubleEncrypt pulumi.BoolPtrInput
 	// (Optional) Whether this application is enabled or not.
-	Enabled         pulumi.BoolPtrInput
+	Enabled pulumi.BoolPtrInput
+	// (Optional)
 	HealthCheckType pulumi.StringPtrInput
 	// (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-	// * `healthCheckType` (Optional)
 	HealthReporting pulumi.StringPtrInput
 	// (Optional)
 	IcmpAccessType pulumi.StringPtrInput
@@ -386,12 +385,12 @@ func (o ZPAApplicationSegmentOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPAApplicationSegment) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
+// (Optional)
 func (o ZPAApplicationSegmentOutput) HealthCheckType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAApplicationSegment) pulumi.StringPtrOutput { return v.HealthCheckType }).(pulumi.StringPtrOutput)
 }
 
 // (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
-// * `healthCheckType` (Optional)
 func (o ZPAApplicationSegmentOutput) HealthReporting() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAApplicationSegment) pulumi.StringPtrOutput { return v.HealthReporting }).(pulumi.StringPtrOutput)
 }

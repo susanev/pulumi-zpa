@@ -44,7 +44,7 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         public Input<string>? ApplicationProtocol { get; set; }
 
         /// <summary>
-        /// - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+        /// ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }

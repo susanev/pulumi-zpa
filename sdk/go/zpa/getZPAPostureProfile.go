@@ -139,7 +139,6 @@ import (
 //
 // ```
 func GetZPAPostureProfile(ctx *pulumi.Context, args *GetZPAPostureProfileArgs, opts ...pulumi.InvokeOption) (*GetZPAPostureProfileResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAPostureProfileResult
 	err := ctx.Invoke("zpa:index/getZPAPostureProfile:getZPAPostureProfile", args, &rv, opts...)
 	if err != nil {

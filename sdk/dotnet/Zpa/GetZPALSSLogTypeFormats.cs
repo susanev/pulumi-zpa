@@ -142,14 +142,6 @@ namespace zscaler.PulumiPackage.Zpa
     {
         /// <summary>
         /// The type of log to be exported.
-        /// * `zpn_trans_log`
-        /// * `zpn_auth_log`
-        /// * `zpn_ast_auth_log`
-        /// * `zpn_http_trans_log`
-        /// * `zpn_audit_log`
-        /// * `zpn_sys_auth_log`
-        /// * `zpn_ast_comprehensive_stats`
-        /// * `zpn_waf_http_exchanges_log`
         /// </summary>
         [Input("logType", required: true)]
         public string LogType { get; set; } = null!;
@@ -164,14 +156,6 @@ namespace zscaler.PulumiPackage.Zpa
     {
         /// <summary>
         /// The type of log to be exported.
-        /// * `zpn_trans_log`
-        /// * `zpn_auth_log`
-        /// * `zpn_ast_auth_log`
-        /// * `zpn_http_trans_log`
-        /// * `zpn_audit_log`
-        /// * `zpn_sys_auth_log`
-        /// * `zpn_ast_comprehensive_stats`
-        /// * `zpn_waf_http_exchanges_log`
         /// </summary>
         [Input("logType", required: true)]
         public Input<string> LogType { get; set; } = null!;

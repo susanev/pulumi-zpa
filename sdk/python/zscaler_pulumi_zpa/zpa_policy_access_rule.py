@@ -38,15 +38,18 @@ class ZPAPolicyAccessRuleArgs:
                  zpn_inspection_profile_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ZPAPolicyAccessRule resource.
-        :param pulumi.Input[str] action: This is for providing the rule action.
+        :param pulumi.Input[str] action: (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         :param pulumi.Input[str] action_id: This field defines the description of the server.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleAppConnectorGroupArgs']]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleAppServerGroupArgs']]] app_server_groups: List of the server group IDs.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleConditionArgs']]] conditions: (Optional)
-        :param pulumi.Input[str] custom_msg: This is for providing a customer message for the user.
+        :param pulumi.Input[str] custom_msg: (Optional) This is for providing a customer message for the user.
         :param pulumi.Input[bool] default_rule: This is for providing a customer message for the user.
-        :param pulumi.Input[str] description: This is the description of the access policy.
-        :param pulumi.Input[str] name: This is the name of the policy.
+        :param pulumi.Input[str] description: (Optional) This is the description of the access policy rule.
+        :param pulumi.Input[str] name: (Optional)
+        :param pulumi.Input[str] operator: (Optional) Supported values: ``AND``, and ``OR``
+        :param pulumi.Input[str] policy_type: (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        :param pulumi.Input[str] rule_order: (Optional)
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -93,7 +96,7 @@ class ZPAPolicyAccessRuleArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
         """
-        This is for providing the rule action.
+        (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         """
         return pulumi.get(self, "action")
 
@@ -162,7 +165,7 @@ class ZPAPolicyAccessRuleArgs:
     @pulumi.getter(name="customMsg")
     def custom_msg(self) -> Optional[pulumi.Input[str]]:
         """
-        This is for providing a customer message for the user.
+        (Optional) This is for providing a customer message for the user.
         """
         return pulumi.get(self, "custom_msg")
 
@@ -186,7 +189,7 @@ class ZPAPolicyAccessRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        This is the description of the access policy.
+        (Optional) This is the description of the access policy rule.
         """
         return pulumi.get(self, "description")
 
@@ -207,7 +210,7 @@ class ZPAPolicyAccessRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        This is the name of the policy.
+        (Optional)
         """
         return pulumi.get(self, "name")
 
@@ -218,6 +221,9 @@ class ZPAPolicyAccessRuleArgs:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) Supported values: ``AND``, and ``OR``
+        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -236,6 +242,9 @@ class ZPAPolicyAccessRuleArgs:
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        """
         return pulumi.get(self, "policy_type")
 
     @policy_type.setter
@@ -281,6 +290,9 @@ class ZPAPolicyAccessRuleArgs:
     @property
     @pulumi.getter(name="ruleOrder")
     def rule_order(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "rule_order")
 
     @rule_order.setter
@@ -322,15 +334,18 @@ class _ZPAPolicyAccessRuleState:
                  zpn_inspection_profile_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ZPAPolicyAccessRule resources.
-        :param pulumi.Input[str] action: This is for providing the rule action.
+        :param pulumi.Input[str] action: (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         :param pulumi.Input[str] action_id: This field defines the description of the server.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleAppConnectorGroupArgs']]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleAppServerGroupArgs']]] app_server_groups: List of the server group IDs.
         :param pulumi.Input[Sequence[pulumi.Input['ZPAPolicyAccessRuleConditionArgs']]] conditions: (Optional)
-        :param pulumi.Input[str] custom_msg: This is for providing a customer message for the user.
+        :param pulumi.Input[str] custom_msg: (Optional) This is for providing a customer message for the user.
         :param pulumi.Input[bool] default_rule: This is for providing a customer message for the user.
-        :param pulumi.Input[str] description: This is the description of the access policy.
-        :param pulumi.Input[str] name: This is the name of the policy.
+        :param pulumi.Input[str] description: (Optional) This is the description of the access policy rule.
+        :param pulumi.Input[str] name: (Optional)
+        :param pulumi.Input[str] operator: (Optional) Supported values: ``AND``, and ``OR``
+        :param pulumi.Input[str] policy_type: (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        :param pulumi.Input[str] rule_order: (Optional)
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -377,7 +392,7 @@ class _ZPAPolicyAccessRuleState:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
         """
-        This is for providing the rule action.
+        (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         """
         return pulumi.get(self, "action")
 
@@ -446,7 +461,7 @@ class _ZPAPolicyAccessRuleState:
     @pulumi.getter(name="customMsg")
     def custom_msg(self) -> Optional[pulumi.Input[str]]:
         """
-        This is for providing a customer message for the user.
+        (Optional) This is for providing a customer message for the user.
         """
         return pulumi.get(self, "custom_msg")
 
@@ -470,7 +485,7 @@ class _ZPAPolicyAccessRuleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        This is the description of the access policy.
+        (Optional) This is the description of the access policy rule.
         """
         return pulumi.get(self, "description")
 
@@ -491,7 +506,7 @@ class _ZPAPolicyAccessRuleState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        This is the name of the policy.
+        (Optional)
         """
         return pulumi.get(self, "name")
 
@@ -502,6 +517,9 @@ class _ZPAPolicyAccessRuleState:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) Supported values: ``AND``, and ``OR``
+        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -520,6 +538,9 @@ class _ZPAPolicyAccessRuleState:
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        """
         return pulumi.get(self, "policy_type")
 
     @policy_type.setter
@@ -565,6 +586,9 @@ class _ZPAPolicyAccessRuleState:
     @property
     @pulumi.getter(name="ruleOrder")
     def rule_order(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "rule_order")
 
     @rule_order.setter
@@ -618,15 +642,18 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: This is for providing the rule action.
+        :param pulumi.Input[str] action: (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         :param pulumi.Input[str] action_id: This field defines the description of the server.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAPolicyAccessRuleAppConnectorGroupArgs']]]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAPolicyAccessRuleAppServerGroupArgs']]]] app_server_groups: List of the server group IDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAPolicyAccessRuleConditionArgs']]]] conditions: (Optional)
-        :param pulumi.Input[str] custom_msg: This is for providing a customer message for the user.
+        :param pulumi.Input[str] custom_msg: (Optional) This is for providing a customer message for the user.
         :param pulumi.Input[bool] default_rule: This is for providing a customer message for the user.
-        :param pulumi.Input[str] description: This is the description of the access policy.
-        :param pulumi.Input[str] name: This is the name of the policy.
+        :param pulumi.Input[str] description: (Optional) This is the description of the access policy rule.
+        :param pulumi.Input[str] name: (Optional)
+        :param pulumi.Input[str] operator: (Optional) Supported values: ``AND``, and ``OR``
+        :param pulumi.Input[str] policy_type: (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        :param pulumi.Input[str] rule_order: (Optional)
         """
         ...
     @overload
@@ -744,15 +771,18 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: This is for providing the rule action.
+        :param pulumi.Input[str] action: (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         :param pulumi.Input[str] action_id: This field defines the description of the server.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAPolicyAccessRuleAppConnectorGroupArgs']]]] app_connector_groups: List of app-connector IDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAPolicyAccessRuleAppServerGroupArgs']]]] app_server_groups: List of the server group IDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZPAPolicyAccessRuleConditionArgs']]]] conditions: (Optional)
-        :param pulumi.Input[str] custom_msg: This is for providing a customer message for the user.
+        :param pulumi.Input[str] custom_msg: (Optional) This is for providing a customer message for the user.
         :param pulumi.Input[bool] default_rule: This is for providing a customer message for the user.
-        :param pulumi.Input[str] description: This is the description of the access policy.
-        :param pulumi.Input[str] name: This is the name of the policy.
+        :param pulumi.Input[str] description: (Optional) This is the description of the access policy rule.
+        :param pulumi.Input[str] name: (Optional)
+        :param pulumi.Input[str] operator: (Optional) Supported values: ``AND``, and ``OR``
+        :param pulumi.Input[str] policy_type: (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        :param pulumi.Input[str] rule_order: (Optional)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -784,7 +814,7 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[str]]:
         """
-        This is for providing the rule action.
+        (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
         """
         return pulumi.get(self, "action")
 
@@ -829,7 +859,7 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
     @pulumi.getter(name="customMsg")
     def custom_msg(self) -> pulumi.Output[Optional[str]]:
         """
-        This is for providing a customer message for the user.
+        (Optional) This is for providing a customer message for the user.
         """
         return pulumi.get(self, "custom_msg")
 
@@ -845,7 +875,7 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        This is the description of the access policy.
+        (Optional) This is the description of the access policy rule.
         """
         return pulumi.get(self, "description")
 
@@ -858,13 +888,16 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        This is the name of the policy.
+        (Optional)
         """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def operator(self) -> pulumi.Output[str]:
+        """
+        (Optional) Supported values: ``AND``, and ``OR``
+        """
         return pulumi.get(self, "operator")
 
     @property
@@ -875,6 +908,9 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Output[str]:
+        """
+        (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+        """
         return pulumi.get(self, "policy_type")
 
     @property
@@ -900,6 +936,9 @@ class ZPAPolicyAccessRule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="ruleOrder")
     def rule_order(self) -> pulumi.Output[str]:
+        """
+        (Optional)
+        """
         return pulumi.get(self, "rule_order")
 
     @property

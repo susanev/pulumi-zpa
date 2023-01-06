@@ -22,7 +22,7 @@ import (
 type ZPAPolicyAccessRule struct {
 	pulumi.CustomResourceState
 
-	// This is for providing the rule action.
+	// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
 	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// This field defines the description of the server.
 	ActionId pulumi.StringPtrOutput `pulumi:"actionId"`
@@ -33,22 +33,25 @@ type ZPAPolicyAccessRule struct {
 	BypassDefaultRule pulumi.BoolPtrOutput                         `pulumi:"bypassDefaultRule"`
 	// (Optional)
 	Conditions ZPAPolicyAccessRuleConditionArrayOutput `pulumi:"conditions"`
-	// This is for providing a customer message for the user.
+	// (Optional) This is for providing a customer message for the user.
 	CustomMsg pulumi.StringPtrOutput `pulumi:"customMsg"`
 	// This is for providing a customer message for the user.
 	DefaultRule pulumi.BoolPtrOutput `pulumi:"defaultRule"`
-	// This is the description of the access policy.
+	// (Optional) This is the description of the access policy rule.
 	Description    pulumi.StringPtrOutput `pulumi:"description"`
 	LssDefaultRule pulumi.BoolPtrOutput   `pulumi:"lssDefaultRule"`
-	// This is the name of the policy.
-	Name                   pulumi.StringOutput    `pulumi:"name"`
-	Operator               pulumi.StringOutput    `pulumi:"operator"`
-	PolicySetId            pulumi.StringOutput    `pulumi:"policySetId"`
-	PolicyType             pulumi.StringOutput    `pulumi:"policyType"`
-	Priority               pulumi.StringOutput    `pulumi:"priority"`
-	ReauthDefaultRule      pulumi.BoolPtrOutput   `pulumi:"reauthDefaultRule"`
-	ReauthIdleTimeout      pulumi.StringPtrOutput `pulumi:"reauthIdleTimeout"`
-	ReauthTimeout          pulumi.StringPtrOutput `pulumi:"reauthTimeout"`
+	// (Optional)
+	Name pulumi.StringOutput `pulumi:"name"`
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator    pulumi.StringOutput `pulumi:"operator"`
+	PolicySetId pulumi.StringOutput `pulumi:"policySetId"`
+	// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+	PolicyType        pulumi.StringOutput    `pulumi:"policyType"`
+	Priority          pulumi.StringOutput    `pulumi:"priority"`
+	ReauthDefaultRule pulumi.BoolPtrOutput   `pulumi:"reauthDefaultRule"`
+	ReauthIdleTimeout pulumi.StringPtrOutput `pulumi:"reauthIdleTimeout"`
+	ReauthTimeout     pulumi.StringPtrOutput `pulumi:"reauthTimeout"`
+	// (Optional)
 	RuleOrder              pulumi.StringOutput    `pulumi:"ruleOrder"`
 	ZpnInspectionProfileId pulumi.StringPtrOutput `pulumi:"zpnInspectionProfileId"`
 }
@@ -60,7 +63,6 @@ func NewZPAPolicyAccessRule(ctx *pulumi.Context,
 		args = &ZPAPolicyAccessRuleArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAPolicyAccessRule
 	err := ctx.RegisterResource("zpa:index/zPAPolicyAccessRule:ZPAPolicyAccessRule", name, args, &resource, opts...)
 	if err != nil {
@@ -83,7 +85,7 @@ func GetZPAPolicyAccessRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ZPAPolicyAccessRule resources.
 type zpapolicyAccessRuleState struct {
-	// This is for providing the rule action.
+	// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
 	Action *string `pulumi:"action"`
 	// This field defines the description of the server.
 	ActionId *string `pulumi:"actionId"`
@@ -94,28 +96,31 @@ type zpapolicyAccessRuleState struct {
 	BypassDefaultRule *bool                               `pulumi:"bypassDefaultRule"`
 	// (Optional)
 	Conditions []ZPAPolicyAccessRuleCondition `pulumi:"conditions"`
-	// This is for providing a customer message for the user.
+	// (Optional) This is for providing a customer message for the user.
 	CustomMsg *string `pulumi:"customMsg"`
 	// This is for providing a customer message for the user.
 	DefaultRule *bool `pulumi:"defaultRule"`
-	// This is the description of the access policy.
+	// (Optional) This is the description of the access policy rule.
 	Description    *string `pulumi:"description"`
 	LssDefaultRule *bool   `pulumi:"lssDefaultRule"`
-	// This is the name of the policy.
-	Name                   *string `pulumi:"name"`
-	Operator               *string `pulumi:"operator"`
-	PolicySetId            *string `pulumi:"policySetId"`
-	PolicyType             *string `pulumi:"policyType"`
-	Priority               *string `pulumi:"priority"`
-	ReauthDefaultRule      *bool   `pulumi:"reauthDefaultRule"`
-	ReauthIdleTimeout      *string `pulumi:"reauthIdleTimeout"`
-	ReauthTimeout          *string `pulumi:"reauthTimeout"`
+	// (Optional)
+	Name *string `pulumi:"name"`
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator    *string `pulumi:"operator"`
+	PolicySetId *string `pulumi:"policySetId"`
+	// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+	PolicyType        *string `pulumi:"policyType"`
+	Priority          *string `pulumi:"priority"`
+	ReauthDefaultRule *bool   `pulumi:"reauthDefaultRule"`
+	ReauthIdleTimeout *string `pulumi:"reauthIdleTimeout"`
+	ReauthTimeout     *string `pulumi:"reauthTimeout"`
+	// (Optional)
 	RuleOrder              *string `pulumi:"ruleOrder"`
 	ZpnInspectionProfileId *string `pulumi:"zpnInspectionProfileId"`
 }
 
 type ZPAPolicyAccessRuleState struct {
-	// This is for providing the rule action.
+	// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
 	Action pulumi.StringPtrInput
 	// This field defines the description of the server.
 	ActionId pulumi.StringPtrInput
@@ -126,22 +131,25 @@ type ZPAPolicyAccessRuleState struct {
 	BypassDefaultRule pulumi.BoolPtrInput
 	// (Optional)
 	Conditions ZPAPolicyAccessRuleConditionArrayInput
-	// This is for providing a customer message for the user.
+	// (Optional) This is for providing a customer message for the user.
 	CustomMsg pulumi.StringPtrInput
 	// This is for providing a customer message for the user.
 	DefaultRule pulumi.BoolPtrInput
-	// This is the description of the access policy.
+	// (Optional) This is the description of the access policy rule.
 	Description    pulumi.StringPtrInput
 	LssDefaultRule pulumi.BoolPtrInput
-	// This is the name of the policy.
-	Name                   pulumi.StringPtrInput
-	Operator               pulumi.StringPtrInput
-	PolicySetId            pulumi.StringPtrInput
-	PolicyType             pulumi.StringPtrInput
-	Priority               pulumi.StringPtrInput
-	ReauthDefaultRule      pulumi.BoolPtrInput
-	ReauthIdleTimeout      pulumi.StringPtrInput
-	ReauthTimeout          pulumi.StringPtrInput
+	// (Optional)
+	Name pulumi.StringPtrInput
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator    pulumi.StringPtrInput
+	PolicySetId pulumi.StringPtrInput
+	// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+	PolicyType        pulumi.StringPtrInput
+	Priority          pulumi.StringPtrInput
+	ReauthDefaultRule pulumi.BoolPtrInput
+	ReauthIdleTimeout pulumi.StringPtrInput
+	ReauthTimeout     pulumi.StringPtrInput
+	// (Optional)
 	RuleOrder              pulumi.StringPtrInput
 	ZpnInspectionProfileId pulumi.StringPtrInput
 }
@@ -151,7 +159,7 @@ func (ZPAPolicyAccessRuleState) ElementType() reflect.Type {
 }
 
 type zpapolicyAccessRuleArgs struct {
-	// This is for providing the rule action.
+	// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
 	Action *string `pulumi:"action"`
 	// This field defines the description of the server.
 	ActionId *string `pulumi:"actionId"`
@@ -162,29 +170,32 @@ type zpapolicyAccessRuleArgs struct {
 	BypassDefaultRule *bool                               `pulumi:"bypassDefaultRule"`
 	// (Optional)
 	Conditions []ZPAPolicyAccessRuleCondition `pulumi:"conditions"`
-	// This is for providing a customer message for the user.
+	// (Optional) This is for providing a customer message for the user.
 	CustomMsg *string `pulumi:"customMsg"`
 	// This is for providing a customer message for the user.
 	DefaultRule *bool `pulumi:"defaultRule"`
-	// This is the description of the access policy.
+	// (Optional) This is the description of the access policy rule.
 	Description    *string `pulumi:"description"`
 	LssDefaultRule *bool   `pulumi:"lssDefaultRule"`
-	// This is the name of the policy.
-	Name                   *string `pulumi:"name"`
-	Operator               *string `pulumi:"operator"`
-	PolicySetId            *string `pulumi:"policySetId"`
-	PolicyType             *string `pulumi:"policyType"`
-	Priority               *string `pulumi:"priority"`
-	ReauthDefaultRule      *bool   `pulumi:"reauthDefaultRule"`
-	ReauthIdleTimeout      *string `pulumi:"reauthIdleTimeout"`
-	ReauthTimeout          *string `pulumi:"reauthTimeout"`
+	// (Optional)
+	Name *string `pulumi:"name"`
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator    *string `pulumi:"operator"`
+	PolicySetId *string `pulumi:"policySetId"`
+	// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+	PolicyType        *string `pulumi:"policyType"`
+	Priority          *string `pulumi:"priority"`
+	ReauthDefaultRule *bool   `pulumi:"reauthDefaultRule"`
+	ReauthIdleTimeout *string `pulumi:"reauthIdleTimeout"`
+	ReauthTimeout     *string `pulumi:"reauthTimeout"`
+	// (Optional)
 	RuleOrder              *string `pulumi:"ruleOrder"`
 	ZpnInspectionProfileId *string `pulumi:"zpnInspectionProfileId"`
 }
 
 // The set of arguments for constructing a ZPAPolicyAccessRule resource.
 type ZPAPolicyAccessRuleArgs struct {
-	// This is for providing the rule action.
+	// (Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``
 	Action pulumi.StringPtrInput
 	// This field defines the description of the server.
 	ActionId pulumi.StringPtrInput
@@ -195,22 +206,25 @@ type ZPAPolicyAccessRuleArgs struct {
 	BypassDefaultRule pulumi.BoolPtrInput
 	// (Optional)
 	Conditions ZPAPolicyAccessRuleConditionArrayInput
-	// This is for providing a customer message for the user.
+	// (Optional) This is for providing a customer message for the user.
 	CustomMsg pulumi.StringPtrInput
 	// This is for providing a customer message for the user.
 	DefaultRule pulumi.BoolPtrInput
-	// This is the description of the access policy.
+	// (Optional) This is the description of the access policy rule.
 	Description    pulumi.StringPtrInput
 	LssDefaultRule pulumi.BoolPtrInput
-	// This is the name of the policy.
-	Name                   pulumi.StringPtrInput
-	Operator               pulumi.StringPtrInput
-	PolicySetId            pulumi.StringPtrInput
-	PolicyType             pulumi.StringPtrInput
-	Priority               pulumi.StringPtrInput
-	ReauthDefaultRule      pulumi.BoolPtrInput
-	ReauthIdleTimeout      pulumi.StringPtrInput
-	ReauthTimeout          pulumi.StringPtrInput
+	// (Optional)
+	Name pulumi.StringPtrInput
+	// (Optional) Supported values: ``AND``, and ``OR``
+	Operator    pulumi.StringPtrInput
+	PolicySetId pulumi.StringPtrInput
+	// (Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``
+	PolicyType        pulumi.StringPtrInput
+	Priority          pulumi.StringPtrInput
+	ReauthDefaultRule pulumi.BoolPtrInput
+	ReauthIdleTimeout pulumi.StringPtrInput
+	ReauthTimeout     pulumi.StringPtrInput
+	// (Optional)
 	RuleOrder              pulumi.StringPtrInput
 	ZpnInspectionProfileId pulumi.StringPtrInput
 }
@@ -302,7 +316,7 @@ func (o ZPAPolicyAccessRuleOutput) ToZPAPolicyAccessRuleOutputWithContext(ctx co
 	return o
 }
 
-// This is for providing the rule action.
+// (Optional) This is for providing the rule action. Supported values: “ALLOW“, “DENY“
 func (o ZPAPolicyAccessRuleOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
 }
@@ -333,7 +347,7 @@ func (o ZPAPolicyAccessRuleOutput) Conditions() ZPAPolicyAccessRuleConditionArra
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) ZPAPolicyAccessRuleConditionArrayOutput { return v.Conditions }).(ZPAPolicyAccessRuleConditionArrayOutput)
 }
 
-// This is for providing a customer message for the user.
+// (Optional) This is for providing a customer message for the user.
 func (o ZPAPolicyAccessRuleOutput) CustomMsg() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringPtrOutput { return v.CustomMsg }).(pulumi.StringPtrOutput)
 }
@@ -343,7 +357,7 @@ func (o ZPAPolicyAccessRuleOutput) DefaultRule() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.BoolPtrOutput { return v.DefaultRule }).(pulumi.BoolPtrOutput)
 }
 
-// This is the description of the access policy.
+// (Optional) This is the description of the access policy rule.
 func (o ZPAPolicyAccessRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -352,11 +366,12 @@ func (o ZPAPolicyAccessRuleOutput) LssDefaultRule() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.BoolPtrOutput { return v.LssDefaultRule }).(pulumi.BoolPtrOutput)
 }
 
-// This is the name of the policy.
+// (Optional)
 func (o ZPAPolicyAccessRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// (Optional) Supported values: “AND“, and “OR“
 func (o ZPAPolicyAccessRuleOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringOutput { return v.Operator }).(pulumi.StringOutput)
 }
@@ -365,6 +380,7 @@ func (o ZPAPolicyAccessRuleOutput) PolicySetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringOutput { return v.PolicySetId }).(pulumi.StringOutput)
 }
 
+// (Optional) Supported values: “ACCESS_POLICY“ or “GLOBAL_POLICY“
 func (o ZPAPolicyAccessRuleOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringOutput { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -385,6 +401,7 @@ func (o ZPAPolicyAccessRuleOutput) ReauthTimeout() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringPtrOutput { return v.ReauthTimeout }).(pulumi.StringPtrOutput)
 }
 
+// (Optional)
 func (o ZPAPolicyAccessRuleOutput) RuleOrder() pulumi.StringOutput {
 	return o.ApplyT(func(v *ZPAPolicyAccessRule) pulumi.StringOutput { return v.RuleOrder }).(pulumi.StringOutput)
 }

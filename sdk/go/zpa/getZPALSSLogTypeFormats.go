@@ -80,7 +80,6 @@ import (
 //
 // ```
 func GetZPALSSLogTypeFormats(ctx *pulumi.Context, args *GetZPALSSLogTypeFormatsArgs, opts ...pulumi.InvokeOption) (*GetZPALSSLogTypeFormatsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPALSSLogTypeFormatsResult
 	err := ctx.Invoke("zpa:index/getZPALSSLogTypeFormats:getZPALSSLogTypeFormats", args, &rv, opts...)
 	if err != nil {
@@ -92,14 +91,6 @@ func GetZPALSSLogTypeFormats(ctx *pulumi.Context, args *GetZPALSSLogTypeFormatsA
 // A collection of arguments for invoking getZPALSSLogTypeFormats.
 type GetZPALSSLogTypeFormatsArgs struct {
 	// The type of log to be exported.
-	// * `zpnTransLog`
-	// * `zpnAuthLog`
-	// * `zpnAstAuthLog`
-	// * `zpnHttpTransLog`
-	// * `zpnAuditLog`
-	// * `zpnSysAuthLog`
-	// * `zpnAstComprehensiveStats`
-	// * `zpnWafHttpExchangesLog`
 	LogType string `pulumi:"logType"`
 }
 
@@ -129,14 +120,6 @@ func GetZPALSSLogTypeFormatsOutput(ctx *pulumi.Context, args GetZPALSSLogTypeFor
 // A collection of arguments for invoking getZPALSSLogTypeFormats.
 type GetZPALSSLogTypeFormatsOutputArgs struct {
 	// The type of log to be exported.
-	// * `zpnTransLog`
-	// * `zpnAuthLog`
-	// * `zpnAstAuthLog`
-	// * `zpnHttpTransLog`
-	// * `zpnAuditLog`
-	// * `zpnSysAuthLog`
-	// * `zpnAstComprehensiveStats`
-	// * `zpnWafHttpExchangesLog`
 	LogType pulumi.StringInput `pulumi:"logType"`
 }
 

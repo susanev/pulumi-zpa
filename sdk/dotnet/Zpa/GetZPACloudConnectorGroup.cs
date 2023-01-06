@@ -146,16 +146,43 @@ namespace zscaler.PulumiPackage.Zpa
     [OutputType]
     public sealed class GetZPACloudConnectorGroupResult
     {
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetZPACloudConnectorGroupCloudConnectorResult> CloudConnectors;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string CreationTime;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string GeolocationId;
         public readonly string? Id;
+        /// <summary>
+        /// (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
+        /// <summary>
+        /// (string) - This field defines the name of the cloud connector group.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string ZiaCloud;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string ZiaOrgId;
 
         [OutputConstructor]

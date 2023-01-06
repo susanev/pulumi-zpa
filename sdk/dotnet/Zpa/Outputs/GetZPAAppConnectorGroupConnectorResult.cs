@@ -21,6 +21,9 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         public readonly string CreationTime;
         public readonly string CtrlBrokerName;
         public readonly string CurrentVersion;
+        /// <summary>
+        /// (String) Description of the App Connector Group.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// (String) Whether this App Connector Group is enabled or not. Default value: `true`. Supported values: `true`, `false`

@@ -14,8 +14,17 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     [OutputType]
     public sealed class GetZPACloudConnectorGroupCloudConnectorResult
     {
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string CreationTime;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly bool Enabled;
         public readonly string Fingerprint;
         /// <summary>
@@ -23,7 +32,13 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<object> Ipacls;
+        /// <summary>
+        /// (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string IssuedCertId;
+        /// <summary>
+        /// (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        /// </summary>
         public readonly string ModifiedTime;
         public readonly string Modifiedby;
         /// <summary>

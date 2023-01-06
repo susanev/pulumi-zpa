@@ -123,8 +123,6 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly string CreationTime;
         /// <summary>
         /// (string) Types for custom controls
-        /// * `type` (string) Types for custom controls
-        /// * `control_rule_json` (string) Custom controls string in JSON format
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZPAInspectionProfileCustomControlResult> CustomControls;
         /// <summary>
@@ -133,12 +131,15 @@ namespace zscaler.PulumiPackage.Zpa
         public readonly string Description;
         public readonly ImmutableArray<string> GlobalControlActions;
         /// <summary>
-        /// (string) ID of the predefined control
+        /// (string)
         /// </summary>
         public readonly string Id;
         public readonly string IncarnationNumber;
         public readonly string ModifiedBy;
         public readonly string ModifiedTime;
+        /// <summary>
+        /// (string)
+        /// </summary>
         public readonly string Name;
         /// <summary>
         /// (string) OWASP Predefined Paranoia Level. Range: [1-4], inclusive

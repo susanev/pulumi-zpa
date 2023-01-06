@@ -62,7 +62,6 @@ import (
 //
 // ```
 func GetZPASAMLAttribute(ctx *pulumi.Context, args *GetZPASAMLAttributeArgs, opts ...pulumi.InvokeOption) (*GetZPASAMLAttributeResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPASAMLAttributeResult
 	err := ctx.Invoke("zpa:index/getZPASAMLAttribute:getZPASAMLAttribute", args, &rv, opts...)
 	if err != nil {
@@ -87,13 +86,12 @@ type GetZPASAMLAttributeResult struct {
 	CreationTime string `pulumi:"creationTime"`
 	Id           string `pulumi:"id"`
 	// (string) The ID of the IdP corresponding to the SAML attribute.
-	IdpId        string  `pulumi:"idpId"`
-	IdpName      *string `pulumi:"idpName"`
-	ModifiedTime string  `pulumi:"modifiedTime"`
-	Modifiedby   string  `pulumi:"modifiedby"`
+	IdpId   string  `pulumi:"idpId"`
+	IdpName *string `pulumi:"idpName"`
 	// (string)
-	// * `modifiedBy` (string)
-	// * `modifiedTime` (string)
+	ModifiedTime string `pulumi:"modifiedTime"`
+	Modifiedby   string `pulumi:"modifiedby"`
+	// (string)
 	Name string `pulumi:"name"`
 	// (string)
 	SamlName string `pulumi:"samlName"`
@@ -161,6 +159,7 @@ func (o GetZPASAMLAttributeResultOutput) IdpName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZPASAMLAttributeResult) *string { return v.IdpName }).(pulumi.StringPtrOutput)
 }
 
+// (string)
 func (o GetZPASAMLAttributeResultOutput) ModifiedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASAMLAttributeResult) string { return v.ModifiedTime }).(pulumi.StringOutput)
 }
@@ -170,8 +169,6 @@ func (o GetZPASAMLAttributeResultOutput) Modifiedby() pulumi.StringOutput {
 }
 
 // (string)
-// * `modifiedBy` (string)
-// * `modifiedTime` (string)
 func (o GetZPASAMLAttributeResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZPASAMLAttributeResult) string { return v.Name }).(pulumi.StringOutput)
 }

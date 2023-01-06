@@ -15,16 +15,6 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
     {
         /// <summary>
         /// (Optional)
-        /// * `operator` (Optional) - Supported values are: `AND` or `OR`
-        /// * `operands`
-        /// * `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`
-        /// * `values` (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.
-        /// - `zpn_client_type_exporter`
-        /// - `zpn_client_type_browser_isolation`
-        /// - `zpn_client_type_machine_tunnel`
-        /// - `zpn_client_type_ip_anchoring`
-        /// - `zpn_client_type_edge_connector`
-        /// - `zpn_client_type_zapp`
         /// </summary>
         [Input("negated")]
         public Input<bool>? Negated { get; set; }
@@ -37,6 +27,9 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
             set => _operands = value;
         }
 
+        /// <summary>
+        /// (Optional) - Supported values are: `AND` or `OR`
+        /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;
 

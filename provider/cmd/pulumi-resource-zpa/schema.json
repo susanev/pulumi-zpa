@@ -102,7 +102,7 @@
             "properties": {
                 "allowOptions": {
                     "type": "boolean",
-                    "description": "- If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`\n",
+                    "description": "If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -111,7 +111,7 @@
                 },
                 "applicationPort": {
                     "type": "string",
-                    "description": "- Port for the BA app.\n",
+                    "description": "Port for the BA app.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -121,7 +121,7 @@
                 },
                 "applicationProtocol": {
                     "type": "string",
-                    "description": "- Protocol for the BA app. Supported values: `HTTP` and `HTTPS`\n",
+                    "description": "Protocol for the BA app. Supported values: `HTTP` and `HTTPS`\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -139,6 +139,7 @@
                 },
                 "cname": {
                     "type": "string",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -147,6 +148,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "description": "(Optional) Description of the application.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -155,7 +157,7 @@
                 },
                 "domain": {
                     "type": "string",
-                    "description": "- Domain name or IP address of the BA app.\n",
+                    "description": "Domain name or IP address of the BA app.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -164,6 +166,7 @@
                 },
                 "enabled": {
                     "type": "boolean",
+                    "description": "(Optional) - Whether this app is enabled or not.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -172,6 +175,7 @@
                 },
                 "hidden": {
                     "type": "boolean",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -188,6 +192,7 @@
                 },
                 "localDomain": {
                     "type": "string",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -196,7 +201,7 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "- Name of BA app.\n",
+                    "description": "Name of the application.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -205,6 +210,7 @@
                 },
                 "path": {
                     "type": "string",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -213,6 +219,7 @@
                 },
                 "trustUntrustedCert": {
                     "type": "boolean",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -377,7 +384,7 @@
                 },
                 "certificateId": {
                     "type": "string",
-                    "description": "- ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.\n",
+                    "description": "ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -644,7 +651,7 @@
                 },
                 "connectionSecurity": {
                     "type": "string",
-                    "description": "- Parameter required when `application_protocol` is of type `RDP`\n",
+                    "description": "Parameter required when `application_protocol` is of type `RDP`\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1323,7 +1330,7 @@
                 },
                 "id": {
                     "type": "string",
-                    "description": "- App Connector Group ID(s) where logs will be forwarded to.\n",
+                    "description": "App Connector Group ID(s) where logs will be forwarded to.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1405,7 +1412,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "- App Connector Group ID(s) where logs will be forwarded to.\n",
+                    "description": "App Connector Group ID(s) where logs will be forwarded to.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1482,7 +1489,7 @@
                 },
                 "id": {
                     "type": "string",
-                    "description": "- App Connector Group ID(s) where logs will be forwarded to.\n",
+                    "description": "App Connector Group ID(s) where logs will be forwarded to.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1508,6 +1515,7 @@
                 },
                 "operator": {
                     "type": "string",
+                    "description": "(Optional) - Supported values are: `AND` or `OR`\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1602,7 +1610,7 @@
             "properties": {
                 "negated": {
                     "type": "boolean",
-                    "description": "(Optional)\n* `operator` (Optional) - Supported values are: `AND` or `OR`\n* `operands`\n* `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`\n* `values` (Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.\n- `zpn_client_type_exporter`\n- `zpn_client_type_browser_isolation`\n- `zpn_client_type_machine_tunnel`\n- `zpn_client_type_ip_anchoring`\n- `zpn_client_type_edge_connector`\n- `zpn_client_type_zapp`\n",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1622,6 +1630,7 @@
                 },
                 "operator": {
                     "type": "string",
+                    "description": "(Optional) - Supported values are: `AND` or `OR`\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1638,6 +1647,7 @@
             "properties": {
                 "objectType": {
                     "type": "string",
+                    "description": "(Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `SAML`, `SCIM`, `SCIM_GROUP`\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1649,6 +1659,7 @@
                     "items": {
                         "type": "string"
                     },
+                    "description": "(Optional) The below values are supported when choosing `object_type` of type `CLIENT_TYPE`.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1972,7 +1983,7 @@
                 },
                 "negated": {
                     "type": "boolean",
-                    "description": "(Optional) Supported values: ``true`` or ``false``\n* `operator` (Optional) Supported values: ``AND``, and ``OR``\n* `operands` (Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.\n* `name` (Optional)\n* `lhs` (Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.\n* `rhs` (Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.\n* `idp_id` (Optional)\n* `object_type` (Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.\n* `CLIENT_TYPE` (Optional) - The below options are the only ones supported in an access policy rule.\n* `zpn_client_type_exporter`\n* `zpn_client_type_browser_isolation`\n* `zpn_client_type_machine_tunnel`\n* `zpn_client_type_ip_anchoring`\n* `zpn_client_type_edge_connector`\n* `zpn_client_type_zapp`\n",
+                    "description": "(Optional) Supported values: ``true`` or ``false``\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1984,6 +1995,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/ZPAPolicyAccessRuleConditionOperand:ZPAPolicyAccessRuleConditionOperand"
                     },
+                    "description": "(Optional) - Operands block must be repeated if multiple per `object_type` conditions are to be added to the rule.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -1992,6 +2004,7 @@
                 },
                 "operator": {
                     "type": "string",
+                    "description": "(Optional) Supported values: ``AND``, and ``OR``\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2027,6 +2040,7 @@
                 },
                 "idpId": {
                     "type": "string",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2035,6 +2049,7 @@
                 },
                 "lhs": {
                     "type": "string",
+                    "description": "(Optional) LHS must always carry the string value ``id`` or the attribute ID of the resource being associated with the rule.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2043,6 +2058,7 @@
                 },
                 "name": {
                     "type": "string",
+                    "description": "(Optional)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2051,6 +2067,7 @@
                 },
                 "objectType": {
                     "type": "string",
+                    "description": "(Optional) This is for specifying the policy critiera. Supported values: `APP`, `APP_GROUP`, `SAML`, `IDP`, `CLIENT_TYPE`, `TRUSTED_NETWORK`, `POSTURE`, `SCIM`, `SCIM_GROUP`, and `CLOUD_CONNECTOR_GROUP`. `TRUSTED_NETWORK`, and `CLIENT_TYPE`.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2059,6 +2076,7 @@
                 },
                 "rhs": {
                     "type": "string",
+                    "description": "(Optional) RHS is either the ID attribute of a resource or fixed string value. Refer to the chart below for further details.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2379,6 +2397,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "description": "(String) Description of the App Connector Group.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2684,6 +2703,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "description": "(String) Description of the App Connector Group.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2764,7 +2784,7 @@
             "properties": {
                 "allowOptions": {
                     "type": "boolean",
-                    "description": "(bool)\n* `cname` (string)\n* `description` (string)\n* `enabled` (bool)\n* `hidden` (bool)\n* `local_domain` (string)\n* `path` (string)\n* `trust_untrusted_cert` (bool)\n",
+                    "description": "(bool)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2817,6 +2837,7 @@
                 },
                 "cname": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2825,7 +2846,7 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "(string) Description of the application.\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2843,7 +2864,7 @@
                 },
                 "enabled": {
                     "type": "boolean",
-                    "description": "(Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.\n",
+                    "description": "(bool)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2852,6 +2873,7 @@
                 },
                 "hidden": {
                     "type": "boolean",
+                    "description": "(bool)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2869,6 +2891,7 @@
                 },
                 "localDomain": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2886,6 +2909,7 @@
                 },
                 "path": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -2894,6 +2918,7 @@
                 },
                 "trustUntrustedCert": {
                     "type": "boolean",
+                    "description": "(bool)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3513,6 +3538,7 @@
             "properties": {
                 "creationTime": {
                     "type": "string",
+                    "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3521,6 +3547,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3529,6 +3556,7 @@
                 },
                 "enabled": {
                     "type": "boolean",
+                    "description": "(bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3565,6 +3593,7 @@
                 },
                 "issuedCertId": {
                     "type": "string",
+                    "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3573,6 +3602,7 @@
                 },
                 "modifiedTime": {
                     "type": "string",
+                    "description": "(string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3632,6 +3662,7 @@
             "properties": {
                 "certificateUrl": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3648,6 +3679,7 @@
                 },
                 "spEntityId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3656,6 +3688,7 @@
                 },
                 "spMetadataUrl": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3664,6 +3697,7 @@
                 },
                 "spPostUrl": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3689,6 +3723,7 @@
             "properties": {
                 "certificateUrl": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3705,6 +3740,7 @@
                 },
                 "spEntityId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3713,6 +3749,7 @@
                 },
                 "spMetadataUrl": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3721,6 +3758,7 @@
                 },
                 "spPostUrl": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3746,7 +3784,7 @@
             "properties": {
                 "action": {
                     "type": "string",
-                    "description": "(string)\n* `PASS`\n* `BLOCK`\n* `REDIRECT`\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3767,7 +3805,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/getZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName:getZPAInspectionAllPredefinedControlsListAssociatedInspectionProfileName"
                     },
-                    "description": "(string)\n* `id`- (string)\n* `name`- (string)\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3812,7 +3850,7 @@
                 },
                 "defaultAction": {
                     "type": "string",
-                    "description": "(string)\n* `PASS`\n* `BLOCK`\n* `REDIRECT`\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3865,6 +3903,7 @@
                 },
                 "name": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3882,7 +3921,7 @@
                 },
                 "severity": {
                     "type": "string",
-                    "description": "(string)\n* `CRITICAL`\n* `ERROR`\n* `WARNING`\n* `INFO`\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -3938,6 +3977,7 @@
                 },
                 "name": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4117,7 +4157,7 @@
                 },
                 "actionValue": {
                     "type": "string",
-                    "description": "(string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.\n* `attachment` (string) Control attachment\n* `control_group` (string) Control group\n",
+                    "description": "(string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4129,7 +4169,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/getZPAInspectionProfileCustomControlAssociatedInspectionProfileName:getZPAInspectionProfileCustomControlAssociatedInspectionProfileName"
                     },
-                    "description": "(string) Name of the inspection profile\n* `id`- (string)\n* `name`- (string)\n",
+                    "description": "(string) Name of the inspection profile\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4146,6 +4186,7 @@
                 },
                 "controlRuleJson": {
                     "type": "string",
+                    "description": "(string) Custom controls string in JSON format\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4426,7 +4467,7 @@
                 },
                 "actionValue": {
                     "type": "string",
-                    "description": "(string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.\n* `attachment` (string) Control attachment\n* `control_group` (string) Control group\n",
+                    "description": "(string) Value for the predefined controls action. This field is only required if the action is set to REDIRECT. This field is only required if the action is set to `REDIRECT`.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4438,7 +4479,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/getZPAInspectionProfilePredefinedControlAssociatedInspectionProfileName:getZPAInspectionProfilePredefinedControlAssociatedInspectionProfileName"
                     },
-                    "description": "(string) Name of the inspection profile\n* `id`- (string)\n* `name`- (string)\n",
+                    "description": "(string) Name of the inspection profile\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4447,6 +4488,7 @@
                 },
                 "attachment": {
                     "type": "string",
+                    "description": "(string) Control attachment\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -4455,6 +4497,7 @@
                 },
                 "controlGroup": {
                     "type": "string",
+                    "description": "(string) Control group\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5203,6 +5246,7 @@
             "properties": {
                 "creationTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5211,6 +5255,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5219,6 +5264,7 @@
                 },
                 "fingerprint": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5236,6 +5282,7 @@
                 },
                 "issuedCertId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5244,6 +5291,7 @@
                 },
                 "machineGroupId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5252,6 +5300,7 @@
                 },
                 "machineGroupName": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5260,6 +5309,7 @@
                 },
                 "machineTokenId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5268,6 +5318,7 @@
                 },
                 "modifiedBy": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5276,6 +5327,7 @@
                 },
                 "modifiedTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -5296,6 +5348,7 @@
                     "additionalProperties": {
                         "type": "string"
                     },
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6633,6 +6686,7 @@
             "properties": {
                 "applicationStartTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6641,6 +6695,7 @@
                 },
                 "controlChannelStatus": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6658,6 +6713,7 @@
                 },
                 "ctrlBrokerName": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6666,6 +6722,7 @@
                 },
                 "currentVersion": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6674,6 +6731,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "description": "(string) Description of the Service Edge Group.\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6694,6 +6752,7 @@
                     "additionalProperties": {
                         "$ref": "pulumi.json#/Any"
                     },
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6702,6 +6761,7 @@
                 },
                 "expectedUpgradeTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6710,6 +6770,7 @@
                 },
                 "expectedVersion": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6743,6 +6804,7 @@
                 },
                 "issuedCertId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6751,6 +6813,7 @@
                 },
                 "lastBrokerConnectTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6759,6 +6822,7 @@
                 },
                 "lastBrokerConnectTimeDuration": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6767,6 +6831,7 @@
                 },
                 "lastBrokerDisconnectTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6775,6 +6840,7 @@
                 },
                 "lastBrokerDisconnectTimeDuration": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6783,6 +6849,7 @@
                 },
                 "lastUpgradeTime": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6791,7 +6858,7 @@
                 },
                 "latitude": {
                     "type": "string",
-                    "description": "(string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6800,6 +6867,7 @@
                 },
                 "listenIps": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6808,7 +6876,7 @@
                 },
                 "location": {
                     "type": "string",
-                    "description": "(string) Location of the Service Edge Group.\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6817,7 +6885,7 @@
                 },
                 "longitude": {
                     "type": "string",
-                    "description": "(string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`\n",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6852,6 +6920,7 @@
                 },
                 "platform": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6860,6 +6929,7 @@
                 },
                 "previousVersion": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6868,6 +6938,7 @@
                 },
                 "privateIp": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6876,6 +6947,7 @@
                 },
                 "provisioningKeyId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6884,6 +6956,7 @@
                 },
                 "provisioningKeyName": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6892,6 +6965,7 @@
                 },
                 "publicIp": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6900,6 +6974,7 @@
                 },
                 "publishIps": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6908,6 +6983,7 @@
                 },
                 "sargeVersion": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6916,6 +6992,7 @@
                 },
                 "serviceEdgeGroupId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6924,6 +7001,7 @@
                 },
                 "serviceEdgeGroupName": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6932,6 +7010,7 @@
                 },
                 "upgradeAttempt": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -6940,6 +7019,7 @@
                 },
                 "upgradeStatus": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -7007,6 +7087,7 @@
                 },
                 "domain": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -7024,6 +7105,7 @@
                 },
                 "masterCustomerId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -7058,6 +7140,7 @@
                 },
                 "networkId": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -7066,6 +7149,7 @@
                 },
                 "zscalerCloud": {
                     "type": "string",
+                    "description": "(string)\n",
                     "language": {
                         "python": {
                             "mapCase": false
@@ -7173,7 +7257,7 @@
                 },
                 "dnsQueryType": {
                     "type": "string",
-                    "description": "Supported values are:\n* ``IPV4``, ``IPV6``, ``IPV4_IPV6``\n"
+                    "description": "Supported values are:\n"
                 },
                 "enabled": {
                     "type": "boolean",
@@ -7267,7 +7351,7 @@
                 },
                 "dnsQueryType": {
                     "type": "string",
-                    "description": "Supported values are:\n* ``IPV4``, ``IPV6``, ``IPV4_IPV6``\n"
+                    "description": "Supported values are:\n"
                 },
                 "enabled": {
                     "type": "boolean",
@@ -7351,7 +7435,7 @@
                     },
                     "dnsQueryType": {
                         "type": "string",
-                        "description": "Supported values are:\n* ``IPV4``, ``IPV6``, ``IPV4_IPV6``\n"
+                        "description": "Supported values are:\n"
                     },
                     "enabled": {
                         "type": "boolean",
@@ -7450,11 +7534,12 @@
                     "description": "(Optional) Whether this application is enabled or not.\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (Optional)\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                 },
                 "icmpAccessType": {
                     "type": "string",
@@ -7552,11 +7637,12 @@
                     "description": "(Optional) Whether this application is enabled or not.\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (Optional)\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                 },
                 "icmpAccessType": {
                     "type": "string",
@@ -7645,11 +7731,12 @@
                         "description": "(Optional) Whether this application is enabled or not.\n"
                     },
                     "healthCheckType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional)\n"
                     },
                     "healthReporting": {
                         "type": "string",
-                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (Optional)\n"
+                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                     },
                     "icmpAccessType": {
                         "type": "string",
@@ -7708,7 +7795,7 @@
             "properties": {
                 "bypassType": {
                     "type": "string",
-                    "description": "Indicates whether users can bypass ZPA to access applications. Default: NEVER. Supported values: ALWAYS, NEVER, ON_NET.\nThe value NEVER indicates the use of the client forwarding policy.\n"
+                    "description": "(Optional) Indicates whether users can bypass ZPA to access applications. Default value is: `NEVER` and supported values are: `ALWAYS`, `NEVER` and `ON_NET`. The value `NEVER` indicates the use of the client forwarding policy.\n"
                 },
                 "clientlessApps": {
                     "type": "array",
@@ -7717,11 +7804,12 @@
                     }
                 },
                 "configSpace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `SIEM`\n"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Description of the application.\n"
+                    "description": "(Optional) Description of the application.\n"
                 },
                 "domainNames": {
                     "type": "array",
@@ -7732,31 +7820,34 @@
                 },
                 "doubleEncrypt": {
                     "type": "boolean",
-                    "description": "Whether Double Encryption is enabled or disabled for the app.\n"
+                    "description": "(Optional) Whether Double Encryption is enabled or disabled for the app.\n"
                 },
                 "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "(Optional) - Whether this app is enabled or not.\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `NONE`\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                 },
                 "icmpAccessType": {
                     "type": "string"
                 },
                 "ipAnchored": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "(Optional) - If Source IP Anchoring for use with ZIA, is enabled or disabled for the app. Supported values are `true` and `false`\n"
                 },
                 "isCnameEnabled": {
                     "type": "boolean",
-                    "description": "Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the\nconnectors.\n"
+                    "description": "(Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.\n"
                 },
                 "name": {
                     "type": "string",
-                    "description": "- Name of BA app.\n"
+                    "description": "Name of the application.\n"
                 },
                 "passiveHealthEnabled": {
                     "type": "boolean"
@@ -7809,7 +7900,7 @@
             "inputProperties": {
                 "bypassType": {
                     "type": "string",
-                    "description": "Indicates whether users can bypass ZPA to access applications. Default: NEVER. Supported values: ALWAYS, NEVER, ON_NET.\nThe value NEVER indicates the use of the client forwarding policy.\n"
+                    "description": "(Optional) Indicates whether users can bypass ZPA to access applications. Default value is: `NEVER` and supported values are: `ALWAYS`, `NEVER` and `ON_NET`. The value `NEVER` indicates the use of the client forwarding policy.\n"
                 },
                 "clientlessApps": {
                     "type": "array",
@@ -7818,11 +7909,12 @@
                     }
                 },
                 "configSpace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `SIEM`\n"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Description of the application.\n"
+                    "description": "(Optional) Description of the application.\n"
                 },
                 "domainNames": {
                     "type": "array",
@@ -7833,31 +7925,34 @@
                 },
                 "doubleEncrypt": {
                     "type": "boolean",
-                    "description": "Whether Double Encryption is enabled or disabled for the app.\n"
+                    "description": "(Optional) Whether Double Encryption is enabled or disabled for the app.\n"
                 },
                 "enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "(Optional) - Whether this app is enabled or not.\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `NONE`\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                 },
                 "icmpAccessType": {
                     "type": "string"
                 },
                 "ipAnchored": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "(Optional) - If Source IP Anchoring for use with ZIA, is enabled or disabled for the app. Supported values are `true` and `false`\n"
                 },
                 "isCnameEnabled": {
                     "type": "boolean",
-                    "description": "Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the\nconnectors.\n"
+                    "description": "(Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.\n"
                 },
                 "name": {
                     "type": "string",
-                    "description": "- Name of BA app.\n"
+                    "description": "Name of the application.\n"
                 },
                 "passiveHealthEnabled": {
                     "type": "boolean"
@@ -7902,7 +7997,7 @@
                 "properties": {
                     "bypassType": {
                         "type": "string",
-                        "description": "Indicates whether users can bypass ZPA to access applications. Default: NEVER. Supported values: ALWAYS, NEVER, ON_NET.\nThe value NEVER indicates the use of the client forwarding policy.\n"
+                        "description": "(Optional) Indicates whether users can bypass ZPA to access applications. Default value is: `NEVER` and supported values are: `ALWAYS`, `NEVER` and `ON_NET`. The value `NEVER` indicates the use of the client forwarding policy.\n"
                     },
                     "clientlessApps": {
                         "type": "array",
@@ -7911,11 +8006,12 @@
                         }
                     },
                     "configSpace": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `SIEM`\n"
                     },
                     "description": {
                         "type": "string",
-                        "description": "Description of the application.\n"
+                        "description": "(Optional) Description of the application.\n"
                     },
                     "domainNames": {
                         "type": "array",
@@ -7926,31 +8022,34 @@
                     },
                     "doubleEncrypt": {
                         "type": "boolean",
-                        "description": "Whether Double Encryption is enabled or disabled for the app.\n"
+                        "description": "(Optional) Whether Double Encryption is enabled or disabled for the app.\n"
                     },
                     "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(Optional) - Whether this app is enabled or not.\n"
                     },
                     "healthCheckType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `NONE`\n"
                     },
                     "healthReporting": {
                         "type": "string",
-                        "description": "Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
+                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                     },
                     "icmpAccessType": {
                         "type": "string"
                     },
                     "ipAnchored": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(Optional) - If Source IP Anchoring for use with ZIA, is enabled or disabled for the app. Supported values are `true` and `false`\n"
                     },
                     "isCnameEnabled": {
                         "type": "boolean",
-                        "description": "Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the\nconnectors.\n"
+                        "description": "(Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.\n"
                     },
                     "name": {
                         "type": "string",
-                        "description": "- Name of BA app.\n"
+                        "description": "Name of the application.\n"
                     },
                     "passiveHealthEnabled": {
                         "type": "boolean"
@@ -8022,11 +8121,12 @@
                     "description": "Whether this application is enabled or not\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (Optional)\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                 },
                 "icmpAccessType": {
                     "type": "string",
@@ -8129,11 +8229,12 @@
                     "description": "Whether this application is enabled or not\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (Optional)\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                 },
                 "icmpAccessType": {
                     "type": "string",
@@ -8223,11 +8324,12 @@
                         "description": "Whether this application is enabled or not\n"
                     },
                     "healthCheckType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional)\n"
                     },
                     "healthReporting": {
                         "type": "string",
-                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (Optional)\n"
+                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                     },
                     "icmpAccessType": {
                         "type": "string",
@@ -8316,11 +8418,12 @@
                     "description": "Whether this application is enabled or not\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n* `health_check_type` (Optional)\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
                 },
                 "icmpAccessType": {
                     "type": "string",
@@ -8423,11 +8526,12 @@
                     "description": "Whether this application is enabled or not\n"
                 },
                 "healthCheckType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "healthReporting": {
                     "type": "string",
-                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n* `health_check_type` (Optional)\n"
+                    "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
                 },
                 "icmpAccessType": {
                     "type": "string",
@@ -8517,11 +8621,12 @@
                         "description": "Whether this application is enabled or not\n"
                     },
                     "healthCheckType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional)\n"
                     },
                     "healthReporting": {
                         "type": "string",
-                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n* `health_check_type` (Optional)\n"
+                        "description": "(Optional) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
                     },
                     "icmpAccessType": {
                         "type": "string",
@@ -9191,7 +9296,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/ZPAInspectionProfileCustomControl:ZPAInspectionProfileCustomControl"
                     },
-                    "description": "(Optional) Types for custom controls\n* `type` (Optional) Types for custom controls\n* `control_rule_json` (Optional) Custom controls string in JSON format\n"
+                    "description": "(Optional) Types for custom controls\n"
                 },
                 "description": {
                     "type": "string",
@@ -9260,7 +9365,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/ZPAInspectionProfileCustomControl:ZPAInspectionProfileCustomControl"
                     },
-                    "description": "(Optional) Types for custom controls\n* `type` (Optional) Types for custom controls\n* `control_rule_json` (Optional) Custom controls string in JSON format\n"
+                    "description": "(Optional) Types for custom controls\n"
                 },
                 "description": {
                     "type": "string",
@@ -9319,7 +9424,7 @@
                         "items": {
                             "$ref": "#/types/zpa:index/ZPAInspectionProfileCustomControl:ZPAInspectionProfileCustomControl"
                         },
-                        "description": "(Optional) Types for custom controls\n* `type` (Optional) Types for custom controls\n* `control_rule_json` (Optional) Custom controls string in JSON format\n"
+                        "description": "(Optional) Types for custom controls\n"
                     },
                     "description": {
                         "type": "string",
@@ -9862,7 +9967,7 @@
             "properties": {
                 "action": {
                     "type": "string",
-                    "description": "This is for providing the rule action.\n"
+                    "description": "(Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``\n"
                 },
                 "actionId": {
                     "type": "string",
@@ -9894,7 +9999,7 @@
                 },
                 "customMsg": {
                     "type": "string",
-                    "description": "This is for providing a customer message for the user.\n"
+                    "description": "(Optional) This is for providing a customer message for the user.\n"
                 },
                 "defaultRule": {
                     "type": "boolean",
@@ -9902,23 +10007,25 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "This is the description of the access policy.\n"
+                    "description": "(Optional) This is the description of the access policy rule.\n"
                 },
                 "lssDefaultRule": {
                     "type": "boolean"
                 },
                 "name": {
                     "type": "string",
-                    "description": "This is the name of the policy.\n"
+                    "description": "(Optional)\n"
                 },
                 "operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Supported values: ``AND``, and ``OR``\n"
                 },
                 "policySetId": {
                     "type": "string"
                 },
                 "policyType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``\n"
                 },
                 "priority": {
                     "type": "string"
@@ -9933,7 +10040,8 @@
                     "type": "string"
                 },
                 "ruleOrder": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "zpnInspectionProfileId": {
                     "type": "string"
@@ -9953,7 +10061,7 @@
             "inputProperties": {
                 "action": {
                     "type": "string",
-                    "description": "This is for providing the rule action.\n"
+                    "description": "(Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``\n"
                 },
                 "actionId": {
                     "type": "string",
@@ -9985,7 +10093,7 @@
                 },
                 "customMsg": {
                     "type": "string",
-                    "description": "This is for providing a customer message for the user.\n"
+                    "description": "(Optional) This is for providing a customer message for the user.\n"
                 },
                 "defaultRule": {
                     "type": "boolean",
@@ -9993,23 +10101,25 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "This is the description of the access policy.\n"
+                    "description": "(Optional) This is the description of the access policy rule.\n"
                 },
                 "lssDefaultRule": {
                     "type": "boolean"
                 },
                 "name": {
                     "type": "string",
-                    "description": "This is the name of the policy.\n"
+                    "description": "(Optional)\n"
                 },
                 "operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Supported values: ``AND``, and ``OR``\n"
                 },
                 "policySetId": {
                     "type": "string"
                 },
                 "policyType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``\n"
                 },
                 "priority": {
                     "type": "string"
@@ -10026,7 +10136,8 @@
                     "willReplaceOnChanges": true
                 },
                 "ruleOrder": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "zpnInspectionProfileId": {
                     "type": "string"
@@ -10037,7 +10148,7 @@
                 "properties": {
                     "action": {
                         "type": "string",
-                        "description": "This is for providing the rule action.\n"
+                        "description": "(Optional) This is for providing the rule action. Supported values: ``ALLOW``, ``DENY``\n"
                     },
                     "actionId": {
                         "type": "string",
@@ -10069,7 +10180,7 @@
                     },
                     "customMsg": {
                         "type": "string",
-                        "description": "This is for providing a customer message for the user.\n"
+                        "description": "(Optional) This is for providing a customer message for the user.\n"
                     },
                     "defaultRule": {
                         "type": "boolean",
@@ -10077,23 +10188,25 @@
                     },
                     "description": {
                         "type": "string",
-                        "description": "This is the description of the access policy.\n"
+                        "description": "(Optional) This is the description of the access policy rule.\n"
                     },
                     "lssDefaultRule": {
                         "type": "boolean"
                     },
                     "name": {
                         "type": "string",
-                        "description": "This is the name of the policy.\n"
+                        "description": "(Optional)\n"
                     },
                     "operator": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional) Supported values: ``AND``, and ``OR``\n"
                     },
                     "policySetId": {
                         "type": "string"
                     },
                     "policyType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional) Supported values: ``ACCESS_POLICY`` or ``GLOBAL_POLICY``\n"
                     },
                     "priority": {
                         "type": "string"
@@ -10110,7 +10223,8 @@
                         "willReplaceOnChanges": true
                     },
                     "ruleOrder": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional)\n"
                     },
                     "zpnInspectionProfileId": {
                         "type": "string"
@@ -10535,15 +10649,16 @@
                     }
                 },
                 "configSpace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Description of the app group.\n"
+                    "description": "(Optional) Description of the segment group.\n"
                 },
                 "enabled": {
                     "type": "boolean",
-                    "description": "Whether this app group is enabled or not.\n"
+                    "description": "(Optional) Whether this segment group is enabled or not.\n"
                 },
                 "name": {
                     "type": "string",
@@ -10553,7 +10668,8 @@
                     "type": "boolean"
                 },
                 "tcpKeepAliveEnabled": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 }
             },
             "required": [
@@ -10568,15 +10684,16 @@
                     }
                 },
                 "configSpace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Description of the app group.\n"
+                    "description": "(Optional) Description of the segment group.\n"
                 },
                 "enabled": {
                     "type": "boolean",
-                    "description": "Whether this app group is enabled or not.\n"
+                    "description": "(Optional) Whether this segment group is enabled or not.\n"
                 },
                 "name": {
                     "type": "string",
@@ -10586,7 +10703,8 @@
                     "type": "boolean"
                 },
                 "tcpKeepAliveEnabled": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Optional)\n"
                 }
             },
             "stateInputs": {
@@ -10599,15 +10717,16 @@
                         }
                     },
                     "configSpace": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional)\n"
                     },
                     "description": {
                         "type": "string",
-                        "description": "Description of the app group.\n"
+                        "description": "(Optional) Description of the segment group.\n"
                     },
                     "enabled": {
                         "type": "boolean",
-                        "description": "Whether this app group is enabled or not.\n"
+                        "description": "(Optional) Whether this segment group is enabled or not.\n"
                     },
                     "name": {
                         "type": "string",
@@ -10617,7 +10736,8 @@
                         "type": "boolean"
                     },
                     "tcpKeepAliveEnabled": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Optional)\n"
                     }
                 },
                 "type": "object"
@@ -10645,15 +10765,15 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "This field is the description of the server group.\n"
+                    "description": "(Optional) This field is the description of the server group.\n"
                 },
                 "dynamicDiscovery": {
                     "type": "boolean",
-                    "description": "This field controls dynamic discovery of the servers.\n"
+                    "description": "(Optional) This field controls dynamic discovery of the servers.\n"
                 },
                 "enabled": {
                     "type": "boolean",
-                    "description": "This field defines if the server group is enabled or disabled.\n"
+                    "description": "(Optional) This field defines if the server group is enabled or disabled.\n"
                 },
                 "ipAnchored": {
                     "type": "boolean"
@@ -10667,7 +10787,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/ZPAServerGroupServer:ZPAServerGroupServer"
                     },
-                    "description": "This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required\nonly in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.\n"
+                    "description": "(Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.\n"
                 }
             },
             "required": [
@@ -10696,15 +10816,15 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "This field is the description of the server group.\n"
+                    "description": "(Optional) This field is the description of the server group.\n"
                 },
                 "dynamicDiscovery": {
                     "type": "boolean",
-                    "description": "This field controls dynamic discovery of the servers.\n"
+                    "description": "(Optional) This field controls dynamic discovery of the servers.\n"
                 },
                 "enabled": {
                     "type": "boolean",
-                    "description": "This field defines if the server group is enabled or disabled.\n"
+                    "description": "(Optional) This field defines if the server group is enabled or disabled.\n"
                 },
                 "ipAnchored": {
                     "type": "boolean"
@@ -10718,7 +10838,7 @@
                     "items": {
                         "$ref": "#/types/zpa:index/ZPAServerGroupServer:ZPAServerGroupServer"
                     },
-                    "description": "This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required\nonly in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.\n"
+                    "description": "(Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.\n"
                 }
             },
             "stateInputs": {
@@ -10743,15 +10863,15 @@
                     },
                     "description": {
                         "type": "string",
-                        "description": "This field is the description of the server group.\n"
+                        "description": "(Optional) This field is the description of the server group.\n"
                     },
                     "dynamicDiscovery": {
                         "type": "boolean",
-                        "description": "This field controls dynamic discovery of the servers.\n"
+                        "description": "(Optional) This field controls dynamic discovery of the servers.\n"
                     },
                     "enabled": {
                         "type": "boolean",
-                        "description": "This field defines if the server group is enabled or disabled.\n"
+                        "description": "(Optional) This field defines if the server group is enabled or disabled.\n"
                     },
                     "ipAnchored": {
                         "type": "boolean"
@@ -10765,7 +10885,7 @@
                         "items": {
                             "$ref": "#/types/zpa:index/ZPAServerGroupServer:ZPAServerGroupServer"
                         },
-                        "description": "This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required\nonly in cases where the new servers need to be created in this API. For existing servers, pass only the serverId.\n"
+                        "description": "(Block List) This field is a list of servers that are applicable only when dynamic discovery is disabled. Server name is required only in cases where the new servers need to be created in this API.\n"
                     }
                 },
                 "type": "object"
@@ -11058,11 +11178,12 @@
                         "type": "string"
                     },
                     "description": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(String) Description of the App Connector Group.\n"
                     },
                     "dnsQueryType": {
                         "type": "string",
-                        "description": "(String)\n* ``0`` = ``Default``\n* ``1`` = ``Previous Default``\n* ``2`` = ``New Release``\n"
+                        "description": "(String)\n"
                     },
                     "enabled": {
                         "type": "boolean",
@@ -11131,15 +11252,15 @@
                     },
                     "versionProfileId": {
                         "type": "string",
-                        "description": "(String) ID of the version profile.\nExported values are:\n* ``0`` = ``Default``\n* ``1`` = ``Previous Default``\n* ``2`` = ``New Release``\n"
+                        "description": "(String) ID of the version profile.\nExported values are:\n"
                     },
                     "versionProfileName": {
                         "type": "string",
-                        "description": "(String)\nExported values are:\n* ``Default`` = ``0``\n* ``Previous Default`` = ``1``\n* ``New Release`` = ``2``\n"
+                        "description": "(String)\nExported values are:\n"
                     },
                     "versionProfileVisibilityScope": {
                         "type": "string",
-                        "description": "(String)\nExported values are:\n* ``\"IPV4_IPV6\"``\n* ``\"IPV4\"``\n* ``\"IPV6``\n"
+                        "description": "(String)\nExported values are:\n"
                     }
                 },
                 "type": "object",
@@ -11364,7 +11485,7 @@
                     },
                     "description": {
                         "type": "string",
-                        "description": "(string) Description of the application.\n"
+                        "description": "(string)\n"
                     },
                     "domainNames": {
                         "type": "array",
@@ -11379,7 +11500,7 @@
                     },
                     "enabled": {
                         "type": "boolean",
-                        "description": "(Boolean) Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.\n"
+                        "description": "(bool)\n"
                     },
                     "healthCheckType": {
                         "type": "string"
@@ -11521,11 +11642,12 @@
                         "description": "(bool) Whether this application is enabled or not\n"
                     },
                     "healthCheckType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "healthReporting": {
                         "type": "string",
-                        "description": "(string) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n* `health_check_type` (string)\n"
+                        "description": "(string) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.\n"
                     },
                     "icmpAccessType": {
                         "type": "string",
@@ -11683,11 +11805,12 @@
                         "description": "(bool) Whether this application is enabled or not\n"
                     },
                     "healthCheckType": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "healthReporting": {
                         "type": "string",
-                        "description": "(string) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n* `health_check_type` (string)\n"
+                        "description": "(string) Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.\n"
                     },
                     "id": {
                         "type": "string"
@@ -11959,37 +12082,46 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/types/zpa:index/getZPACloudConnectorGroupCloudConnector:getZPACloudConnectorGroupCloudConnector"
-                        }
+                        },
+                        "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "creationTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "description": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "geolocationId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "id": {
                         "type": "string"
                     },
                     "modifiedTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "modifiedby": {
                         "type": "string"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) - This field defines the name of the cloud connector group.\n"
                     },
                     "ziaCloud": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     },
                     "ziaOrgId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.\n"
                     }
                 },
                 "type": "object",
@@ -12035,7 +12167,7 @@
                     },
                     "clientCertType": {
                         "type": "string",
-                        "description": "(string) Returned values are:\n* `ZAPP_CLIENT`\n* `ISOLATION_CLIENT`\n* `NONE`\n"
+                        "description": "(string) Returned values are:\n"
                     },
                     "cname": {
                         "type": "string",
@@ -12155,49 +12287,61 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAIdPControllerAdminMetadata:getZPAIdPControllerAdminMetadata"
-                        }
+                        },
+                        "description": "(Computed)\n"
                     },
                     "adminSpSigningCertId": {
                         "type": "string"
                     },
                     "autoProvision": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "creationTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "description": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "disableSamlBasedPolicy": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "domainLists": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "(string)\n"
                     },
                     "enableScimBasedPolicy": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool) Default value if null is True\n"
                     },
                     "id": {
                         "type": "string"
                     },
                     "idpEntityId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "loginNameAttribute": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "loginUrl": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "modifiedTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "modifiedby": {
                         "type": "string"
@@ -12206,37 +12350,46 @@
                         "type": "string"
                     },
                     "reauthOnUserUpdate": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "redirectBinding": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "scimEnabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "scimServiceProviderEndpoint": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "scimSharedSecretExists": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "signSamlRequest": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "ssoTypes": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "(string)\n"
                     },
                     "useCustomSpMetadata": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "userMetadatas": {
                         "type": "array",
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAIdPControllerUserMetadata:getZPAIdPControllerUserMetadata"
-                        }
+                        },
+                        "description": "(Computed)\n"
                     },
                     "userSpSigningCertId": {
                         "type": "string"
@@ -12449,7 +12602,7 @@
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAInspectionPredefinedControlsAssociatedInspectionProfileName:getZPAInspectionPredefinedControlsAssociatedInspectionProfileName"
                         },
-                        "description": "(Computed)\n* `id`- (Computed)\n* `name`- (Computed)\n"
+                        "description": "(Computed)\n"
                     },
                     "attachment": {
                         "type": "string",
@@ -12491,7 +12644,8 @@
                         "type": "string"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(Computed)\n"
                     },
                     "paranoiaLevel": {
                         "type": "string",
@@ -12567,7 +12721,7 @@
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAInspectionProfileCustomControl:getZPAInspectionProfileCustomControl"
                         },
-                        "description": "(string) Types for custom controls\n* `type` (string) Types for custom controls\n* `control_rule_json` (string) Custom controls string in JSON format\n"
+                        "description": "(string) Types for custom controls\n"
                     },
                     "description": {
                         "type": "string",
@@ -12581,7 +12735,7 @@
                     },
                     "id": {
                         "type": "string",
-                        "description": "(string) ID of the predefined control\n"
+                        "description": "(string)\n"
                     },
                     "incarnationNumber": {
                         "type": "string"
@@ -12593,7 +12747,8 @@
                         "type": "string"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "paranoiaLevel": {
                         "type": "string",
@@ -12731,7 +12886,7 @@
                 "properties": {
                     "logType": {
                         "type": "string",
-                        "description": "The type of log to be exported.\n* `zpn_trans_log`\n* `zpn_auth_log`\n* `zpn_ast_auth_log`\n* `zpn_http_trans_log`\n* `zpn_audit_log`\n* `zpn_sys_auth_log`\n* `zpn_ast_comprehensive_stats`\n* `zpn_waf_http_exchanges_log`\n"
+                        "description": "The type of log to be exported.\n"
                     }
                 },
                 "type": "object",
@@ -12833,31 +12988,39 @@
                 "description": "A collection of values returned by getZPAMachineGroup.\n",
                 "properties": {
                     "creationTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "description": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "id": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "machines": {
                         "type": "array",
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAMachineGroupMachine:getZPAMachineGroupMachine"
-                        }
+                        },
+                        "description": "(string)\n"
                     },
                     "modifiedBy": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "modifiedTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     }
                 },
                 "type": "object",
@@ -13164,14 +13327,15 @@
                         "type": "string"
                     },
                     "modifiedTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "modifiedby": {
                         "type": "string"
                     },
                     "name": {
                         "type": "string",
-                        "description": "(string)\n* `modified_by` (string)\n* `modified_time` (string)\n"
+                        "description": "(string)\n"
                     },
                     "samlName": {
                         "type": "string",
@@ -13202,7 +13366,7 @@
                 "properties": {
                     "idpId": {
                         "type": "string",
-                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n* `modified_by`(string)\n* `modified_time` (string)\n* `multivalued` (bool)\n* `mutability` (string)\n* `required` (bool)\n* `returned` (string)\n* `schema_uri` (string)\n* `uniqueness` (bool)\n"
+                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n"
                     },
                     "idpName": {
                         "type": "string",
@@ -13247,37 +13411,44 @@
                     },
                     "idpId": {
                         "type": "string",
-                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n* `modified_by`(string)\n* `modified_time` (string)\n* `multivalued` (bool)\n* `mutability` (string)\n* `required` (bool)\n* `returned` (string)\n* `schema_uri` (string)\n* `uniqueness` (bool)\n"
+                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n"
                     },
                     "idpName": {
                         "type": "string"
                     },
                     "modifiedTime": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "modifiedby": {
                         "type": "string"
                     },
                     "multivalued": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "mutability": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "name": {
                         "type": "string"
                     },
                     "required": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "returned": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "schemaUri": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "uniqueness": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "(bool)\n"
                     },
                     "values": {
                         "type": "array",
@@ -13316,7 +13487,7 @@
                     },
                     "idpId": {
                         "type": "integer",
-                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n* `idp_group_id`(string)\n* `modified_time` (string)\n"
+                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n"
                     },
                     "idpName": {
                         "type": "string",
@@ -13340,17 +13511,19 @@
                         "type": "string"
                     },
                     "idpGroupId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "idpId": {
                         "type": "integer",
-                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n* `idp_group_id`(string)\n* `modified_time` (string)\n"
+                        "description": "(string) The ID of the IdP corresponding to the SAML attribute.\n"
                     },
                     "idpName": {
                         "type": "string"
                     },
                     "modifiedTime": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "(string)\n"
                     },
                     "name": {
                         "type": "string"
@@ -13472,7 +13645,8 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAServerGroupAppConnectorGroup:getZPAServerGroupAppConnectorGroup"
-                        }
+                        },
+                        "description": "(string)This field is a json array of app-connector-id only.\n"
                     },
                     "applications": {
                         "type": "array",
@@ -13504,7 +13678,7 @@
                     },
                     "ipAnchored": {
                         "type": "boolean",
-                        "description": "(bool)\n* `app_connector_groups` (string)This field is a json array of app-connector-id only.\n"
+                        "description": "(bool)\n"
                     },
                     "modifiedTime": {
                         "type": "string"
@@ -13570,7 +13744,8 @@
                         "description": "(string)\n"
                     },
                     "description": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string) Description of the Service Edge Group.\n"
                     },
                     "enabled": {
                         "type": "boolean",
@@ -13581,7 +13756,8 @@
                         "description": "(string)\n"
                     },
                     "id": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "isPublic": {
                         "type": "string",
@@ -13589,15 +13765,15 @@
                     },
                     "latitude": {
                         "type": "string",
-                        "description": "(string) Latitude of the Service Edge Group. Integer or decimal. With values in the range of `-90` to `90`\n"
+                        "description": "(string)\n"
                     },
                     "location": {
                         "type": "string",
-                        "description": "(string) Location of the Service Edge Group.\n"
+                        "description": "(string)\n"
                     },
                     "longitude": {
                         "type": "string",
-                        "description": "(string) Longitude of the Service Edge Group.Integer or decimal. With values in the range of `-180` to `180`\n"
+                        "description": "(string)\n"
                     },
                     "modifiedTime": {
                         "type": "string",
@@ -13607,7 +13783,8 @@
                         "type": "string"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "(string)\n"
                     },
                     "overrideVersionProfile": {
                         "type": "boolean",
@@ -13618,14 +13795,14 @@
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAServiceEdgeGroupServiceEdge:getZPAServiceEdgeGroupServiceEdge"
                         },
-                        "description": "(string)\n* `name` (string)\n* `application_start_time` (string)\n* `service_edge_group_id` (string)\n* `service_edge_group_name` (string)\n* `control_channel_status` (string)\n* `creation_time` (string)\n* `modified_by` (string)\n* `modified_time` (string)\n* `ctrl_broker_name` (string)\n* `current_version` (string)\n* `expected_upgrade_time` (string)\n* `expected_version` (string)\n* `figerprint` (string)\n* `ip_acl` (string)\n* `issued_cert_id` (string)\n* `last_broker_connect_time` (string)\n* `last_broker_connect_time_duration` (string)\n* `last_broker_disconnect_time` (string)\n* `last_broker_disconnect_time_duration` (string)\n* `last_upgrade_time` (string)\n* `latitude` (string)\n* `listen_ips` (string)\n* `location` (string)\n* `longitude` (string)\n* `provisioning_key_id` (string)\n* `provisioning_key_name` (string)\n* `platform` (string)\n* `previous_version` (string)\n* `private_ip` (string)\n* `public_ip` (string)\n* `publish_ips` (string)\n* `sarge_version` (string)\n* `enrollment_cert` (string)\n* `upgrade_attempt` (string)\n* `upgrade_status` (string)\n"
+                        "description": "(string)\n"
                     },
                     "trustedNetworks": {
                         "type": "array",
                         "items": {
                             "$ref": "#/types/zpa:index/getZPAServiceEdgeGroupTrustedNetwork:getZPAServiceEdgeGroupTrustedNetwork"
                         },
-                        "description": "(string)\n* `creation_time` (string)\n* `domain` (string)\n* `id` (string)\n* `master_customer_id` (string)\n* `modified_by` (string)\n* `modified_time` (string)\n* `name` (string)\n* `network_id` (string)\n* `zscaler_cloud` (string)\n"
+                        "description": "(string)\n"
                     },
                     "upgradeDay": {
                         "type": "string",
@@ -13637,15 +13814,15 @@
                     },
                     "versionProfileId": {
                         "type": "string",
-                        "description": "(String) ID of the version profile.\nExported values are:\n* ``0`` = ``Default``\n* ``1`` = ``Previous Default``\n* ``2`` = ``New Release``\n"
+                        "description": "(String) ID of the version profile.\nExported values are:\n"
                     },
                     "versionProfileName": {
                         "type": "string",
-                        "description": "(String)\nExported values are:\n* ``Default`` = ``0``\n* ``Previous Default`` = ``1``\n* ``New Release`` = ``2``\n"
+                        "description": "(String)\nExported values are:\n"
                     },
                     "versionProfileVisibilityScope": {
                         "type": "string",
-                        "description": "(string)\nExported values are:\n* ``ALL``\n* ``NONE``\n* ``CUSTOM``\n"
+                        "description": "(string)\nExported values are:\n"
                     }
                 },
                 "type": "object",

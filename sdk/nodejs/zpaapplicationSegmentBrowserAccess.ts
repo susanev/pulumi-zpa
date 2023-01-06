@@ -104,14 +104,16 @@ export class ZPAApplicationSegmentBrowserAccess extends pulumi.CustomResource {
     }
 
     /**
-     * Indicates whether users can bypass ZPA to access applications. Default: NEVER. Supported values: ALWAYS, NEVER, ON_NET.
-     * The value NEVER indicates the use of the client forwarding policy.
+     * (Optional) Indicates whether users can bypass ZPA to access applications. Default value is: `NEVER` and supported values are: `ALWAYS`, `NEVER` and `ON_NET`. The value `NEVER` indicates the use of the client forwarding policy.
      */
     public readonly bypassType!: pulumi.Output<string | undefined>;
     public readonly clientlessApps!: pulumi.Output<outputs.ZPAApplicationSegmentBrowserAccessClientlessApp[]>;
+    /**
+     * (Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `SIEM`
+     */
     public readonly configSpace!: pulumi.Output<string | undefined>;
     /**
-     * Description of the application.
+     * (Optional) Description of the application.
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
@@ -119,24 +121,32 @@ export class ZPAApplicationSegmentBrowserAccess extends pulumi.CustomResource {
      */
     public readonly domainNames!: pulumi.Output<string[]>;
     /**
-     * Whether Double Encryption is enabled or disabled for the app.
+     * (Optional) Whether Double Encryption is enabled or disabled for the app.
      */
     public readonly doubleEncrypt!: pulumi.Output<boolean | undefined>;
+    /**
+     * (Optional) - Whether this app is enabled or not.
+     */
     public readonly enabled!: pulumi.Output<boolean>;
+    /**
+     * (Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `NONE`
+     */
     public readonly healthCheckType!: pulumi.Output<string>;
     /**
-     * Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
+     * (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
      */
     public readonly healthReporting!: pulumi.Output<string>;
     public readonly icmpAccessType!: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) - If Source IP Anchoring for use with ZIA, is enabled or disabled for the app. Supported values are `true` and `false`
+     */
     public readonly ipAnchored!: pulumi.Output<boolean | undefined>;
     /**
-     * Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the
-     * connectors.
+     * (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
      */
     public readonly isCnameEnabled!: pulumi.Output<boolean | undefined>;
     /**
-     * - Name of BA app.
+     * Name of the application.
      */
     public readonly name!: pulumi.Output<string>;
     public readonly passiveHealthEnabled!: pulumi.Output<boolean>;
@@ -234,14 +244,16 @@ export class ZPAApplicationSegmentBrowserAccess extends pulumi.CustomResource {
  */
 export interface ZPAApplicationSegmentBrowserAccessState {
     /**
-     * Indicates whether users can bypass ZPA to access applications. Default: NEVER. Supported values: ALWAYS, NEVER, ON_NET.
-     * The value NEVER indicates the use of the client forwarding policy.
+     * (Optional) Indicates whether users can bypass ZPA to access applications. Default value is: `NEVER` and supported values are: `ALWAYS`, `NEVER` and `ON_NET`. The value `NEVER` indicates the use of the client forwarding policy.
      */
     bypassType?: pulumi.Input<string>;
     clientlessApps?: pulumi.Input<pulumi.Input<inputs.ZPAApplicationSegmentBrowserAccessClientlessApp>[]>;
+    /**
+     * (Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `SIEM`
+     */
     configSpace?: pulumi.Input<string>;
     /**
-     * Description of the application.
+     * (Optional) Description of the application.
      */
     description?: pulumi.Input<string>;
     /**
@@ -249,24 +261,32 @@ export interface ZPAApplicationSegmentBrowserAccessState {
      */
     domainNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether Double Encryption is enabled or disabled for the app.
+     * (Optional) Whether Double Encryption is enabled or disabled for the app.
      */
     doubleEncrypt?: pulumi.Input<boolean>;
+    /**
+     * (Optional) - Whether this app is enabled or not.
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * (Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `NONE`
+     */
     healthCheckType?: pulumi.Input<string>;
     /**
-     * Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
+     * (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
      */
     healthReporting?: pulumi.Input<string>;
     icmpAccessType?: pulumi.Input<string>;
+    /**
+     * (Optional) - If Source IP Anchoring for use with ZIA, is enabled or disabled for the app. Supported values are `true` and `false`
+     */
     ipAnchored?: pulumi.Input<boolean>;
     /**
-     * Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the
-     * connectors.
+     * (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
      */
     isCnameEnabled?: pulumi.Input<boolean>;
     /**
-     * - Name of BA app.
+     * Name of the application.
      */
     name?: pulumi.Input<string>;
     passiveHealthEnabled?: pulumi.Input<boolean>;
@@ -294,14 +314,16 @@ export interface ZPAApplicationSegmentBrowserAccessState {
  */
 export interface ZPAApplicationSegmentBrowserAccessArgs {
     /**
-     * Indicates whether users can bypass ZPA to access applications. Default: NEVER. Supported values: ALWAYS, NEVER, ON_NET.
-     * The value NEVER indicates the use of the client forwarding policy.
+     * (Optional) Indicates whether users can bypass ZPA to access applications. Default value is: `NEVER` and supported values are: `ALWAYS`, `NEVER` and `ON_NET`. The value `NEVER` indicates the use of the client forwarding policy.
      */
     bypassType?: pulumi.Input<string>;
     clientlessApps: pulumi.Input<pulumi.Input<inputs.ZPAApplicationSegmentBrowserAccessClientlessApp>[]>;
+    /**
+     * (Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `SIEM`
+     */
     configSpace?: pulumi.Input<string>;
     /**
-     * Description of the application.
+     * (Optional) Description of the application.
      */
     description?: pulumi.Input<string>;
     /**
@@ -309,24 +331,32 @@ export interface ZPAApplicationSegmentBrowserAccessArgs {
      */
     domainNames: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether Double Encryption is enabled or disabled for the app.
+     * (Optional) Whether Double Encryption is enabled or disabled for the app.
      */
     doubleEncrypt?: pulumi.Input<boolean>;
+    /**
+     * (Optional) - Whether this app is enabled or not.
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * (Optional) Default: `DEFAULT`. Supported values: `DEFAULT`, `NONE`
+     */
     healthCheckType?: pulumi.Input<string>;
     /**
-     * Whether health reporting for the app is Continuous or On Access. Supported values: NONE, ON_ACCESS, CONTINUOUS.
+     * (Optional) Whether health reporting for the app is Continuous or On Access. Supported values: `NONE`, `ON_ACCESS`, `CONTINUOUS`.
      */
     healthReporting?: pulumi.Input<string>;
     icmpAccessType?: pulumi.Input<string>;
+    /**
+     * (Optional) - If Source IP Anchoring for use with ZIA, is enabled or disabled for the app. Supported values are `true` and `false`
+     */
     ipAnchored?: pulumi.Input<boolean>;
     /**
-     * Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the
-     * connectors.
+     * (Optional) Indicates if the Zscaler Client Connector (formerly Zscaler App or Z App) receives CNAME DNS records from the connectors.
      */
     isCnameEnabled?: pulumi.Input<boolean>;
     /**
-     * - Name of BA app.
+     * Name of the application.
      */
     name?: pulumi.Input<string>;
     passiveHealthEnabled?: pulumi.Input<boolean>;

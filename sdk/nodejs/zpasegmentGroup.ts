@@ -64,13 +64,16 @@ export class ZPASegmentGroup extends pulumi.CustomResource {
     }
 
     public readonly applications!: pulumi.Output<outputs.ZPASegmentGroupApplication[]>;
+    /**
+     * (Optional)
+     */
     public readonly configSpace!: pulumi.Output<string | undefined>;
     /**
-     * Description of the app group.
+     * (Optional) Description of the segment group.
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
-     * Whether this app group is enabled or not.
+     * (Optional) Whether this segment group is enabled or not.
      */
     public readonly enabled!: pulumi.Output<boolean | undefined>;
     /**
@@ -78,6 +81,9 @@ export class ZPASegmentGroup extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     public readonly policyMigrated!: pulumi.Output<boolean | undefined>;
+    /**
+     * (Optional)
+     */
     public readonly tcpKeepAliveEnabled!: pulumi.Output<string | undefined>;
 
     /**
@@ -120,13 +126,16 @@ export class ZPASegmentGroup extends pulumi.CustomResource {
  */
 export interface ZPASegmentGroupState {
     applications?: pulumi.Input<pulumi.Input<inputs.ZPASegmentGroupApplication>[]>;
+    /**
+     * (Optional)
+     */
     configSpace?: pulumi.Input<string>;
     /**
-     * Description of the app group.
+     * (Optional) Description of the segment group.
      */
     description?: pulumi.Input<string>;
     /**
-     * Whether this app group is enabled or not.
+     * (Optional) Whether this segment group is enabled or not.
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -134,6 +143,9 @@ export interface ZPASegmentGroupState {
      */
     name?: pulumi.Input<string>;
     policyMigrated?: pulumi.Input<boolean>;
+    /**
+     * (Optional)
+     */
     tcpKeepAliveEnabled?: pulumi.Input<string>;
 }
 
@@ -142,13 +154,16 @@ export interface ZPASegmentGroupState {
  */
 export interface ZPASegmentGroupArgs {
     applications?: pulumi.Input<pulumi.Input<inputs.ZPASegmentGroupApplication>[]>;
+    /**
+     * (Optional)
+     */
     configSpace?: pulumi.Input<string>;
     /**
-     * Description of the app group.
+     * (Optional) Description of the segment group.
      */
     description?: pulumi.Input<string>;
     /**
-     * Whether this app group is enabled or not.
+     * (Optional) Whether this segment group is enabled or not.
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -156,5 +171,8 @@ export interface ZPASegmentGroupArgs {
      */
     name?: pulumi.Input<string>;
     policyMigrated?: pulumi.Input<boolean>;
+    /**
+     * (Optional)
+     */
     tcpKeepAliveEnabled?: pulumi.Input<string>;
 }

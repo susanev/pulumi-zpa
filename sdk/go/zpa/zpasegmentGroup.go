@@ -59,14 +59,16 @@ type ZPASegmentGroup struct {
 	pulumi.CustomResourceState
 
 	Applications ZPASegmentGroupApplicationArrayOutput `pulumi:"applications"`
-	ConfigSpace  pulumi.StringPtrOutput                `pulumi:"configSpace"`
-	// Description of the app group.
+	// (Optional)
+	ConfigSpace pulumi.StringPtrOutput `pulumi:"configSpace"`
+	// (Optional) Description of the segment group.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// Whether this app group is enabled or not.
+	// (Optional) Whether this segment group is enabled or not.
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
 	// (Required) Name of the segment group.
-	Name                pulumi.StringOutput    `pulumi:"name"`
-	PolicyMigrated      pulumi.BoolPtrOutput   `pulumi:"policyMigrated"`
+	Name           pulumi.StringOutput  `pulumi:"name"`
+	PolicyMigrated pulumi.BoolPtrOutput `pulumi:"policyMigrated"`
+	// (Optional)
 	TcpKeepAliveEnabled pulumi.StringPtrOutput `pulumi:"tcpKeepAliveEnabled"`
 }
 
@@ -77,7 +79,6 @@ func NewZPASegmentGroup(ctx *pulumi.Context,
 		args = &ZPASegmentGroupArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPASegmentGroup
 	err := ctx.RegisterResource("zpa:index/zPASegmentGroup:ZPASegmentGroup", name, args, &resource, opts...)
 	if err != nil {
@@ -101,27 +102,31 @@ func GetZPASegmentGroup(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ZPASegmentGroup resources.
 type zpasegmentGroupState struct {
 	Applications []ZPASegmentGroupApplication `pulumi:"applications"`
-	ConfigSpace  *string                      `pulumi:"configSpace"`
-	// Description of the app group.
+	// (Optional)
+	ConfigSpace *string `pulumi:"configSpace"`
+	// (Optional) Description of the segment group.
 	Description *string `pulumi:"description"`
-	// Whether this app group is enabled or not.
+	// (Optional) Whether this segment group is enabled or not.
 	Enabled *bool `pulumi:"enabled"`
 	// (Required) Name of the segment group.
-	Name                *string `pulumi:"name"`
-	PolicyMigrated      *bool   `pulumi:"policyMigrated"`
+	Name           *string `pulumi:"name"`
+	PolicyMigrated *bool   `pulumi:"policyMigrated"`
+	// (Optional)
 	TcpKeepAliveEnabled *string `pulumi:"tcpKeepAliveEnabled"`
 }
 
 type ZPASegmentGroupState struct {
 	Applications ZPASegmentGroupApplicationArrayInput
-	ConfigSpace  pulumi.StringPtrInput
-	// Description of the app group.
+	// (Optional)
+	ConfigSpace pulumi.StringPtrInput
+	// (Optional) Description of the segment group.
 	Description pulumi.StringPtrInput
-	// Whether this app group is enabled or not.
+	// (Optional) Whether this segment group is enabled or not.
 	Enabled pulumi.BoolPtrInput
 	// (Required) Name of the segment group.
-	Name                pulumi.StringPtrInput
-	PolicyMigrated      pulumi.BoolPtrInput
+	Name           pulumi.StringPtrInput
+	PolicyMigrated pulumi.BoolPtrInput
+	// (Optional)
 	TcpKeepAliveEnabled pulumi.StringPtrInput
 }
 
@@ -131,28 +136,32 @@ func (ZPASegmentGroupState) ElementType() reflect.Type {
 
 type zpasegmentGroupArgs struct {
 	Applications []ZPASegmentGroupApplication `pulumi:"applications"`
-	ConfigSpace  *string                      `pulumi:"configSpace"`
-	// Description of the app group.
+	// (Optional)
+	ConfigSpace *string `pulumi:"configSpace"`
+	// (Optional) Description of the segment group.
 	Description *string `pulumi:"description"`
-	// Whether this app group is enabled or not.
+	// (Optional) Whether this segment group is enabled or not.
 	Enabled *bool `pulumi:"enabled"`
 	// (Required) Name of the segment group.
-	Name                *string `pulumi:"name"`
-	PolicyMigrated      *bool   `pulumi:"policyMigrated"`
+	Name           *string `pulumi:"name"`
+	PolicyMigrated *bool   `pulumi:"policyMigrated"`
+	// (Optional)
 	TcpKeepAliveEnabled *string `pulumi:"tcpKeepAliveEnabled"`
 }
 
 // The set of arguments for constructing a ZPASegmentGroup resource.
 type ZPASegmentGroupArgs struct {
 	Applications ZPASegmentGroupApplicationArrayInput
-	ConfigSpace  pulumi.StringPtrInput
-	// Description of the app group.
+	// (Optional)
+	ConfigSpace pulumi.StringPtrInput
+	// (Optional) Description of the segment group.
 	Description pulumi.StringPtrInput
-	// Whether this app group is enabled or not.
+	// (Optional) Whether this segment group is enabled or not.
 	Enabled pulumi.BoolPtrInput
 	// (Required) Name of the segment group.
-	Name                pulumi.StringPtrInput
-	PolicyMigrated      pulumi.BoolPtrInput
+	Name           pulumi.StringPtrInput
+	PolicyMigrated pulumi.BoolPtrInput
+	// (Optional)
 	TcpKeepAliveEnabled pulumi.StringPtrInput
 }
 
@@ -247,16 +256,17 @@ func (o ZPASegmentGroupOutput) Applications() ZPASegmentGroupApplicationArrayOut
 	return o.ApplyT(func(v *ZPASegmentGroup) ZPASegmentGroupApplicationArrayOutput { return v.Applications }).(ZPASegmentGroupApplicationArrayOutput)
 }
 
+// (Optional)
 func (o ZPASegmentGroupOutput) ConfigSpace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPASegmentGroup) pulumi.StringPtrOutput { return v.ConfigSpace }).(pulumi.StringPtrOutput)
 }
 
-// Description of the app group.
+// (Optional) Description of the segment group.
 func (o ZPASegmentGroupOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPASegmentGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Whether this app group is enabled or not.
+// (Optional) Whether this segment group is enabled or not.
 func (o ZPASegmentGroupOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPASegmentGroup) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
@@ -270,6 +280,7 @@ func (o ZPASegmentGroupOutput) PolicyMigrated() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ZPASegmentGroup) pulumi.BoolPtrOutput { return v.PolicyMigrated }).(pulumi.BoolPtrOutput)
 }
 
+// (Optional)
 func (o ZPASegmentGroupOutput) TcpKeepAliveEnabled() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ZPASegmentGroup) pulumi.StringPtrOutput { return v.TcpKeepAliveEnabled }).(pulumi.StringPtrOutput)
 }

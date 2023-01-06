@@ -15,7 +15,7 @@ namespace zscaler.PulumiPackage.Zpa.Outputs
     public sealed class ZPALSSConfigControllerConnectorGroup
     {
         /// <summary>
-        /// - App Connector Group ID(s) where logs will be forwarded to.
+        /// App Connector Group ID(s) where logs will be forwarded to.
         /// </summary>
         public readonly ImmutableArray<string> Ids;
 

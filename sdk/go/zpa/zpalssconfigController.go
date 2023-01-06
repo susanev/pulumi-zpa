@@ -196,7 +196,6 @@ func NewZPALSSConfigController(ctx *pulumi.Context,
 		args = &ZPALSSConfigControllerArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPALSSConfigController
 	err := ctx.RegisterResource("zpa:index/zPALSSConfigController:ZPALSSConfigController", name, args, &resource, opts...)
 	if err != nil {

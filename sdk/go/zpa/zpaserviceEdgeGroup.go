@@ -157,7 +157,6 @@ func NewZPAServiceEdgeGroup(ctx *pulumi.Context,
 	if args.Longitude == nil {
 		return nil, errors.New("invalid value for required argument 'Longitude'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAServiceEdgeGroup
 	err := ctx.RegisterResource("zpa:index/zPAServiceEdgeGroup:ZPAServiceEdgeGroup", name, args, &resource, opts...)
 	if err != nil {

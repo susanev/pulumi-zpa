@@ -84,7 +84,6 @@ export class ZPAAppConnectorGroup extends pulumi.CustomResource {
     public readonly description!: pulumi.Output<string | undefined>;
     /**
      * Supported values are:
-     * * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
      */
     public readonly dnsQueryType!: pulumi.Output<string | undefined>;
     /**
@@ -232,7 +231,6 @@ export interface ZPAAppConnectorGroupState {
     description?: pulumi.Input<string>;
     /**
      * Supported values are:
-     * * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
      */
     dnsQueryType?: pulumi.Input<string>;
     /**
@@ -313,7 +311,6 @@ export interface ZPAAppConnectorGroupArgs {
     description?: pulumi.Input<string>;
     /**
      * Supported values are:
-     * * ``IPV4``, ``IPV6``, ``IPV4_IPV6``
      */
     dnsQueryType?: pulumi.Input<string>;
     /**

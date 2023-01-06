@@ -92,8 +92,6 @@ class GetZPAInspectionProfileResult:
     def custom_controls(self) -> Sequence['outputs.GetZPAInspectionProfileCustomControlResult']:
         """
         (string) Types for custom controls
-        * `type` (string) Types for custom controls
-        * `control_rule_json` (string) Custom controls string in JSON format
         """
         return pulumi.get(self, "custom_controls")
 
@@ -114,7 +112,7 @@ class GetZPAInspectionProfileResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        (string) ID of the predefined control
+        (string)
         """
         return pulumi.get(self, "id")
 
@@ -136,6 +134,9 @@ class GetZPAInspectionProfileResult:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "name")
 
     @property

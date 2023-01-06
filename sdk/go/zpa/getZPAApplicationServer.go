@@ -60,7 +60,6 @@ import (
 //
 // ```
 func LookupZPAApplicationServer(ctx *pulumi.Context, args *LookupZPAApplicationServerArgs, opts ...pulumi.InvokeOption) (*LookupZPAApplicationServerResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAApplicationServerResult
 	err := ctx.Invoke("zpa:index/getZPAApplicationServer:getZPAApplicationServer", args, &rv, opts...)
 	if err != nil {

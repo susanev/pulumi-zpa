@@ -79,6 +79,9 @@ class GetZPASAMLAttributeResult:
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -91,8 +94,6 @@ class GetZPASAMLAttributeResult:
     def name(self) -> str:
         """
         (string)
-        * `modified_by` (string)
-        * `modified_time` (string)
         """
         return pulumi.get(self, "name")
 

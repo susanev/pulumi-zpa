@@ -70,12 +70,12 @@ export interface GetZPAAppConnectorGroupResult {
      */
     readonly countryCode: string;
     readonly creationTime: string;
+    /**
+     * (String) Description of the App Connector Group.
+     */
     readonly description: string;
     /**
      * (String)
-     * * ``0`` = ``Default``
-     * * ``1`` = ``Previous Default``
-     * * ``2`` = ``New Release``
      */
     readonly dnsQueryType: string;
     /**
@@ -123,25 +123,16 @@ export interface GetZPAAppConnectorGroupResult {
     /**
      * (String) ID of the version profile.
      * Exported values are:
-     * * ``0`` = ``Default``
-     * * ``1`` = ``Previous Default``
-     * * ``2`` = ``New Release``
      */
     readonly versionProfileId: string;
     /**
      * (String)
      * Exported values are:
-     * * ``Default`` = ``0``
-     * * ``Previous Default`` = ``1``
-     * * ``New Release`` = ``2``
      */
     readonly versionProfileName: string;
     /**
      * (String)
      * Exported values are:
-     * * ``"IPV4_IPV6"``
-     * * ``"IPV4"``
-     * * ``"IPV6``
      */
     readonly versionProfileVisibilityScope: string;
 }

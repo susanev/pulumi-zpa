@@ -47,7 +47,7 @@ namespace zscaler.PulumiPackage.Zpa.Inputs
         public Input<string>? Cname { get; set; }
 
         /// <summary>
-        /// - Parameter required when `application_protocol` is of type `RDP`
+        /// Parameter required when `application_protocol` is of type `RDP`
         /// </summary>
         [Input("connectionSecurity")]
         public Input<string>? ConnectionSecurity { get; set; }

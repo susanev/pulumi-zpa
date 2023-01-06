@@ -37,8 +37,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// (Optional) Types for custom controls
-        /// * `type` (Optional) Types for custom controls
-        /// * `control_rule_json` (Optional) Custom controls string in JSON format
         /// </summary>
         [Output("customControls")]
         public Output<ImmutableArray<Outputs.ZPAInspectionProfileCustomControl>> CustomControls { get; private set; } = null!;
@@ -99,7 +97,6 @@ namespace zscaler.PulumiPackage.Zpa
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/zscaler",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -155,8 +152,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// (Optional) Types for custom controls
-        /// * `type` (Optional) Types for custom controls
-        /// * `control_rule_json` (Optional) Custom controls string in JSON format
         /// </summary>
         public InputList<Inputs.ZPAInspectionProfileCustomControlArgs> CustomControls
         {
@@ -248,8 +243,6 @@ namespace zscaler.PulumiPackage.Zpa
 
         /// <summary>
         /// (Optional) Types for custom controls
-        /// * `type` (Optional) Types for custom controls
-        /// * `control_rule_json` (Optional) Custom controls string in JSON format
         /// </summary>
         public InputList<Inputs.ZPAInspectionProfileCustomControlGetArgs> CustomControls
         {

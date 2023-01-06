@@ -60,26 +60,41 @@ class GetZPACloudConnectorGroupResult:
     @property
     @pulumi.getter(name="cloudConnectors")
     def cloud_connectors(self) -> Sequence['outputs.GetZPACloudConnectorGroupCloudConnectorResult']:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "cloud_connectors")
 
     @property
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "creation_time")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def enabled(self) -> bool:
+        """
+        (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter(name="geolocationId")
     def geolocation_id(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "geolocation_id")
 
     @property
@@ -90,6 +105,9 @@ class GetZPACloudConnectorGroupResult:
     @property
     @pulumi.getter(name="modifiedTime")
     def modified_time(self) -> str:
+        """
+        (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "modified_time")
 
     @property
@@ -100,16 +118,25 @@ class GetZPACloudConnectorGroupResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        """
+        (string) - This field defines the name of the cloud connector group.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="ziaCloud")
     def zia_cloud(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "zia_cloud")
 
     @property
     @pulumi.getter(name="ziaOrgId")
     def zia_org_id(self) -> str:
+        """
+        (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+        """
         return pulumi.get(self, "zia_org_id")
 
 

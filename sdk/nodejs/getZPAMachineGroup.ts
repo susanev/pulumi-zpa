@@ -57,13 +57,37 @@ export interface GetZPAMachineGroupArgs {
  * A collection of values returned by getZPAMachineGroup.
  */
 export interface GetZPAMachineGroupResult {
+    /**
+     * (string)
+     */
     readonly creationTime: string;
+    /**
+     * (string)
+     */
     readonly description: string;
+    /**
+     * (bool)
+     */
     readonly enabled: boolean;
+    /**
+     * (string)
+     */
     readonly id?: string;
+    /**
+     * (string)
+     */
     readonly machines: outputs.GetZPAMachineGroupMachine[];
+    /**
+     * (string)
+     */
     readonly modifiedBy: string;
+    /**
+     * (string)
+     */
     readonly modifiedTime: string;
+    /**
+     * (string)
+     */
     readonly name?: string;
 }
 /**
