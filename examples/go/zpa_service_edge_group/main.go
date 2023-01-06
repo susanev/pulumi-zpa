@@ -13,7 +13,7 @@ func main() {
 			Name:                   pulumi.String("Pulumi Service Edge Group"),
 			Description:            pulumi.String("Pulumi Service Edge Group"),
 			Enabled:                pulumi.Bool(true),
-			IsPublic:               pulumi.String("TRUE"),
+			IsPublic:               pulumi.Bool(true),
 			CountryCode:            pulumi.String("US"),
 			CityCountry:            pulumi.String("San Jose, US"),
 			Location:               pulumi.String("San Jose, CA, USA"),

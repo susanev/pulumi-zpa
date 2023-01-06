@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-zpa/sdk
+module github.com/zscaler/pulumi-zpa/sdk
 
 go 1.19
 

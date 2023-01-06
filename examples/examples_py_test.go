@@ -1,19 +1,17 @@
-//go:build python || all
-// +build python all
-
 package examples
 
 import (
+	"path"
 	"path/filepath"
 	"testing"
 
 	"github.com/pulumi/pulumi/pkg/v3/testing/integration"
 )
 
-func TestAccZPASegmentGroup(t *testing.T) {
+func TestAccZPASegmentGroupPython(t *testing.T) {
 	test := getPythonBaseOptions(t).
 		With(integration.ProgramTestOptions{
-			Dir: path.Join(getCwd(t), "python/zpa_segment_group"),
+			Dir: path.Join(getCwd(t), "./python/zpa_segment_group"),
 		})
 
 	integration.ProgramTest(t, &test)

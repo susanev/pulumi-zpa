@@ -1,19 +1,16 @@
-//go:build nodejs || all
-// +build nodejs all
-
 package examples
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	"github.com/pulumi/pulumi/pkg/v3/testing/integration"
 )
 
-func TestAccZPASegmentGroup(t *testing.T) {
+func TestAccZPASegmentGroupTS(t *testing.T) {
 	test := getJSBaseOptions(t).
 		With(integration.ProgramTestOptions{
-			Dir: path.Join(getCwd(t), "ts/zpa_segment_group"),
+			Dir: path.Join(getCwd(t), "./ts/zpa_segment_group"),
 		})
 
 	integration.ProgramTest(t, &test)
