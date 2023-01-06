@@ -13,7 +13,7 @@ import (
 func TestAccZPASegmentGroup(t *testing.T) {
 	test := getJSBaseOptions(t).
 		With(integration.ProgramTestOptions{
-			Dir: path.Join(getCwd(t), "./ts/zpa_segment_group"),
+			Dir: path.Join(getCwd(t), "ts/zpa_segment_group"),
 		})
 
 	integration.ProgramTest(t, &test)
@@ -22,6 +22,7 @@ func TestAccZPASegmentGroup(t *testing.T) {
 func getJSBaseOptions(t *testing.T) integration.ProgramTestOptions {
 	base := getBaseOptions()
 	baseJS := base.With(integration.ProgramTestOptions{
+		ExpectRefreshChanges: true,
 		Dependencies: []string{
 			"@zscaler/pulumi-zpa",
 		},
