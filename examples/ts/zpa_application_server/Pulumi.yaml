@@ -1,0 +1,3 @@
+name: zpa_application_server
+runtime: nodejs
+description: A minimal TypeScript Pulumi program

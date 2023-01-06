@@ -1,0 +1,3 @@
+name: zpa_server_group
+runtime: go
+description: A minimal Go Pulumi program

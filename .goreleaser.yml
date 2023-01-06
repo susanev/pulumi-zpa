@@ -1,0 +1,34 @@
+archives:
+- id: archive
+  name_template: '{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}'
+before:
+  hooks:
+  - make tfgen
+  - make build_sdks
+  - make install_sdks
+builds:
+- binary: pulumi-resource-zpa
+  dir: provider
+  env:
+  - CGO_ENABLED=0
+  - GO111MODULE=on
+  goarch:
+  - amd64
+  - arm64
+  goos:
+  - darwin
+  - windows
+  - linux
+  ldflags:
+  - -X github.com/zscaler/pulumi-zpa/provider/pkg/version.Version={{.Tag}}
+  main: ./cmd/pulumi-resource-zpa/
+changelog:
+  skip: true
+release:
+  disable: false
+  prerelease: auto
+  extra_files:
+    - glob: sdk/python/bin/dist/pulumi_zpa-*.tar.gz
+    - glob: nuget/*.nupkg
+snapshot:
+  name_template: '{{ .Tag }}-SNAPSHOT'
