@@ -18,7 +18,7 @@ npm install @zscaler/pulumi-zpa
 or `yarn`:
 
 ```bash
-yarn add @pulumi/pulumi-zpa
+yarn add @zscaler/pulumi-zpa
 ```
 
 ### Python
