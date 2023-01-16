@@ -13,6 +13,7 @@
     "attribution": "This Pulumi package is based on the [`zpa` Terraform Provider](https://github.com/zscaler/terraform-provider-zpa).",
     "repository": "https://github.com/zscaler/pulumi-zpa",
     "logoUrl": "https://www.zscaler.com/themes/custom/zscaler/logo.svg",
+    "pluginDownloadURL": "github://api.github.com/zscaler",
     "publisher": "Zscaler",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
