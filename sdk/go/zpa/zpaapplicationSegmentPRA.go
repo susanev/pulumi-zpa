@@ -159,6 +159,7 @@ func NewZPAApplicationSegmentPRA(ctx *pulumi.Context,
 	if args.ServerGroups == nil {
 		return nil, errors.New("invalid value for required argument 'ServerGroups'")
 	}
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAApplicationSegmentPRA
 	err := ctx.RegisterResource("zpa:index/zPAApplicationSegmentPRA:ZPAApplicationSegmentPRA", name, args, &resource, opts...)
 	if err != nil {

@@ -45,6 +45,7 @@ func NewZPAInspectionProfile(ctx *pulumi.Context,
 		args = &ZPAInspectionProfileArgs{}
 	}
 
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAInspectionProfile
 	err := ctx.RegisterResource("zpa:index/zPAInspectionProfile:ZPAInspectionProfile", name, args, &resource, opts...)
 	if err != nil {

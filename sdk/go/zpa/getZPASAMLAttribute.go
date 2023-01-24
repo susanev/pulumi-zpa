@@ -62,6 +62,7 @@ import (
 //
 // ```
 func GetZPASAMLAttribute(ctx *pulumi.Context, args *GetZPASAMLAttributeArgs, opts ...pulumi.InvokeOption) (*GetZPASAMLAttributeResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPASAMLAttributeResult
 	err := ctx.Invoke("zpa:index/getZPASAMLAttribute:getZPASAMLAttribute", args, &rv, opts...)
 	if err != nil {

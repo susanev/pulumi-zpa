@@ -36,6 +36,7 @@ import (
 //
 // ```
 func LookupZPASegmentGroup(ctx *pulumi.Context, args *LookupZPASegmentGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPASegmentGroupResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPASegmentGroupResult
 	err := ctx.Invoke("zpa:index/getZPASegmentGroup:getZPASegmentGroup", args, &rv, opts...)
 	if err != nil {

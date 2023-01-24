@@ -68,6 +68,7 @@ import (
 //
 // ```
 func GetZPAIdPController(ctx *pulumi.Context, args *GetZPAIdPControllerArgs, opts ...pulumi.InvokeOption) (*GetZPAIdPControllerResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAIdPControllerResult
 	err := ctx.Invoke("zpa:index/getZPAIdPController:getZPAIdPController", args, &rv, opts...)
 	if err != nil {

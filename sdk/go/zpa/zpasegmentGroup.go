@@ -79,6 +79,7 @@ func NewZPASegmentGroup(ctx *pulumi.Context,
 		args = &ZPASegmentGroupArgs{}
 	}
 
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPASegmentGroup
 	err := ctx.RegisterResource("zpa:index/zPASegmentGroup:ZPASegmentGroup", name, args, &resource, opts...)
 	if err != nil {

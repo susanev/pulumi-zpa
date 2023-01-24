@@ -175,6 +175,7 @@ func NewZPAApplicationSegmentBrowserAccess(ctx *pulumi.Context,
 	if args.ServerGroups == nil {
 		return nil, errors.New("invalid value for required argument 'ServerGroups'")
 	}
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAApplicationSegmentBrowserAccess
 	err := ctx.RegisterResource("zpa:index/zPAApplicationSegmentBrowserAccess:ZPAApplicationSegmentBrowserAccess", name, args, &resource, opts...)
 	if err != nil {

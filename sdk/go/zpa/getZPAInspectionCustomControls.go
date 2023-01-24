@@ -11,6 +11,7 @@ import (
 )
 
 func LookupZPAInspectionCustomControls(ctx *pulumi.Context, args *LookupZPAInspectionCustomControlsArgs, opts ...pulumi.InvokeOption) (*LookupZPAInspectionCustomControlsResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAInspectionCustomControlsResult
 	err := ctx.Invoke("zpa:index/getZPAInspectionCustomControls:getZPAInspectionCustomControls", args, &rv, opts...)
 	if err != nil {

@@ -35,6 +35,7 @@ import (
 //
 // ```
 func GetZPALSSStatusCodes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetZPALSSStatusCodesResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPALSSStatusCodesResult
 	err := ctx.Invoke("zpa:index/getZPALSSStatusCodes:getZPALSSStatusCodes", nil, &rv, opts...)
 	if err != nil {

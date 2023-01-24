@@ -47,6 +47,7 @@ func NewZPAPolicyAccessTimeOutRule(ctx *pulumi.Context,
 		args = &ZPAPolicyAccessTimeOutRuleArgs{}
 	}
 
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAPolicyAccessTimeOutRule
 	err := ctx.RegisterResource("zpa:index/zPAPolicyAccessTimeOutRule:ZPAPolicyAccessTimeOutRule", name, args, &resource, opts...)
 	if err != nil {

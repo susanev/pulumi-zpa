@@ -60,6 +60,7 @@ import (
 //
 // ```
 func LookupZPAAppConnectorGroup(ctx *pulumi.Context, args *LookupZPAAppConnectorGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPAAppConnectorGroupResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAAppConnectorGroupResult
 	err := ctx.Invoke("zpa:index/getZPAAppConnectorGroup:getZPAAppConnectorGroup", args, &rv, opts...)
 	if err != nil {

@@ -64,6 +64,7 @@ import (
 //
 // ```
 func GetZPACloudConnectorGroup(ctx *pulumi.Context, args *GetZPACloudConnectorGroupArgs, opts ...pulumi.InvokeOption) (*GetZPACloudConnectorGroupResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPACloudConnectorGroupResult
 	err := ctx.Invoke("zpa:index/getZPACloudConnectorGroup:getZPACloudConnectorGroup", args, &rv, opts...)
 	if err != nil {

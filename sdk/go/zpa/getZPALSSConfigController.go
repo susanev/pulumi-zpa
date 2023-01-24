@@ -12,6 +12,7 @@ import (
 
 // Use the **zpa_lss_config_controller** data source to get information about a Log Streaming (LSS) configuration resource created in the Zscaler Private Access.
 func LookupZPALSSConfigController(ctx *pulumi.Context, args *LookupZPALSSConfigControllerArgs, opts ...pulumi.InvokeOption) (*LookupZPALSSConfigControllerResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPALSSConfigControllerResult
 	err := ctx.Invoke("zpa:index/getZPALSSConfigController:getZPALSSConfigController", args, &rv, opts...)
 	if err != nil {

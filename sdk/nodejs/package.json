@@ -25,6 +25,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "zpa"
+        "name": "zpa",
+        "server": "github://api.github.com/zscaler"
     }
 }

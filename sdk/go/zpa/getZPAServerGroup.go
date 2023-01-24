@@ -36,6 +36,7 @@ import (
 //
 // ```
 func LookupZPAServerGroup(ctx *pulumi.Context, args *LookupZPAServerGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPAServerGroupResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAServerGroupResult
 	err := ctx.Invoke("zpa:index/getZPAServerGroup:getZPAServerGroup", args, &rv, opts...)
 	if err != nil {

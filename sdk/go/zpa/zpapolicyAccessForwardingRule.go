@@ -47,6 +47,7 @@ func NewZPAPolicyAccessForwardingRule(ctx *pulumi.Context,
 		args = &ZPAPolicyAccessForwardingRuleArgs{}
 	}
 
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAPolicyAccessForwardingRule
 	err := ctx.RegisterResource("zpa:index/zPAPolicyAccessForwardingRule:ZPAPolicyAccessForwardingRule", name, args, &resource, opts...)
 	if err != nil {

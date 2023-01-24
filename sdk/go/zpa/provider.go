@@ -57,6 +57,7 @@ func NewProvider(ctx *pulumi.Context,
 		"zpaCustomerId",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:zpa", name, args, &resource, opts...)
 	if err != nil {

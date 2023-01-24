@@ -46,6 +46,7 @@ import (
 //
 // ```
 func GetZPASCIMAttributeHeader(ctx *pulumi.Context, args *GetZPASCIMAttributeHeaderArgs, opts ...pulumi.InvokeOption) (*GetZPASCIMAttributeHeaderResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPASCIMAttributeHeaderResult
 	err := ctx.Invoke("zpa:index/getZPASCIMAttributeHeader:getZPASCIMAttributeHeader", args, &rv, opts...)
 	if err != nil {

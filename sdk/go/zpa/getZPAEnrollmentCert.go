@@ -62,6 +62,7 @@ import (
 //
 // ```
 func GetZPAEnrollmentCert(ctx *pulumi.Context, args *GetZPAEnrollmentCertArgs, opts ...pulumi.InvokeOption) (*GetZPAEnrollmentCertResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAEnrollmentCertResult
 	err := ctx.Invoke("zpa:index/getZPAEnrollmentCert:getZPAEnrollmentCert", args, &rv, opts...)
 	if err != nil {

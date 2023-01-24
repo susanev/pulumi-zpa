@@ -66,6 +66,7 @@ import (
 //
 // ```
 func LookupZPAServiceEdgeGroup(ctx *pulumi.Context, args *LookupZPAServiceEdgeGroupArgs, opts ...pulumi.InvokeOption) (*LookupZPAServiceEdgeGroupResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAServiceEdgeGroupResult
 	err := ctx.Invoke("zpa:index/getZPAServiceEdgeGroup:getZPAServiceEdgeGroup", args, &rv, opts...)
 	if err != nil {

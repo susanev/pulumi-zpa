@@ -152,6 +152,7 @@ func NewZPAApplicationSegmentInspection(ctx *pulumi.Context,
 	if args.ServerGroups == nil {
 		return nil, errors.New("invalid value for required argument 'ServerGroups'")
 	}
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAApplicationSegmentInspection
 	err := ctx.RegisterResource("zpa:index/zPAApplicationSegmentInspection:ZPAApplicationSegmentInspection", name, args, &resource, opts...)
 	if err != nil {

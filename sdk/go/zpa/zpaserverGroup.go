@@ -182,6 +182,7 @@ func NewZPAServerGroup(ctx *pulumi.Context,
 		args = &ZPAServerGroupArgs{}
 	}
 
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAServerGroup
 	err := ctx.RegisterResource("zpa:index/zPAServerGroup:ZPAServerGroup", name, args, &resource, opts...)
 	if err != nil {

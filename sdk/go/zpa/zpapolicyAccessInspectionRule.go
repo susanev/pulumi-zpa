@@ -47,6 +47,7 @@ func NewZPAPolicyAccessInspectionRule(ctx *pulumi.Context,
 		args = &ZPAPolicyAccessInspectionRuleArgs{}
 	}
 
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAPolicyAccessInspectionRule
 	err := ctx.RegisterResource("zpa:index/zPAPolicyAccessInspectionRule:ZPAPolicyAccessInspectionRule", name, args, &resource, opts...)
 	if err != nil {

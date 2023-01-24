@@ -124,6 +124,7 @@ func NewZPAAppConnectorGroup(ctx *pulumi.Context,
 	if args.Longitude == nil {
 		return nil, errors.New("invalid value for required argument 'Longitude'")
 	}
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ZPAAppConnectorGroup
 	err := ctx.RegisterResource("zpa:index/zPAAppConnectorGroup:ZPAAppConnectorGroup", name, args, &resource, opts...)
 	if err != nil {

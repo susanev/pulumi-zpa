@@ -62,6 +62,7 @@ import (
 //
 // ```
 func LookupZPAApplicationSegmentInspection(ctx *pulumi.Context, args *LookupZPAApplicationSegmentInspectionArgs, opts ...pulumi.InvokeOption) (*LookupZPAApplicationSegmentInspectionResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAApplicationSegmentInspectionResult
 	err := ctx.Invoke("zpa:index/getZPAApplicationSegmentInspection:getZPAApplicationSegmentInspection", args, &rv, opts...)
 	if err != nil {

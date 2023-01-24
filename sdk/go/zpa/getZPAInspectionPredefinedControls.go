@@ -40,6 +40,7 @@ import (
 //
 // ```
 func GetZPAInspectionPredefinedControls(ctx *pulumi.Context, args *GetZPAInspectionPredefinedControlsArgs, opts ...pulumi.InvokeOption) (*GetZPAInspectionPredefinedControlsResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAInspectionPredefinedControlsResult
 	err := ctx.Invoke("zpa:index/getZPAInspectionPredefinedControls:getZPAInspectionPredefinedControls", args, &rv, opts...)
 	if err != nil {

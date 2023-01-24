@@ -71,6 +71,7 @@ import (
 //
 // ```
 func GetZPATrustedNetwork(ctx *pulumi.Context, args *GetZPATrustedNetworkArgs, opts ...pulumi.InvokeOption) (*GetZPATrustedNetworkResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPATrustedNetworkResult
 	err := ctx.Invoke("zpa:index/getZPATrustedNetwork:getZPATrustedNetwork", args, &rv, opts...)
 	if err != nil {

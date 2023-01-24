@@ -62,6 +62,7 @@ import (
 //
 // ```
 func LookupZPAProvisioningKey(ctx *pulumi.Context, args *LookupZPAProvisioningKeyArgs, opts ...pulumi.InvokeOption) (*LookupZPAProvisioningKeyResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAProvisioningKeyResult
 	err := ctx.Invoke("zpa:index/getZPAProvisioningKey:getZPAProvisioningKey", args, &rv, opts...)
 	if err != nil {

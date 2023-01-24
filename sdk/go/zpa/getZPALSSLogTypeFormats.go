@@ -80,6 +80,7 @@ import (
 //
 // ```
 func GetZPALSSLogTypeFormats(ctx *pulumi.Context, args *GetZPALSSLogTypeFormatsArgs, opts ...pulumi.InvokeOption) (*GetZPALSSLogTypeFormatsResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPALSSLogTypeFormatsResult
 	err := ctx.Invoke("zpa:index/getZPALSSLogTypeFormats:getZPALSSLogTypeFormats", args, &rv, opts...)
 	if err != nil {

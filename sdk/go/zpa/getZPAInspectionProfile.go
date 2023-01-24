@@ -38,6 +38,7 @@ import (
 //
 // ```
 func LookupZPAInspectionProfile(ctx *pulumi.Context, args *LookupZPAInspectionProfileArgs, opts ...pulumi.InvokeOption) (*LookupZPAInspectionProfileResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv LookupZPAInspectionProfileResult
 	err := ctx.Invoke("zpa:index/getZPAInspectionProfile:getZPAInspectionProfile", args, &rv, opts...)
 	if err != nil {

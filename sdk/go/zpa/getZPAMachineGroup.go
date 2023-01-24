@@ -62,6 +62,7 @@ import (
 //
 // ```
 func GetZPAMachineGroup(ctx *pulumi.Context, args *GetZPAMachineGroupArgs, opts ...pulumi.InvokeOption) (*GetZPAMachineGroupResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPAMachineGroupResult
 	err := ctx.Invoke("zpa:index/getZPAMachineGroup:getZPAMachineGroup", args, &rv, opts...)
 	if err != nil {

@@ -39,6 +39,7 @@ import (
 //
 // ```
 func GetZPASCIMGroups(ctx *pulumi.Context, args *GetZPASCIMGroupsArgs, opts ...pulumi.InvokeOption) (*GetZPASCIMGroupsResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetZPASCIMGroupsResult
 	err := ctx.Invoke("zpa:index/getZPASCIMGroups:getZPASCIMGroups", args, &rv, opts...)
 	if err != nil {
