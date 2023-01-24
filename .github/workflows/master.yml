@@ -2,7 +2,6 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
   PROVIDER: zpa
   PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
   PULUMI_API: https://api.pulumi.com
@@ -15,6 +14,7 @@ env:
   ZPA_CLIENT_SECRET: ${{ secrets.ZPA_CLIENT_SECRET }}
   ZPA_CUSTOMER_ID: ${{ secrets.ZPA_CUSTOMER_ID }}
   TRAVIS_OS_NAME: linux
+
 jobs:
   build_sdk:
     name: build_sdk
@@ -278,6 +278,10 @@ jobs:
         - 16.x
         pythonversion:
         - "3.7"
+  test:
+    name: test
+    needs: build_sdk
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
@@ -339,13 +343,8 @@ jobs:
         pip3 install pipenv
     - name: Install dependencies
       run: make install_${{ matrix.language}}_sdk
-    - name: Bootstrap controller
-      run: make test_setup
     - name: Run tests
       run: cd examples && go test -v -count=1 -cover -timeout 2h -tags=${{ matrix.language }} -parallel 4 .
-    - name: Shutdown controller
-      if: ${{ always() }}
-      run: make test_teardown
     strategy:
       fail-fast: true
       matrix:

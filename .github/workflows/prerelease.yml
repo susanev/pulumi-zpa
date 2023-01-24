@@ -2,7 +2,6 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
   PROVIDER: zpa
   PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
   PULUMI_API: https://api.pulumi.com
@@ -15,6 +14,7 @@ env:
   ZPA_CLIENT_SECRET: ${{ secrets.ZPA_CLIENT_SECRET }}
   ZPA_CUSTOMER_ID: ${{ secrets.ZPA_CUSTOMER_ID }}
   TRAVIS_OS_NAME: linux
+
 jobs:
   build_sdk:
     name: build_sdk
@@ -279,6 +279,15 @@ jobs:
         - 16.x
         pythonversion:
         - "3.7"
+  test:
+    name: test
+    needs: build_sdk
+    runs-on: ubuntu-latest
+    env:
+      UNIFI_INSECURE: true
+      UNIFI_API: https://localhost:8443
+      UNIFI_USERNAME: pulumi-unifi-admin
+      UNIFI_PASSWORD: pulumi-unifi-password
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
