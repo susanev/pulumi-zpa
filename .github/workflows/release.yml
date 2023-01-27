@@ -291,11 +291,6 @@ jobs:
     name: test
     needs: build_sdk
     runs-on: ubuntu-latest
-    env:
-      UNIFI_INSECURE: true
-      UNIFI_API: https://localhost:8443
-      UNIFI_USERNAME: pulumi-unifi-admin
-      UNIFI_PASSWORD: pulumi-unifi-password
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
