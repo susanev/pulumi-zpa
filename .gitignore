@@ -23,3 +23,9 @@ provider/**/schema-embed.json
 **/dist
 zpa_all_together
 local_dev
+
+sdk/java/build
+sdk/java/.gradle
+sdk/java/gradle
+sdk/java/gradlew
+sdk/java/gradlew.bat

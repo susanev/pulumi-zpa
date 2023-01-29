@@ -2,7 +2,7 @@ import * as zpa from "@zscaler/pulumi-zpa"
 
 
 // Create a Segment Group
-const segmentGroup = new zpa.ZPASegmentGroup("segment-group-example", {
+const segmentGroup = new zpa.segmentgroup.SegmentGroup("segment-group-example", {
     name: "Pulumi Segment Group TypeScript",
     description: "Pulumi Segment Group TypeScript",
     enabled: true,

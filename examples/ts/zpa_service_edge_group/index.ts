@@ -1,7 +1,7 @@
 import * as zpa from "@zscaler/pulumi-zpa";
 
 // Create a App Connector Group
-const serviceEdgeGroup = new zpa.ZPAServiceEdgeGroup("service-edge-group-example", {
+const serviceEdgeGroup = new zpa.serviceedge.ServiceEdgeGroup("service-edge-group-example", {
     name: "Pulumi Service Edge Group",
     description: "Pulumi Service Edge Group",
     enabled: true,

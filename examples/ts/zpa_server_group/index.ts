@@ -1,7 +1,7 @@
 import * as zpa from "@zscaler/pulumi-zpa";
 
 // Create a App Connector Group
-const appConnectorGroup = new zpa.ZPAAppConnectorGroup("app-connector-group-example", {
+const appConnectorGroup = new zpa.connector.ConnectorGroup("app-connector-group-example", {
     name: "Pulumi App Connector Group",
     description: "Pulumi App Connector Group",
     enabled: true,
@@ -20,7 +20,7 @@ const appConnectorGroup = new zpa.ZPAAppConnectorGroup("app-connector-group-exam
  export const groupId = appConnectorGroup.id
 
  // Create a Server Group resource with Dynamic Discovery Enabled
- const serverGroup = new zpa.ZPAServerGroup("server-group-example", {
+ const serverGroup = new zpa.servergroup.ServerGroup("server-group-example", {
     name: "Pulumi Server Group",
     description: "Pulumi Server Group",
     enabled: true,

@@ -1,7 +1,7 @@
 import * as zpa from "@zscaler/pulumi-zpa";
 
 // Create a App Connector Group
-const appConnectorGroup = new zpa.ZPAAppConnectorGroup("app-connector-group-example", {
+const appConnectorGroup = new zpa.connector.ConnectorGroup("app-connector-group-example", {
     name: "Pulumi App Connector Group",
     description: "Pulumi App Connector Group",
     enabled: true,

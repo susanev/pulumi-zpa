@@ -2,7 +2,7 @@
 
 import zscaler_pulumi_zpa as zpa
 
-applicationServer = zpa.ZPAApplicationServer("application-server-example",
+applicationServer = zpa.server.ApplicationServer("application-server-example",
     name = "Pulumi Application Server",
     description = "Pulumi Application Server",
     enabled = True,
