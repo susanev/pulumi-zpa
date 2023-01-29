@@ -2,7 +2,7 @@
 
 import zscaler_pulumi_zpa as zpa
 
-serviceEdgeGroup = zpa.ZPAServiceEdgeGroup("service-edge-group-example",
+serviceEdgeGroup = zpa.serviceedge.ServiceEdgeGroup("service-edge-group-example",
     name = "Pulumi Service Edge Group",
     description = "Pulumi Service Edge Group",
     enabled = True,

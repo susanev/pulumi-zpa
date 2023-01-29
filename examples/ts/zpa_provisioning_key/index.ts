@@ -1,7 +1,7 @@
 import * as zpa from "@zscaler/pulumi-zpa";
 
 // Create a App Connector Group
-const appConnectorGroup = new zpa.ZPAAppConnectorGroup("app-connector-group-example", {
+const appConnectorGroup = new zpa.connector.ConnectorGroup("app-connector-group-example", {
     name: "Pulumi App Connector Group",
     description: "Pulumi App Connector Group",
     enabled: true,
@@ -19,14 +19,14 @@ const appConnectorGroup = new zpa.ZPAAppConnectorGroup("app-connector-group-exam
 
  export const groupId = appConnectorGroup.id
 
-const certId = zpa.getZPAEnrollmentCert({
+const certId = zpa.browsercertificate.getBaCertificate({
      name: "Connector",
  });
 
  export const connector = certId.then((connector => connector.id))
 
 // Create a Provisioning Key
-const provisioningKey = new zpa.ZPAProvisioningKey("provisioning-key-example", {
+const provisioningKey = new zpa.provisioningkey.ProvisioningKey("provisioning-key-example", {
     name: "Pulumi Provisioning Key",
     associationType: "CONNECTOR_GRP",
     enrollmentCertId: "6573",

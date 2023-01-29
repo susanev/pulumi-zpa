@@ -2,7 +2,7 @@
 
 import zscaler_pulumi_zpa as zpa
 
-appConnectorGroup01 = zpa.ZPAAppConnectorGroup("app-connector-group",
+appConnectorGroup01 = zpa.connector.ConnectorGroup("app-connector-group",
     name = "Pulumi App Connector Group",
     description = "Pulumi App Connector Group",
     enabled = True,
@@ -18,7 +18,7 @@ appConnectorGroup01 = zpa.ZPAAppConnectorGroup("app-connector-group",
     dns_query_type = "IPV4_IPV6",
 )
 
-provisioningKey = zpa.ZPAProvisioningKey("provisioning-key",
+provisioningKey = zpa.provisioningkey.ProvisioningKey("provisioning-key",
     name = "Pulumi Provisioning Key",
     association_type = "CONNECTOR_GRP",
     max_usage        = "10",

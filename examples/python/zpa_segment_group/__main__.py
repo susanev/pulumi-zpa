@@ -2,7 +2,7 @@
 
 import zscaler_pulumi_zpa as zpa
 
-segmentGroup = zpa.ZPASegmentGroup("segment-group-example",
+segmentGroup = zpa.segmentgroup.SegmentGroup("segment-group-example",
     name = "Pulumi Segment Group Python",
     description = "Pulumi Segment Group Python",
     enabled = True,
