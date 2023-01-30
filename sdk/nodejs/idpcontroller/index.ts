@@ -9,18 +9,3 @@ export const getIdPController: typeof import("./getIdPController").getIdPControl
 export const getIdPControllerOutput: typeof import("./getIdPController").getIdPControllerOutput = null as any;
 utilities.lazyLoad(exports, ["getIdPController","getIdPControllerOutput"], () => require("./getIdPController"));
 
-export { GetSAMLAttributeArgs, GetSAMLAttributeResult, GetSAMLAttributeOutputArgs } from "./getSAMLAttribute";
-export const getSAMLAttribute: typeof import("./getSAMLAttribute").getSAMLAttribute = null as any;
-export const getSAMLAttributeOutput: typeof import("./getSAMLAttribute").getSAMLAttributeOutput = null as any;
-utilities.lazyLoad(exports, ["getSAMLAttribute","getSAMLAttributeOutput"], () => require("./getSAMLAttribute"));
-
-export { GetSCIMAttributeHeaderArgs, GetSCIMAttributeHeaderResult, GetSCIMAttributeHeaderOutputArgs } from "./getSCIMAttributeHeader";
-export const getSCIMAttributeHeader: typeof import("./getSCIMAttributeHeader").getSCIMAttributeHeader = null as any;
-export const getSCIMAttributeHeaderOutput: typeof import("./getSCIMAttributeHeader").getSCIMAttributeHeaderOutput = null as any;
-utilities.lazyLoad(exports, ["getSCIMAttributeHeader","getSCIMAttributeHeaderOutput"], () => require("./getSCIMAttributeHeader"));
-
-export { GetSCIMGroupsArgs, GetSCIMGroupsResult, GetSCIMGroupsOutputArgs } from "./getSCIMGroups";
-export const getSCIMGroups: typeof import("./getSCIMGroups").getSCIMGroups = null as any;
-export const getSCIMGroupsOutput: typeof import("./getSCIMGroups").getSCIMGroupsOutput = null as any;
-utilities.lazyLoad(exports, ["getSCIMGroups","getSCIMGroupsOutput"], () => require("./getSCIMGroups"));
-

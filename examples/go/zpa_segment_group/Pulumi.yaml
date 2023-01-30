@@ -1,3 +1,0 @@
-name: go_zpa_segment_group
-description: A minimal Go Pulumi program
-runtime: go

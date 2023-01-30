@@ -34,9 +34,9 @@ const (
 	// modules:
 	segmentGroupMod          = "SegmentGroup"
 	serverGroupMod           = "ServerGroup"
-	appSegmentMod            = "Segment"
-	appServerMod             = "Server"
-	appConnectorGroupMod     = "Connector"
+	applicationSegmentMod    = "ApplicationSegment"
+	appServerMod             = "ApplicationServer"
+	appConnectorGroupMod     = "AppConnectorGroup"
 	serviceEdgeGroupMod      = "ServiceEdge"
 	cloudConnectorGroupMod   = "CloudConnectorGroup"
 	browserCertificateMod    = "BrowserCertificate"
@@ -49,9 +49,9 @@ const (
 	inspectionPolicyMod      = "InspectionPolicy"
 	timeoutPolicyMod         = "TimeoutPolicy"
 	idpControllerMod         = "idpController"
-	samlAttributeMod         = "idpController"
-	scimAttributeHeaderMod   = "idpController"
-	scimGroupMod             = "idpController"
+	samlAttributeMod         = "SamlAttribute"
+	scimAttributeHeaderMod   = "ScimAttribute"
+	scimGroupMod             = "scimGroup"
 	machineGroupMod          = "machineGroup"
 	postureProfileMod        = "postureProfile"
 	trustedNetworkMod        = "trustedNetwork"
@@ -123,19 +123,19 @@ func Provider() tfbridge.ProviderInfo {
 			"zpa_server_group": {Tok: tfbridge.MakeResource(zpaPkg, serverGroupMod, "ServerGroup"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_server_group.md"},
 			},
-			"zpa_application_segment": {Tok: tfbridge.MakeResource(zpaPkg, appSegmentMod, "ApplicationSegment"),
+			"zpa_application_segment": {Tok: tfbridge.MakeResource(zpaPkg, applicationSegmentMod, "ApplicationSegment"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment.md"},
 			},
-			"zpa_application_segment_browser_access": {Tok: tfbridge.MakeResource(zpaPkg, appSegmentMod, "ApplicationSegmentBrowserAccess"),
+			"zpa_application_segment_browser_access": {Tok: tfbridge.MakeResource(zpaPkg, applicationSegmentMod, "ApplicationSegmentBrowserAccess"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment_browser_access.md"},
 			},
-			"zpa_browser_access": {Tok: tfbridge.MakeResource(zpaPkg, appSegmentMod, "BrowserAccess"),
+			"zpa_browser_access": {Tok: tfbridge.MakeResource(zpaPkg, applicationSegmentMod, "BrowserAccess"),
 				Docs: noUpstreamDocs(),
 			},
-			"zpa_application_segment_inspection": {Tok: tfbridge.MakeResource(zpaPkg, appSegmentMod, "ApplicationSegmentInspection"),
+			"zpa_application_segment_inspection": {Tok: tfbridge.MakeResource(zpaPkg, applicationSegmentMod, "ApplicationSegmentInspection"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment_inspection.md"},
 			},
-			"zpa_application_segment_pra": {Tok: tfbridge.MakeResource(zpaPkg, appSegmentMod, "ApplicationSegmentPRA"),
+			"zpa_application_segment_pra": {Tok: tfbridge.MakeResource(zpaPkg, applicationSegmentMod, "ApplicationSegmentPRA"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment_pra.md"},
 			},
 			"zpa_application_server": {Tok: tfbridge.MakeResource(zpaPkg, appServerMod, "ApplicationServer"),
@@ -187,16 +187,16 @@ func Provider() tfbridge.ProviderInfo {
 			"zpa_server_group": {Tok: tfbridge.MakeDataSource(zpaPkg, serverGroupMod, "getServerGroup"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_server_group.md"},
 			},
-			"zpa_application_segment": {Tok: tfbridge.MakeDataSource(zpaPkg, appSegmentMod, "getApplicationSegment"),
+			"zpa_application_segment": {Tok: tfbridge.MakeDataSource(zpaPkg, applicationSegmentMod, "getApplicationSegment"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment.md"},
 			},
-			"zpa_application_segment_browser_access": {Tok: tfbridge.MakeDataSource(zpaPkg, appSegmentMod, "getApplicationSegmentBrowserAccess"),
+			"zpa_application_segment_browser_access": {Tok: tfbridge.MakeDataSource(zpaPkg, applicationSegmentMod, "getApplicationSegmentBrowserAccess"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment_browser_access.md"},
 			},
-			"zpa_browser_access": {Tok: tfbridge.MakeDataSource(zpaPkg, appSegmentMod, "getBrowserAccess"),
+			"zpa_browser_access": {Tok: tfbridge.MakeDataSource(zpaPkg, applicationSegmentMod, "getBrowserAccess"),
 				Docs: noUpstreamDocs(),
 			},
-			"zpa_application_segment_inspection": {Tok: tfbridge.MakeDataSource(zpaPkg, appSegmentMod, "getApplicationSegmentInspection"),
+			"zpa_application_segment_inspection": {Tok: tfbridge.MakeDataSource(zpaPkg, applicationSegmentMod, "getApplicationSegmentInspection"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment_inspection.md"},
 			},
 			"zpa_inspection_custom_controls": {Tok: tfbridge.MakeDataSource(zpaPkg, inspectionMod, "getInspectionCustomControls"),
@@ -211,7 +211,7 @@ func Provider() tfbridge.ProviderInfo {
 			"zpa_inspection_all_predefined_controls": {Tok: tfbridge.MakeDataSource(zpaPkg, inspectionMod, "getInspectionAllPredefinedControls"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_inspection_all_predefined_controls.md"},
 			},
-			"zpa_application_segment_pra": {Tok: tfbridge.MakeDataSource(zpaPkg, appSegmentMod, "getApplicationSegmentPRA"),
+			"zpa_application_segment_pra": {Tok: tfbridge.MakeDataSource(zpaPkg, applicationSegmentMod, "getApplicationSegmentPRA"),
 				Docs: &tfbridge.DocInfo{Source: "zpa_application_segment_pra.md"},
 			},
 			"zpa_application_server": {Tok: tfbridge.MakeDataSource(zpaPkg, appServerMod, "getApplicationServer"),

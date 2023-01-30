@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * import * as zpa from "@zscaler/pulumi-zpa";
  *
  * // Create a App Connector Group
- * const exampleConnectorGroup = new zpa.connector.ConnectorGroup("exampleConnectorGroup", {
+ * const exampleConnectorGroup = new zpa.appconnectorgroup.ConnectorGroup("exampleConnectorGroup", {
  *     description: "Example",
  *     enabled: true,
  *     cityCountry: "San Jose, CA",
@@ -46,13 +46,13 @@ import * as utilities from "../utilities";
  * import * as zpa from "@zscaler/pulumi-zpa";
  *
  * // Create an application server
- * const exampleApplicationServer = new zpa.server.ApplicationServer("exampleApplicationServer", {
+ * const exampleApplicationServer = new zpa.applicationserver.ApplicationServer("exampleApplicationServer", {
  *     description: "Example",
  *     address: "server.example.com",
  *     enabled: true,
  * });
  * // Create a App Connector Group
- * const exampleConnectorGroup = new zpa.connector.ConnectorGroup("exampleConnectorGroup", {
+ * const exampleConnectorGroup = new zpa.appconnectorgroup.ConnectorGroup("exampleConnectorGroup", {
  *     description: "Example",
  *     enabled: true,
  *     cityCountry: "San Jose, CA",

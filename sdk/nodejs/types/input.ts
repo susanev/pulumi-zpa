@@ -68,10 +68,276 @@ export namespace AccessPolicy {
     }
 }
 
-export namespace CloudConnectorGroup {
+export namespace AppConnectorGroup {
 }
 
-export namespace Connector {
+export namespace ApplicationSegment {
+    export interface ApplicationSegmentBrowserAccessClientlessApp {
+        /**
+         * If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+         */
+        allowOptions?: pulumi.Input<boolean>;
+        /**
+         * Port for the BA app.
+         */
+        applicationPort: pulumi.Input<string>;
+        /**
+         * Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+         */
+        applicationProtocol: pulumi.Input<string>;
+        certificateId: pulumi.Input<string>;
+        /**
+         * (Optional)
+         */
+        cname?: pulumi.Input<string>;
+        /**
+         * (Optional) Description of the application.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Domain name or IP address of the BA app.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * (Optional) - Whether this app is enabled or not.
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * (Optional)
+         */
+        hidden?: pulumi.Input<boolean>;
+        id?: pulumi.Input<string>;
+        /**
+         * (Optional)
+         */
+        localDomain?: pulumi.Input<string>;
+        /**
+         * Name of the application.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Optional)
+         */
+        path?: pulumi.Input<string>;
+        /**
+         * (Optional)
+         */
+        trustUntrustedCert?: pulumi.Input<boolean>;
+    }
+
+    export interface ApplicationSegmentBrowserAccessServerGroup {
+        ids: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ApplicationSegmentInspectionCommonAppsDto {
+        appsConfigs?: pulumi.Input<pulumi.Input<inputs.ApplicationSegment.ApplicationSegmentInspectionCommonAppsDtoAppsConfig>[]>;
+    }
+
+    export interface ApplicationSegmentInspectionCommonAppsDtoAppsConfig {
+        allowOptions?: pulumi.Input<boolean>;
+        appId?: pulumi.Input<string>;
+        /**
+         * Indicates the type of application as inspection. Supported value: `INSPECT`
+         */
+        appTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Port for the Inspection Application Segment.
+         */
+        applicationPort?: pulumi.Input<string>;
+        /**
+         * Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
+         */
+        applicationProtocol?: pulumi.Input<string>;
+        /**
+         * ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+         */
+        certificateId?: pulumi.Input<string>;
+        certificateName?: pulumi.Input<string>;
+        cname?: pulumi.Input<string>;
+        /**
+         * (Optional) Description of the application.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Domain name of the Inspection Application Segment.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * Whether this application is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        hidden?: pulumi.Input<boolean>;
+        id?: pulumi.Input<string>;
+        localDomain?: pulumi.Input<string>;
+        /**
+         * Name of the Inspection Application Segment.
+         */
+        name?: pulumi.Input<string>;
+        portal?: pulumi.Input<boolean>;
+        trustUntrustedCert?: pulumi.Input<boolean>;
+    }
+
+    export interface ApplicationSegmentInspectionServerGroup {
+        ids: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ApplicationSegmentPRACommonAppsDto {
+        appsConfigs?: pulumi.Input<pulumi.Input<inputs.ApplicationSegment.ApplicationSegmentPRACommonAppsDtoAppsConfig>[]>;
+    }
+
+    export interface ApplicationSegmentPRACommonAppsDtoAppsConfig {
+        allowOptions?: pulumi.Input<boolean>;
+        appId?: pulumi.Input<string>;
+        /**
+         * Indicates the type of application as Privileged Remote Access. Supported value: `SECURE_REMOTE_ACCESS`
+         */
+        appTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Port for the Privileged Remote Access
+         */
+        applicationPort?: pulumi.Input<string>;
+        /**
+         * Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
+         */
+        applicationProtocol?: pulumi.Input<string>;
+        cname?: pulumi.Input<string>;
+        /**
+         * Parameter required when `applicationProtocol` is of type `RDP`
+         */
+        connectionSecurity?: pulumi.Input<string>;
+        /**
+         * (Optional) Description of the application.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Domain name of the Privileged Remote Access
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * Whether this application is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        hidden?: pulumi.Input<boolean>;
+        id?: pulumi.Input<string>;
+        localDomain?: pulumi.Input<string>;
+        /**
+         * Name of the Privileged Remote Access
+         */
+        name?: pulumi.Input<string>;
+        portal?: pulumi.Input<boolean>;
+    }
+
+    export interface ApplicationSegmentPRAServerGroup {
+        ids: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ApplicationSegmentServerGroup {
+        ids: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface BrowserAccessClientlessApp {
+        allowOptions?: pulumi.Input<boolean>;
+        applicationPort: pulumi.Input<string>;
+        applicationProtocol: pulumi.Input<string>;
+        certificateId: pulumi.Input<string>;
+        cname?: pulumi.Input<string>;
+        description?: pulumi.Input<string>;
+        domain?: pulumi.Input<string>;
+        enabled?: pulumi.Input<boolean>;
+        hidden?: pulumi.Input<boolean>;
+        id?: pulumi.Input<string>;
+        localDomain?: pulumi.Input<string>;
+        name: pulumi.Input<string>;
+        path?: pulumi.Input<string>;
+        trustUntrustedCert?: pulumi.Input<boolean>;
+    }
+
+    export interface BrowserAccessServerGroup {
+        ids: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetApplicationSegmentBrowserAccessTcpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentBrowserAccessTcpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentBrowserAccessUdpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentBrowserAccessUdpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentInspectionTcpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentInspectionTcpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentInspectionUdpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentInspectionUdpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentPRATcpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentPRATcpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentPRAUdpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentPRAUdpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentTcpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentTcpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+
+    export interface GetApplicationSegmentUdpPortRange {
+        from?: string;
+        to?: string;
+    }
+
+    export interface GetApplicationSegmentUdpPortRangeArgs {
+        from?: pulumi.Input<string>;
+        to?: pulumi.Input<string>;
+    }
+}
+
+export namespace CloudConnectorGroup {
 }
 
 export namespace ForwardPolicy {
@@ -407,272 +673,6 @@ export namespace LSSConfig {
 }
 
 export namespace PolicyType {
-}
-
-export namespace Segment {
-    export interface ApplicationSegmentBrowserAccessClientlessApp {
-        /**
-         * If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
-         */
-        allowOptions?: pulumi.Input<boolean>;
-        /**
-         * Port for the BA app.
-         */
-        applicationPort: pulumi.Input<string>;
-        /**
-         * Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
-         */
-        applicationProtocol: pulumi.Input<string>;
-        certificateId: pulumi.Input<string>;
-        /**
-         * (Optional)
-         */
-        cname?: pulumi.Input<string>;
-        /**
-         * (Optional) Description of the application.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * Domain name or IP address of the BA app.
-         */
-        domain?: pulumi.Input<string>;
-        /**
-         * (Optional) - Whether this app is enabled or not.
-         */
-        enabled?: pulumi.Input<boolean>;
-        /**
-         * (Optional)
-         */
-        hidden?: pulumi.Input<boolean>;
-        id?: pulumi.Input<string>;
-        /**
-         * (Optional)
-         */
-        localDomain?: pulumi.Input<string>;
-        /**
-         * Name of the application.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Optional)
-         */
-        path?: pulumi.Input<string>;
-        /**
-         * (Optional)
-         */
-        trustUntrustedCert?: pulumi.Input<boolean>;
-    }
-
-    export interface ApplicationSegmentBrowserAccessServerGroup {
-        ids: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface ApplicationSegmentInspectionCommonAppsDto {
-        appsConfigs?: pulumi.Input<pulumi.Input<inputs.Segment.ApplicationSegmentInspectionCommonAppsDtoAppsConfig>[]>;
-    }
-
-    export interface ApplicationSegmentInspectionCommonAppsDtoAppsConfig {
-        allowOptions?: pulumi.Input<boolean>;
-        appId?: pulumi.Input<string>;
-        /**
-         * Indicates the type of application as inspection. Supported value: `INSPECT`
-         */
-        appTypes?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * Port for the Inspection Application Segment.
-         */
-        applicationPort?: pulumi.Input<string>;
-        /**
-         * Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
-         */
-        applicationProtocol?: pulumi.Input<string>;
-        /**
-         * ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
-         */
-        certificateId?: pulumi.Input<string>;
-        certificateName?: pulumi.Input<string>;
-        cname?: pulumi.Input<string>;
-        /**
-         * (Optional) Description of the application.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * Domain name of the Inspection Application Segment.
-         */
-        domain?: pulumi.Input<string>;
-        /**
-         * Whether this application is enabled or not
-         */
-        enabled?: pulumi.Input<boolean>;
-        hidden?: pulumi.Input<boolean>;
-        id?: pulumi.Input<string>;
-        localDomain?: pulumi.Input<string>;
-        /**
-         * Name of the Inspection Application Segment.
-         */
-        name?: pulumi.Input<string>;
-        portal?: pulumi.Input<boolean>;
-        trustUntrustedCert?: pulumi.Input<boolean>;
-    }
-
-    export interface ApplicationSegmentInspectionServerGroup {
-        ids: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface ApplicationSegmentPRACommonAppsDto {
-        appsConfigs?: pulumi.Input<pulumi.Input<inputs.Segment.ApplicationSegmentPRACommonAppsDtoAppsConfig>[]>;
-    }
-
-    export interface ApplicationSegmentPRACommonAppsDtoAppsConfig {
-        allowOptions?: pulumi.Input<boolean>;
-        appId?: pulumi.Input<string>;
-        /**
-         * Indicates the type of application as Privileged Remote Access. Supported value: `SECURE_REMOTE_ACCESS`
-         */
-        appTypes?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * Port for the Privileged Remote Access
-         */
-        applicationPort?: pulumi.Input<string>;
-        /**
-         * Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
-         */
-        applicationProtocol?: pulumi.Input<string>;
-        cname?: pulumi.Input<string>;
-        /**
-         * Parameter required when `applicationProtocol` is of type `RDP`
-         */
-        connectionSecurity?: pulumi.Input<string>;
-        /**
-         * (Optional) Description of the application.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * Domain name of the Privileged Remote Access
-         */
-        domain?: pulumi.Input<string>;
-        /**
-         * Whether this application is enabled or not
-         */
-        enabled?: pulumi.Input<boolean>;
-        hidden?: pulumi.Input<boolean>;
-        id?: pulumi.Input<string>;
-        localDomain?: pulumi.Input<string>;
-        /**
-         * Name of the Privileged Remote Access
-         */
-        name?: pulumi.Input<string>;
-        portal?: pulumi.Input<boolean>;
-    }
-
-    export interface ApplicationSegmentPRAServerGroup {
-        ids: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface ApplicationSegmentServerGroup {
-        ids: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface BrowserAccessClientlessApp {
-        allowOptions?: pulumi.Input<boolean>;
-        applicationPort: pulumi.Input<string>;
-        applicationProtocol: pulumi.Input<string>;
-        certificateId: pulumi.Input<string>;
-        cname?: pulumi.Input<string>;
-        description?: pulumi.Input<string>;
-        domain?: pulumi.Input<string>;
-        enabled?: pulumi.Input<boolean>;
-        hidden?: pulumi.Input<boolean>;
-        id?: pulumi.Input<string>;
-        localDomain?: pulumi.Input<string>;
-        name: pulumi.Input<string>;
-        path?: pulumi.Input<string>;
-        trustUntrustedCert?: pulumi.Input<boolean>;
-    }
-
-    export interface BrowserAccessServerGroup {
-        ids: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetApplicationSegmentBrowserAccessTcpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentBrowserAccessTcpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentBrowserAccessUdpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentBrowserAccessUdpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentInspectionTcpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentInspectionTcpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentInspectionUdpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentInspectionUdpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentPRATcpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentPRATcpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentPRAUdpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentPRAUdpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentTcpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentTcpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
-
-    export interface GetApplicationSegmentUdpPortRange {
-        from?: string;
-        to?: string;
-    }
-
-    export interface GetApplicationSegmentUdpPortRangeArgs {
-        from?: pulumi.Input<string>;
-        to?: pulumi.Input<string>;
-    }
 }
 
 export namespace SegmentGroup {

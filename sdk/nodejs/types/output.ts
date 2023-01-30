@@ -69,45 +69,7 @@ export namespace AccessPolicy {
 
 }
 
-export namespace CloudConnectorGroup {
-    export interface GetCloudConnectorGroupCloudConnector {
-        /**
-         * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
-         */
-        creationTime: string;
-        /**
-         * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
-         */
-        description: string;
-        /**
-         * (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
-         */
-        enabled: boolean;
-        fingerprint: string;
-        /**
-         * This field defines the id of the cloud connector group.
-         */
-        id: string;
-        ipacls: any[];
-        /**
-         * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
-         */
-        issuedCertId: string;
-        /**
-         * (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
-         */
-        modifiedTime: string;
-        modifiedby: string;
-        /**
-         * This field defines the name of the cloud connector group.
-         */
-        name: string;
-        signingCert: {[key: string]: any};
-    }
-
-}
-
-export namespace Connector {
+export namespace AppConnectorGroup {
     export interface GetAppConnectorGroupConnector {
         appconnectorGroupId: string;
         appconnectorGroupName: string;
@@ -190,6 +152,405 @@ export namespace Connector {
          * Name of the App Connector Group.
          */
         name: string;
+    }
+
+}
+
+export namespace ApplicationSegment {
+    export interface ApplicationSegmentBrowserAccessClientlessApp {
+        /**
+         * If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
+         */
+        allowOptions?: boolean;
+        /**
+         * Port for the BA app.
+         */
+        applicationPort: string;
+        /**
+         * Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
+         */
+        applicationProtocol: string;
+        certificateId: string;
+        /**
+         * (Optional)
+         */
+        cname: string;
+        /**
+         * (Optional) Description of the application.
+         */
+        description?: string;
+        /**
+         * Domain name or IP address of the BA app.
+         */
+        domain?: string;
+        /**
+         * (Optional) - Whether this app is enabled or not.
+         */
+        enabled: boolean;
+        /**
+         * (Optional)
+         */
+        hidden: boolean;
+        id: string;
+        /**
+         * (Optional)
+         */
+        localDomain?: string;
+        /**
+         * Name of the application.
+         */
+        name: string;
+        /**
+         * (Optional)
+         */
+        path?: string;
+        /**
+         * (Optional)
+         */
+        trustUntrustedCert: boolean;
+    }
+
+    export interface ApplicationSegmentBrowserAccessServerGroup {
+        ids: string[];
+    }
+
+    export interface ApplicationSegmentInspectionCommonAppsDto {
+        appsConfigs: outputs.ApplicationSegment.ApplicationSegmentInspectionCommonAppsDtoAppsConfig[];
+    }
+
+    export interface ApplicationSegmentInspectionCommonAppsDtoAppsConfig {
+        allowOptions: boolean;
+        appId: string;
+        /**
+         * Indicates the type of application as inspection. Supported value: `INSPECT`
+         */
+        appTypes: string[];
+        /**
+         * Port for the Inspection Application Segment.
+         */
+        applicationPort: string;
+        /**
+         * Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
+         */
+        applicationProtocol: string;
+        /**
+         * ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+         */
+        certificateId: string;
+        certificateName: string;
+        cname: string;
+        /**
+         * (Optional) Description of the application.
+         */
+        description: string;
+        /**
+         * Domain name of the Inspection Application Segment.
+         */
+        domain: string;
+        /**
+         * Whether this application is enabled or not
+         */
+        enabled: boolean;
+        hidden: boolean;
+        id: string;
+        localDomain: string;
+        /**
+         * Name of the Inspection Application Segment.
+         */
+        name: string;
+        portal: boolean;
+        trustUntrustedCert: boolean;
+    }
+
+    export interface ApplicationSegmentInspectionServerGroup {
+        ids: string[];
+    }
+
+    export interface ApplicationSegmentPRACommonAppsDto {
+        appsConfigs: outputs.ApplicationSegment.ApplicationSegmentPRACommonAppsDtoAppsConfig[];
+    }
+
+    export interface ApplicationSegmentPRACommonAppsDtoAppsConfig {
+        allowOptions: boolean;
+        appId: string;
+        /**
+         * Indicates the type of application as Privileged Remote Access. Supported value: `SECURE_REMOTE_ACCESS`
+         */
+        appTypes: string[];
+        /**
+         * Port for the Privileged Remote Access
+         */
+        applicationPort: string;
+        /**
+         * Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
+         */
+        applicationProtocol: string;
+        cname: string;
+        /**
+         * Parameter required when `applicationProtocol` is of type `RDP`
+         */
+        connectionSecurity: string;
+        /**
+         * (Optional) Description of the application.
+         */
+        description: string;
+        /**
+         * Domain name of the Privileged Remote Access
+         */
+        domain: string;
+        /**
+         * Whether this application is enabled or not
+         */
+        enabled: boolean;
+        hidden: boolean;
+        id: string;
+        localDomain: string;
+        /**
+         * Name of the Privileged Remote Access
+         */
+        name: string;
+        portal: boolean;
+    }
+
+    export interface ApplicationSegmentPRAServerGroup {
+        ids: string[];
+    }
+
+    export interface ApplicationSegmentServerGroup {
+        ids: string[];
+    }
+
+    export interface BrowserAccessClientlessApp {
+        allowOptions?: boolean;
+        applicationPort: string;
+        applicationProtocol: string;
+        certificateId: string;
+        cname: string;
+        description?: string;
+        domain?: string;
+        enabled: boolean;
+        hidden: boolean;
+        id: string;
+        localDomain?: string;
+        name: string;
+        path?: string;
+        trustUntrustedCert: boolean;
+    }
+
+    export interface BrowserAccessServerGroup {
+        ids: string[];
+    }
+
+    export interface GetApplicationSegmentBrowserAccessClientlessApp {
+        /**
+         * (bool)
+         */
+        allowOptions: boolean;
+        appId: string;
+        /**
+         * (string)
+         */
+        applicationPort: string;
+        /**
+         * (string)
+         */
+        applicationProtocol: string;
+        /**
+         * (string)
+         */
+        certificateId: string;
+        /**
+         * (string)
+         */
+        certificateName: string;
+        /**
+         * (string)
+         */
+        cname: string;
+        /**
+         * (string)
+         */
+        description: string;
+        /**
+         * (string)
+         */
+        domain: string;
+        /**
+         * (bool)
+         */
+        enabled: boolean;
+        /**
+         * (bool)
+         */
+        hidden: boolean;
+        /**
+         * This field defines the id of the application server.
+         */
+        id: string;
+        /**
+         * (string)
+         */
+        localDomain: string;
+        /**
+         * This field defines the name of the server.
+         */
+        name: string;
+        /**
+         * (string)
+         */
+        path: string;
+        /**
+         * (bool)
+         */
+        trustUntrustedCert: boolean;
+    }
+
+    export interface GetApplicationSegmentBrowserAccessServerGroup {
+        /**
+         * This field defines the id of the application server.
+         */
+        ids: string[];
+    }
+
+    export interface GetApplicationSegmentInspectionInspectionApp {
+        appId: string;
+        /**
+         * (string) TCP/UDP Port for ZPA Inspection.
+         */
+        applicationPort: string;
+        /**
+         * (string) Protocol for the Inspection Application. Supported values: `HTTP` and `HTTPS`
+         */
+        applicationProtocol: string;
+        /**
+         * (string) - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
+         */
+        certificateId: string;
+        /**
+         * (string) - Parameter required when `applicationProtocol` is of type `HTTPS`
+         */
+        certificateName: string;
+        /**
+         * (string) Description of the application.
+         */
+        description: string;
+        domain: string;
+        /**
+         * (bool) Whether this application is enabled or not
+         */
+        enabled: boolean;
+        /**
+         * The ID of the Inspection Application Segment to be exported.
+         */
+        id: string;
+        /**
+         * The name of the Inspection Application Segment to be exported.
+         */
+        name: string;
+    }
+
+    export interface GetApplicationSegmentInspectionServerGroup {
+        /**
+         * The ID of the Inspection Application Segment to be exported.
+         */
+        ids: string[];
+    }
+
+    export interface GetApplicationSegmentPRAServerGroup {
+        ids: string[];
+    }
+
+    export interface GetApplicationSegmentPRASraApp {
+        appId: string;
+        /**
+         * (string) Port for the Privileged Remote Accessvalues: `RDP` and `SSH`
+         */
+        applicationPort: string;
+        /**
+         * (string) Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
+         */
+        applicationProtocol: string;
+        certificateId: string;
+        certificateName: string;
+        /**
+         * (string) - Parameter required when `applicationProtocol` is of type `RDP`
+         */
+        connectionSecurity: string;
+        /**
+         * (string) Description of the application.
+         */
+        description: string;
+        domain: string;
+        /**
+         * (bool) Whether this application is enabled or not
+         */
+        enabled: boolean;
+        hidden: boolean;
+        id: string;
+        /**
+         * The name of the PRA Application Segment to be exported.
+         */
+        name: string;
+        portal: boolean;
+    }
+
+    export interface GetApplicationSegmentServerGroup {
+        configSpace: string;
+        creationTime: string;
+        /**
+         * Description of the application.
+         */
+        description: string;
+        dynamicDiscovery: boolean;
+        /**
+         * Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
+         */
+        enabled: boolean;
+        id: string;
+        modifiedTime: string;
+        modifiedby: string;
+        /**
+         * Name of the application.
+         */
+        name: string;
+    }
+
+}
+
+export namespace CloudConnectorGroup {
+    export interface GetCloudConnectorGroupCloudConnector {
+        /**
+         * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+         */
+        creationTime: string;
+        /**
+         * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+         */
+        description: string;
+        /**
+         * (bool) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+         */
+        enabled: boolean;
+        fingerprint: string;
+        /**
+         * This field defines the id of the cloud connector group.
+         */
+        id: string;
+        ipacls: any[];
+        /**
+         * (string) - Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+         */
+        issuedCertId: string;
+        /**
+         * (string)- Only applicable for a GET request. Ignored in PUT/POST/DELETE requests.
+         */
+        modifiedTime: string;
+        modifiedby: string;
+        /**
+         * This field defines the name of the cloud connector group.
+         */
+        name: string;
+        signingCert: {[key: string]: any};
     }
 
 }
@@ -980,367 +1341,6 @@ export namespace PolicyType {
         objectType: string;
         operator: string;
         rhs: string;
-    }
-
-}
-
-export namespace Segment {
-    export interface ApplicationSegmentBrowserAccessClientlessApp {
-        /**
-         * If you want ZPA to forward unauthenticated HTTP preflight OPTIONS requests from the browser to the app.. Supported values: `true` and `false`
-         */
-        allowOptions?: boolean;
-        /**
-         * Port for the BA app.
-         */
-        applicationPort: string;
-        /**
-         * Protocol for the BA app. Supported values: `HTTP` and `HTTPS`
-         */
-        applicationProtocol: string;
-        certificateId: string;
-        /**
-         * (Optional)
-         */
-        cname: string;
-        /**
-         * (Optional) Description of the application.
-         */
-        description?: string;
-        /**
-         * Domain name or IP address of the BA app.
-         */
-        domain?: string;
-        /**
-         * (Optional) - Whether this app is enabled or not.
-         */
-        enabled: boolean;
-        /**
-         * (Optional)
-         */
-        hidden: boolean;
-        id: string;
-        /**
-         * (Optional)
-         */
-        localDomain?: string;
-        /**
-         * Name of the application.
-         */
-        name: string;
-        /**
-         * (Optional)
-         */
-        path?: string;
-        /**
-         * (Optional)
-         */
-        trustUntrustedCert: boolean;
-    }
-
-    export interface ApplicationSegmentBrowserAccessServerGroup {
-        ids: string[];
-    }
-
-    export interface ApplicationSegmentInspectionCommonAppsDto {
-        appsConfigs: outputs.Segment.ApplicationSegmentInspectionCommonAppsDtoAppsConfig[];
-    }
-
-    export interface ApplicationSegmentInspectionCommonAppsDtoAppsConfig {
-        allowOptions: boolean;
-        appId: string;
-        /**
-         * Indicates the type of application as inspection. Supported value: `INSPECT`
-         */
-        appTypes: string[];
-        /**
-         * Port for the Inspection Application Segment.
-         */
-        applicationPort: string;
-        /**
-         * Protocol for the Inspection Application Segment.. Supported values: `HTTP` and `HTTPS`
-         */
-        applicationProtocol: string;
-        /**
-         * ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
-         */
-        certificateId: string;
-        certificateName: string;
-        cname: string;
-        /**
-         * (Optional) Description of the application.
-         */
-        description: string;
-        /**
-         * Domain name of the Inspection Application Segment.
-         */
-        domain: string;
-        /**
-         * Whether this application is enabled or not
-         */
-        enabled: boolean;
-        hidden: boolean;
-        id: string;
-        localDomain: string;
-        /**
-         * Name of the Inspection Application Segment.
-         */
-        name: string;
-        portal: boolean;
-        trustUntrustedCert: boolean;
-    }
-
-    export interface ApplicationSegmentInspectionServerGroup {
-        ids: string[];
-    }
-
-    export interface ApplicationSegmentPRACommonAppsDto {
-        appsConfigs: outputs.Segment.ApplicationSegmentPRACommonAppsDtoAppsConfig[];
-    }
-
-    export interface ApplicationSegmentPRACommonAppsDtoAppsConfig {
-        allowOptions: boolean;
-        appId: string;
-        /**
-         * Indicates the type of application as Privileged Remote Access. Supported value: `SECURE_REMOTE_ACCESS`
-         */
-        appTypes: string[];
-        /**
-         * Port for the Privileged Remote Access
-         */
-        applicationPort: string;
-        /**
-         * Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
-         */
-        applicationProtocol: string;
-        cname: string;
-        /**
-         * Parameter required when `applicationProtocol` is of type `RDP`
-         */
-        connectionSecurity: string;
-        /**
-         * (Optional) Description of the application.
-         */
-        description: string;
-        /**
-         * Domain name of the Privileged Remote Access
-         */
-        domain: string;
-        /**
-         * Whether this application is enabled or not
-         */
-        enabled: boolean;
-        hidden: boolean;
-        id: string;
-        localDomain: string;
-        /**
-         * Name of the Privileged Remote Access
-         */
-        name: string;
-        portal: boolean;
-    }
-
-    export interface ApplicationSegmentPRAServerGroup {
-        ids: string[];
-    }
-
-    export interface ApplicationSegmentServerGroup {
-        ids: string[];
-    }
-
-    export interface BrowserAccessClientlessApp {
-        allowOptions?: boolean;
-        applicationPort: string;
-        applicationProtocol: string;
-        certificateId: string;
-        cname: string;
-        description?: string;
-        domain?: string;
-        enabled: boolean;
-        hidden: boolean;
-        id: string;
-        localDomain?: string;
-        name: string;
-        path?: string;
-        trustUntrustedCert: boolean;
-    }
-
-    export interface BrowserAccessServerGroup {
-        ids: string[];
-    }
-
-    export interface GetApplicationSegmentBrowserAccessClientlessApp {
-        /**
-         * (bool)
-         */
-        allowOptions: boolean;
-        appId: string;
-        /**
-         * (string)
-         */
-        applicationPort: string;
-        /**
-         * (string)
-         */
-        applicationProtocol: string;
-        /**
-         * (string)
-         */
-        certificateId: string;
-        /**
-         * (string)
-         */
-        certificateName: string;
-        /**
-         * (string)
-         */
-        cname: string;
-        /**
-         * (string)
-         */
-        description: string;
-        /**
-         * (string)
-         */
-        domain: string;
-        /**
-         * (bool)
-         */
-        enabled: boolean;
-        /**
-         * (bool)
-         */
-        hidden: boolean;
-        /**
-         * This field defines the id of the application server.
-         */
-        id: string;
-        /**
-         * (string)
-         */
-        localDomain: string;
-        /**
-         * This field defines the name of the server.
-         */
-        name: string;
-        /**
-         * (string)
-         */
-        path: string;
-        /**
-         * (bool)
-         */
-        trustUntrustedCert: boolean;
-    }
-
-    export interface GetApplicationSegmentBrowserAccessServerGroup {
-        /**
-         * This field defines the id of the application server.
-         */
-        ids: string[];
-    }
-
-    export interface GetApplicationSegmentInspectionInspectionApp {
-        appId: string;
-        /**
-         * (string) TCP/UDP Port for ZPA Inspection.
-         */
-        applicationPort: string;
-        /**
-         * (string) Protocol for the Inspection Application. Supported values: `HTTP` and `HTTPS`
-         */
-        applicationProtocol: string;
-        /**
-         * (string) - ID of the signing certificate. This field is required if the applicationProtocol is set to `HTTPS`. The certificateId is not supported if the applicationProtocol is set to `HTTP`.
-         */
-        certificateId: string;
-        /**
-         * (string) - Parameter required when `applicationProtocol` is of type `HTTPS`
-         */
-        certificateName: string;
-        /**
-         * (string) Description of the application.
-         */
-        description: string;
-        domain: string;
-        /**
-         * (bool) Whether this application is enabled or not
-         */
-        enabled: boolean;
-        /**
-         * The ID of the Inspection Application Segment to be exported.
-         */
-        id: string;
-        /**
-         * The name of the Inspection Application Segment to be exported.
-         */
-        name: string;
-    }
-
-    export interface GetApplicationSegmentInspectionServerGroup {
-        /**
-         * The ID of the Inspection Application Segment to be exported.
-         */
-        ids: string[];
-    }
-
-    export interface GetApplicationSegmentPRAServerGroup {
-        ids: string[];
-    }
-
-    export interface GetApplicationSegmentPRASraApp {
-        appId: string;
-        /**
-         * (string) Port for the Privileged Remote Accessvalues: `RDP` and `SSH`
-         */
-        applicationPort: string;
-        /**
-         * (string) Protocol for the Privileged Remote Access. Supported values: `RDP` and `SSH`
-         */
-        applicationProtocol: string;
-        certificateId: string;
-        certificateName: string;
-        /**
-         * (string) - Parameter required when `applicationProtocol` is of type `RDP`
-         */
-        connectionSecurity: string;
-        /**
-         * (string) Description of the application.
-         */
-        description: string;
-        domain: string;
-        /**
-         * (bool) Whether this application is enabled or not
-         */
-        enabled: boolean;
-        hidden: boolean;
-        id: string;
-        /**
-         * The name of the PRA Application Segment to be exported.
-         */
-        name: string;
-        portal: boolean;
-    }
-
-    export interface GetApplicationSegmentServerGroup {
-        configSpace: string;
-        creationTime: string;
-        /**
-         * Description of the application.
-         */
-        description: string;
-        dynamicDiscovery: boolean;
-        /**
-         * Whether this application is enabled or not. Default: false. Supported values: `true`, `false`.
-         */
-        enabled: boolean;
-        id: string;
-        modifiedTime: string;
-        modifiedby: string;
-        /**
-         * Name of the application.
-         */
-        name: string;
     }
 
 }

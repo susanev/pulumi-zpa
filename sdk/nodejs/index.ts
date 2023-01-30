@@ -13,10 +13,12 @@ utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
 
 // Export sub-modules:
 import * as accesspolicy from "./accesspolicy";
+import * as appconnectorgroup from "./appconnectorgroup";
+import * as applicationsegment from "./applicationsegment";
+import * as applicationserver from "./applicationserver";
 import * as browsercertificate from "./browsercertificate";
 import * as cloudconnectorgroup from "./cloudconnectorgroup";
 import * as config from "./config";
-import * as connector from "./connector";
 import * as enrollmentcertificate from "./enrollmentcertificate";
 import * as forwardpolicy from "./forwardpolicy";
 import * as idpcontroller from "./idpcontroller";
@@ -27,9 +29,10 @@ import * as machinegroup from "./machinegroup";
 import * as policytype from "./policytype";
 import * as postureprofile from "./postureprofile";
 import * as provisioningkey from "./provisioningkey";
-import * as segment from "./segment";
+import * as samlattribute from "./samlattribute";
+import * as scimattribute from "./scimattribute";
+import * as scimgroup from "./scimgroup";
 import * as segmentgroup from "./segmentgroup";
-import * as server from "./server";
 import * as servergroup from "./servergroup";
 import * as serviceedge from "./serviceedge";
 import * as timeoutpolicy from "./timeoutpolicy";
@@ -38,10 +41,12 @@ import * as types from "./types";
 
 export {
     accesspolicy,
+    appconnectorgroup,
+    applicationsegment,
+    applicationserver,
     browsercertificate,
     cloudconnectorgroup,
     config,
-    connector,
     enrollmentcertificate,
     forwardpolicy,
     idpcontroller,
@@ -52,9 +57,10 @@ export {
     policytype,
     postureprofile,
     provisioningkey,
-    segment,
+    samlattribute,
+    scimattribute,
+    scimgroup,
     segmentgroup,
-    server,
     servergroup,
     serviceedge,
     timeoutpolicy,

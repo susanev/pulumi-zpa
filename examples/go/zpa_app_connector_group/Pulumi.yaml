@@ -1,3 +1,0 @@
-name: zpa_app_connector_group
-runtime: go
-description: A minimal Go Pulumi program

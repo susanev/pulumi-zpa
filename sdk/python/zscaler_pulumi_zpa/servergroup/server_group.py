@@ -324,7 +324,7 @@ class ServerGroup(pulumi.CustomResource):
         import zscaler_pulumi_zpa as zpa
 
         # Create a App Connector Group
-        example_connector_group = zpa.connector.ConnectorGroup("exampleConnectorGroup",
+        example_connector_group = zpa.app_connector_group.ConnectorGroup("exampleConnectorGroup",
             description="Example",
             enabled=True,
             city_country="San Jose, CA",
@@ -353,12 +353,12 @@ class ServerGroup(pulumi.CustomResource):
         import zscaler_pulumi_zpa as zpa
 
         # Create an application server
-        example_application_server = zpa.server.ApplicationServer("exampleApplicationServer",
+        example_application_server = zpa.application_server.ApplicationServer("exampleApplicationServer",
             description="Example",
             address="server.example.com",
             enabled=True)
         # Create a App Connector Group
-        example_connector_group = zpa.connector.ConnectorGroup("exampleConnectorGroup",
+        example_connector_group = zpa.app_connector_group.ConnectorGroup("exampleConnectorGroup",
             description="Example",
             enabled=True,
             city_country="San Jose, CA",
@@ -431,7 +431,7 @@ class ServerGroup(pulumi.CustomResource):
         import zscaler_pulumi_zpa as zpa
 
         # Create a App Connector Group
-        example_connector_group = zpa.connector.ConnectorGroup("exampleConnectorGroup",
+        example_connector_group = zpa.app_connector_group.ConnectorGroup("exampleConnectorGroup",
             description="Example",
             enabled=True,
             city_country="San Jose, CA",
@@ -460,12 +460,12 @@ class ServerGroup(pulumi.CustomResource):
         import zscaler_pulumi_zpa as zpa
 
         # Create an application server
-        example_application_server = zpa.server.ApplicationServer("exampleApplicationServer",
+        example_application_server = zpa.application_server.ApplicationServer("exampleApplicationServer",
             description="Example",
             address="server.example.com",
             enabled=True)
         # Create a App Connector Group
-        example_connector_group = zpa.connector.ConnectorGroup("exampleConnectorGroup",
+        example_connector_group = zpa.app_connector_group.ConnectorGroup("exampleConnectorGroup",
             description="Example",
             enabled=True,
             city_country="San Jose, CA",

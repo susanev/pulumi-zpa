@@ -18,14 +18,14 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/Connector"
+//	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/AppConnectorGroup"
 //	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/ServerGroup"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			exampleConnectorGroup, err := Connector.NewConnectorGroup(ctx, "exampleConnectorGroup", &Connector.ConnectorGroupArgs{
+//			exampleConnectorGroup, err := AppConnectorGroup.NewConnectorGroup(ctx, "exampleConnectorGroup", &AppConnectorGroup.ConnectorGroupArgs{
 //				Description:            pulumi.String("Example"),
 //				Enabled:                pulumi.Bool(true),
 //				CityCountry:            pulumi.String("San Jose, CA"),
@@ -71,15 +71,15 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/Connector"
-//	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/Server"
+//	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/AppConnectorGroup"
+//	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/ApplicationServer"
 //	"github.com/zscaler/pulumi-zpa/sdk/go/zpa/ServerGroup"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			exampleApplicationServer, err := Server.NewApplicationServer(ctx, "exampleApplicationServer", &Server.ApplicationServerArgs{
+//			exampleApplicationServer, err := ApplicationServer.NewApplicationServer(ctx, "exampleApplicationServer", &ApplicationServer.ApplicationServerArgs{
 //				Description: pulumi.String("Example"),
 //				Address:     pulumi.String("server.example.com"),
 //				Enabled:     pulumi.Bool(true),
@@ -87,7 +87,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			exampleConnectorGroup, err := Connector.NewConnectorGroup(ctx, "exampleConnectorGroup", &Connector.ConnectorGroupArgs{
+//			exampleConnectorGroup, err := AppConnectorGroup.NewConnectorGroup(ctx, "exampleConnectorGroup", &AppConnectorGroup.ConnectorGroupArgs{
 //				Description:            pulumi.String("Example"),
 //				Enabled:                pulumi.Bool(true),
 //				CityCountry:            pulumi.String("San Jose, CA"),

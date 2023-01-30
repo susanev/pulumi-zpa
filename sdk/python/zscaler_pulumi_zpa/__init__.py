@@ -11,14 +11,18 @@ from .provider import *
 if typing.TYPE_CHECKING:
     import zscaler_pulumi_zpa.accesspolicy as __accesspolicy
     accesspolicy = __accesspolicy
+    import zscaler_pulumi_zpa.appconnectorgroup as __appconnectorgroup
+    appconnectorgroup = __appconnectorgroup
+    import zscaler_pulumi_zpa.applicationsegment as __applicationsegment
+    applicationsegment = __applicationsegment
+    import zscaler_pulumi_zpa.applicationserver as __applicationserver
+    applicationserver = __applicationserver
     import zscaler_pulumi_zpa.browsercertificate as __browsercertificate
     browsercertificate = __browsercertificate
     import zscaler_pulumi_zpa.cloudconnectorgroup as __cloudconnectorgroup
     cloudconnectorgroup = __cloudconnectorgroup
     import zscaler_pulumi_zpa.config as __config
     config = __config
-    import zscaler_pulumi_zpa.connector as __connector
-    connector = __connector
     import zscaler_pulumi_zpa.enrollmentcertificate as __enrollmentcertificate
     enrollmentcertificate = __enrollmentcertificate
     import zscaler_pulumi_zpa.forwardpolicy as __forwardpolicy
@@ -39,12 +43,14 @@ if typing.TYPE_CHECKING:
     postureprofile = __postureprofile
     import zscaler_pulumi_zpa.provisioningkey as __provisioningkey
     provisioningkey = __provisioningkey
-    import zscaler_pulumi_zpa.segment as __segment
-    segment = __segment
+    import zscaler_pulumi_zpa.samlattribute as __samlattribute
+    samlattribute = __samlattribute
+    import zscaler_pulumi_zpa.scimattribute as __scimattribute
+    scimattribute = __scimattribute
+    import zscaler_pulumi_zpa.scimgroup as __scimgroup
+    scimgroup = __scimgroup
     import zscaler_pulumi_zpa.segmentgroup as __segmentgroup
     segmentgroup = __segmentgroup
-    import zscaler_pulumi_zpa.server as __server
-    server = __server
     import zscaler_pulumi_zpa.servergroup as __servergroup
     servergroup = __servergroup
     import zscaler_pulumi_zpa.serviceedge as __serviceedge
@@ -55,10 +61,12 @@ if typing.TYPE_CHECKING:
     trustednetwork = __trustednetwork
 else:
     accesspolicy = _utilities.lazy_import('zscaler_pulumi_zpa.accesspolicy')
+    appconnectorgroup = _utilities.lazy_import('zscaler_pulumi_zpa.appconnectorgroup')
+    applicationsegment = _utilities.lazy_import('zscaler_pulumi_zpa.applicationsegment')
+    applicationserver = _utilities.lazy_import('zscaler_pulumi_zpa.applicationserver')
     browsercertificate = _utilities.lazy_import('zscaler_pulumi_zpa.browsercertificate')
     cloudconnectorgroup = _utilities.lazy_import('zscaler_pulumi_zpa.cloudconnectorgroup')
     config = _utilities.lazy_import('zscaler_pulumi_zpa.config')
-    connector = _utilities.lazy_import('zscaler_pulumi_zpa.connector')
     enrollmentcertificate = _utilities.lazy_import('zscaler_pulumi_zpa.enrollmentcertificate')
     forwardpolicy = _utilities.lazy_import('zscaler_pulumi_zpa.forwardpolicy')
     idpcontroller = _utilities.lazy_import('zscaler_pulumi_zpa.idpcontroller')
@@ -69,9 +77,10 @@ else:
     policytype = _utilities.lazy_import('zscaler_pulumi_zpa.policytype')
     postureprofile = _utilities.lazy_import('zscaler_pulumi_zpa.postureprofile')
     provisioningkey = _utilities.lazy_import('zscaler_pulumi_zpa.provisioningkey')
-    segment = _utilities.lazy_import('zscaler_pulumi_zpa.segment')
+    samlattribute = _utilities.lazy_import('zscaler_pulumi_zpa.samlattribute')
+    scimattribute = _utilities.lazy_import('zscaler_pulumi_zpa.scimattribute')
+    scimgroup = _utilities.lazy_import('zscaler_pulumi_zpa.scimgroup')
     segmentgroup = _utilities.lazy_import('zscaler_pulumi_zpa.segmentgroup')
-    server = _utilities.lazy_import('zscaler_pulumi_zpa.server')
     servergroup = _utilities.lazy_import('zscaler_pulumi_zpa.servergroup')
     serviceedge = _utilities.lazy_import('zscaler_pulumi_zpa.serviceedge')
     timeoutpolicy = _utilities.lazy_import('zscaler_pulumi_zpa.timeoutpolicy')
@@ -90,10 +99,58 @@ _utilities.register(
  },
  {
   "pkg": "zpa",
-  "mod": "Connector/connectorGroup",
-  "fqn": "zscaler_pulumi_zpa.connector",
+  "mod": "AppConnectorGroup/connectorGroup",
+  "fqn": "zscaler_pulumi_zpa.appconnectorgroup",
   "classes": {
-   "zpa:Connector/connectorGroup:ConnectorGroup": "ConnectorGroup"
+   "zpa:AppConnectorGroup/connectorGroup:ConnectorGroup": "ConnectorGroup"
+  }
+ },
+ {
+  "pkg": "zpa",
+  "mod": "ApplicationSegment/applicationSegment",
+  "fqn": "zscaler_pulumi_zpa.applicationsegment",
+  "classes": {
+   "zpa:ApplicationSegment/applicationSegment:ApplicationSegment": "ApplicationSegment"
+  }
+ },
+ {
+  "pkg": "zpa",
+  "mod": "ApplicationSegment/applicationSegmentBrowserAccess",
+  "fqn": "zscaler_pulumi_zpa.applicationsegment",
+  "classes": {
+   "zpa:ApplicationSegment/applicationSegmentBrowserAccess:ApplicationSegmentBrowserAccess": "ApplicationSegmentBrowserAccess"
+  }
+ },
+ {
+  "pkg": "zpa",
+  "mod": "ApplicationSegment/applicationSegmentInspection",
+  "fqn": "zscaler_pulumi_zpa.applicationsegment",
+  "classes": {
+   "zpa:ApplicationSegment/applicationSegmentInspection:ApplicationSegmentInspection": "ApplicationSegmentInspection"
+  }
+ },
+ {
+  "pkg": "zpa",
+  "mod": "ApplicationSegment/applicationSegmentPRA",
+  "fqn": "zscaler_pulumi_zpa.applicationsegment",
+  "classes": {
+   "zpa:ApplicationSegment/applicationSegmentPRA:ApplicationSegmentPRA": "ApplicationSegmentPRA"
+  }
+ },
+ {
+  "pkg": "zpa",
+  "mod": "ApplicationSegment/browserAccess",
+  "fqn": "zscaler_pulumi_zpa.applicationsegment",
+  "classes": {
+   "zpa:ApplicationSegment/browserAccess:BrowserAccess": "BrowserAccess"
+  }
+ },
+ {
+  "pkg": "zpa",
+  "mod": "ApplicationServer/applicationServer",
+  "fqn": "zscaler_pulumi_zpa.applicationserver",
+  "classes": {
+   "zpa:ApplicationServer/applicationServer:ApplicationServer": "ApplicationServer"
   }
  },
  {
@@ -146,58 +203,10 @@ _utilities.register(
  },
  {
   "pkg": "zpa",
-  "mod": "Segment/applicationSegment",
-  "fqn": "zscaler_pulumi_zpa.segment",
-  "classes": {
-   "zpa:Segment/applicationSegment:ApplicationSegment": "ApplicationSegment"
-  }
- },
- {
-  "pkg": "zpa",
-  "mod": "Segment/applicationSegmentBrowserAccess",
-  "fqn": "zscaler_pulumi_zpa.segment",
-  "classes": {
-   "zpa:Segment/applicationSegmentBrowserAccess:ApplicationSegmentBrowserAccess": "ApplicationSegmentBrowserAccess"
-  }
- },
- {
-  "pkg": "zpa",
-  "mod": "Segment/applicationSegmentInspection",
-  "fqn": "zscaler_pulumi_zpa.segment",
-  "classes": {
-   "zpa:Segment/applicationSegmentInspection:ApplicationSegmentInspection": "ApplicationSegmentInspection"
-  }
- },
- {
-  "pkg": "zpa",
-  "mod": "Segment/applicationSegmentPRA",
-  "fqn": "zscaler_pulumi_zpa.segment",
-  "classes": {
-   "zpa:Segment/applicationSegmentPRA:ApplicationSegmentPRA": "ApplicationSegmentPRA"
-  }
- },
- {
-  "pkg": "zpa",
-  "mod": "Segment/browserAccess",
-  "fqn": "zscaler_pulumi_zpa.segment",
-  "classes": {
-   "zpa:Segment/browserAccess:BrowserAccess": "BrowserAccess"
-  }
- },
- {
-  "pkg": "zpa",
   "mod": "SegmentGroup/segmentGroup",
   "fqn": "zscaler_pulumi_zpa.segmentgroup",
   "classes": {
    "zpa:SegmentGroup/segmentGroup:SegmentGroup": "SegmentGroup"
-  }
- },
- {
-  "pkg": "zpa",
-  "mod": "Server/applicationServer",
-  "fqn": "zscaler_pulumi_zpa.server",
-  "classes": {
-   "zpa:Server/applicationServer:ApplicationServer": "ApplicationServer"
   }
  },
  {

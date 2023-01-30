@@ -21,7 +21,7 @@ namespace zscaler.PulumiPackage.Zpa.ServerGroup
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create a App Connector Group
-    ///     var exampleConnectorGroup = new Zpa.Connector.ConnectorGroup("exampleConnectorGroup", new()
+    ///     var exampleConnectorGroup = new Zpa.AppConnectorGroup.ConnectorGroup("exampleConnectorGroup", new()
     ///     {
     ///         Description = "Example",
     ///         Enabled = true,
@@ -72,7 +72,7 @@ namespace zscaler.PulumiPackage.Zpa.ServerGroup
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create an application server
-    ///     var exampleApplicationServer = new Zpa.Server.ApplicationServer("exampleApplicationServer", new()
+    ///     var exampleApplicationServer = new Zpa.ApplicationServer.ApplicationServer("exampleApplicationServer", new()
     ///     {
     ///         Description = "Example",
     ///         Address = "server.example.com",
@@ -80,7 +80,7 @@ namespace zscaler.PulumiPackage.Zpa.ServerGroup
     ///     });
     /// 
     ///     // Create a App Connector Group
-    ///     var exampleConnectorGroup = new Zpa.Connector.ConnectorGroup("exampleConnectorGroup", new()
+    ///     var exampleConnectorGroup = new Zpa.AppConnectorGroup.ConnectorGroup("exampleConnectorGroup", new()
     ///     {
     ///         Description = "Example",
     ///         Enabled = true,
